@@ -1,9 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://63kp1cwf1snt"]
+[gd_scene load_steps=5 format=3 uid="uid://63kp1cwf1snt"]
 
 [ext_resource type="Script" uid="uid://rd7jqoyg5ayg" path="res://scripts/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://gdw0uqu72fms" path="res://assets/main-character-of-the-story/MainCharacter(FullPack)/MainCharacter(FullPack-v1)/MainChar - idle.png" id="2_i3pqv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hqtel"]
+radius = 9.0
+height = 58.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
 radius = 9.0
 height = 58.0
 
@@ -18,3 +22,27 @@ hframes = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_hqtel")
+
+[node name="SelfDamage" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="Collision" type="CollisionShape2D" parent="SelfDamage"]
+unique_name_in_owner = true
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_g2els")
+
+[node name="Health" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -13.0
+offset_top = -38.0
+offset_right = 13.0
+offset_bottom = -34.0
+value = 100.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="body_entered" from="SelfDamage" to="." method="_on_self_damage_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
