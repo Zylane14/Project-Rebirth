@@ -6,6 +6,7 @@ extends Node2D
 
 #distance for enemy spawning
 var distance : float = 400
+var can_spawn : bool = true #flag variable for spawning
 
 #declare a variable to store array of enemy
 @export var enemy_types : Array[Enemy]
@@ -26,8 +27,18 @@ var second : int:
 		%Second.text = str(second).lpad(2,'0') #padding to the left
 
 
+func	 _physics_process(_delta):
+	if get_tree().get_node_count_in_group("Enemy") < 700: #limit mob spawns below 700
+		can_spawn = true
+	else:
+		can_spawn = false
+	
+
 #instantiate the enemy node and set spawn position and player reference
 func spawn(pos : Vector2, elite : bool = false):
+	if not can_spawn and not elite: #using flag to control spawn
+		return
+	
 	var enemy_instance = enemy.instantiate()
 	
 	enemy_instance.type = enemy_types[min(minute, enemy_types.size()-1)] #each minute will be a diffirent wave of enemy
