@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bhrwvaf5ewwi4"]
+
+[ext_resource type="Shader" uid="uid://j85al8n2vug0" path="res://shaders/rainbow_outline.gdshader" id="1_2jhfb"]
+
+[resource]
+shader = ExtResource("1_2jhfb")
+shader_parameter/color = Color(0.607843, 0, 0, 0.72549)
+shader_parameter/width = 0.8
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true

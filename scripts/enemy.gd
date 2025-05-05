@@ -5,6 +5,12 @@ extends CharacterBody2D
 var direction : Vector2
 var speed : float = 75
 var damage : float
+var elite : bool = false:
+	set(value):
+		elite = value
+		if value:
+			$Sprite2D.material = load("res://shaders/red.tres") #change elite outline
+			scale = Vector2(1.5,1.5) #scales up elite
 
 
 #variable to store enemy resource that updates Sprite2D

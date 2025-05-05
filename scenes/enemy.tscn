@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cgwls6ojprwwa" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/Characters/Enemy1/enemy1-all-animations-from top to bottom(Idle-run-atk1-atk2-hurt-death)-canvas 192x128.png" id="2_4ra3w"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5uy6h"]
+radius = 9.0
 height = 32.0
 
 [node name="Enemy" type="CharacterBody2D"]
