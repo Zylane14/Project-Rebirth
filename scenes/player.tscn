@@ -95,6 +95,8 @@ autostart = true
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Magnet" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Magnet"]
 shape = SubResource("CircleShape2D_tuyoq")

@@ -64,5 +64,5 @@ func check_XP(): #function to check XP and increase level
 
 
 func _on_magnet_area_entered(area: Area2D) -> void:
-	if area.has_method("follow"):
-		area.follow(owner)
+	if area.has_method("follow"): #call the follow function from pickup
+		area.follow(self)

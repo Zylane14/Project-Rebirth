@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://kob240l1y6xk"]
+[gd_scene load_steps=21 format=4 uid="uid://kob240l1y6xk"]
 
 [ext_resource type="PackedScene" uid="uid://63kp1cwf1snt" path="res://scenes/player.tscn" id="1_g7g4h"]
 [ext_resource type="Texture2D" uid="uid://1pn1vpo8ol6a" path="res://assets/epic-rpg-world-pack-ancient-ruins/ERW - Ancient Ruins V 1.9.1/Tilesets/grass1 to water.png" id="1_h3xc6"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://rr77k31gn4ju" path="res://assets/epic-rpg-world-pack-ancient-ruins/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/birch trees_4.png" id="5_ntc4i"]
 [ext_resource type="Texture2D" uid="uid://dmrx5d7iifb2i" path="res://assets/epic-rpg-world-pack-ancient-ruins/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/bushes_0.png" id="6_u0xbq"]
 [ext_resource type="Texture2D" uid="uid://blli31k5lmrew" path="res://assets/epic-rpg-world-pack-ancient-ruins/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/bushes_1.png" id="7_pln1h"]
+[ext_resource type="PackedScene" uid="uid://cqojmim05b0x4" path="res://scenes/pickups.tscn" id="10_s36qc"]
+[ext_resource type="Resource" uid="uid://bsdwvs8d0sd32" path="res://resources/Pickups/Blue EXP.tres" id="11_6qxox"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8gixj"]
 texture = ExtResource("1_h3xc6")
@@ -7304,3 +7306,8 @@ player = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("1_g7g4h")]
 position = Vector2(316, 180)
+
+[node name="Pickups" parent="." node_paths=PackedStringArray("player_reference") instance=ExtResource("10_s36qc")]
+position = Vector2(166, 145)
+type = ExtResource("11_6qxox")
+player_reference = NodePath("../Player")
