@@ -9,10 +9,13 @@ var damage : float
 var knockback : Vector2 #adds knockback
 var seperation : float
 
+var drop = preload("res://scenes/pickups.tscn") #preloads pickup scene
+
 var health : float:
 	set(value):
 		health = value
 		if health <= 0: #when health reaches 0, free the enemy from memory
+			drop_item() #enemy will drop item when hp reaches 0
 			queue_free()
 
 var elite : bool = false:
@@ -75,4 +78,18 @@ func take_damage(amount):
 	
 	damage_popup(amount)
 	health -= amount #health will get reduced from take damage function
+
+func drop_item():
+	if type.drops.size() == 0:
+		return 
 	
+	var item = type.drops.pick_random() #function to drop item, first pick a random pickups from the array
+	
+	var item_to_drop = drop.instantiate() #instantiate pickup node, set resource and reference
+	
+	item_to_drop.type = item
+	item_to_drop.position = position
+	item_to_drop.player_reference = player_reference
+	
+	get_tree().current_scene.call_deferred("add_child", item_to_drop) #add to scene tree
+  

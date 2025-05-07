@@ -7308,6 +7308,6 @@ player = NodePath("../Player")
 position = Vector2(316, 180)
 
 [node name="Pickups" parent="." node_paths=PackedStringArray("player_reference") instance=ExtResource("10_s36qc")]
-position = Vector2(166, 145)
+position = Vector2(145, 185)
 type = ExtResource("11_6qxox")
 player_reference = NodePath("../Player")

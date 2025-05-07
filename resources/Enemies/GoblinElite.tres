@@ -1,6 +1,8 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=3 format=3 uid="uid://bkrq0re188bjr"]
+[gd_resource type="Resource" script_class="Enemy" load_steps=5 format=3 uid="uid://bkrq0re188bjr"]
 
+[ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="1_pltqi"]
 [ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="1_y5rs7"]
+[ext_resource type="Resource" uid="uid://brhulfmqu2bs1" path="res://resources/Pickups/Orange EXP.tres" id="2_3oqdy"]
 [ext_resource type="Texture2D" uid="uid://d3ujkw5sgbgeo" path="res://assets/epic-rpg-world-the-depths-of-the-mountain/Epic RPG World - The dephs of the Mountain V1.5.1/Characters/Enemy 2/enemy 2-walk.png" id="2_o4cvl"]
 
 [resource]
@@ -9,4 +11,5 @@ title = "GoblinElite"
 texture = ExtResource("2_o4cvl")
 health = 12.0
 damage = 4.0
+drops = Array[ExtResource("1_pltqi")]([ExtResource("2_3oqdy")])
 metadata/_custom_type_script = "uid://brq1oadyao0po"

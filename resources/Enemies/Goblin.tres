@@ -1,6 +1,8 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=3 format=3 uid="uid://d14tpynryekla"]
+[gd_resource type="Resource" script_class="Enemy" load_steps=5 format=3 uid="uid://d14tpynryekla"]
 
 [ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="1_8hu17"]
+[ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="1_op2jl"]
+[ext_resource type="Resource" uid="uid://bsdwvs8d0sd32" path="res://resources/Pickups/Blue EXP.tres" id="2_0lhts"]
 [ext_resource type="Texture2D" uid="uid://cgwls6ojprwwa" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/Characters/Enemy1/enemy1-all-animations-from top to bottom(Idle-run-atk1-atk2-hurt-death)-canvas 192x128.png" id="2_catu4"]
 
 [resource]
@@ -9,4 +11,5 @@ title = "Goblin"
 texture = ExtResource("2_catu4")
 health = 5.0
 damage = 2.0
+drops = Array[ExtResource("1_op2jl")]([ExtResource("2_0lhts")])
 metadata/_custom_type_script = "uid://brq1oadyao0po"
