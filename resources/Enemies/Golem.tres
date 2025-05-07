@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Enemy" load_steps=3 format=3 uid="uid://c4udbpqvqruxj"]
 
-[ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="1_10mjs"]
-[ext_resource type="Texture2D" uid="uid://ck4mg1crdli5j" path="res://assets/epic-rpg-world-pack-ancient-ruins/ERW - Ancient Ruins V 1.9.1/Characters/Stone  Golem/Stone-golem v2-all animations-224x192.png" id="2_6nmvi"]
+[ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="1_ts7x5"]
+[ext_resource type="Texture2D" uid="uid://ck4mg1crdli5j" path="res://assets/epic-rpg-world-pack-ancient-ruins/ERW - Ancient Ruins V 1.9.1/Characters/Stone  Golem/Stone-golem v2-all animations-224x192.png" id="2_3aljv"]
 
 [resource]
-script = ExtResource("1_10mjs")
+script = ExtResource("1_ts7x5")
 title = "Golem"
-texture = ExtResource("2_6nmvi")
-health = 0.0
+texture = ExtResource("2_3aljv")
+health = 50.0
 damage = 10.0
 metadata/_custom_type_script = "uid://brq1oadyao0po"

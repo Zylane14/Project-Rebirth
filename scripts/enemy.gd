@@ -8,6 +8,13 @@ var speed : float = 75
 var damage : float
 var knockback : Vector2 #adds knockback
 var seperation : float
+
+var health : float:
+	set(value):
+		health = value
+		if health <= 0: #when health reaches 0, free the enemy from memory
+			queue_free()
+
 var elite : bool = false:
 	set(value):
 		elite = value
@@ -22,6 +29,7 @@ var type : Enemy:
 		type = value
 		$Sprite2D.texture = value.texture
 		damage = value.damage
+		health = value.health #updates health from resource
 
 
 #Enemy moves toward player position
@@ -65,3 +73,5 @@ func take_damage(amount):
 	tween.chain().tween_property($Sprite2D, "modulate", Color(1, 1, 1), 0.2) #tween modulation for color of the sprite
 	
 	damage_popup(amount)
+	health -= amount #health will get reduced from take damage function
+	

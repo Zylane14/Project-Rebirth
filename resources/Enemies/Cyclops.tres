@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Enemy" load_steps=3 format=3 uid="uid://q51bg0iwnqs4"]
 
-[ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="1_bi5jr"]
-[ext_resource type="Texture2D" uid="uid://chwlulqjwaf43" path="res://assets/epic-rpg-world-the-depths-of-the-mountain/Epic RPG World - The dephs of the Mountain V1.5.1/Characters/Enemy 1/enemy 1-walk.png" id="2_bi5jr"]
+[ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="1_e58ni"]
+[ext_resource type="Texture2D" uid="uid://chwlulqjwaf43" path="res://assets/epic-rpg-world-the-depths-of-the-mountain/Epic RPG World - The dephs of the Mountain V1.5.1/Characters/Enemy 1/enemy 1-walk.png" id="2_watds"]
 
 [resource]
-script = ExtResource("1_bi5jr")
+script = ExtResource("1_e58ni")
 title = "Cyclops"
-texture = ExtResource("2_bi5jr")
-health = 0.0
+texture = ExtResource("2_watds")
+health = 30.0
 damage = 7.0
 metadata/_custom_type_script = "uid://brq1oadyao0po"
