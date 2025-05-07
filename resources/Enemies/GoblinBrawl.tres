@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Enemy" load_steps=3 format=3 uid="uid://cyfp26oy6hbmm"]
 
-[ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scenes/EnemyType.gd" id="1_agsvp"]
+[ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="1_agsvp"]
 [ext_resource type="Texture2D" uid="uid://b6erfhgi8hiyw" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/Characters/Enemy1/enemy1-variation1-all-animations-from top to bottom(Idle-run-atk1-atk2-hurt-death)-canvas 192x128.png" id="2_ae756"]
 
 [resource]

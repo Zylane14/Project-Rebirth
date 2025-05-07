@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SingleShot" load_steps=4 format=3 uid="uid://bc6hknxlqyxm0"]
+
+[ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="1_msqgw"]
+[ext_resource type="Script" uid="uid://bthks1pwcgkfj" path="res://scripts/SingleShot.gd" id="2_ja44x"]
+[ext_resource type="Texture2D" uid="uid://bp8p6hwncjcsp" path="res://assets/Projectiles/Demo/Colored/T_Projectile_Colored_12.PNG" id="3_2b7by"]
+
+[resource]
+script = ExtResource("2_ja44x")
+title = "Fireball"
+texture = ExtResource("3_2b7by")
+damage = 1.0
+cooldown = 0.25
+speed = 400.0
+projectile_node = ExtResource("1_msqgw")
+metadata/_custom_type_script = "uid://bthks1pwcgkfj"

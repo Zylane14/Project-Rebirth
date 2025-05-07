@@ -7,9 +7,16 @@ var health : float = 100: #makes health a setter variable to updates progress ba
 		health = value
 		%Health.value = value
 
-
+var nearest_enemy : CharacterBody2D
+var nearest_enemy_distance : float = INF
 
 func _physics_process(delta):
+	if nearest_enemy:
+		nearest_enemy_distance = nearest_enemy.seperation #if nearest enemy is not null, sotre its seperation
+		print(nearest_enemy.name)
+	else:
+		nearest_enemy_distance = INF #else set default value to infinite
+	
 	velocity = Input.get_vector("left","right","up","down") * speed
 	move_and_collide(velocity * delta)
 

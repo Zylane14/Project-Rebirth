@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Enemy" load_steps=3 format=3 uid="uid://bkrq0re188bjr"]
 
-[ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scenes/EnemyType.gd" id="1_mdlsv"]
+[ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="1_mdlsv"]
 [ext_resource type="Texture2D" uid="uid://d3ujkw5sgbgeo" path="res://assets/epic-rpg-world-the-depths-of-the-mountain/Epic RPG World - The dephs of the Mountain V1.5.1/Characters/Enemy 2/enemy 2-walk.png" id="2_rjau3"]
 
 [resource]

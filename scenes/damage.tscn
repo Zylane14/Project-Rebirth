@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://df5fdtvevwssj"]
+
+[ext_resource type="Script" uid="uid://h2h36oef3nv7" path="res://scenes/damage.gd" id="1_1gm86"]
+
+[node name="Damage" type="Label"]
+offset_left = -50.0
+offset_top = -12.0
+offset_right = 50.0
+offset_bottom = 37.0
+pivot_offset = Vector2(50, 12)
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_1gm86")

@@ -26,7 +26,8 @@ window/stretch/mode="viewport"
 [file_customization]
 
 folder_colors={
-"res://shaders/": "red"
+"res://resources/Enemies/": "red",
+"res://resources/Weapons/": "blue"
 }
 
 [input]
