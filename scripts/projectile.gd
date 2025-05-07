@@ -11,6 +11,7 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.has_method("take_damage"): #call take_damage function
 		body.take_damage(damage)
+		body.knockback += direction * 25 #knockback to body from projectiles
 
 
 func _on_screen_exited() -> void:
