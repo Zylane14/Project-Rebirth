@@ -71,6 +71,7 @@ func take_damage(amount):
 	var tween = get_tree().create_tween()
 	tween.tween_property($Sprite2D, "modulate", Color(3, 0.25, 0.25), 0.2)
 	tween.chain().tween_property($Sprite2D, "modulate", Color(1, 1, 1), 0.2) #tween modulation for color of the sprite
+	tween.bind_node(self) #bind the tween to the enemy itself
 	
 	damage_popup(amount)
 	health -= amount #health will get reduced from take damage function
