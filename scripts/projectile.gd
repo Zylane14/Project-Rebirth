@@ -14,6 +14,6 @@ func _on_body_entered(body: Node2D) -> void:
 		body.knockback += direction * 25 #knockback to body from projectiles
 
 
-func _on_screen_exited() -> void:
+func _on_screen_exited():
 	queue_free() #frees the projectile when it leaves the screen
  

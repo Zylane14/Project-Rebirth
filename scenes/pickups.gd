@@ -12,7 +12,7 @@ var speed : float = 175
 
 var can_follow : bool = false
 
-func _ready() -> void:
+func _ready():
 	$Sprite2D.texture = type.icon #update the texture for the Sprite2D when the node is ready
 
 func _physics_process(delta):
@@ -24,6 +24,6 @@ func follow(_target : CharacterBody2D): #function follow will set the flag to tr
 	can_follow = true
 
 
-func _on_body_entered(body): #after interacting with the player, activate pickupResource and free it from memory
+func _on_body_entered(_fbody): #after interacting with the player, activate pickupResource and free it from memory
 	type.activate()
 	queue_free()

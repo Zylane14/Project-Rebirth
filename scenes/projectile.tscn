@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://bga3lfxfnpqra"]
 
 [ext_resource type="Script" uid="uid://dk6lqkbnlbvv4" path="res://scripts/projectile.gd" id="1_q3m7n"]
-[ext_resource type="Texture2D" uid="uid://bp8p6hwncjcsp" path="res://assets/Projectiles/Demo/Colored/T_Projectile_Colored_12.PNG" id="2_softn"]
+[ext_resource type="Texture2D" uid="uid://bmh3a8id7u7qj" path="res://assets/Projectiles/fireball_V_1_1/FB500-1.png" id="2_q3m7n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sxmqc"]
 size = Vector2(15, 10)
@@ -52,9 +52,8 @@ script = ExtResource("1_q3m7n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-10, -6)
-texture = ExtResource("2_softn")
-hframes = 4
-vframes = 4
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_q3m7n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.5, 0)
