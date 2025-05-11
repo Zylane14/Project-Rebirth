@@ -30,7 +30,7 @@ curve = SubResource("Curve_byeak")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_w7nm8"]
 particle_flag_disable_z = true
 emission_shape = 1
-emission_sphere_radius = 8.0
+emission_sphere_radius = 15.0
 direction = Vector3(1, 1, 0)
 initial_velocity_min = -10.0
 initial_velocity_max = 10.0
@@ -56,12 +56,14 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_q3m7n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.5, 0)
+position = Vector2(-10, -7)
 shape = SubResource("RectangleShape2D_sxmqc")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-10, -8)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(-10, -7)
 amount = 200
 process_material = SubResource("ParticleProcessMaterial_w7nm8")
 

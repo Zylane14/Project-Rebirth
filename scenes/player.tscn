@@ -67,7 +67,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 texture = ExtResource("3_y4r1p")
-region_rect = Rect2(4.11292, 4.04077, 23.874, 22.8847)
+region_rect = Rect2(2.50137, 2.3946, 27.0203, 26.0732)
 
 [node name="Label" type="Label" parent="UI/Panel"]
 layout_mode = 0

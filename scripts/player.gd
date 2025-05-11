@@ -1,13 +1,24 @@
 extends CharacterBody2D
 
-var speed : float = 150
+
 var health : float = 100: #makes health a setter variable to updates progress bar
 	set(value):
-		health = value
+		health = max(value, 0) #minimum value of health should be 0
 		%Health.value = value
 
+var movement_speed : float = 150
+var max_health : float = 100 : #property for max_health
+	set(value):
+		max_health = value
+		%Health.max_value = value #setter variable to change max value of the progress bar
+var recovery : float = 0
+var armor : float = 0 #armor property
+var might : float = 1.5 #amplify attack
+var area : float = 100 #attack range
+var magnet : float = 0 #pickup range
+
 var nearest_enemy : CharacterBody2D
-var nearest_enemy_distance : float = INF
+var nearest_enemy_distance : float = 150 + area #default distance, minimum + area
 
 var level : int = 1: #variable to store player level
 	set(value):
@@ -32,18 +43,18 @@ func _physics_process(delta):
 		nearest_enemy_distance = nearest_enemy.seperation #if nearest enemy is not null, sotre its seperation
 		print(nearest_enemy.name)
 	else:
-		nearest_enemy_distance = INF #else set default value to infinite
+		nearest_enemy_distance = 150 + area #update nearest distance in physics process
+		nearest_enemy = null #for resetting reference
 	
-	velocity = Input.get_vector("left","right","up","down") * speed
+	velocity = Input.get_vector("left","right","up","down") * movement_speed
 	move_and_collide(velocity * delta)
-	
 	check_XP()
+	health += recovery * delta #increase health with recovery * delta
 
 
 #function to reduce health
 func take_damage(amount):
-	health -= amount
-	print(amount)
+	health -= max(amount - armor, 0) #making defense additive
 
 
 func _on_self_damage_body_entered(body):
