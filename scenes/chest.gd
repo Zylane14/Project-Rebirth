@@ -10,7 +10,6 @@ func _ready():
 	$Open.show()
 	$Close.hide()
 	
-	open()
 	
 func open(): #in open function, play idle and pause the scene tree
 	clear_reward()
@@ -25,10 +24,13 @@ func _on_open_pressed(): #play open animation on pressing the button
 	chest.play("open_boss_chest")
 	await chest.animation_finished #wait for animation then set reward
 	set_reward()
+	$Open.hide()
+	$Close.show() #after opening chest, show close button
 
 
-func _on_close_pressed():
-	pass # Replace with function body.
+func _on_close_pressed(): #resumes the scene tree and hide the chest
+	get_tree().paused = false
+	hide()
 
 
 func set_reward(): #set reward get a random value between 0 and 1
@@ -49,7 +51,7 @@ func upgrade_item(start, end):
 		var upgrades = options.get_available_upgrades() #in for loop, get the available upgrades
 		
 		if upgrades.size() == 0: #return the function if no upgrades available
-			return
+			add_gold(index) #add gold when no upgrades available
 		else:
 			var selected_upgrade : Item
 			selected_upgrade = upgrades.pick_random() #if there are any upgrades, then pick a random upgrade
@@ -59,3 +61,9 @@ func upgrade_item(start, end):
 func clear_reward():
 	for slot in rewards.get_children(): #function to clear the rewards
 		slot.texture = null
+
+func add_gold(index):
+	var gold : Gold = load("res://resources/Others/Gold.tres")
+	gold.player_reference = owner
+	rewards.get_child(index).texture = gold.texture
+	gold.upgrade_item()

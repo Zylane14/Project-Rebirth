@@ -25,6 +25,11 @@ var growth : float = 1 #growth property
 var nearest_enemy : CharacterBody2D
 var nearest_enemy_distance : float = 150 + area #default distance, minimum + area
 
+var gold : int = 0:
+	set(value):
+		gold = value
+		%Gold.text = "Gold : " + str(value) #setter variable gold that updates the label
+
 #variable to store XP and total XP
 var XP : int = 0:
 	set(value): #make XP a setter var to update XP value
@@ -85,3 +90,9 @@ func check_XP(): #function to check XP and increase level
 func _on_magnet_area_entered(area):
 	if area.has_method("follow"): #call the follow function from pickup
 		area.follow(self)
+
+func gain_gold(amount): #function to gain gold
+	gold += amount
+
+func open_chest(): #function to call open from player
+	$UI/Chest.open()

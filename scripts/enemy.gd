@@ -84,6 +84,9 @@ func drop_item():
 		return 
 	
 	var item = type.drops.pick_random() #function to drop item, first pick a random pickups from the array
+	if elite:
+		item = load("res://resources/Pickups/Chest.tres") #item drop will be a chest if it's an elite enemy
+	
 	
 	var item_to_drop = drop.instantiate() #instantiate pickup node, set resource and reference
 	

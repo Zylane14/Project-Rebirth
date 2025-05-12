@@ -21,6 +21,8 @@ func _physics_process(delta):
 		position += direction * speed * delta #when in range, Pickups will be moving towards the player
 
 func follow(_target : CharacterBody2D): #function follow will set the flag to true
+	if type is Chest: #stops chest from magnet
+		return
 	can_follow = true
 
 
