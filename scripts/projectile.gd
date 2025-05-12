@@ -6,10 +6,10 @@ var speed : float = 200
 var damage : float = 1
 var source #variable source in the projectile scene
 
-func _physics_process(delta: float) -> void:
+func _physics_process(delta):
 	position += direction * speed * delta
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(body):
 	if body.has_method("take_damage"): #call take_damage function
 		if "might" in source:
 			body.take_damage(damage * source.might) #if source has property might, multiply the damage

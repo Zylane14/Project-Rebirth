@@ -61,7 +61,7 @@ func amount(number : int = 1):
 
 
 #increment "second" with each timeout and spawn enemies
-func _on_timer_timeout() -> void:
+func _on_timer_timeout():
 	second += 1
 	amount(second % 10)
 
@@ -71,5 +71,5 @@ func _on_pattern_timeout():
 		spawn(get_random_position())
 
 
-func _on_elite_timeout() -> void:
+func _on_elite_timeout():
 	spawn(get_random_position(), true)

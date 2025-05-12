@@ -13,8 +13,8 @@ var max_health : float = 100 : #property for max_health
 		%Health.max_value = value #setter variable to change max value of the progress bar
 var recovery : float = 0
 var armor : float = 0 #armor property
-var might : float = 1.5 #amplify attack
-var area : float = 100 #attack range
+var might : float = 1.0 #amplify attack
+var area : float = 0 #attack range
 var magnet : float = 0: #pickup range
 	set(value):
 		magnet = value
@@ -25,24 +25,25 @@ var growth : float = 1 #growth property
 var nearest_enemy : CharacterBody2D
 var nearest_enemy_distance : float = 150 + area #default distance, minimum + area
 
-var level : int = 1: #variable to store player level
-	set(value):
-		level = value
-		%Level.text = "Lv " + str(value)
-		%Options.show_option() #during level up, show option
-		
-		if level >= 2:
-			%XP.max_value = 20 #available to change max value when needed after certain level
-		elif level >= 7:
-			%XP.max_value = 40
-
-
 #variable to store XP and total XP
 var XP : int = 0:
 	set(value): #make XP a setter var to update XP value
 		XP = value
 		%XP.value = value
 var total_XP : int = 0
+
+var level : int = 1: #variable to store player level
+	set(value):
+		level = value
+		%Level.text = "Lv " + str(value)
+		%Options.show_option() #during level up, show option
+		
+		if level >= 3:
+			%XP.max_value = 20 #available to change max value when needed after certain level
+		elif level >= 7:
+			%XP.max_value = 40
+
+
 
 func _physics_process(delta):
 	if is_instance_valid(nearest_enemy):
@@ -81,6 +82,6 @@ func check_XP(): #function to check XP and increase level
 		level += 1
 
 
-func _on_magnet_area_entered(area: Area2D) -> void:
+func _on_magnet_area_entered(area):
 	if area.has_method("follow"): #call the follow function from pickup
 		area.follow(self)

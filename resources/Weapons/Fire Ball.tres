@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="SingleShot" load_steps=11 format=3 uid="uid://bc6hknxlqyxm0"]
+[gd_resource type="Resource" script_class="SingleShotd" load_steps=13 format=3 uid="uid://bc6hknxlqyxm0"]
 
+[ext_resource type="Resource" uid="uid://cunwxqhggo8i6" path="res://resources/Weapons/Holy Fire 2.tres" id="1_ap575"]
 [ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="1_msqgw"]
 [ext_resource type="Script" uid="uid://bthks1pwcgkfj" path="res://scripts/SingleShot.gd" id="2_ja44x"]
+[ext_resource type="Resource" uid="uid://cdqw7gta62gvm" path="res://resources/Passive Items/Magnet.tres" id="2_wuo0d"]
 [ext_resource type="Texture2D" uid="uid://bmh3a8id7u7qj" path="res://assets/Projectiles/fireball_V_1_1/FB500-1.png" id="3_2b7by"]
 [ext_resource type="Script" uid="uid://co5wubqlbfsyl" path="res://scenes/Upgrade.gd" id="4_2b7by"]
 [ext_resource type="Script" uid="uid://ldvf6v3hcrde" path="res://scenes/ProjectileUpgrade.gd" id="5_2lheo"]
@@ -48,11 +50,13 @@ metadata/_custom_type_script = "uid://ldvf6v3hcrde"
 
 [resource]
 script = ExtResource("2_ja44x")
-title = "Fireball"
-texture = ExtResource("3_2b7by")
 damage = 1.0
-cooldown = 0.25
+cooldown = 0.7
 speed = 400.0
 projectile_node = ExtResource("1_msqgw")
 upgrades = Array[ExtResource("4_2b7by")]([SubResource("Resource_ap575"), SubResource("Resource_2b7by"), SubResource("Resource_2lheo"), SubResource("Resource_wuo0d"), SubResource("Resource_bsojs")])
+item_needed = ExtResource("2_wuo0d")
+evolution = ExtResource("1_ap575")
+title = "Fireball"
+texture = ExtResource("3_2b7by")
 metadata/_custom_type_script = "uid://bthks1pwcgkfj"

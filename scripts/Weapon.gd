@@ -7,12 +7,15 @@ class_name Weapon
 @export var speed : float
 @export var projectile_node : PackedScene = preload("res://scenes/projectile.tscn") #preload projectile node
 @export var upgrades : Array[Upgrade] #property to store array of upgrade
-@export var item_need : PassiveItem
+@export var item_needed : PassiveItem
+@export var evolution : Weapon
+
+var slot
 
 func activate(_source, _target, _scene_tree):
 	pass
 
-func	 is_upgradeable() -> bool:
+func is_upgradeable() -> bool:
 	if level <= upgrades.size(): #function to check if item is upgradeable or not
 		return true
 	return false
@@ -27,3 +30,8 @@ func upgrade_item(): #function to upgrade item
 	cooldown += upgrade.cooldown
 	
 	level += 1
+
+func max_level_reached(): #function to check if an item reached max level or not
+	if upgrades.size() +1 == level and upgrades.size() != 0:
+		return true
+	return false

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=5 format=3 uid="uid://b2so3xjfm3ta3"]
+
+[ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="1_tew3o"]
+[ext_resource type="Script" uid="uid://cnx1yfvbpbkka" path="res://scripts/Weapon.gd" id="2_dhg5w"]
+[ext_resource type="Texture2D" uid="uid://do4cpsthd0qp7" path="res://assets/Projectiles/fireball_V_1_1/FB500-5.png" id="3_7aepq"]
+[ext_resource type="Script" uid="uid://co5wubqlbfsyl" path="res://scenes/Upgrade.gd" id="4_va0ch"]
+
+[resource]
+script = ExtResource("2_dhg5w")
+damage = 10.0
+cooldown = 0.1
+speed = 500.0
+projectile_node = ExtResource("1_tew3o")
+upgrades = Array[ExtResource("4_va0ch")]([])
+title = "Holy Fire"
+texture = ExtResource("3_7aepq")
+metadata/_custom_type_script = "uid://cnx1yfvbpbkka"

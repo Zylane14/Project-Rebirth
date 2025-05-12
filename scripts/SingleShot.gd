@@ -1,5 +1,5 @@
 extends Weapon
-class_name SingleShot
+class_name SingleShotd
 
 #declares a function shoot
 func shoot(source, target, scene_tree):
@@ -21,13 +21,17 @@ func activate(source, target, scene_tree):
 	shoot(source, target, scene_tree)
 	
 func upgrade_item():
+	if max_level_reached(): #if the item gets upgraded even if it reaches max lvl, then evolve the item
+		slot.item = evolution
+		return
+	
 	if not is_upgradeable():
 		return
 	
 	var upgrade = upgrades[level - 1]
 	
 	damage += upgrade.damage
-	cooldown =+ upgrade.cooldown
+	cooldown += upgrade.cooldown
 	speed += upgrade.speed
 	
 	level += 1
