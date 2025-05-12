@@ -65,3 +65,15 @@ func show_option():
 	particles.show() #show both while showing option
 	panel.show()
 	get_tree().paused = true #else show the option and pause the scene tree
+
+func get_available_upgrades()-> Array[Item]: #set function that will return an array of item
+	var upgrades : Array[Item] = []
+	for weapon : Weapon in get_available_resource_in(weapons):
+		if weapon.is_upgradeable(): #push available weapons to the array
+			upgrades.append(weapon)
+	
+	for passive_item : PassiveItem in get_available_resource_in(passive_items):
+		if passive_item.is_upgradeable(): #if any passive item is upgradeable, push it to the array
+			upgrades.append(passive_item)
+	
+	return upgrades
