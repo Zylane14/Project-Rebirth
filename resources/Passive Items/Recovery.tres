@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="PassiveItem" load_steps=7 format=3 uid="uid://byk5so652svi8"]
+
+[ext_resource type="Script" uid="uid://oh3fq60et0sw" path="res://scenes/PassiveItem.gd" id="1_h5u7p"]
+[ext_resource type="Texture2D" uid="uid://bj4hrepour6ib" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/char_stats_slots_4.png" id="2_yg5t0"]
+[ext_resource type="Script" uid="uid://dhltvcvyn33cy" path="res://scenes/Stats.gd" id="3_7wuij"]
+
+[sub_resource type="Resource" id="Resource_qdiv8"]
+script = ExtResource("3_7wuij")
+description = "+0.2 Health/sec"
+max_health = 0.0
+recovery = 0.2
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+metadata/_custom_type_script = "uid://dhltvcvyn33cy"
+
+[sub_resource type="Resource" id="Resource_c80nh"]
+script = ExtResource("3_7wuij")
+description = "+0.4 Health/sec"
+max_health = 0.0
+recovery = 0.4
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+metadata/_custom_type_script = "uid://dhltvcvyn33cy"
+
+[sub_resource type="Resource" id="Resource_lab53"]
+script = ExtResource("3_7wuij")
+description = "+0.6 Health/sec"
+max_health = 0.0
+recovery = 0.6
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+metadata/_custom_type_script = "uid://dhltvcvyn33cy"
+
+[resource]
+script = ExtResource("1_h5u7p")
+upgrades = Array[ExtResource("3_7wuij")]([SubResource("Resource_qdiv8"), SubResource("Resource_c80nh"), SubResource("Resource_lab53")])
+title = "HP Regen"
+texture = ExtResource("2_yg5t0")
+metadata/_custom_type_script = "uid://oh3fq60et0sw"

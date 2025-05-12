@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="PassiveItem" load_steps=7 format=3 uid="uid://cdqw7gta62gvm"]
+
+[ext_resource type="Script" uid="uid://oh3fq60et0sw" path="res://scenes/PassiveItem.gd" id="1_82em7"]
+[ext_resource type="Texture2D" uid="uid://bm41y3243653j" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/icons_items_paper_roll.png" id="2_d2ge8"]
+[ext_resource type="Script" uid="uid://dhltvcvyn33cy" path="res://scenes/Stats.gd" id="3_6ljra"]
+
+[sub_resource type="Resource" id="Resource_mgu2e"]
+script = ExtResource("3_6ljra")
+description = "+15 Magnet Range"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 15.0
+growth = 0.0
+metadata/_custom_type_script = "uid://dhltvcvyn33cy"
+
+[sub_resource type="Resource" id="Resource_7tv1t"]
+script = ExtResource("3_6ljra")
+description = "+20 Magnet Range"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 20.0
+growth = 0.0
+metadata/_custom_type_script = "uid://dhltvcvyn33cy"
+
+[sub_resource type="Resource" id="Resource_g1hcx"]
+script = ExtResource("3_6ljra")
+description = "+25 Magnet Range"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 25.0
+growth = 0.0
+metadata/_custom_type_script = "uid://dhltvcvyn33cy"
+
+[resource]
+script = ExtResource("1_82em7")
+upgrades = Array[ExtResource("3_6ljra")]([SubResource("Resource_mgu2e"), SubResource("Resource_7tv1t"), SubResource("Resource_g1hcx")])
+title = "Magnet"
+texture = ExtResource("2_d2ge8")
+metadata/_custom_type_script = "uid://oh3fq60et0sw"

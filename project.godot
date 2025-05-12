@@ -27,6 +27,7 @@ window/stretch/mode="viewport"
 
 folder_colors={
 "res://resources/Enemies/": "red",
+"res://resources/Passive Items/": "purple",
 "res://resources/Pickups/": "teal",
 "res://resources/Weapons/": "blue"
 }

@@ -15,7 +15,12 @@ var recovery : float = 0
 var armor : float = 0 #armor property
 var might : float = 1.5 #amplify attack
 var area : float = 100 #attack range
-var magnet : float = 0 #pickup range
+var magnet : float = 0: #pickup range
+	set(value):
+		magnet = value
+		%Magnet.shape.radius = 50 + value
+var growth : float = 1 #growth property
+
 
 var nearest_enemy : CharacterBody2D
 var nearest_enemy_distance : float = 150 + area #default distance, minimum + area
@@ -30,6 +35,7 @@ var level : int = 1: #variable to store player level
 			%XP.max_value = 20 #available to change max value when needed after certain level
 		elif level >= 7:
 			%XP.max_value = 40
+
 
 #variable to store XP and total XP
 var XP : int = 0:
@@ -66,8 +72,8 @@ func _on_timer_timeout(): #disable and enable with each timeout
 	%Collision.set_deferred("disabled", false)
 
 func gain_XP(amount): #function to gain XP
-	XP += amount
-	total_XP += amount
+	XP += amount * growth
+	total_XP += amount * growth
 
 func check_XP(): #function to check XP and increase level
 	if XP > %XP.max_value:

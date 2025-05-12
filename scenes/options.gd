@@ -1,6 +1,7 @@
 extends VBoxContainer
 
 @export var weapons : HBoxContainer #variable ro store weapon container
+@export var passive_items : HBoxContainer #variable to store container for passive items in Option
 var OptionSlot = preload("res://scenes/option_slot.tscn") #preloads the option slot
 
 #variable to store both particle and panel
@@ -18,16 +19,26 @@ func close_option(): #will hide option and resume the scene tree
 	panel.hide()
 	get_tree().paused = false
 
-func get_available_weapons(): #checks all weapons and store available weapon resource
-	var weapon_resource = []
-	for weapon in weapons.get_children():
-		if weapon.weapon != null:
-			weapon_resource.append(weapon.weapon)
-	return weapon_resource #return the array of weapon resource
+func get_available_resource_in(items)-> Array[Item]: #function to extract resource from the slot present in the container
+	var resources : Array[Item] = []
+	for item in items.get_children():
+		if item.item != null:
+			resources.append(item.item)
+	return	resources
+
+func add_option(item) -> int: #function to add Option with the item Resource
+	if item.is_upgradeable():
+		var option_slot = OptionSlot.instantiate()
+		option_slot.item = item
+		add_child(option_slot)
+		return 1 #if the item can be upgraded return 1, else return 0
+	return 0
+
 
 func show_option():
-	var weapons_available = get_available_weapons()
-	if weapons_available.size() == 0: #if there are no weapon resource, return the show function
+	var weapons_available = get_available_resource_in(weapons)
+	var passive_item_available = get_available_resource_in(passive_items) #get both weapon and passive item and store them
+	if weapons_available.size() == 0 and passive_item_available.size() == 0: #if there are no weapon resource, return the show function
 		return
 	
 	for slot in get_children(): #if there is any weapon, then remove previous option
@@ -35,11 +46,10 @@ func show_option():
 	
 	var option_size = 0
 	for weapon in weapons_available:
-		if weapon.is_upgradeable():
-			var option_slot = OptionSlot.instantiate() #add option for every weapon available
-			option_slot.weapon = weapon
-			add_child(option_slot)
-			option_size += 1
+		option_size += add_option(weapon) #add weapon option for any available upgrade
+	
+	for passive_item in passive_item_available:
+		option_size += add_option(passive_item)
 	
 	if option_size == 0: #if none of the weapons can be upgraded again, return the function
 		return

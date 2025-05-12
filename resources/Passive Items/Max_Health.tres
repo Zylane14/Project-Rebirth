@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="PassiveItem" load_steps=7 format=3 uid="uid://djc5vnmsvhyml"]
+
+[ext_resource type="Script" uid="uid://oh3fq60et0sw" path="res://scenes/PassiveItem.gd" id="1_nciiq"]
+[ext_resource type="Texture2D" uid="uid://d0r3r651tlqpm" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/char_stats_slots_0.png" id="2_nllni"]
+[ext_resource type="Script" uid="uid://dhltvcvyn33cy" path="res://scenes/Stats.gd" id="3_06km0"]
+
+[sub_resource type="Resource" id="Resource_ghaxb"]
+script = ExtResource("3_06km0")
+description = "+20 Max Health"
+max_health = 20.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+metadata/_custom_type_script = "uid://dhltvcvyn33cy"
+
+[sub_resource type="Resource" id="Resource_mcyhc"]
+script = ExtResource("3_06km0")
+description = "+25 Max Health"
+max_health = 25.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+metadata/_custom_type_script = "uid://dhltvcvyn33cy"
+
+[sub_resource type="Resource" id="Resource_yblfq"]
+script = ExtResource("3_06km0")
+description = "+35 Max Health"
+max_health = 35.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+metadata/_custom_type_script = "uid://dhltvcvyn33cy"
+
+[resource]
+script = ExtResource("1_nciiq")
+upgrades = Array[ExtResource("3_06km0")]([SubResource("Resource_ghaxb"), SubResource("Resource_mcyhc"), SubResource("Resource_yblfq")])
+title = "Max_Health"
+texture = ExtResource("2_nllni")
+metadata/_custom_type_script = "uid://oh3fq60et0sw"

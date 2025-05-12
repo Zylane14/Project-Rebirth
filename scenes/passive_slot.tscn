@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://3oy7wx1aj4tc"]
+
+[ext_resource type="Script" uid="uid://ce8q7ibxjfkyw" path="res://scenes/passive_slot.gd" id="1_ejlcw"]
+
+[node name="PassiveSlot" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ejlcw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5

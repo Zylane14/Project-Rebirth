@@ -11,5 +11,4 @@ class_name Stats
 @export var might : float
 @export var area : float
 @export var magnet : float
-@export var revival : int
 @export var growth : float

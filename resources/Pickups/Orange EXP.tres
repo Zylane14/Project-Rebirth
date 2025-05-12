@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Gem" load_steps=3 format=3 uid="uid://brhulfmqu2bs1"]
 
 [ext_resource type="Texture2D" uid="uid://bgaqet6f2ormh" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/icons_items_coin.png" id="1_p5dlv"]
-[ext_resource type="Script" uid="uid://xl6mh4kudeuh" path="res://Gem.gd" id="2_8mdkf"]
+[ext_resource type="Script" uid="uid://xl6mh4kudeuh" path="res://scripts/Gem.gd" id="2_8mdkf"]
 
 [resource]
 script = ExtResource("2_8mdkf")
