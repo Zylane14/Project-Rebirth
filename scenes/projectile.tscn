@@ -63,9 +63,10 @@ shape = SubResource("RectangleShape2D_sxmqc")
 position = Vector2(-10, -8)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-position = Vector2(-10, -7)
+position = Vector2(-23, -7)
 amount = 200
 process_material = SubResource("ParticleProcessMaterial_w7nm8")
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]

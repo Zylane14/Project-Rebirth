@@ -22,3 +22,8 @@ func _on_body_entered(body):
 func _on_screen_exited():
 	queue_free() #frees the projectile when it leaves the screen
  
+
+
+func _on_area_entered(area: Area2D) -> void: #call the take_damage function
+	if area.get_parent().has_method("take_damage"):
+		area.get_parent().take_damage(damage)

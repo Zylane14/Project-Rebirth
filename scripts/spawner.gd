@@ -3,6 +3,7 @@ extends Node2D
 #variable for holding lpayer reference and for holding enemy node
 @export var player : CharacterBody2D
 @export var enemy : PackedScene
+@export var destructible : PackedScene
 
 #distance for enemy spawning
 var distance : float = 400
@@ -73,3 +74,12 @@ func _on_pattern_timeout():
 
 func _on_elite_timeout():
 	spawn(get_random_position(), true)
+
+
+func _on_destructible_timeout():
+	spawn_destructible(get_random_position()) #spawning destructible with each timeout
+	
+func	 spawn_destructible(pos):
+	var object_instance = destructible.instantiate() #function to spawn destructible
+	object_instance.position = pos
+	get_tree().current_scene.add_child(object_instance)

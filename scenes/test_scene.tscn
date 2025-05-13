@@ -7311,3 +7311,7 @@ position = Vector2(316, 180)
 position = Vector2(145, 185)
 type = ExtResource("11_6qxox")
 player_reference = NodePath("../Player")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(0.170569, 0.133138, 0.056945, 1)
+blend_mode = 2

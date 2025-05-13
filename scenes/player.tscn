@@ -362,46 +362,46 @@ offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="UI/Chest/Rewards"]
 layout_mode = 0
-offset_left = 171.0
-offset_top = 93.0
-offset_right = 211.0
-offset_bottom = 133.0
+offset_left = 168.0
+offset_top = 98.0
+offset_right = 208.0
+offset_bottom = 138.0
 expand_mode = 1
 stretch_mode = 5
 
 [node name="TextureRect2" type="TextureRect" parent="UI/Chest/Rewards"]
 layout_mode = 0
-offset_left = 44.0
-offset_top = 94.0
-offset_right = 84.0
-offset_bottom = 134.0
+offset_left = 51.0
+offset_top = 44.0
+offset_right = 91.0
+offset_bottom = 84.0
 expand_mode = 1
 stretch_mode = 5
 
 [node name="TextureRect3" type="TextureRect" parent="UI/Chest/Rewards"]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 43.0
-offset_right = 80.0
-offset_bottom = 83.0
+offset_left = 108.0
+offset_top = 31.0
+offset_right = 148.0
+offset_bottom = 71.0
 expand_mode = 1
 stretch_mode = 5
 
 [node name="TextureRect4" type="TextureRect" parent="UI/Chest/Rewards"]
 layout_mode = 0
-offset_left = 163.0
-offset_top = 45.0
-offset_right = 203.0
-offset_bottom = 85.0
+offset_left = 160.0
+offset_top = 44.0
+offset_right = 200.0
+offset_bottom = 84.0
 expand_mode = 1
 stretch_mode = 5
 
 [node name="TextureRect5" type="TextureRect" parent="UI/Chest/Rewards"]
 layout_mode = 0
-offset_left = 108.0
-offset_top = 31.0
-offset_right = 148.0
-offset_bottom = 71.0
+offset_left = 42.0
+offset_top = 98.0
+offset_right = 82.0
+offset_bottom = 138.0
 expand_mode = 1
 stretch_mode = 5
 

@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://by6exrkw4wuup"]
+
+[ext_resource type="Texture2D" uid="uid://ciegyam261d6c" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/Props/animated/shrine3-available.png" id="1_l8yo0"]
+[ext_resource type="Script" uid="uid://dg378ae4wpvdr" path="res://scenes/destructible.gd" id="2_u70qa"]
+[ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="3_iw4aa"]
+[ext_resource type="Resource" uid="uid://ci2o2efevbw1o" path="res://resources/Pickups/Food.tres" id="4_aay8l"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iw4aa"]
+radius = 9.0
+height = 34.0
+
+[sub_resource type="Gradient" id="Gradient_l8yo0"]
+offsets = PackedFloat32Array(0, 0.302778, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.627778, 0.627778, 0.627778, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u70qa"]
+gradient = SubResource("Gradient_l8yo0")
+fill = 1
+fill_from = Vector2(0.489316, 0.495726)
+fill_to = Vector2(0.856838, 0.119658)
+
+[node name="Destructible" type="Sprite2D"]
+texture = ExtResource("1_l8yo0")
+hframes = 14
+script = ExtResource("2_u70qa")
+drops = Array[ExtResource("3_iw4aa")]([ExtResource("4_aay8l")])
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 20)
+shape = SubResource("CapsuleShape2D_iw4aa")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, 14)
+scale = Vector2(4.28516, 3.86033)
+color = Color(0.960784, 0.262745, 0.27451, 1)
+texture = SubResource("GradientTexture2D_u70qa")

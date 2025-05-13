@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Health" load_steps=3 format=3 uid="uid://ci2o2efevbw1o"]
+
+[ext_resource type="Texture2D" uid="uid://dgtbx3nk8rion" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/skill_icon_cropped_0.png" id="1_p5ttk"]
+[ext_resource type="Script" uid="uid://dp38fhgeg1xjh" path="res://scenes/Health.gd" id="2_rganw"]
+
+[resource]
+script = ExtResource("2_rganw")
+amount = 20
+title = "Food"
+icon = ExtResource("1_p5ttk")
+description = "+20 Health"
+metadata/_custom_type_script = "uid://dp38fhgeg1xjh"
