@@ -7313,5 +7313,5 @@ type = ExtResource("11_6qxox")
 player_reference = NodePath("../Player")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-color = Color(0.170569, 0.133138, 0.056945, 1)
+color = Color(0.104113, 0.123807, 0.219107, 1)
 blend_mode = 2
