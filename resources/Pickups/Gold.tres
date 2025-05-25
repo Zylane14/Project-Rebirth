@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Gold" load_steps=3 format=3 uid="uid://cbti8t33h3fr3"]
+
+[ext_resource type="Texture2D" uid="uid://dwjn4w41mc2p2" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/icons_items_bag.png" id="1_6hpao"]
+[ext_resource type="Script" uid="uid://csixs0ikw2obv" path="res://scenes/Gold.gd" id="2_fm0yb"]
+
+[resource]
+script = ExtResource("2_fm0yb")
+gold = 5
+title = "Gold"
+icon = ExtResource("1_6hpao")
+description = "+5 Gold"
+metadata/_custom_type_script = "uid://csixs0ikw2obv"

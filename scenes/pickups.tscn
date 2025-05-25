@@ -4,7 +4,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lekrw"]
 
-[node name="Pickups" type="Area2D"]
+[node name="Pickups" type="Area2D" groups=["Pickups"]]
 collision_layer = 4
 script = ExtResource("1_xnt6b")
 

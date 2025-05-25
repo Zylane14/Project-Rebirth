@@ -20,8 +20,12 @@ func _physics_process(delta):
 		direction = (player_reference.position - position).normalized()
 		position += direction * speed * delta #when in range, Pickups will be moving towards the player
 
-func follow(_target : CharacterBody2D): #function follow will set the flag to true
+func follow(_target : CharacterBody2D, gem_flag = false): #function follow will set the flag to true
 	if type is Chest: #stops chest from magnet
+		return
+	if gem_flag == true: #for gem_flag only, Gem type Pickups can follow
+		if type is Gem:
+			can_follow = true
 		return
 	can_follow = true
 

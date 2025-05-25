@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Health" load_steps=3 format=3 uid="uid://ci2o2efevbw1o"]
 
-[ext_resource type="Texture2D" uid="uid://dgtbx3nk8rion" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/skill_icon_cropped_0.png" id="1_p5ttk"]
+[ext_resource type="Texture2D" uid="uid://b5ogugkka61t3" path="res://assets/Ghostpixxells_pixelfood/05_apple_pie.png" id="1_p5ttk"]
 [ext_resource type="Script" uid="uid://dp38fhgeg1xjh" path="res://scenes/Health.gd" id="2_rganw"]
 
 [resource]

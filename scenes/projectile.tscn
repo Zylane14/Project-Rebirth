@@ -3,8 +3,7 @@
 [ext_resource type="Script" uid="uid://dk6lqkbnlbvv4" path="res://scripts/projectile.gd" id="1_q3m7n"]
 [ext_resource type="Texture2D" uid="uid://bmh3a8id7u7qj" path="res://assets/Projectiles/fireball_V_1_1/FB500-1.png" id="2_q3m7n"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxmqc"]
-size = Vector2(15, 10)
+[sub_resource type="CircleShape2D" id="CircleShape2D_q3m7n"]
 
 [sub_resource type="Gradient" id="Gradient_q3m7n"]
 offsets = PackedFloat32Array(0, 0.0318182, 1)
@@ -57,7 +56,7 @@ texture = ExtResource("2_q3m7n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-10, -7)
-shape = SubResource("RectangleShape2D_sxmqc")
+shape = SubResource("CircleShape2D_q3m7n")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-10, -8)

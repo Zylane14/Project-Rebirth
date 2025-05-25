@@ -7316,3 +7316,8 @@ player_reference = NodePath("../Player")
 visible = false
 color = Color(0.104113, 0.123807, 0.219107, 1)
 blend_mode = 2
+
+[node name="DirectionalLight2D2" type="DirectionalLight2D" parent="."]
+visible = false
+color = Color(0.218535, 0.0752456, 0.0852045, 1)
+blend_mode = 2
