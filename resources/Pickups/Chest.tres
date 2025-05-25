@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Chest" load_steps=3 format=3 uid="uid://b7ir43l7ithlg"]
+[gd_resource type="Resource" script_class="Chest" load_steps=4 format=3 uid="uid://b7ir43l7ithlg"]
 
 [ext_resource type="Texture2D" uid="uid://c4sodq50e842k" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/chests_0.png" id="1_nenli"]
 [ext_resource type="Script" uid="uid://cdck1y0uf63an" path="res://scenes/ChestResource.gd" id="2_x2xao"]
+[ext_resource type="AudioStream" uid="uid://byh76arrh8xbk" path="res://music & sfx/Minifantasy_Dungeon_SFX/01_chest_open_4.wav" id="3_x2xao"]
 
 [resource]
 script = ExtResource("2_x2xao")
 title = "Boss Chest"
 icon = ExtResource("1_nenli")
 description = ""
+sound = ExtResource("3_x2xao")
 metadata/_custom_type_script = "uid://cdck1y0uf63an"

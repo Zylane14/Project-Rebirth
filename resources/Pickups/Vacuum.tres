@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="PickupMagnet" load_steps=3 format=3 uid="uid://db1qi4br8jy2u"]
+[gd_resource type="Resource" script_class="PickupMagnet" load_steps=4 format=3 uid="uid://db1qi4br8jy2u"]
 
-[ext_resource type="Texture2D" uid="uid://b27v7un5ryd07" path="res://assets/epic-rpg-world-the-depths-of-the-mountain/Epic RPG World - The dephs of the Mountain V1.5.1/Props/Animated props/power balls-5.png" id="1_tmlu5"]
+[ext_resource type="Texture2D" uid="uid://b27v7un5ryd07" path="res://assets/epic-rpg-world-the-depths-of-the-mountain/power balls-5.png" id="1_s1x8o"]
 [ext_resource type="Script" uid="uid://da2ukx3dfs8bo" path="res://scenes/Vacuum.gd" id="2_s1x8o"]
+[ext_resource type="AudioStream" uid="uid://c5dpotlc0yhdy" path="res://music & sfx/RPG_Essentials_Free/8_Buffs_Heals_SFX/39_Absorb_04.wav" id="3_n124k"]
 
 [resource]
 script = ExtResource("2_s1x8o")
 title = "Vacuum"
-icon = ExtResource("1_tmlu5")
+icon = ExtResource("1_s1x8o")
 description = "Vacuum's all the gems."
+sound = ExtResource("3_n124k")
 metadata/_custom_type_script = "uid://da2ukx3dfs8bo"

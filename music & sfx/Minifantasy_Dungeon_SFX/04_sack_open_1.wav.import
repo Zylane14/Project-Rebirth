@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://np7k2thcs54n"
+path="res://.godot/imported/04_sack_open_1.wav-c5b902f6eb55855e9bbfc44fbe7c1c8a.sample"
+
+[deps]
+
+source_file="res://music & sfx/Minifantasy_Dungeon_SFX/04_sack_open_1.wav"
+dest_files=["res://.godot/imported/04_sack_open_1.wav-c5b902f6eb55855e9bbfc44fbe7c1c8a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

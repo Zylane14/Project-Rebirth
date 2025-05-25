@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dm17ormus2tgn"
+path="res://.godot/imported/69_Enemy_death_01.wav-df52aae8eda254386f22e12a063f5670.sample"
+
+[deps]
+
+source_file="res://music & sfx/RPG_Essentials_Free/10_Battle_SFX/69_Enemy_death_01.wav"
+dest_files=["res://.godot/imported/69_Enemy_death_01.wav-df52aae8eda254386f22e12a063f5670.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

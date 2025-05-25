@@ -3,9 +3,10 @@ class_name SingleShotd
 
 #declares a function shoot
 func shoot(source, target, scene_tree):
-	if target == null:
+	if target == null or scene_tree.paused == true: #it will only shoow when it's not paused
 		return
-		
+	
+	SoundManager.play_sfx(sound) #call the sound effect
 	var projectile = projectile_node.instantiate() #instantiate the projectile node
 	
 	projectile.position = source.position #set properties of the projectile with resource data

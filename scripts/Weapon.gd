@@ -9,6 +9,7 @@ class_name Weapon
 @export var upgrades : Array[Upgrade] #property to store array of upgrade
 @export var item_needed : PassiveItem
 @export var evolution : Weapon
+@export var sound : AudioStream #property for storing audio
 
 var slot
 

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ci8ae7r02u583"
+path="res://.godot/imported/48_Speed_up_02.wav-421d5695d063d2a04164fa3e096b8602.sample"
+
+[deps]
+
+source_file="res://music & sfx/RPG_Essentials_Free/8_Buffs_Heals_SFX/48_Speed_up_02.wav"
+dest_files=["res://.godot/imported/48_Speed_up_02.wav-421d5695d063d2a04164fa3e096b8602.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

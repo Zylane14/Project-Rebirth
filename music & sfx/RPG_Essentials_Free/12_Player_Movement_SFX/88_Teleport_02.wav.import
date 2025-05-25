@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c8gfcjna6bpok"
+path="res://.godot/imported/88_Teleport_02.wav-542258236ec17fa6cf1061ab2e66f7fd.sample"
+
+[deps]
+
+source_file="res://music & sfx/RPG_Essentials_Free/12_Player_Movement_SFX/88_Teleport_02.wav"
+dest_files=["res://.godot/imported/88_Teleport_02.wav-542258236ec17fa6cf1061ab2e66f7fd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

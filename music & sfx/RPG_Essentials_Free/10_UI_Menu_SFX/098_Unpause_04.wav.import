@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c7u1n1py7ke3j"
+path="res://.godot/imported/098_Unpause_04.wav-f05c7a48502c730b3613aa20f0c2f175.sample"
+
+[deps]
+
+source_file="res://music & sfx/RPG_Essentials_Free/10_UI_Menu_SFX/098_Unpause_04.wav"
+dest_files=["res://.godot/imported/098_Unpause_04.wav-f05c7a48502c730b3613aa20f0c2f175.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

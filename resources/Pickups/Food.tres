@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Health" load_steps=3 format=3 uid="uid://ci2o2efevbw1o"]
+[gd_resource type="Resource" script_class="Health" load_steps=4 format=3 uid="uid://ci2o2efevbw1o"]
 
 [ext_resource type="Texture2D" uid="uid://b5ogugkka61t3" path="res://assets/Ghostpixxells_pixelfood/05_apple_pie.png" id="1_p5ttk"]
 [ext_resource type="Script" uid="uid://dp38fhgeg1xjh" path="res://scenes/Health.gd" id="2_rganw"]
+[ext_resource type="AudioStream" uid="uid://dpwoe3lxo4a6y" path="res://music & sfx/RPG_Essentials_Free/8_Buffs_Heals_SFX/02_Heal_02.wav" id="3_rganw"]
 
 [resource]
 script = ExtResource("2_rganw")
@@ -9,4 +10,5 @@ amount = 20
 title = "Food"
 icon = ExtResource("1_p5ttk")
 description = "+20 Health"
+sound = ExtResource("3_rganw")
 metadata/_custom_type_script = "uid://dp38fhgeg1xjh"
