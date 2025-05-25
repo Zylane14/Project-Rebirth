@@ -1,17 +1,21 @@
-[gd_resource type="Resource" script_class="SingleShot" load_steps=5 format=3 uid="uid://cunwxqhggo8i6"]
+[gd_resource type="Resource" script_class="SingleShotd" load_steps=7 format=3 uid="uid://cunwxqhggo8i6"]
 
 [ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="1_04l6a"]
+[ext_resource type="Texture2D" uid="uid://bho7swdnc67ua" path="res://assets/Projectiles/fireball_V_1_1/FB500-2.png" id="1_vel5k"]
 [ext_resource type="Script" uid="uid://bthks1pwcgkfj" path="res://scripts/SingleShot.gd" id="2_aa1kk"]
+[ext_resource type="AudioStream" uid="uid://cqyg5sl2bkne5" path="res://music & sfx/RPG_Essentials_Free/8_Atk_Magic_SFX/04_Fire_explosion_04_medium.wav" id="3_aa1kk"]
 [ext_resource type="Texture2D" uid="uid://do4cpsthd0qp7" path="res://assets/Projectiles/fireball_V_1_1/FB500-5.png" id="3_vel5k"]
 [ext_resource type="Script" uid="uid://co5wubqlbfsyl" path="res://scenes/Upgrade.gd" id="4_4isxq"]
 
 [resource]
 script = ExtResource("2_aa1kk")
-damage = 10.0
+damage = 14.0
 cooldown = 0.1
-speed = 500.0
+speed = 600.0
 projectile_node = ExtResource("1_04l6a")
 upgrades = Array[ExtResource("4_4isxq")]([])
+sound = ExtResource("3_aa1kk")
 title = "Holy Fire 2"
+icon = ExtResource("1_vel5k")
 texture = ExtResource("3_vel5k")
 metadata/_custom_type_script = "uid://bthks1pwcgkfj"

@@ -2,11 +2,17 @@ extends PanelContainer
 
 @export var item : Weapon:#setter variable to store weapons
 	set(value):
+		if item != null and item.has_method("reset"): #before changing to new value, reset the previous item
+			item.reset()
+		
 		item = value
-		$TextureRect.texture = value.texture
+		$TextureRect.texture = value.icon
 		$Cooldown.wait_time = value.cooldown
 		item.slot = self
 
+func _physics_process(delta):
+	if item != null and item.has_method("update"):
+		item.update(delta) 
 
 func _on_cooldown_timeout():
 	if item:

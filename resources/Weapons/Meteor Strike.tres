@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Circular" load_steps=5 format=3 uid="uid://ci5ieqn2o8pmk"]
+
+[ext_resource type="Texture2D" uid="uid://donvynr6taisg" path="res://assets/Projectiles/Free  Effect Bullet Impact Explosion 32x32 V1/Sprite-0003-Sheet-export.png" id="1_wwu2x"]
+[ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="2_hh6ry"]
+[ext_resource type="Script" uid="uid://4711pfsdiwbb" path="res://scenes/CircularWeapon.gd" id="3_putwg"]
+[ext_resource type="Script" uid="uid://co5wubqlbfsyl" path="res://scenes/Upgrade.gd" id="5_hsbyw"]
+
+[resource]
+script = ExtResource("3_putwg")
+angular_speed = 300
+radius = 120
+amount = 7
+damage = 22.0
+cooldown = 2.0
+speed = 0.0
+projectile_node = ExtResource("2_hh6ry")
+upgrades = Array[ExtResource("5_hsbyw")]([])
+title = "Meteor Strike"
+icon = ExtResource("1_wwu2x")
+texture = ExtResource("1_wwu2x")
+metadata/_custom_type_script = "uid://4711pfsdiwbb"
