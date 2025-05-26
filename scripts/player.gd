@@ -5,15 +5,26 @@ var health : float = 100: #makes health a setter variable to updates progress ba
 	set(value):
 		health = max(value, 0) #minimum value of health should be 0
 		%Health.value = value
+		if health <= 0:
+			get_tree().paused = true #pause the game when health reaches 0
 
 var movement_speed : float = 150
-var max_health : float = 100 : #property for max_health
+var max_health : float = 100: #property for max_health
 	set(value):
 		max_health = value
 		%Health.max_value = value #setter variable to change max value of the progress bar
-var recovery : float = 0
-var armor : float = 0 #armor property
-var might : float = 1.0 #amplify attack
+var recovery : float = 0:
+	set(value):
+		recovery = value
+		%Recovery.text = "Recovery : " + str(value)
+var armor : float = 0: #armor property
+	set(value):
+		armor = value
+		%Armor.text = "Armor : " + str(value)
+var might : float = 1.0: #amplify attack
+	set(value):
+		might = value
+		%Might.text = "Might : " + str(value)
 var area : float = 0 #attack range
 var magnet : float = 0: #pickup range
 	set(value):
@@ -49,6 +60,9 @@ var level : int = 1: #variable to store player level
 			%XP.max_value = 40
 
 
+func _ready() -> void:
+	Persistence.gain_bonus_stats(self) #call the gain bonus stats from persistence when the player node is ready
+
 
 func _physics_process(delta):
 	if is_instance_valid(nearest_enemy):
@@ -66,7 +80,7 @@ func _physics_process(delta):
 
 #function to reduce health
 func take_damage(amount):
-	health -= max(amount - armor, 0) #making defense additive
+	health -= max(amount * (amount/(amount + armor)), 1) #making defense additive
 
 
 func _on_self_damage_body_entered(body):
@@ -96,3 +110,7 @@ func gain_gold(amount): #function to gain gold
 
 func open_chest(): #function to call open from player
 	$UI/Chest.open()
+
+
+func _on_back_pressed() -> void:
+	pass # Replace with function body.

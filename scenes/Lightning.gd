@@ -17,6 +17,7 @@ func shoot(source : CharacterBody2D, scene_tree : SceneTree):
 	if enemies.size() == 0: #if no enemy, then return
 		return
 	
+	SoundManager.play_sfx(sound)
 	for i in range(amount):
 			var enemy = enemies.pick_random() #pick a randon enemy
 			
@@ -36,3 +37,20 @@ func shoot(source : CharacterBody2D, scene_tree : SceneTree):
 		var temp = projectiles.pop_front()
 		if is_instance_valid(temp):
 			temp.queue_free()
+
+
+func upgrade_item():
+	if max_level_reached():
+		slot.item = evolution
+		return
+	
+	if not is_upgradeable():
+		return
+	
+	var upgrade = upgrades[level - 1]
+	
+	amount += upgrade.amount #for lightning upgrades
+	damage += upgrade.damage
+	cooldown += upgrade.cooldown
+	
+	level += 1

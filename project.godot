@@ -18,7 +18,9 @@ config/icon="res://icon.svg"
 [autoload]
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
-SoundManager="*res://scenes/sound_manager.gd"
+SoundManager="*res://scenes/sound_manager.tscn"
+SaveData="*res://scenes/save_data.tscn"
+Persistence="*res://scenes/persistence.tscn"
 
 [dialogic]
 
