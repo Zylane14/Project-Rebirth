@@ -31,6 +31,7 @@ var magnet : float = 0: #pickup range
 		magnet = value
 		%Magnet.shape.radius = 50 + value
 var growth : float = 1 #growth property
+var luck : float = 1.0 #default luck value
 
 
 var nearest_enemy

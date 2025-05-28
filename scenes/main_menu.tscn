@@ -1,5 +1,7 @@
-[gd_scene load_steps=55 format=3 uid="uid://cxt1tvyg3uor3"]
+[gd_scene load_steps=73 format=3 uid="uid://cxt1tvyg3uor3"]
 
+[ext_resource type="Script" uid="uid://iobihtft1ln3" path="res://scenes/main_menu.gd" id="1_3wgol"]
+[ext_resource type="Texture2D" uid="uid://5ywanej8h4x1" path="res://assets/Backgrounds/Nature Landscapes Free Pixel Art/nature_6/2.png" id="1_8egab"]
 [ext_resource type="PackedScene" uid="uid://cno74hvw6ty2g" path="res://scenes/upgrade.tscn" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://b23fuofnodvb3" path="res://scenes/skill_tree.gd" id="1_oa1go"]
 [ext_resource type="Script" uid="uid://c72yp5iad4110" path="res://scenes/Skill.gd" id="2_ekxnf"]
@@ -17,7 +19,66 @@
 [ext_resource type="Texture2D" uid="uid://djkr6aabcl7of" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/icons_items_book2.png" id="14_8egab"]
 [ext_resource type="Texture2D" uid="uid://dgtbx3nk8rion" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/skill_icon_cropped_0.png" id="15_gw5y6"]
 [ext_resource type="Texture2D" uid="uid://cr044o566urrd" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/skill_icon_slot_hud_0.png" id="16_svtp6"]
+[ext_resource type="Texture2D" uid="uid://buyq6cxiew8gx" path="res://assets/Backgrounds/Nature Landscapes Free Pixel Art/nature_6/origbig.png" id="17_hstxw"]
 [ext_resource type="Script" uid="uid://oj1btmb4eqd4" path="res://scenes/start.gd" id="18_a8gd2"]
+[ext_resource type="Texture2D" uid="uid://grdhbp260rur" path="res://assets/Backgrounds/Nature Landscapes Free Pixel Art/nature_6/1.png" id="20_svtp6"]
+[ext_resource type="Texture2D" uid="uid://da8r85dnw6p5k" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/9SlicedObjects_windows_7.png" id="21_qywvv"]
+[ext_resource type="Texture2D" uid="uid://c5u11r88d57ut" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/9SlicedObjects_windows_4.png" id="22_3wgol"]
+[ext_resource type="Texture2D" uid="uid://b7sthbn7i3qhd" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/9SlicedObjects_windows_details_0.png" id="23_1acrt"]
+[ext_resource type="Script" uid="uid://bypjfrm4pq3ub" path="res://scenes/enemy_list.gd" id="23_vr8o3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8egab"]
+bg_color = Color(0.152139, 0.208666, 0.346595, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.104312, 0.158032, 0.253582, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8gd2"]
+bg_color = Color(0.176471, 0.243137, 0.392157, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0996276, 0.186069, 0.240013, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hstxw"]
+bg_color = Color(0.136761, 0.18927, 0.317464, 1)
+border_color = Color(0.129412, 0.188235, 0.219608, 1)
+border_blend = true
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+expand_margin_left = 9.0
+expand_margin_top = 2.0
+expand_margin_right = 9.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="Theme" id="Theme_a8gd2"]
+Button/styles/hover = SubResource("StyleBoxFlat_8egab")
+Button/styles/normal = SubResource("StyleBoxFlat_a8gd2")
+Button/styles/pressed = SubResource("StyleBoxFlat_hstxw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gw5y6"]
+texture = ExtResource("1_8egab")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 
 [sub_resource type="Resource" id="Resource_5dd4i"]
 script = ExtResource("3_rtw2f")
@@ -397,6 +458,39 @@ cost = 500
 stats = SubResource("Resource_c6nra")
 metadata/_custom_type_script = "uid://c72yp5iad4110"
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8egab"]
+texture = ExtResource("17_hstxw")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qywvv"]
+texture = ExtResource("20_svtp6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3wgol"]
+texture = ExtResource("21_qywvv")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vr8o3"]
+texture = ExtResource("22_3wgol")
+texture_margin_left = 7.0
+texture_margin_top = 7.0
+texture_margin_right = 7.0
+texture_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1a85y"]
+texture = ExtResource("23_1acrt")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+expand_margin_left = 6.0
+expand_margin_top = 6.0
+expand_margin_right = 6.0
+expand_margin_bottom = 6.0
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -404,6 +498,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_a8gd2")
+script = ExtResource("1_3wgol")
 
 [node name="SkillTree" type="Panel" parent="."]
 layout_mode = 1
@@ -412,6 +508,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(320, 180)
+theme_override_styles/panel = SubResource("StyleBoxTexture_gw5y6")
 script = ExtResource("1_oa1go")
 
 [node name="Might" type="Control" parent="SkillTree"]
@@ -430,20 +528,20 @@ grow_vertical = 2
 
 [node name="Upgrade" parent="SkillTree/Might" instance=ExtResource("1_l6cm7")]
 layout_mode = 0
-offset_top = -40.0
-offset_bottom = 0.0
+offset_top = -56.0
+offset_bottom = -16.0
 skill = SubResource("Resource_bqqt6")
 
 [node name="Upgrade2" parent="SkillTree/Might" instance=ExtResource("1_l6cm7")]
 layout_mode = 0
-offset_top = -96.0
-offset_bottom = -56.0
+offset_top = -112.0
+offset_bottom = -72.0
 skill = SubResource("Resource_flqon")
 
 [node name="Upgrade3" parent="SkillTree/Might" instance=ExtResource("1_l6cm7")]
 layout_mode = 0
-offset_top = -152.0
-offset_bottom = -112.0
+offset_top = -168.0
+offset_bottom = -128.0
 skill = SubResource("Resource_1ajci")
 
 [node name="Movement Speed" type="Control" parent="SkillTree"]
@@ -462,21 +560,21 @@ grow_vertical = 2
 
 [node name="Upgrade" parent="SkillTree/Movement Speed" instance=ExtResource("1_l6cm7")]
 layout_mode = 0
-offset_left = 60.0
-offset_right = 100.0
+offset_left = 68.0
+offset_right = 108.0
 rotation = -0.00211283
 skill = SubResource("Resource_5pajh")
 
 [node name="Upgrade2" parent="SkillTree/Movement Speed" instance=ExtResource("1_l6cm7")]
 layout_mode = 0
-offset_left = 116.0
-offset_right = 156.0
+offset_left = 132.0
+offset_right = 172.0
 skill = SubResource("Resource_a8gd2")
 
 [node name="Upgrade3" parent="SkillTree/Movement Speed" instance=ExtResource("1_l6cm7")]
 layout_mode = 0
-offset_left = 172.0
-offset_right = 212.0
+offset_left = 196.0
+offset_right = 236.0
 skill = SubResource("Resource_8egab")
 
 [node name="Recovery" type="Control" parent="SkillTree"]
@@ -495,20 +593,20 @@ grow_vertical = 2
 
 [node name="Upgrade" parent="SkillTree/Recovery" instance=ExtResource("1_l6cm7")]
 layout_mode = 0
-offset_left = -60.0
-offset_right = -20.0
+offset_left = -68.0
+offset_right = -28.0
 skill = SubResource("Resource_svtp6")
 
 [node name="Upgrade2" parent="SkillTree/Recovery" instance=ExtResource("1_l6cm7")]
 layout_mode = 0
-offset_left = -116.0
-offset_right = -76.0
+offset_left = -132.0
+offset_right = -92.0
 skill = SubResource("Resource_qywvv")
 
 [node name="Upgrade3" parent="SkillTree/Recovery" instance=ExtResource("1_l6cm7")]
 layout_mode = 0
-offset_left = -172.0
-offset_right = -132.0
+offset_left = -196.0
+offset_right = -156.0
 skill = SubResource("Resource_1acrt")
 
 [node name="Armor" type="Control" parent="SkillTree"]
@@ -527,20 +625,20 @@ grow_vertical = 2
 
 [node name="Upgrade" parent="SkillTree/Armor" instance=ExtResource("1_l6cm7")]
 layout_mode = 0
-offset_top = 40.0
-offset_bottom = 80.0
+offset_top = 56.0
+offset_bottom = 96.0
 skill = SubResource("Resource_1a85y")
 
 [node name="Upgrade2" parent="SkillTree/Armor" instance=ExtResource("1_l6cm7")]
 layout_mode = 0
-offset_top = 96.0
-offset_bottom = 136.0
+offset_top = 112.0
+offset_bottom = 152.0
 skill = SubResource("Resource_engjn")
 
 [node name="Upgrade3" parent="SkillTree/Armor" instance=ExtResource("1_l6cm7")]
 layout_mode = 0
-offset_top = 152.0
-offset_bottom = 192.0
+offset_top = 168.0
+offset_bottom = 208.0
 skill = SubResource("Resource_dj67d")
 
 [node name="Magnet" type="Control" parent="SkillTree"]
@@ -559,25 +657,25 @@ grow_vertical = 2
 
 [node name="Upgrade" parent="SkillTree/Magnet" instance=ExtResource("1_l6cm7")]
 layout_mode = 0
-offset_left = -60.0
+offset_left = -68.0
 offset_top = 56.0
-offset_right = -20.0
+offset_right = -28.0
 offset_bottom = 96.0
 skill = SubResource("Resource_ip0br")
 
 [node name="Upgrade2" parent="SkillTree/Magnet" instance=ExtResource("1_l6cm7")]
 layout_mode = 0
-offset_left = -108.0
+offset_left = -132.0
 offset_top = 104.0
-offset_right = -68.0
+offset_right = -92.0
 offset_bottom = 144.0
 skill = SubResource("Resource_tcusk")
 
 [node name="Upgrade3" parent="SkillTree/Magnet" instance=ExtResource("1_l6cm7")]
 layout_mode = 0
-offset_left = -156.0
+offset_left = -196.0
 offset_top = 152.0
-offset_right = -116.0
+offset_right = -156.0
 offset_bottom = 192.0
 skill = SubResource("Resource_q13xq")
 
@@ -597,51 +695,181 @@ grow_vertical = 2
 
 [node name="Upgrade" parent="SkillTree/Health" instance=ExtResource("1_l6cm7")]
 layout_mode = 0
-offset_left = 60.0
+offset_left = 68.0
 offset_top = 56.0
-offset_right = 100.0
+offset_right = 108.0
 offset_bottom = 96.0
 skill = SubResource("Resource_jvjdd")
 
 [node name="Upgrade2" parent="SkillTree/Health" instance=ExtResource("1_l6cm7")]
 layout_mode = 0
-offset_left = 108.0
+offset_left = 132.0
 offset_top = 104.0
-offset_right = 148.0
+offset_right = 172.0
 offset_bottom = 144.0
 skill = SubResource("Resource_eku7s")
 
 [node name="Upgrade3" parent="SkillTree/Health" instance=ExtResource("1_l6cm7")]
 layout_mode = 0
-offset_left = 156.0
-offset_top = 152.0
-offset_right = 196.0
-offset_bottom = 192.0
+offset_left = 196.0
+offset_top = 160.0
+offset_right = 236.0
+offset_bottom = 200.0
 skill = SubResource("Resource_qw82i")
 
-[node name="Gold" type="Label" parent="."]
-layout_mode = 0
-offset_left = 512.0
-offset_top = 16.0
-offset_right = 624.0
-offset_bottom = 39.0
-horizontal_alignment = 2
-script = ExtResource("6_jk1qb")
+[node name="Menu" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(320, 180)
+theme_override_styles/panel = SubResource("StyleBoxTexture_8egab")
 
-[node name="Start" type="Button" parent="."]
+[node name="Start" type="Button" parent="Menu"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 256.0
-offset_top = -48.0
-offset_right = 302.0
-offset_bottom = -17.0
+offset_left = -256.0
+offset_top = -232.0
+offset_right = -173.0
+offset_bottom = -179.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_font_sizes/font_size = 28
 text = "Start"
 script = ExtResource("18_a8gd2")
 
-[connection signal="pressed" from="Start" to="Start" method="_on_pressed"]
+[node name="Upgrades" type="Button" parent="Menu"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 200.0
+offset_right = 177.0
+offset_bottom = 247.0
+theme_override_font_sizes/font_size = 28
+text = "Upgrades"
+
+[node name="Beastiary" type="Button" parent="Menu"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 264.0
+offset_right = 175.0
+offset_bottom = 311.0
+theme_override_font_sizes/font_size = 28
+text = "Beastiary"
+
+[node name="Beastiary" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(320, 180)
+theme_override_styles/panel = SubResource("StyleBoxTexture_qywvv")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Beastiary"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 32.0
+offset_top = -124.0
+offset_right = 282.0
+offset_bottom = 126.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_3wgol")
+
+[node name="EnemyList" type="VBoxContainer" parent="Beastiary/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("23_vr8o3")
+
+[node name="Information" type="Panel" parent="Beastiary"]
+custom_minimum_size = Vector2(250, 225)
+layout_mode = 0
+offset_left = 320.0
+offset_top = 64.0
+offset_right = 570.0
+offset_bottom = 289.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_vr8o3")
+
+[node name="Texture" type="TextureRect" parent="Beastiary/Information"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -37.0
+offset_top = 16.0
+offset_right = 43.0
+offset_bottom = 96.0
+grow_horizontal = 2
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="Beastiary/Information/Texture"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_1a85y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Beastiary/Information"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 104.0
+offset_right = 48.0
+offset_bottom = 181.0
+
+[node name="Name" type="Label" parent="Beastiary/Information/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Name:"
+
+[node name="Damage" type="Label" parent="Beastiary/Information/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Damage:"
+
+[node name="Health" type="Label" parent="Beastiary/Information/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Health:"
+
+[node name="Gold" type="Label" parent="."]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 320.0
+offset_right = 624.0
+offset_bottom = 343.0
+horizontal_alignment = 2
+script = ExtResource("6_jk1qb")
+
+[node name="Back" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_top = 16.0
+offset_right = -19.0
+offset_bottom = 47.0
+grow_horizontal = 0
+text = "Back"
+
+[connection signal="pressed" from="Menu/Start" to="Menu/Start" method="_on_pressed"]
+[connection signal="pressed" from="Menu/Upgrades" to="." method="_on_upgrades_pressed"]
+[connection signal="pressed" from="Menu/Beastiary" to="." method="_on_beastiary_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

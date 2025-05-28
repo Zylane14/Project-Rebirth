@@ -45,18 +45,8 @@ func show_option():
 		slot.queue_free()
 	
 	var option_size = 0
-	for weapon in weapons_available:
-		option_size += add_option(weapon) #add weapon option for any available upgrade
-		
-		#if weapon reached max level, and if the passive is available
-		if weapon.max_level_reached() and weapon.item_needed in passive_item_available:
-			var option_slot = OptionSlot.instantiate()
-			option_slot.item = weapon #add option for overleveling to trigger evolution
-			add_child(option_slot)
-			option_size += 1
 	
-	for passive_item in passive_item_available:
-		option_size += add_option(passive_item)
+	
 	
 	if option_size == 0: #if none of the weapons can be upgraded again, return the function
 		return
@@ -65,6 +55,23 @@ func show_option():
 	particles.show() #show both while showing option
 	panel.show()
 	get_tree().paused = true #else show the option and pause the scene tree
+
+func dir_contents(path):
+	var dir = DirAccess.open(path)
+	var item_resources = []
+	if dir:
+		dir.last_dir_begin()
+		var file_name = dir.get_next()
+		while file_name != "":
+			print("Found file: " + file_name)
+			var item_resource : Item = load(path + file_name)
+			item_resources.append(item_resources)
+			file_name =dir.get_next()
+	else:
+		print("An error occured while trying to access the path.")
+		return null
+	return item_resources
+
 
 func get_available_upgrades()-> Array[Item]: #set function that will return an array of item
 	var upgrades : Array[Item] = []
