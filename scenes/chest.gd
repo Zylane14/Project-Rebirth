@@ -3,6 +3,7 @@ extends NinePatchRect
 @onready var chest = $AnimatedSprite2D
 @onready var options = %Options
 @onready var rewards = $Rewards
+@export var sound = AudioStream
 
 func _ready():
 	randomize() #set different seed every run

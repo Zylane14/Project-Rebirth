@@ -16,10 +16,11 @@ extends TextureButton
 			$Description.text = "EVOLUTION"
 
 
-func _on_gui_input(event: InputEvent):
-	if event.is_action_pressed("click") and item: #clicking the slot will close the option
+
+
+func _on_gui_input(event: InputEvent) -> void:
+	if event.is_action_pressed("click") and item:
 		print(item.title)
 		get_parent().check_item(item)
-		item.upgrade_item() #pressing the gui will upgrade the weapon
+		item.upgrade_item()
 		get_parent().close_option()
- 

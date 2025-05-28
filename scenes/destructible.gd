@@ -1,22 +1,23 @@
 extends Sprite2D
 
 var frame_counter = 0
-var seperation : float
 var health : float = 10:
 	set(value):
 		health = value
 		if health < 0:
 			drop_item() #drop item when health is below 0
-	
+var seperation : float
 @onready var player_reference = get_tree().current_scene.find_child("Player") #get the player from the scene tree
+
 var drop_node = preload("res://scenes/pickups.tscn")
 @export var drops : Array[Pickups]
+
 
 func _physics_process(_delta):
 	frame_counter += 1
 	if frame_counter >= 6:
 		frame_counter = 0
-		frame = (frame + 1) % (hframes * vframes) #animates the sprite
+		frame = (frame + 1) % 8 #animates the sprite
 	
 	seperation = (player_reference.position - position).length() #update seperation and if it's near player, then set nearest enemy
 	if seperation < player_reference.nearest_enemy_distance:
@@ -28,11 +29,24 @@ func take_damage(amount = 1):
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "modulate", Color(3, 0.25, 0.25), 0.2) #modulate color for the hit effect
 	tween.chain().tween_property(self, "modulate", Color(1, 1, 1), 0.2)
-	
 	tween.bind_node(self)
 
+
 func drop_item():
-	var item = drops.pick_random() #get random pickup and instantiate the node
+	var item
+	var weights = [] #array for storing weights
+	
+	for pickup in drops:
+		if pickup is Gold:
+			weights.append(pickup.weight) #normal weight for the gold
+		else:
+			weights.append(pickup.weight * player_reference.luck) #others weight multiply by luck
+	
+	var chance = randf()
+	for i in range(drops.size()):
+		if chance < get_weighted_chance(weights, i):
+			item = drops[i]
+			break
 	
 	var item_to_drop = drop_node.instantiate()
 	
@@ -42,3 +56,14 @@ func drop_item():
 	
 	get_tree().current_scene.call_deferred("add_child", item_to_drop)
 	queue_free()
+
+func get_weighted_chance(weight, index):
+	var sum = 0
+	for i in range(weight.size()):
+		sum += weight[i]
+	
+	var cumulative = 0
+	for i in range(index + 1):
+		cumulative += weight[i]
+	
+	return float(cumulative)/sum

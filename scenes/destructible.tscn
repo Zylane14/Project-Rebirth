@@ -26,7 +26,7 @@ fill_to = Vector2(0.856838, 0.119658)
 texture = ExtResource("1_l8yo0")
 hframes = 14
 script = ExtResource("2_u70qa")
-drops = Array[ExtResource("3_iw4aa")]([ExtResource("4_iw4aa"), ExtResource("4_aay8l"), ExtResource("6_rwuy0"), ExtResource("7_ni6ti")])
+drops = Array[ExtResource("3_iw4aa")]([ExtResource("4_iw4aa"), ExtResource("4_aay8l"), ExtResource("7_ni6ti"), ExtResource("6_rwuy0")])
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2

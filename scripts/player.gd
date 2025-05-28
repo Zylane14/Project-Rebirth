@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+
 var health : float = 100: #makes health a setter variable to updates progress bar
 	set(value):
 		health = max(value, 0) #minimum value of health should be 0
@@ -30,7 +31,7 @@ var magnet : float = 0: #pickup range
 		magnet = value
 		%Magnet.shape.radius = 50 + value
 var growth : float = 1 #growth property
-var luck : float = 2.0 #default luck value
+var luck : float = 1.0
 
 
 var nearest_enemy

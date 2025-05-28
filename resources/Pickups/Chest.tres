@@ -10,4 +10,5 @@ title = "Boss Chest"
 icon = ExtResource("1_nenli")
 description = ""
 sound = ExtResource("3_x2xao")
+weight = 0.0
 metadata/_custom_type_script = "uid://cdck1y0uf63an"

@@ -5,6 +5,7 @@ class_name Pickups
 @export var icon : Texture2D
 @export_multiline var description : String
 @export var sound : AudioStream #property to store audio
+@export var weight : float
 
 var player_reference : CharacterBody2D
 

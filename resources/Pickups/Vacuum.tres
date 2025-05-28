@@ -10,4 +10,5 @@ title = "Vacuum"
 icon = ExtResource("1_s1x8o")
 description = "Vacuum's all the gems."
 sound = ExtResource("3_n124k")
+weight = 2.0
 metadata/_custom_type_script = "uid://da2ukx3dfs8bo"

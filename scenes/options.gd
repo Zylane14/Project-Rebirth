@@ -7,6 +7,8 @@ var OptionSlot = preload("res://scenes/option_slot.tscn") #preloads the option s
 #variable to store both particle and panel
 @export var particles : GPUParticles2D
 @export var panel : NinePatchRect
+@export var player_reference : CharacterBody2D
+
 
 const weapon_path : String = "res://resources/Weapons/" 
 const passive_item_path : String = "res://resources/Passive Items/"
@@ -94,7 +96,8 @@ func dir_contents(path):
 		print("An error occured while trying to access the path.")
 		return null
 	return item_resources
-	
+
+
 func get_all_item():
 	var item_resources = dir_contents(weapon_path)
 	every_weapon = item_resources #load and store weapon resources
@@ -126,27 +129,34 @@ func get_equipped_item():
 	return get_upgradeable(equipped_items) #return only the upgradeable ones
 
 
-func add_weapon(item): #function to add weapon to weapon slot
+func add_weapon(item) -> void: #function to add weapon to weapon slot
 	for slot in weapons.get_children():
 		if slot.item == null:
 			slot.item = item
 			return
 
-func add_passive(item): #function to add passive to passive slots
+func add_passive(item) -> void: #function to add passive to passive slots
 	for slot in passive_items.get_children():
 		if slot.item == null:
 			slot.item = item
 			return
 
-func check_item(item): #check function, if item is already present in slot then return
+func check_item(item)  -> void: #check function, if item is already present in slot then return
 	if item in get_available_resource_in(weapons) or item in get_available_resource_in(passive_items):
 		return
 	else:
 		if item is Weapon:
 			add_weapon(item)
 		elif item is PassiveItem:
+			item.player_reference = owner
 			add_passive(item)
 
+func get_upgradable(items, flag = []):
+	var array = []
+	for item in items:
+		if item.is_upgradable() and item not in flag:
+			array.append(item)
+	return array
 
 func get_available_upgrades()-> Array[Item]: #set function that will return an array of item
 	var upgrades : Array[Item] = []
