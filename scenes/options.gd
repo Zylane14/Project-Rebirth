@@ -129,19 +129,19 @@ func get_equipped_item():
 	return get_upgradeable(equipped_items) #return only the upgradeable ones
 
 
-func add_weapon(item) -> void: #function to add weapon to weapon slot
+func add_weapon(item): #function to add weapon to weapon slot
 	for slot in weapons.get_children():
 		if slot.item == null:
 			slot.item = item
 			return
 
-func add_passive(item) -> void: #function to add passive to passive slots
+func add_passive(item): #function to add passive to passive slots
 	for slot in passive_items.get_children():
 		if slot.item == null:
 			slot.item = item
 			return
 
-func check_item(item)  -> void: #check function, if item is already present in slot then return
+func check_item(item): #check function, if item is already present in slot then return
 	if item in get_available_resource_in(weapons) or item in get_available_resource_in(passive_items):
 		return
 	else:
@@ -163,6 +163,9 @@ func get_available_upgrades()-> Array[Item]: #set function that will return an a
 	for weapon : Weapon in get_available_resource_in(weapons):
 		if weapon.is_upgradeable(): #push available weapons to the array
 			upgrades.append(weapon)
+		
+		if weapon.max_level_reached() and weapon.item_needed in get_available_resource_in(passive_items):
+			upgrades.append(weapon) #for evolution to show in chest
 	
 	for passive_item : PassiveItem in get_available_resource_in(passive_items):
 		if passive_item.is_upgradeable(): #if any passive item is upgradeable, push it to the array
