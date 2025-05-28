@@ -91,6 +91,7 @@ might = 0.1
 area = 0.0
 magnet = 0.0
 growth = 0.0
+luck = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [sub_resource type="Resource" id="Resource_bqqt6"]
@@ -112,6 +113,7 @@ might = 0.15
 area = 0.0
 magnet = 0.0
 growth = 0.0
+luck = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [sub_resource type="Resource" id="Resource_flqon"]
@@ -133,6 +135,7 @@ might = 0.25
 area = 0.0
 magnet = 0.0
 growth = 0.0
+luck = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [sub_resource type="Resource" id="Resource_1ajci"]
@@ -154,6 +157,7 @@ might = 0.0
 area = 2.0
 magnet = 0.0
 growth = 0.0
+luck = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [sub_resource type="Resource" id="Resource_5pajh"]
@@ -175,6 +179,7 @@ might = 0.0
 area = 0.0
 magnet = 0.0
 growth = 0.0
+luck = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [sub_resource type="Resource" id="Resource_a8gd2"]
@@ -196,6 +201,7 @@ might = 0.0
 area = 0.0
 magnet = 0.0
 growth = 0.0
+luck = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [sub_resource type="Resource" id="Resource_8egab"]
@@ -217,6 +223,7 @@ might = 0.0
 area = 0.0
 magnet = 0.0
 growth = 0.0
+luck = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [sub_resource type="Resource" id="Resource_svtp6"]
@@ -238,6 +245,7 @@ might = 0.0
 area = 0.0
 magnet = 0.0
 growth = 0.0
+luck = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [sub_resource type="Resource" id="Resource_qywvv"]
@@ -259,6 +267,7 @@ might = 0.0
 area = 0.0
 magnet = 0.0
 growth = 0.0
+luck = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [sub_resource type="Resource" id="Resource_1acrt"]
@@ -280,6 +289,7 @@ might = 0.0
 area = 0.0
 magnet = 0.0
 growth = 0.0
+luck = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [sub_resource type="Resource" id="Resource_1a85y"]
@@ -301,6 +311,7 @@ might = 0.0
 area = 0.0
 magnet = 0.0
 growth = 0.0
+luck = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [sub_resource type="Resource" id="Resource_engjn"]
@@ -322,6 +333,7 @@ might = 0.0
 area = 0.0
 magnet = 0.0
 growth = 0.0
+luck = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [sub_resource type="Resource" id="Resource_dj67d"]
@@ -343,6 +355,7 @@ might = 0.0
 area = 0.0
 magnet = 10.0
 growth = 0.0
+luck = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [sub_resource type="Resource" id="Resource_ip0br"]
@@ -364,6 +377,7 @@ might = 0.0
 area = 0.0
 magnet = 20.0
 growth = 0.0
+luck = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [sub_resource type="Resource" id="Resource_tcusk"]
@@ -385,6 +399,7 @@ might = 0.0
 area = 0.0
 magnet = 30.0
 growth = 0.0
+luck = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [sub_resource type="Resource" id="Resource_q13xq"]
@@ -406,6 +421,7 @@ might = 0.0
 area = 0.0
 magnet = 0.0
 growth = 0.0
+luck = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [sub_resource type="Resource" id="Resource_jvjdd"]
@@ -427,6 +443,7 @@ might = 0.0
 area = 0.0
 magnet = 0.0
 growth = 0.0
+luck = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [sub_resource type="Resource" id="Resource_eku7s"]
@@ -448,6 +465,7 @@ might = 0.0
 area = 0.0
 magnet = 0.0
 growth = 0.0
+luck = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [sub_resource type="Resource" id="Resource_qw82i"]

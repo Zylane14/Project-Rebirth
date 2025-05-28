@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="PassiveItem" load_steps=8 format=3 uid="uid://dw478itjqgfrt"]
+
+[ext_resource type="Texture2D" uid="uid://blbywyd18c05k" path="res://assets/epic-rpg-world-pack-ancient-ruins/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/flooded gras details_6.png" id="1_si68l"]
+[ext_resource type="Script" uid="uid://oh3fq60et0sw" path="res://scenes/PassiveItem.gd" id="2_v7d1i"]
+[ext_resource type="Script" uid="uid://dhltvcvyn33cy" path="res://scenes/Stats.gd" id="3_6qo2h"]
+
+[sub_resource type="Resource" id="Resource_opdgn"]
+script = ExtResource("3_6qo2h")
+description = "+0.1 Luck"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.1
+metadata/_custom_type_script = "uid://dhltvcvyn33cy"
+
+[sub_resource type="Resource" id="Resource_63bs6"]
+script = ExtResource("3_6qo2h")
+description = "+0.2 Luck"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.2
+metadata/_custom_type_script = "uid://dhltvcvyn33cy"
+
+[sub_resource type="Resource" id="Resource_m7p3p"]
+script = ExtResource("3_6qo2h")
+description = "+0.3 Luck"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.3
+metadata/_custom_type_script = "uid://dhltvcvyn33cy"
+
+[sub_resource type="Resource" id="Resource_asl7t"]
+script = ExtResource("3_6qo2h")
+description = "+0.3 Luck"
+max_health = 0.0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+might = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.3
+metadata/_custom_type_script = "uid://dhltvcvyn33cy"
+
+[resource]
+script = ExtResource("2_v7d1i")
+upgrades = Array[ExtResource("3_6qo2h")]([SubResource("Resource_opdgn"), SubResource("Resource_63bs6"), SubResource("Resource_m7p3p"), SubResource("Resource_asl7t")])
+title = "Lucky Ring"
+icon = ExtResource("1_si68l")
+texture = ExtResource("1_si68l")
+metadata/_custom_type_script = "uid://oh3fq60et0sw"

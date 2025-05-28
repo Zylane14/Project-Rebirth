@@ -27,5 +27,6 @@ func upgrade_item(): #this will first check for upgrades and player reference
 	player_reference.area += upgrade.area
 	player_reference.magnet += upgrade.magnet
 	player_reference.growth += upgrade.growth
+	player_reference.luck += upgrade.luck
 
 	level += 1

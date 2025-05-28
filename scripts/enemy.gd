@@ -62,10 +62,12 @@ func knockback_update(delta):
 
 
 #function to instantiate damage popup and add it to scene tree
-func damage_popup(amount):
+func damage_popup(amount, modifier = 1.0):
 	var popup = damage_popup_node.instantiate()
-	popup.text = str(amount)
+	popup.text = str(amount * modifier)
 	popup.position = position + Vector2(-50,-25)
+	if modifier > 1.0:
+		popup.set("theme_override_colors/font_color", Color.DARK_RED) #change font color to red if modifier > 1.0
 	get_tree().current_scene.add_child(popup)
 
 
@@ -76,8 +78,11 @@ func take_damage(amount):
 	tween.chain().tween_property($Sprite2D, "modulate", Color(1, 1, 1), 0.2) #tween modulation for color of the sprite
 	tween.bind_node(self) #bind the tween to the enemy itself
 	
-	damage_popup(amount)
-	health -= amount #health will get reduced from take damage function
+	var chance = randf()
+	var modifier : float = 2.0 if (chance <(1.0 - (1.0/player_reference.luck))) else 1.0 #crit chance of 2x damage depending on luck
+	
+	damage_popup(amount, modifier)
+	health -= amount * modifier #health will get reduced from take damage function
 
 func drop_item():
 	if type.drops.size() == 0:

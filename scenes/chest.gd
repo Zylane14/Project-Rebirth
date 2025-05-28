@@ -85,7 +85,7 @@ func get_weighted_chance(weight, index):
 			modified_weight.append(weight[i])
 			sum += weight[i]
 		else:
-			modified_weight.append(weight[i] * owner.luck)
+			modified_weight.append(weight[i] * owner.luck) #higher luck = better rarity
 			sum += weight[i] * owner.luck
 	
 	var cumulative = 0
