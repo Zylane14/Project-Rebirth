@@ -12,18 +12,18 @@
 
 [sub_resource type="Resource" id="Resource_8078k"]
 script = ExtResource("7_yg4jm")
-amount = 2
+amount = 1
 damage = 0.0
 cooldown = 0.0
-description = "+2 Lightning"
+description = "1 Lightning"
 metadata/_custom_type_script = "uid://c557imx4ux1uo"
 
 [sub_resource type="Resource" id="Resource_ikmcd"]
 script = ExtResource("7_yg4jm")
-amount = 0
+amount = 1
 damage = 0.0
 cooldown = -1.0
-description = "-1s cooldown"
+description = "-1s cooldown +1 Lightning"
 metadata/_custom_type_script = "uid://c557imx4ux1uo"
 
 [sub_resource type="Resource" id="Resource_r8hb1"]
@@ -54,7 +54,7 @@ metadata/_custom_type_script = "uid://c557imx4ux1uo"
 script = ExtResource("3_8hp45")
 amount = 3
 damage = 4.0
-cooldown = 4.0
+cooldown = 6.0
 speed = 0.0
 projectile_node = ExtResource("2_d8nxx")
 upgrades = Array[ExtResource("4_yg4jm")]([SubResource("Resource_8078k"), SubResource("Resource_ikmcd"), SubResource("Resource_r8hb1"), SubResource("Resource_yy5p1"), SubResource("Resource_230km")])
