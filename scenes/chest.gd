@@ -22,6 +22,7 @@ func open(): #in open function, play idle and pause the scene tree
 
 func _on_open_pressed(): #play open animation on pressing the button
 	chest.play("open_boss_chest")
+	SoundManager.play_sfx(load("res://music & sfx/Minifantasy_Dungeon_SFX/01_chest_open_3.wav"))
 	await chest.animation_finished #wait for animation then set reward
 	set_reward()
 	$Open.hide()
@@ -36,15 +37,18 @@ func _on_close_pressed(): #resumes the scene tree and hide the chest
 func set_reward(): #set reward get a random value between 0 and 1
 	clear_reward()
 	var chance = randf()
-	if chance < 0.5: #50% rare
-		upgrade_item(2,3) #for rare chance, only the middle element will get filled
+	var weight = [5.0,2.0,1.0] #weight for rare, epic, and legendary chance
+	print(chance)
+	if chance < get_weighted_chance(weight, 0):
+		upgrade_item(2,3)
 		print("rare")
-	elif chance < 0.75: #25% epic
-		upgrade_item(1,4) #for epic, middle 3 will get filled
+	elif chance < get_weighted_chance(weight, 1):
+		upgrade_item(1,4)
 		print("epic")
 	else:
-		upgrade_item(0,5) #all 5 will be used
-		print("legendary") #25% legendary
+		upgrade_item(0,5)
+		print("legendary")
+
 
 func upgrade_item(start, end):
 	for index in range(start, end):
@@ -72,3 +76,20 @@ func add_gold(index):
 	gold.player_reference = owner
 	rewards.get_child(index).texture = gold.icon
 	gold.activate() #activates gold
+
+func get_weighted_chance(weight, index):
+	var modified_weight = []
+	var sum = 0
+	for i in range(weight.size()):
+		if i == 0:
+			modified_weight.append(weight[i])
+			sum += weight[i]
+		else:
+			modified_weight.append(weight[i] * owner.luck)
+			sum += weight[i] * owner.luck
+	
+	var cumulative = 0
+	for i in range(index + 1):
+		cumulative += modified_weight[i] #get the cumulative fraction and return it
+	
+	return float(cumulative)/sum

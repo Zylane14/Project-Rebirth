@@ -33,7 +33,7 @@ func get_available_resource_in(items)-> Array[Item]: #function to extract resour
 	for item in items.get_children():
 		if item.item != null:
 			resources.append(item.item)
-	return	resources
+	return resources
 
 func add_option(item) -> int: #function to add Option with the item Resource
 	if item is Item and item.is_upgradeable():
@@ -47,13 +47,13 @@ func add_option(item) -> int: #function to add Option with the item Resource
 func show_option():
 	var weapons_available = get_available_resource_in(weapons)
 	var passive_item_available = get_available_resource_in(passive_items) #get both weapon and passive item and store them
+	
 	if weapons_available.size() == 0 and passive_item_available.size() == 0: #if there are no weapon resource, return the show function
 		return
 	
 	for slot in get_children(): #if there is any weapon, then remove previous option
 		slot.queue_free()
-	
-	var option_size = 0
+
 	
 	var available = get_equipped_item() #get the equipped item from the slots
 	if slot_available(weapons): #if any empty weapon slot is available, add the new weapons to array
@@ -62,7 +62,12 @@ func show_option():
 		available.append_array(get_upgradeable(every_passive, get_equipped_item()))
 	available.shuffle() #shuffle entire array
 	
-	for i in range(3): #add 3 options
+	var chance = randf() #store random fraction in the variable chance
+	var modifier : int = 1 if (chance < (1.0 - (1.0/owner.luck))) else 0 #formula for luck to get the fourth option
+	
+	var option_size = 0
+		
+	for i in range(3 + modifier): #add 3 options
 		if available.size() > 0:
 			option_size += add_option(available.pop_front()) #with for loop from available items
 	
@@ -119,6 +124,29 @@ func get_equipped_item():
 	equipped_items.append_array(get_available_resource_in(passive_items)) #get the equipped items from the slots
 	
 	return get_upgradeable(equipped_items) #return only the upgradeable ones
+
+
+func add_weapon(item): #function to add weapon to weapon slot
+	for slot in weapons.get_children():
+		if slot.item == null:
+			slot.item = item
+			return
+
+func add_passive(item): #function to add passive to passive slots
+	for slot in passive_items.get_children():
+		if slot.item == null:
+			slot.item = item
+			return
+
+func check_item(item): #check function, if item is already present in slot then return
+	if item in get_available_resource_in(weapons) or item in get_available_resource_in(passive_items):
+		return
+	else:
+		if item is Weapon:
+			add_weapon(item)
+		elif item is PassiveItem:
+			add_passive(item)
+
 
 func get_available_upgrades()-> Array[Item]: #set function that will return an array of item
 	var upgrades : Array[Item] = []

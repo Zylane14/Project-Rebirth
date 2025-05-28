@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 var health : float = 100: #makes health a setter variable to updates progress bar
 	set(value):
 		health = max(value, 0) #minimum value of health should be 0

@@ -47,5 +47,6 @@ metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 script = ExtResource("1_1pnu5")
 upgrades = Array[ExtResource("3_avugv")]([SubResource("Resource_ujoeh"), SubResource("Resource_prwxu"), SubResource("Resource_sw3i4")])
 title = "Area"
+icon = ExtResource("2_nyo22")
 texture = ExtResource("2_nyo22")
 metadata/_custom_type_script = "uid://oh3fq60et0sw"

@@ -47,5 +47,6 @@ metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 script = ExtResource("1_nciiq")
 upgrades = Array[ExtResource("3_06km0")]([SubResource("Resource_ghaxb"), SubResource("Resource_mcyhc"), SubResource("Resource_yblfq")])
 title = "Max_Health"
+icon = ExtResource("2_nllni")
 texture = ExtResource("2_nllni")
 metadata/_custom_type_script = "uid://oh3fq60et0sw"
