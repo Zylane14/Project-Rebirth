@@ -68,7 +68,16 @@ func show_option():
 	var modifier : int = 1 if (chance < (1.0 - (1.0/owner.luck))) else 0 #formula for luck to get the fourth option
 	
 	var option_size = 0
+	for weapon in weapons_available:
+		option_size += add_option(weapon)
 		
+		if weapon.max_level_reached() and  weapon.item_needed in passive_item_available:
+			var option_slot = OptionSlot.instantiate()
+			option_slot.item = weapon
+			add_child(option_slot)
+			option_size += 1
+	
+	
 	for i in range(3 + modifier): #add 3 options
 		if available.size() > 0:
 			option_size += add_option(available.pop_front()) #with for loop from available items
@@ -163,9 +172,6 @@ func get_available_upgrades()-> Array[Item]: #set function that will return an a
 	for weapon : Weapon in get_available_resource_in(weapons):
 		if weapon.is_upgradeable(): #push available weapons to the array
 			upgrades.append(weapon)
-		
-		if weapon.max_level_reached() and weapon.item_needed in get_available_resource_in(passive_items):
-			upgrades.append(weapon) #for evolution to show in chest
 	
 	for passive_item : PassiveItem in get_available_resource_in(passive_items):
 		if passive_item.is_upgradeable(): #if any passive item is upgradeable, push it to the array

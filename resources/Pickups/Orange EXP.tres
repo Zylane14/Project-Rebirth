@@ -11,4 +11,5 @@ title = "Orange EXP"
 icon = ExtResource("1_p5dlv")
 description = "Gives 2 Experience Points."
 sound = ExtResource("3_8mdkf")
+weight = 0.0
 metadata/_custom_type_script = "uid://xl6mh4kudeuh"

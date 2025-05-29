@@ -11,4 +11,5 @@ title = ""
 icon = ExtResource("1_82wc2")
 description = "Gives 1 Experience Point."
 sound = ExtResource("3_nfxct")
+weight = 0.0
 metadata/_custom_type_script = "uid://xl6mh4kudeuh"

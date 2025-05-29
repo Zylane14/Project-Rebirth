@@ -15,6 +15,10 @@ run/main_scene="uid://cxt1tvyg3uor3"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://music & sfx/default_bus_layout.tres"
+
 [autoload]
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
