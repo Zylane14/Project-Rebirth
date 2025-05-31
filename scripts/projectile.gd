@@ -4,6 +4,7 @@ extends Area2D
 var direction : Vector2 = Vector2.RIGHT
 var speed : float = 200
 var damage : float = 1
+var knockback : float = 90
 var source #variable source in the projectile scene
 
 func _physics_process(delta):
@@ -16,7 +17,7 @@ func _on_body_entered(body):
 		else	:
 			body.take_damage(damage)
 		
-		body.knockback += direction * 25 #knockback to body from projectiles
+		body.knockback += direction * knockback #knockback to body from projectiles
 
 
 func _on_screen_exited():

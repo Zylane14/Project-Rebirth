@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bmh3a8id7u7qj" path="res://assets/Projectiles/fireball_V_1_1/FB500-1.png" id="2_q3m7n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q3m7n"]
+resource_local_to_scene = true
+radius = 5.0
 
 [sub_resource type="Gradient" id="Gradient_q3m7n"]
 offsets = PackedFloat32Array(0, 0.0318182, 1)

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Lightning" load_steps=15 format=3 uid="uid://jcw2mdw4of8p"]
 
-[ext_resource type="Resource" uid="uid://btaq7k4spibi5" path="res://resources/Weapons/Thunder.tres" id="1_ikmcd"]
+[ext_resource type="Resource" uid="uid://btaq7k4spibi5" path="res://resources/Weapons Evolved/Thunder.tres" id="1_ikmcd"]
 [ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="2_d8nxx"]
 [ext_resource type="Script" uid="uid://c0anj5l8vyvkr" path="res://scenes/Lightning.gd" id="3_8hp45"]
 [ext_resource type="Resource" uid="uid://bg2vjx7ir7rx2" path="res://resources/Passive Items/Might.tres" id="3_r8hb1"]

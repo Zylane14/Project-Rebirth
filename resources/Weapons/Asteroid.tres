@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c8semoxmejbtc" path="res://assets/epic-rpg-world-the-depths-of-the-mountain/Epic RPG World - The dephs of the Mountain V1.5.1/Props/Animated props/individual files/power balls-3-frame1.png" id="1_3xwug"]
 [ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="1_40gbq"]
-[ext_resource type="Resource" uid="uid://ci5ieqn2o8pmk" path="res://resources/Weapons/Meteor Strike.tres" id="1_ye6g7"]
+[ext_resource type="Resource" uid="uid://ci5ieqn2o8pmk" path="res://resources/Weapons Evolved/Meteor Strike.tres" id="1_ye6g7"]
 [ext_resource type="Script" uid="uid://4711pfsdiwbb" path="res://scenes/CircularWeapon.gd" id="2_5v0xx"]
 [ext_resource type="Resource" uid="uid://byk5so652svi8" path="res://resources/Passive Items/Recovery.tres" id="3_viqsq"]
 [ext_resource type="Texture2D" uid="uid://bmh3a8id7u7qj" path="res://assets/Projectiles/fireball_V_1_1/FB500-1.png" id="4_3xwug"]
