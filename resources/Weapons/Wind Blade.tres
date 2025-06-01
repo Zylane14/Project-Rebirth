@@ -1,0 +1,79 @@
+[gd_resource type="Resource" script_class="WindBlade" load_steps=14 format=3 uid="uid://dtuaquges8at1"]
+
+[ext_resource type="Texture2D" uid="uid://x8o1w3myhjfg" path="res://assets/Projectiles/Wind Effect 01/Wind Blade-export.png" id="1_mr5q2"]
+[ext_resource type="Resource" uid="uid://cvvo1wgg3i1uq" path="res://resources/Weapons Evolved/Blade Slash.tres" id="1_o8pbe"]
+[ext_resource type="Resource" uid="uid://dw478itjqgfrt" path="res://resources/Passive Items/Lucky Ring.tres" id="2_dmrje"]
+[ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="2_lnykp"]
+[ext_resource type="AudioStream" uid="uid://ctfl5kwg6ohhl" path="res://music & sfx/RPG_Essentials_Free/10_Battle_SFX/22_Slash_04.wav" id="4_o8pbe"]
+[ext_resource type="Script" uid="uid://sur3de5kfqnl" path="res://scenes/WeaponScript/WindBlade.gd" id="5_03jd5"]
+[ext_resource type="Script" uid="uid://co5wubqlbfsyl" path="res://scenes/Upgrade.gd" id="5_kiewn"]
+[ext_resource type="Script" uid="uid://desj1lkl2lkec" path="res://scenes/WeaponScript/WindBladeUpgrade.gd" id="6_lnykp"]
+
+[sub_resource type="Resource" id="Resource_dmrje"]
+script = ExtResource("6_lnykp")
+area = 0.25
+speed = 0.0
+amount = 0.0
+damage = 0.0
+cooldown = 0.0
+description = "+100% Area"
+metadata/_custom_type_script = "uid://desj1lkl2lkec"
+
+[sub_resource type="Resource" id="Resource_o8pbe"]
+script = ExtResource("6_lnykp")
+area = 0.0
+speed = 0.0
+amount = 2.0
+damage = 0.0
+cooldown = 0.0
+description = "+2 Amount"
+metadata/_custom_type_script = "uid://desj1lkl2lkec"
+
+[sub_resource type="Resource" id="Resource_kiewn"]
+script = ExtResource("6_lnykp")
+area = 0.25
+speed = 150.0
+amount = 0.0
+damage = 0.0
+cooldown = 0.0
+description = "+150 Speed +0.25 Area"
+metadata/_custom_type_script = "uid://desj1lkl2lkec"
+
+[sub_resource type="Resource" id="Resource_03jd5"]
+script = ExtResource("6_lnykp")
+area = 0.0
+speed = 0.0
+amount = 0.0
+damage = 3.0
+cooldown = -0.25
+description = "+3 Damage -0.25 Cooldown"
+metadata/_custom_type_script = "uid://desj1lkl2lkec"
+
+[sub_resource type="Resource" id="Resource_qjasa"]
+script = ExtResource("6_lnykp")
+area = 0.15
+speed = 100.0
+amount = 1.0
+damage = 0.0
+cooldown = 0.0
+description = "+1 Amount +100 Speed +0.15 Area"
+metadata/_custom_type_script = "uid://desj1lkl2lkec"
+
+[resource]
+script = ExtResource("5_03jd5")
+area = 1.0
+amount = 1
+reversible = false
+delay = 0.3
+damage = 4.0
+cooldown = 1.0
+speed = 500.0
+projectile_node = ExtResource("2_lnykp")
+upgrades = Array[ExtResource("5_kiewn")]([SubResource("Resource_dmrje"), SubResource("Resource_o8pbe"), SubResource("Resource_kiewn"), SubResource("Resource_03jd5"), SubResource("Resource_qjasa")])
+item_needed = ExtResource("2_dmrje")
+evolution = ExtResource("1_o8pbe")
+sound = ExtResource("4_o8pbe")
+title = "Wind Blade"
+icon = ExtResource("1_mr5q2")
+texture = ExtResource("1_mr5q2")
+metadata/_custom_type_script = "uid://sur3de5kfqnl"

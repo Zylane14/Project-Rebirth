@@ -24,14 +24,23 @@ var might : float = 1.0: #amplify attack
 	set(value):
 		might = value
 		%Might.text = "Might : " + str(value)
-var area : float = 0 #attack range
+var area : float = 0: #attack range
+	set(value):
+		area = value
+		%Area.text = "Area : " + str(value)
 var magnet : float = 0: #pickup range
 	set(value):
 		magnet = value
 		%Magnet.shape.radius = 50 + value
 		%MagnetL.text = "Magnet : " + str(value)
-var growth : float = 1 #growth property
-var luck : float = 0.5
+var growth : float = 1: #growth property
+	set(value):
+		area = value
+		%AmplifyAttack.text = "Amplify Attack : " + str(value)
+var luck : float = 0.5:
+	set(value):
+		luck = value
+		%Luck.text = "Luck : " + str(value)
 
 
 var nearest_enemy

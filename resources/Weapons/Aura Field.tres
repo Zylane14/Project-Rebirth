@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="DamagingArea" load_steps=14 format=3 uid="uid://smmit2hxxxxi"]
+[gd_resource type="Resource" script_class="DamagingArea" load_steps=15 format=3 uid="uid://smmit2hxxxxi"]
 
 [ext_resource type="Texture2D" uid="uid://d25h7cjolwncp" path="res://assets/Projectiles/Free  Effect Bullet Impact Explosion 32x32 V1/AuraField.png" id="1_dga1w"]
 [ext_resource type="Resource" uid="uid://ct1x6o3ibesax" path="res://resources/Weapons Evolved/Burst Field.tres" id="1_pmude"]
 [ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="2_gd5wf"]
+[ext_resource type="Texture2D" uid="uid://yvj10rqi6i1v" path="res://assets/Projectiles/Free  Effect Bullet Impact Explosion 32x32 V1/AuraField-1280t.png" id="2_pmude"]
 [ext_resource type="Script" uid="uid://bp7xh7ffcmotq" path="res://scenes/WeaponScript/DamagingArea.gd" id="3_obuno"]
 [ext_resource type="Resource" uid="uid://djc5vnmsvhyml" path="res://resources/Passive Items/Max_Health.tres" id="3_vrytw"]
 [ext_resource type="Script" uid="uid://co5wubqlbfsyl" path="res://scenes/Upgrade.gd" id="5_vrytw"]
@@ -62,6 +63,6 @@ item_needed = ExtResource("3_vrytw")
 evolution = ExtResource("1_pmude")
 sound = ExtResource("6_pmude")
 title = "Aura Field"
-icon = ExtResource("1_dga1w")
+icon = ExtResource("2_pmude")
 texture = ExtResource("1_dga1w")
 metadata/_custom_type_script = "uid://bp7xh7ffcmotq"
