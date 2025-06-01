@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="MultiDamagingArea" load_steps=5 format=3 uid="uid://b8d44jntry46n"]
+
+[ext_resource type="Texture2D" uid="uid://us8uiob2jibo" path="res://assets/Projectiles/Free  Effect Bullet Impact Explosion 32x32 V1/ToxicSludge.png" id="1_gm5xq"]
+[ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="2_fx3jm"]
+[ext_resource type="Script" uid="uid://xs5efml7d1rs" path="res://scenes/WeaponScript/MultiDamagingArea.gd" id="3_gr15f"]
+[ext_resource type="Script" uid="uid://co5wubqlbfsyl" path="res://scenes/Upgrade.gd" id="4_guorm"]
+
+[resource]
+script = ExtResource("3_gr15f")
+amount = 1
+area = 3.0
+delay = 0.2
+damage = 1.0
+cooldown = 4.0
+speed = 0.0
+projectile_node = ExtResource("2_fx3jm")
+upgrades = Array[ExtResource("4_guorm")]([])
+title = "Toxic Puddle"
+icon = ExtResource("1_gm5xq")
+texture = ExtResource("1_gm5xq")
+metadata/_custom_type_script = "uid://xs5efml7d1rs"
