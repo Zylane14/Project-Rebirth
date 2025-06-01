@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="MultiDamagingArea" load_steps=6 format=3 uid="uid://cjtkcusgqhpuh"]
+
+[ext_resource type="Texture2D" uid="uid://us8uiob2jibo" path="res://assets/Projectiles/Free  Effect Bullet Impact Explosion 32x32 V1/ToxicSludge.png" id="1_lr0j3"]
+[ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="2_a5syj"]
+[ext_resource type="Script" uid="uid://xs5efml7d1rs" path="res://scenes/WeaponScript/MultiDamagingArea.gd" id="3_j6310"]
+[ext_resource type="AudioStream" uid="uid://dqy2e2lstypbn" path="res://music & sfx/Minifantasy_Dungeon_SFX/21_orc_damage_1.wav" id="4_h11p2"]
+[ext_resource type="Script" uid="uid://co5wubqlbfsyl" path="res://scenes/Upgrade.gd" id="5_3efch"]
+
+[resource]
+script = ExtResource("3_j6310")
+amount = 6
+area = 5.0
+delay = 0.1
+damage = 8.0
+cooldown = 4.0
+speed = 0.0
+projectile_node = ExtResource("2_a5syj")
+upgrades = Array[ExtResource("5_3efch")]([])
+sound = ExtResource("4_h11p2")
+title = "Venom Puddle"
+icon = ExtResource("1_lr0j3")
+texture = ExtResource("1_lr0j3")
+metadata/_custom_type_script = "uid://xs5efml7d1rs"
