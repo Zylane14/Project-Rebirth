@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SingleShotd" load_steps=15 format=3 uid="uid://bc6hknxlqyxm0"]
 
-[ext_resource type="Resource" uid="uid://cunwxqhggo8i6" path="res://resources/Weapons/Holy Fire 2.tres" id="1_ap575"]
+[ext_resource type="Resource" uid="uid://cunwxqhggo8i6" path="res://resources/Weapons Evolved/Holy Fire 2.tres" id="1_ap575"]
 [ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="1_msqgw"]
 [ext_resource type="Script" uid="uid://bthks1pwcgkfj" path="res://scripts/SingleShot.gd" id="2_ja44x"]
 [ext_resource type="Resource" uid="uid://cdqw7gta62gvm" path="res://resources/Passive Items/Magnet.tres" id="2_wuo0d"]

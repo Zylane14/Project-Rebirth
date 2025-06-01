@@ -49,7 +49,8 @@ folder_colors={
 "res://resources/Enemies/": "red",
 "res://resources/Others/": "gray",
 "res://resources/Passive Items/": "purple",
-"res://resources/Pickups/": "teal",
+"res://resources/Pickups/": "green",
+"res://resources/Weapons Evolved/": "teal",
 "res://resources/Weapons/": "blue"
 }
 

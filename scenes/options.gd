@@ -70,7 +70,11 @@ func show_option():
 	var option_size = 0
 	for weapon in weapons_available:
 		if weapon.max_level_reached() and weapon.item_needed in passive_item_available:
+			var option_slot = OptionSlot.instantiate()
 			available.append(weapon)
+			option_slot.item = weapon
+			add_child(option_slot)
+			option_size += 1
 	
 	
 	for i in range(3 + modifier): #add 3 options
