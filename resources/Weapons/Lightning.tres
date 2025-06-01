@@ -1,14 +1,13 @@
-[gd_resource type="Resource" script_class="Lightning" load_steps=15 format=3 uid="uid://jcw2mdw4of8p"]
+[gd_resource type="Resource" script_class="Lightning" load_steps=14 format=3 uid="uid://jcw2mdw4of8p"]
 
-[ext_resource type="Resource" uid="uid://btaq7k4spibi5" path="res://resources/Weapons Evolved/Thunder.tres" id="1_ikmcd"]
+[ext_resource type="Resource" uid="uid://btaq7k4spibi5" path="res://resources/Weapons/Thunder.tres" id="1_ikmcd"]
+[ext_resource type="Texture2D" uid="uid://d0w4mxy7dgrpa" path="res://assets/Projectiles/Thunder Effect 02/Thunder Strike/Lightning.png" id="2_8078k"]
 [ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="2_d8nxx"]
 [ext_resource type="Script" uid="uid://c0anj5l8vyvkr" path="res://scenes/Lightning.gd" id="3_8hp45"]
 [ext_resource type="Resource" uid="uid://bg2vjx7ir7rx2" path="res://resources/Passive Items/Might.tres" id="3_r8hb1"]
 [ext_resource type="AudioStream" uid="uid://b8nwmsne0o08o" path="res://music & sfx/RPG_Essentials_Free/8_Atk_Magic_SFX/18_Thunder_02.wav" id="4_8hp45"]
 [ext_resource type="Script" uid="uid://co5wubqlbfsyl" path="res://scenes/Upgrade.gd" id="4_yg4jm"]
-[ext_resource type="Texture2D" uid="uid://donvynr6taisg" path="res://assets/Projectiles/Free  Effect Bullet Impact Explosion 32x32 V1/Sprite-0003-Sheet-export.png" id="5_yg4jm"]
 [ext_resource type="Script" uid="uid://c557imx4ux1uo" path="res://scenes/LightningUpgrade.gd" id="7_yg4jm"]
-[ext_resource type="Texture2D" uid="uid://fvyo1wdr3d4k" path="res://assets/Projectiles/Thunder Effect 02/Thunder Strike/ezgif-split/tile006.png" id="14_uyvry"]
 
 [sub_resource type="Resource" id="Resource_8078k"]
 script = ExtResource("7_yg4jm")
@@ -62,6 +61,6 @@ item_needed = ExtResource("3_r8hb1")
 evolution = ExtResource("1_ikmcd")
 sound = ExtResource("4_8hp45")
 title = "Lightning"
-icon = ExtResource("14_uyvry")
-texture = ExtResource("5_yg4jm")
+icon = ExtResource("2_8078k")
+texture = ExtResource("2_8078k")
 metadata/_custom_type_script = "uid://c0anj5l8vyvkr"

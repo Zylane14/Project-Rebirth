@@ -10,7 +10,7 @@
 script = ExtResource("3_xar88")
 amount = 10
 damage = 25.0
-cooldown = 2.5
+cooldown = 1.5
 speed = 0.0
 projectile_node = ExtResource("2_nlopo")
 upgrades = Array[ExtResource("5_vin65")]([])

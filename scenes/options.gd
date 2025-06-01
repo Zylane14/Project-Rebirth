@@ -69,13 +69,8 @@ func show_option():
 	
 	var option_size = 0
 	for weapon in weapons_available:
-		option_size += add_option(weapon)
-		
-		if weapon.max_level_reached() and  weapon.item_needed in passive_item_available:
-			var option_slot = OptionSlot.instantiate()
-			option_slot.item = weapon
-			add_child(option_slot)
-			option_size += 1
+		if weapon.max_level_reached() and weapon.item_needed in passive_item_available:
+			available.append(weapon)
 	
 	
 	for i in range(3 + modifier): #add 3 options
@@ -130,7 +125,7 @@ func get_upgradeable(items, flag = []): #set flag to not include specific items
 		if item.is_upgradeable() and item not in flag: #function to get only the upgradeable item
 			array.append(item)
 	return array
-	
+
 func get_equipped_item():
 	var equipped_items = get_available_resource_in(weapons)
 	equipped_items.append_array(get_available_resource_in(passive_items)) #get the equipped items from the slots
@@ -159,13 +154,6 @@ func check_item(item): #check function, if item is already present in slot then 
 		elif item is PassiveItem:
 			item.player_reference = owner
 			add_passive(item)
-
-func get_upgradable(items, flag = []):
-	var array = []
-	for item in items:
-		if item.is_upgradable() and item not in flag:
-			array.append(item)
-	return array
 
 func get_available_upgrades()-> Array[Item]: #set function that will return an array of item
 	var upgrades : Array[Item] = []

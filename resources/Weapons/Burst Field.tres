@@ -1,12 +1,10 @@
 [gd_resource type="Resource" script_class="DamagingArea" load_steps=6 format=3 uid="uid://ct1x6o3ibesax"]
 
+[ext_resource type="Texture2D" uid="uid://rkvgmr1ri4iy" path="res://assets/Projectiles/Free  Effect Bullet Impact Explosion 32x32 V1/Burst Field.png" id="1_q2oji"]
 [ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="2_ipby0"]
 [ext_resource type="Script" uid="uid://bp7xh7ffcmotq" path="res://scenes/WeaponScript/DamagingArea.gd" id="3_c4avp"]
 [ext_resource type="AudioStream" uid="uid://d4keld3v5t1hq" path="res://music & sfx/Minifantasy_Dungeon_SFX/09_human_charging_1_loop.wav" id="3_ekuk8"]
 [ext_resource type="Script" uid="uid://co5wubqlbfsyl" path="res://scenes/Upgrade.gd" id="5_wp6sq"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q2oji"]
-load_path = "res://.godot/imported/FireAura.png-75ae48ecdf6e52d39609ba6a43d47183.ctex"
 
 [resource]
 script = ExtResource("3_c4avp")
@@ -19,6 +17,6 @@ projectile_node = ExtResource("2_ipby0")
 upgrades = Array[ExtResource("5_wp6sq")]([])
 sound = ExtResource("3_ekuk8")
 title = "Burst Field"
-icon = SubResource("CompressedTexture2D_q2oji")
-texture = SubResource("CompressedTexture2D_q2oji")
+icon = ExtResource("1_q2oji")
+texture = ExtResource("1_q2oji")
 metadata/_custom_type_script = "uid://bp7xh7ffcmotq"

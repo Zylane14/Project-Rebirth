@@ -15,6 +15,7 @@ might = 0.1
 area = 0.0
 magnet = 0.0
 growth = 0.0
+luck = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [sub_resource type="Resource" id="Resource_pix5o"]
@@ -28,6 +29,7 @@ might = 0.2
 area = 0.0
 magnet = 0.0
 growth = 0.0
+luck = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [sub_resource type="Resource" id="Resource_mdq7l"]
@@ -41,6 +43,7 @@ might = 0.3
 area = 0.0
 magnet = 0.0
 growth = 0.0
+luck = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [resource]

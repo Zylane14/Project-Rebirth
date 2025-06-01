@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://63kp1cwf1snt"]
+[gd_scene load_steps=42 format=3 uid="uid://63kp1cwf1snt"]
 
 [ext_resource type="Script" uid="uid://rd7jqoyg5ayg" path="res://scripts/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://3ninw6nm3qxc" path="res://scenes/slot.tscn" id="2_dqkch"]
@@ -15,6 +15,15 @@
 [ext_resource type="Script" uid="uid://d0ua8kdhyqf7c" path="res://scenes/chest.gd" id="12_oprun"]
 [ext_resource type="Texture2D" uid="uid://b63d8w5s2s3q3" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/Props/animated/treasure chest lvl 2-opening animation-cartoon style.png" id="13_a8ls1"]
 [ext_resource type="Script" uid="uid://b1fv06tfxoej" path="res://scenes/back.gd" id="18_4r5pv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oprun"]
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_a8ls1"]
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_qfm1y"]
+font_size = 12
 
 [sub_resource type="Gradient" id="Gradient_d2wvv"]
 offsets = PackedFloat32Array(0.868182, 1)
@@ -188,16 +197,31 @@ offset_bottom = 168.0
 unique_name_in_owner = true
 layout_mode = 2
 text = "Might: 1"
+label_settings = SubResource("LabelSettings_oprun")
 
 [node name="Armor" type="Label" parent="UI/Debug"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Armor: 0"
+label_settings = SubResource("LabelSettings_a8ls1")
 
 [node name="Recovery" type="Label" parent="UI/Debug"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Recovery: 0"
+label_settings = SubResource("LabelSettings_qfm1y")
+
+[node name="MagnetL" type="Label" parent="UI/Debug"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Magnet: 0"
+label_settings = SubResource("LabelSettings_qfm1y")
+
+[node name="HealthL" type="Label" parent="UI/Debug"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Health: 0"
+label_settings = SubResource("LabelSettings_qfm1y")
 
 [node name="Gold" type="Label" parent="UI"]
 unique_name_in_owner = true
