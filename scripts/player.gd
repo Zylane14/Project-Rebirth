@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 var health : float = 100: #makes health a setter variable to updates progress bar
 	set(value):
 		health = max(value, 0) #minimum value of health should be 0
@@ -103,9 +102,9 @@ func check_XP(): #function to check XP and increase level
 		level += 1
 
 
-func _on_magnet_area_entered(area):
-	if area.has_method("follow"): #call the follow function from pickup
-		area.follow(self)
+func _on_magnet_area_entered(pickup_area):
+	if pickup_area.has_method("follow"): #call the follow function from pickup
+		pickup_area.follow(self)
 
 func gain_gold(amount): #function to gain gold
 	gold += amount

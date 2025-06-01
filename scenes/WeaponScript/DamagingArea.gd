@@ -31,7 +31,7 @@ func add_to_player(source): #function to add projectile to the player
 	projectile.damage = damage
 	projectile.source = source
 	projectile.scale = Vector2(area,area)
-	projectile.z_index = 0
+	projectile.show_behind_parent = 1
 	
 	projectile.find_child("Sprite2D").texture = texture #properties
 	projectile.find_child("CollisionShape2D").shape.radius = 90
