@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://kob240l1y6xk"]
+[gd_scene load_steps=22 format=4 uid="uid://kob240l1y6xk"]
 
 [ext_resource type="PackedScene" uid="uid://63kp1cwf1snt" path="res://scenes/player.tscn" id="1_g7g4h"]
 [ext_resource type="Texture2D" uid="uid://1pn1vpo8ol6a" path="res://assets/epic-rpg-world-pack-ancient-ruins/ERW - Ancient Ruins V 1.9.1/Tilesets/grass1 to water.png" id="1_h3xc6"]
@@ -7286,6 +7286,11 @@ sources/2 = SubResource("TileSetAtlasSource_ap2hy")
 sources/3 = SubResource("TileSetAtlasSource_nlwlv")
 sources/4 = SubResource("TileSetAtlasSource_6gkjt")
 
+[sub_resource type="Environment" id="Environment_6qxox"]
+background_mode = 3
+glow_enabled = true
+glow_hdr_threshold = 0.4
+
 [node name="TestScene" type="Node2D"]
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
@@ -7321,3 +7326,6 @@ blend_mode = 2
 visible = false
 color = Color(0.218535, 0.0752456, 0.0852045, 1)
 blend_mode = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6qxox")
