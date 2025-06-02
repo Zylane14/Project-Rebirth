@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bed2lh12wpsvb"]
+
+[ext_resource type="Shader" uid="uid://vp51p2il3cop" path="res://shaders/burn.gdshader" id="1_xe3t8"]
+
+[resource]
+shader = ExtResource("1_xe3t8")
+shader_parameter/dissolve_value = 1.0
+shader_parameter/burn_size = 0.81
+shader_parameter/ash_color = Color(0, 0, 0, 1)
+shader_parameter/burn_color = Color(0.775666, 0.18374, 0.0401062, 1)
+shader_parameter/proburn_color = Color(0.647952, 0.0597529, 0.031805, 1)

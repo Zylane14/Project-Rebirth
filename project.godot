@@ -25,6 +25,14 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 SoundManager="*res://scenes/sound_manager.tscn"
 SaveData="*res://scenes/save_data.tscn"
 Persistence="*res://scenes/persistence.tscn"
+<<<<<<< HEAD
+<<<<<<< HEAD
+ParticleFX="*res://scenes/particle_fx.tscn"
+ShaderPool="*res://scenes/shader_pool.tscn"
+=======
+>>>>>>> parent of 5e5d53e1 (Added Shine on Chest Rewards)
+=======
+>>>>>>> parent of 5e5d53e1 (Added Shine on Chest Rewards)
 
 [dialogic]
 

@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://clejrop88tudo"]
+
+[ext_resource type="Shader" uid="uid://ctpypvj2eqddh" path="res://scenes/RewardSlot.gdshader" id="1_xrcp5"]
+
+[resource]
+shader = ExtResource("1_xrcp5")
+shader_parameter/dissolve_value = 0.0
+shader_parameter/burn_size = 0.0
+shader_parameter/ash_color = Color(0, 0, 0, 1)
+shader_parameter/burn_color = Color(0.882, 0.777, 0.169, 1)
+shader_parameter/proburn_color = Color(0.804, 0.2, 0.093, 1)
