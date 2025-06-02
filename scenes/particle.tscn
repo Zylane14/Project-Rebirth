@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cbayseoxwpb24"]
 
-[ext_resource type="Script" path="res://scenes/particle.gd" id="1_jw3tu"]
-[ext_resource type="Material" path="res://Particles/BloodFX.tres" id="1_y25om"]
+[ext_resource type="Script" uid="uid://du3knecvo26xv" path="res://scenes/particle.gd" id="1_jw3tu"]
+[ext_resource type="Material" uid="uid://cbuwbo4uyfa73" path="res://shaders/blood.tres" id="1_y25om"]
 
 [node name="Particle" type="GPUParticles2D"]
 emitting = false

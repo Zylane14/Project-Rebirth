@@ -37,7 +37,7 @@ var growth : float = 1: #growth property
 	set(value):
 		area = value
 		%AmplifyAttack.text = "Amplify Attack : " + str(value)
-var luck : float = 0.5:
+var luck : float = 2.5:
 	set(value):
 		luck = value
 		%Luck.text = "Luck : " + str(value)

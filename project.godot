@@ -27,7 +27,6 @@ SaveData="*res://scenes/save_data.tscn"
 Persistence="*res://scenes/persistence.tscn"
 ParticleFX="*res://scenes/particle_fx.tscn"
 ShaderPool="*res://scenes/shader_pool.tscn"
-<<<<<<<HEAD<<<<<<<HEADParticleFX="*res://scenes/particle_fx.tscn"
 
 [dialogic]
 
