@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://63kp1cwf1snt"]
+[gd_scene load_steps=43 format=3 uid="uid://63kp1cwf1snt"]
 
 [ext_resource type="Script" uid="uid://rd7jqoyg5ayg" path="res://scripts/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://3ninw6nm3qxc" path="res://scenes/slot.tscn" id="2_dqkch"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://da8r85dnw6p5k" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/9SlicedObjects_windows_7.png" id="11_f1ej7"]
 [ext_resource type="Script" uid="uid://d0ua8kdhyqf7c" path="res://scenes/chest.gd" id="12_oprun"]
 [ext_resource type="Texture2D" uid="uid://b63d8w5s2s3q3" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/Props/animated/treasure chest lvl 2-opening animation-cartoon style.png" id="13_a8ls1"]
+[ext_resource type="PackedScene" uid="uid://d2i68oagku42c" path="res://scenes/reward_slot.tscn" id="14_a8ls1"]
 [ext_resource type="Script" uid="uid://b1fv06tfxoej" path="res://scenes/back.gd" id="18_4r5pv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oprun"]
@@ -399,6 +400,7 @@ panel = NodePath("../Panel")
 [node name="Chest" type="NinePatchRect" parent="UI"]
 process_mode = 3
 visible = false
+z_index = 1
 custom_minimum_size = Vector2(250, 220)
 anchors_preset = 8
 anchor_left = 0.5
@@ -425,16 +427,17 @@ frame = 12
 frame_progress = 1.0
 
 [node name="Open" type="Button" parent="UI/Chest"]
+z_index = 1
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -25.0
-offset_top = -59.0
-offset_right = 25.0
-offset_bottom = -28.0
+offset_left = -23.0
+offset_top = -60.0
+offset_right = 27.0
+offset_bottom = -29.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_gl8cc")
@@ -464,50 +467,45 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="UI/Chest/Rewards"]
+[node name="RewardSlot" parent="UI/Chest/Rewards" instance=ExtResource("14_a8ls1")]
+visible = false
 layout_mode = 0
-offset_left = 168.0
-offset_top = 98.0
-offset_right = 208.0
-offset_bottom = 138.0
-expand_mode = 1
-stretch_mode = 5
+offset_left = 169.0
+offset_top = 99.0
+offset_right = 209.0
+offset_bottom = 139.0
 
-[node name="TextureRect2" type="TextureRect" parent="UI/Chest/Rewards"]
+[node name="RewardSlot2" parent="UI/Chest/Rewards" instance=ExtResource("14_a8ls1")]
+visible = false
 layout_mode = 0
-offset_left = 51.0
+offset_left = 50.0
 offset_top = 44.0
-offset_right = 91.0
+offset_right = 90.0
 offset_bottom = 84.0
-expand_mode = 1
-stretch_mode = 5
 
-[node name="TextureRect3" type="TextureRect" parent="UI/Chest/Rewards"]
+[node name="RewardSlot3" parent="UI/Chest/Rewards" instance=ExtResource("14_a8ls1")]
+visible = false
 layout_mode = 0
-offset_left = 108.0
-offset_top = 31.0
-offset_right = 148.0
-offset_bottom = 71.0
-expand_mode = 1
-stretch_mode = 5
+offset_left = 107.0
+offset_top = 34.0
+offset_right = 147.0
+offset_bottom = 74.0
 
-[node name="TextureRect4" type="TextureRect" parent="UI/Chest/Rewards"]
+[node name="RewardSlot4" parent="UI/Chest/Rewards" instance=ExtResource("14_a8ls1")]
+visible = false
 layout_mode = 0
 offset_left = 160.0
-offset_top = 44.0
+offset_top = 45.0
 offset_right = 200.0
-offset_bottom = 84.0
-expand_mode = 1
-stretch_mode = 5
+offset_bottom = 85.0
 
-[node name="TextureRect5" type="TextureRect" parent="UI/Chest/Rewards"]
+[node name="RewardSlot5" parent="UI/Chest/Rewards" instance=ExtResource("14_a8ls1")]
+visible = false
 layout_mode = 0
 offset_left = 42.0
 offset_top = 98.0
 offset_right = 82.0
 offset_bottom = 138.0
-expand_mode = 1
-stretch_mode = 5
 
 [node name="Back" type="Button" parent="UI"]
 process_mode = 3

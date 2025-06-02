@@ -62,17 +62,20 @@ func upgrade_item(start, end):
 			selected_upgrade = upgrades.pick_random() #if there are any upgrades, then pick a random upgrade
 			rewards.get_child(index).texture = selected_upgrade.icon
 			
+			rewards.get_child(index).show()
 			selected_upgrade.upgrade_item()
 
 
 func clear_reward():
 	for slot in rewards.get_children(): #function to clear the rewards
 		slot.texture = null
+		slot.hide()
 
 func add_gold(index):
 	var gold : Gold = load("res://resources/Pickups/Gold.tres") #loads the gold
 	gold.player_reference = owner
 	rewards.get_child(index).texture = gold.icon
+	rewards.get_child(index).show()
 	gold.activate() #activates gold
 
 func get_weighted_chance(weight, index):
