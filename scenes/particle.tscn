@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbayseoxwpb24"]
+
+[ext_resource type="Script" path="res://scenes/particle.gd" id="1_jw3tu"]
+[ext_resource type="Material" path="res://Particles/BloodFX.tres" id="1_y25om"]
+
+[node name="Particle" type="GPUParticles2D"]
+emitting = false
+amount = 16
+one_shot = true
+explosiveness = 0.62
+process_material = ExtResource("1_y25om")
+script = ExtResource("1_jw3tu")
