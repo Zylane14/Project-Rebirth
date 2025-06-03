@@ -3,13 +3,14 @@
 [ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="1_3xd4o"]
 [ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="1_6r0uh"]
 [ext_resource type="Resource" uid="uid://bsdwvs8d0sd32" path="res://resources/Pickups/Blue EXP.tres" id="2_cc8tm"]
-[ext_resource type="Texture2D" uid="uid://b6erfhgi8hiyw" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/Characters/Enemy1/enemy1-variation1-all-animations-from top to bottom(Idle-run-atk1-atk2-hurt-death)-canvas 192x128.png" id="2_ecoag"]
+[ext_resource type="Texture2D" uid="uid://bb27tkxnrikn4" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/Characters/Enemy1/enemy1-variation1-run.png" id="4_3xd4o"]
 
 [resource]
 script = ExtResource("1_6r0uh")
 title = "GoblinBrawl"
-texture = ExtResource("2_ecoag")
+texture = ExtResource("4_3xd4o")
 health = 6.0
 damage = 3.0
+frames = 8
 drops = Array[ExtResource("1_3xd4o")]([ExtResource("2_cc8tm")])
 metadata/_custom_type_script = "uid://brq1oadyao0po"

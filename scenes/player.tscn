@@ -321,6 +321,9 @@ layout_mode = 2
 [node name="Slot9" parent="UI/Weapons" instance=ExtResource("2_dqkch")]
 layout_mode = 2
 
+[node name="Slot10" parent="UI/Weapons" instance=ExtResource("2_dqkch")]
+layout_mode = 2
+
 [node name="PassiveItems" type="HBoxContainer" parent="UI"]
 offset_left = 27.0
 offset_top = 313.0
@@ -353,6 +356,9 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="PassiveSlot9" parent="UI/PassiveItems" instance=ExtResource("5_ur7pv")]
+layout_mode = 2
+
+[node name="PassiveSlot10" parent="UI/PassiveItems" instance=ExtResource("5_ur7pv")]
 layout_mode = 2
 
 [node name="XP" type="TextureProgressBar" parent="UI"]

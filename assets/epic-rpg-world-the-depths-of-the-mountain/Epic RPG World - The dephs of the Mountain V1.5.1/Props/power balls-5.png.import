@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b27v7un5ryd07"
-path="res://.godot/imported/power balls-5.png-c32f062b47c42826887f9ca873c669ee.ctex"
+path="res://.godot/imported/power balls-5.png-f86249ab43a6225a0cbb68834ce37861.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/epic-rpg-world-the-depths-of-the-mountain/power balls-5.png"
-dest_files=["res://.godot/imported/power balls-5.png-c32f062b47c42826887f9ca873c669ee.ctex"]
+source_file="res://assets/epic-rpg-world-the-depths-of-the-mountain/Epic RPG World - The dephs of the Mountain V1.5.1/Props/power balls-5.png"
+dest_files=["res://.godot/imported/power balls-5.png-f86249ab43a6225a0cbb68834ce37861.ctex"]
 
 [params]
 

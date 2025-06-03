@@ -11,5 +11,6 @@ title = "Cyclops"
 texture = ExtResource("2_watds")
 health = 20.0
 damage = 7.0
+frames = 8
 drops = Array[ExtResource("1_g45f2")]([ExtResource("2_g45f2")])
 metadata/_custom_type_script = "uid://brq1oadyao0po"

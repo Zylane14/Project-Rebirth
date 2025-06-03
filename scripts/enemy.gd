@@ -31,15 +31,33 @@ var type : Enemy:
 	set(value):
 		type = value
 		$Sprite2D.texture = value.texture
+		$Sprite2D.hframes = value.frames
 		damage = value.damage
 		health = value.health #updates health from resource
+
+var duration : float = 0
+var FPS : int = 10
 
 
 #Enemy moves toward player position
 func _physics_process(delta):
+	animation(delta) #call the animation function to enemy script physics process
 	check_seperation(delta)
 	knockback_update(delta)
 
+func animation(delta): #function animation that will flip sprite in the direction of player
+	if (player_reference.position.x - position.x) < 0:
+		$Sprite2D.flip_h = true
+	else:
+		$Sprite2D.flip_h = false
+	
+	if type.frames <= 1: #return function if frames are still 1
+		return
+	
+	duration += delta
+	if type.frames > 1 and duration >= 1.0/FPS: #else increase frame with resepect to FPS
+		$Sprite2D.frame = ($Sprite2D.frame + 1) % type.frames
+		duration = 0
 
 func check_seperation(_delta):
 	seperation = (player_reference.position - position).length() #calculate seperations and store in through a function
