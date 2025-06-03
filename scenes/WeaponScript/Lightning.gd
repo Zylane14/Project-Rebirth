@@ -29,6 +29,7 @@ func shoot(source : CharacterBody2D, scene_tree : SceneTree):
 			projectile.z_index = 1
 		
 			projectile.find_child("Sprite2D").texture = texture
+			projectile.find_child("Particle").process_material = particle
 			projectiles.append(projectile) #texture and reference of the projectile
 		
 			scene_tree.current_scene.add_child(projectile) #add projectile to the scene tree

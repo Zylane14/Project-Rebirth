@@ -35,6 +35,7 @@ func add_to_player(source): #function to add projectile to the player
 	
 	projectile.find_child("Sprite2D").texture = texture #properties
 	projectile.find_child("CollisionShape2D").shape.radius = 90
+	projectile.find_child("Particle").process_material = particle
 	projectile.knockback = -40
 	projectile_reference = projectile
 	

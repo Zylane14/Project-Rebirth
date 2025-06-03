@@ -1,13 +1,14 @@
-[gd_resource type="Resource" script_class="Circular" load_steps=14 format=3 uid="uid://k0qec0duaiuq"]
+[gd_resource type="Resource" script_class="Circular" load_steps=15 format=3 uid="uid://k0qec0duaiuq"]
 
 [ext_resource type="Texture2D" uid="uid://c8semoxmejbtc" path="res://assets/epic-rpg-world-the-depths-of-the-mountain/Epic RPG World - The dephs of the Mountain V1.5.1/Props/Animated props/individual files/power balls-3-frame1.png" id="1_3xwug"]
 [ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="1_40gbq"]
 [ext_resource type="Resource" uid="uid://ci5ieqn2o8pmk" path="res://resources/Weapons Evolved/Meteor Strike.tres" id="1_ye6g7"]
-[ext_resource type="Script" uid="uid://4711pfsdiwbb" path="res://scenes/CircularWeapon.gd" id="2_5v0xx"]
+[ext_resource type="Script" uid="uid://4711pfsdiwbb" path="res://scenes/WeaponScript/CircularWeapon.gd" id="2_5v0xx"]
 [ext_resource type="Resource" uid="uid://byk5so652svi8" path="res://resources/Passive Items/Recovery.tres" id="3_viqsq"]
 [ext_resource type="Texture2D" uid="uid://bmh3a8id7u7qj" path="res://assets/Projectiles/fireball_V_1_1/FB500-1.png" id="4_3xwug"]
 [ext_resource type="Script" uid="uid://co5wubqlbfsyl" path="res://scenes/Upgrade.gd" id="4_rgxfb"]
-[ext_resource type="Script" uid="uid://cnqkprtjrc6t6" path="res://scenes/CircularUpgrade.gd" id="5_5v0xx"]
+[ext_resource type="Material" uid="uid://b7vipbcopj15v" path="res://Paticles/Radial.tres" id="4_viqsq"]
+[ext_resource type="Script" uid="uid://cnqkprtjrc6t6" path="res://scenes/WeaponScript/CircularUpgrade.gd" id="5_5v0xx"]
 
 [sub_resource type="Resource" id="Resource_3xwug"]
 script = ExtResource("5_5v0xx")
@@ -67,6 +68,7 @@ projectile_node = ExtResource("1_40gbq")
 upgrades = Array[ExtResource("4_rgxfb")]([SubResource("Resource_3xwug"), SubResource("Resource_rgxfb"), SubResource("Resource_ye6g7"), SubResource("Resource_viqsq"), SubResource("Resource_1303o")])
 item_needed = ExtResource("3_viqsq")
 evolution = ExtResource("1_ye6g7")
+particle = ExtResource("4_viqsq")
 title = "Asteroid"
 icon = ExtResource("1_3xwug")
 texture = ExtResource("4_3xwug")

@@ -1,49 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bga3lfxfnpqra"]
+[gd_scene load_steps=4 format=3 uid="uid://bga3lfxfnpqra"]
 
 [ext_resource type="Script" uid="uid://dk6lqkbnlbvv4" path="res://scripts/projectile.gd" id="1_q3m7n"]
 [ext_resource type="Texture2D" uid="uid://bmh3a8id7u7qj" path="res://assets/Projectiles/fireball_V_1_1/FB500-1.png" id="2_q3m7n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q3m7n"]
 resource_local_to_scene = true
-
-[sub_resource type="Gradient" id="Gradient_q3m7n"]
-offsets = PackedFloat32Array(0, 0.0318182, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.754545, 0.754545, 0.754545, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_softn"]
-gradient = SubResource("Gradient_q3m7n")
-
-[sub_resource type="Gradient" id="Gradient_softn"]
-offsets = PackedFloat32Array(0, 0.145455, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.581818, 0.581818, 0.581818, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_6q2a6"]
-gradient = SubResource("Gradient_softn")
-
-[sub_resource type="Curve" id="Curve_byeak"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.0813009), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_jxwu6"]
-curve = SubResource("Curve_byeak")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_w7nm8"]
-particle_flag_disable_z = true
-emission_shape = 1
-emission_sphere_radius = 15.0
-direction = Vector3(1, 1, 0)
-initial_velocity_min = -10.0
-initial_velocity_max = 10.0
-gravity = Vector3(0, 0, 0)
-scale_min = 2.0
-scale_max = 3.0
-scale_curve = SubResource("CurveTexture_jxwu6")
-color = Color(1, 0, 0, 1)
-color_ramp = SubResource("GradientTexture1D_6q2a6")
-color_initial_ramp = SubResource("GradientTexture1D_softn")
-turbulence_enabled = true
-turbulence_noise_speed = Vector3(0, 1, 0)
-turbulence_influence_max = 0.248
 
 [node name="Projectile" type="Area2D"]
 z_as_relative = false
@@ -63,10 +24,9 @@ shape = SubResource("CircleShape2D_q3m7n")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-10, -8)
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="Particle" type="GPUParticles2D" parent="."]
 position = Vector2(-23, -7)
 amount = 200
-process_material = SubResource("ParticleProcessMaterial_w7nm8")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

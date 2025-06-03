@@ -10,6 +10,7 @@ class_name Weapon
 @export var item_needed : PassiveItem
 @export var evolution : Weapon
 @export var sound : AudioStream #property for storing audio
+@export var particle : ParticleProcessMaterial = null #new property to store particles
 
 var slot
 

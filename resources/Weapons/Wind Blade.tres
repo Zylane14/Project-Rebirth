@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="WindBlade" load_steps=14 format=3 uid="uid://dtuaquges8at1"]
+[gd_resource type="Resource" script_class="WindBlade" load_steps=15 format=3 uid="uid://dtuaquges8at1"]
 
 [ext_resource type="Texture2D" uid="uid://x8o1w3myhjfg" path="res://assets/Projectiles/Wind Effect 01/Wind Blade-export.png" id="1_mr5q2"]
 [ext_resource type="Resource" uid="uid://cvvo1wgg3i1uq" path="res://resources/Weapons Evolved/Blade Slash.tres" id="1_o8pbe"]
 [ext_resource type="Resource" uid="uid://dw478itjqgfrt" path="res://resources/Passive Items/Lucky Ring.tres" id="2_dmrje"]
 [ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="2_lnykp"]
+[ext_resource type="Material" uid="uid://djvjop6kmlya2" path="res://Paticles/Magic.tres" id="4_kiewn"]
 [ext_resource type="AudioStream" uid="uid://ctfl5kwg6ohhl" path="res://music & sfx/RPG_Essentials_Free/10_Battle_SFX/22_Slash_04.wav" id="4_o8pbe"]
 [ext_resource type="Script" uid="uid://sur3de5kfqnl" path="res://scenes/WeaponScript/WindBlade.gd" id="5_03jd5"]
 [ext_resource type="Script" uid="uid://co5wubqlbfsyl" path="res://scenes/Upgrade.gd" id="5_kiewn"]
@@ -73,6 +74,7 @@ upgrades = Array[ExtResource("5_kiewn")]([SubResource("Resource_dmrje"), SubReso
 item_needed = ExtResource("2_dmrje")
 evolution = ExtResource("1_o8pbe")
 sound = ExtResource("4_o8pbe")
+particle = ExtResource("4_kiewn")
 title = "Wind Blade"
 icon = ExtResource("1_mr5q2")
 texture = ExtResource("1_mr5q2")

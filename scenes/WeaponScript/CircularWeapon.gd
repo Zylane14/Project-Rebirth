@@ -23,7 +23,7 @@ func add_to_player(source):
 	projectile.source = source
 	projectile.find_child("Sprite2D").texture = texture #set texture to sprite2d for bullets
 	projectile.hide()
-	
+	projectile.find_child("Particle").process_material = particle
 	projectile_reference.append(projectile)
 	source.call_deferred("add_child",projectile) #stores reference and add to player (source)
 
