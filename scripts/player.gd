@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@export var character : Character #variable to store character
+
 var health : float = 100: #makes health a setter variable to updates progress bar
 	set(value):
 		health = max(value, 0) #minimum value of health should be 0
@@ -84,7 +86,9 @@ func _physics_process(delta):
 	
 	velocity = Input.get_vector("left","right","up","down") * movement_speed
 	move_and_collide(velocity * delta)
+	
 	check_XP()
+	animation(delta)
 	health += recovery * delta #increase health with recovery * delta
 
 
@@ -121,6 +125,16 @@ func gain_gold(amount): #function to gain gold
 func open_chest(): #function to call open from player
 	$UI/Chest.open()
 
+func animation(_delta): #plays the character animation
+	if velocity == Vector2.ZERO:
+		$AnimationPlayer.play("idle_" + character.animation_name)
+	else:
+		$AnimationPlayer.play("walk_" + character.animation_name)
+	
+	if velocity.x < 0: #flipping sprites according to movement direction
+		$Sprite2D.flip_h = true
+	elif velocity.x > 0:
+		$Sprite2D.flip_h = false
 
 func _on_back_pressed() -> void:
 	pass # Replace with function body.

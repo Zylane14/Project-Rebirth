@@ -970,4 +970,5 @@ text = "Back"
 
 [connection signal="pressed" from="Menu/Upgrades" to="." method="_on_upgrades_pressed"]
 [connection signal="pressed" from="Menu/Beastiary" to="." method="_on_beastiary_pressed"]
+[connection signal="pressed" from="CharacterSelection/Start" to="CharacterSelection/Start" method="_on_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

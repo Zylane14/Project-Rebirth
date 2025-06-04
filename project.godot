@@ -48,6 +48,7 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 [file_customization]
 
 folder_colors={
+"res://resources/Characters/": "orange",
 "res://resources/Enemies/": "red",
 "res://resources/Others/": "gray",
 "res://resources/Passive Items/": "purple",
