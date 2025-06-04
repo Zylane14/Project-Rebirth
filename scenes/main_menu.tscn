@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://cxt1tvyg3uor3"]
+[gd_scene load_steps=79 format=3 uid="uid://cxt1tvyg3uor3"]
 
 [ext_resource type="Script" uid="uid://iobihtft1ln3" path="res://scenes/main_menu.gd" id="1_3wgol"]
 [ext_resource type="Texture2D" uid="uid://5ywanej8h4x1" path="res://assets/Backgrounds/Nature Landscapes Free Pixel Art/nature_6/2.png" id="1_8egab"]
@@ -26,6 +26,10 @@
 [ext_resource type="Texture2D" uid="uid://c5u11r88d57ut" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/9SlicedObjects_windows_4.png" id="22_3wgol"]
 [ext_resource type="Texture2D" uid="uid://b7sthbn7i3qhd" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/9SlicedObjects_windows_details_0.png" id="23_1acrt"]
 [ext_resource type="Script" uid="uid://bypjfrm4pq3ub" path="res://scenes/enemy_list.gd" id="23_vr8o3"]
+[ext_resource type="Texture2D" uid="uid://gbel4rco8kd6" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/9SlicedObjects_windows_details_3.png" id="25_vr8o3"]
+[ext_resource type="Texture2D" uid="uid://ddfgfn25flovn" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/9SlicedObjects_windows_details_1.png" id="26_1a85y"]
+[ext_resource type="Script" uid="uid://b4s3c5qisgo37" path="res://scenes/character_list.gd" id="27_hl5e0"]
+[ext_resource type="PackedScene" uid="uid://cye63rjt76qsv" path="res://scenes/character_slot.tscn" id="28_engjn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8egab"]
 bg_color = Color(0.152139, 0.208666, 0.346595, 1)
@@ -509,6 +513,20 @@ expand_margin_top = 6.0
 expand_margin_right = 6.0
 expand_margin_bottom = 6.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hl5e0"]
+texture = ExtResource("25_vr8o3")
+texture_margin_left = 7.23112
+texture_margin_top = 6.15916
+texture_margin_right = 7.10526
+texture_margin_bottom = 6.35011
+region_rect = Rect2(3.74447, 3.87338, 24.3326, 23.2838)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_engjn"]
+texture = ExtResource("26_1a85y")
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+region_rect = Rect2(6.02831, 5.91789, 20.1153, 20.155)
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -520,6 +538,7 @@ theme = SubResource("Theme_a8gd2")
 script = ExtResource("1_3wgol")
 
 [node name="SkillTree" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -761,7 +780,6 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 28
 text = "Start"
-script = ExtResource("18_a8gd2")
 
 [node name="Upgrades" type="Button" parent="Menu"]
 layout_mode = 0
@@ -865,7 +883,70 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Health:"
 
+[node name="CharacterSelection" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_hl5e0")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CharacterSelection"]
+custom_minimum_size = Vector2(240, 80)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -80.0
+offset_right = 120.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_engjn")
+
+[node name="CharacterList" type="GridContainer" parent="CharacterSelection/ScrollContainer"]
+layout_mode = 2
+columns = 3
+script = ExtResource("27_hl5e0")
+character_slot = ExtResource("28_engjn")
+
+[node name="Panel" type="Panel" parent="CharacterSelection"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 296.0
+offset_top = 216.0
+offset_right = 344.0
+offset_bottom = 264.0
+
+[node name="TextureRect" type="TextureRect" parent="CharacterSelection/Panel"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StartingWeapon" type="Label" parent="CharacterSelection/Panel/TextureRect"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Start" type="Button" parent="CharacterSelection"]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 304.0
+offset_right = 506.0
+offset_bottom = 331.0
+theme_override_font_sizes/font_size = 16
+text = "Start"
+script = ExtResource("18_a8gd2")
+
 [node name="Gold" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 512.0
 offset_top = 320.0
@@ -887,7 +968,6 @@ offset_bottom = 47.0
 grow_horizontal = 0
 text = "Back"
 
-[connection signal="pressed" from="Menu/Start" to="Menu/Start" method="_on_pressed"]
 [connection signal="pressed" from="Menu/Upgrades" to="." method="_on_upgrades_pressed"]
 [connection signal="pressed" from="Menu/Beastiary" to="." method="_on_beastiary_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

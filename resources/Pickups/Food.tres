@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Health" load_steps=4 format=3 uid="uid://ci2o2efevbw1o"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://ci2o2efevbw1o"]
 
 [ext_resource type="Texture2D" uid="uid://b5ogugkka61t3" path="res://assets/Ghostpixxells_pixelfood/05_apple_pie.png" id="1_p5ttk"]
 [ext_resource type="Script" uid="uid://dp38fhgeg1xjh" path="res://scenes/Health.gd" id="2_rganw"]

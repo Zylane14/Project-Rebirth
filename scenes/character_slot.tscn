@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://cye63rjt76qsv"]
+
+[ext_resource type="Texture2D" uid="uid://dia4u56cokgcb" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/9SlicedObjects_windows_details_4.png" id="1_h3508"]
+[ext_resource type="Script" uid="uid://dl3ejjkmclkq2" path="res://scenes/character_slot.gd" id="2_ndgm5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ndgm5"]
+texture = ExtResource("1_h3508")
+texture_margin_left = 3.87059
+texture_margin_top = 3.10153
+texture_margin_right = 2.94924
+texture_margin_bottom = 2.89847
+region_rect = Rect2(-0.876177, 0, 32.8762, 32)
+
+[node name="CharacterSlot" type="Panel"]
+custom_minimum_size = Vector2(200, 200)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ndgm5")
+script = ExtResource("2_ndgm5")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.5
+offset_top = -37.5
+offset_right = 37.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="Select" type="Line2D" parent="."]
+visible = false
+points = PackedVector2Array(12, 6, 191, 5, 191, 192, 12, 192)
+closed = true
+width = 3.0
+default_color = Color(0, 0.458824, 0.615686, 1)
+
+[connection signal="pressed" from="TextureButton" to="." method="_button_pressed"]
