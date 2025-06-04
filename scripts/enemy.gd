@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var player_reference : CharacterBody2D
 var damage_popup_node = preload("res://scenes/damage.tscn") #loads the damage popup to the enemy
 var direction : Vector2
-var speed : float = 75
+var speed : float
 var damage : float
 var knockback : Vector2 #adds knockback
 var seperation : float
@@ -16,7 +16,6 @@ var health : float:
 		health = value
 		if health <= 0: #when health reaches 0, free the enemy from memory
 			drop_item() #enemy will drop item when hp reaches 0
-
 
 var elite : bool = false:
 	set(value):
@@ -33,6 +32,7 @@ var type : Enemy:
 		$Sprite2D.texture = value.texture
 		$Sprite2D.hframes = value.frames
 		damage = value.damage
+		speed = value.speed
 		health = value.health #updates health from resource
 
 var duration : float = 0

@@ -11,6 +11,7 @@ title = "OrcMelee"
 texture = ExtResource("4_jubfm")
 health = 20.0
 damage = 6.0
+speed = 70.0
 frames = 8
 drops = Array[ExtResource("1_pi32d")]([ExtResource("2_s7xvb")])
 metadata/_custom_type_script = "uid://brq1oadyao0po"

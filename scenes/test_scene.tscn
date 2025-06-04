@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://kob240l1y6xk"]
+[gd_scene load_steps=31 format=4 uid="uid://kob240l1y6xk"]
 
 [ext_resource type="PackedScene" uid="uid://63kp1cwf1snt" path="res://scenes/player.tscn" id="1_g7g4h"]
 [ext_resource type="Texture2D" uid="uid://1pn1vpo8ol6a" path="res://assets/epic-rpg-world-pack-ancient-ruins/ERW - Ancient Ruins V 1.9.1/Tilesets/grass1 to water.png" id="1_h3xc6"]
@@ -9,8 +9,17 @@
 [ext_resource type="Texture2D" uid="uid://rr77k31gn4ju" path="res://assets/epic-rpg-world-pack-ancient-ruins/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/birch trees_4.png" id="5_ntc4i"]
 [ext_resource type="Texture2D" uid="uid://dmrx5d7iifb2i" path="res://assets/epic-rpg-world-pack-ancient-ruins/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/bushes_0.png" id="6_u0xbq"]
 [ext_resource type="Texture2D" uid="uid://blli31k5lmrew" path="res://assets/epic-rpg-world-pack-ancient-ruins/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/bushes_1.png" id="7_pln1h"]
+[ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="9_ap2hy"]
+[ext_resource type="Resource" uid="uid://d14tpynryekla" path="res://resources/Enemies/Goblin.tres" id="10_nlwlv"]
 [ext_resource type="PackedScene" uid="uid://cqojmim05b0x4" path="res://scenes/pickups.tscn" id="10_s36qc"]
+[ext_resource type="Resource" uid="uid://cyfp26oy6hbmm" path="res://resources/Enemies/GoblinBrawl.tres" id="11_6gkjt"]
 [ext_resource type="Resource" uid="uid://bsdwvs8d0sd32" path="res://resources/Pickups/Blue EXP.tres" id="11_6qxox"]
+[ext_resource type="Resource" uid="uid://bkrq0re188bjr" path="res://resources/Enemies/GoblinElite.tres" id="12_lmrlb"]
+[ext_resource type="Resource" uid="uid://8t86jgvkply2" path="res://resources/Enemies/OrcMelee.tres" id="13_nks25"]
+[ext_resource type="Resource" uid="uid://dmikugp6yofm5" path="res://resources/Enemies/OrcWarrior.tres" id="14_kub5s"]
+[ext_resource type="Resource" uid="uid://d3uudpnnu02vc" path="res://resources/Enemies/OrcMage.tres" id="15_afgys"]
+[ext_resource type="Resource" uid="uid://q51bg0iwnqs4" path="res://resources/Enemies/Cyclops.tres" id="16_sstcd"]
+[ext_resource type="Resource" uid="uid://c4udbpqvqruxj" path="res://resources/Enemies/Golem.tres" id="17_2oq4n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8gixj"]
 texture = ExtResource("1_h3xc6")
@@ -7308,6 +7317,7 @@ tile_set = SubResource("TileSet_lmrlb")
 
 [node name="Spawner" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_j8ivh")]
 player = NodePath("../Player")
+enemy_types = Array[ExtResource("9_ap2hy")]([ExtResource("10_nlwlv"), ExtResource("11_6gkjt"), ExtResource("12_lmrlb"), ExtResource("13_nks25"), ExtResource("14_kub5s"), ExtResource("15_afgys"), ExtResource("16_sstcd"), ExtResource("17_2oq4n")])
 
 [node name="Player" parent="." instance=ExtResource("1_g7g4h")]
 position = Vector2(316, 180)

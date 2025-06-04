@@ -11,6 +11,7 @@ title = "GoblinElite"
 texture = ExtResource("2_o4cvl")
 health = 12.0
 damage = 4.0
+speed = 85.0
 frames = 6
 drops = Array[ExtResource("1_pltqi")]([ExtResource("2_3oqdy")])
 metadata/_custom_type_script = "uid://brq1oadyao0po"

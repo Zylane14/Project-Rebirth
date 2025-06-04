@@ -1,5 +1,4 @@
 extends Pickups
-class_name Health
 
 @export var amount : int = 20 #destructible health
 

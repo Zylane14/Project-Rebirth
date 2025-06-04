@@ -7,10 +7,11 @@
 
 [resource]
 script = ExtResource("3_vh51q")
-title = "OrcMelee"
+title = "OrcMage"
 texture = ExtResource("4_idlhn")
 health = 15.0
 damage = 10.0
+speed = 70.0
 frames = 8
 drops = Array[ExtResource("1_idlhn")]([ExtResource("2_j8ncs")])
 metadata/_custom_type_script = "uid://brq1oadyao0po"
