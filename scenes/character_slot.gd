@@ -10,10 +10,9 @@ signal pressed
 func _ready():
 	$Select.hide()
 
-func _button_pressed() -> void:
+func _button_pressed():
 	for slot in get_parent().get_children(): #pressing this slot will deselect all its sibling slots
 		slot.deselect()
-	
 	$Select.show() #show current slot and emit pressed signal
 	pressed.emit()
 

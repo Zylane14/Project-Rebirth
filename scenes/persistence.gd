@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var bonus_stats : Stats = Stats.new()
+var character = null #set character property
 
 func gain_bonus_stats(player):
 	player.max_health += bonus_stats.max_health
@@ -11,3 +12,4 @@ func gain_bonus_stats(player):
 	player.area += bonus_stats.area
 	player.magnet += bonus_stats.magnet
 	player.growth += bonus_stats.growth
+	player.luck += bonus_stats.luck

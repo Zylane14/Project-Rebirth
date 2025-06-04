@@ -42,7 +42,7 @@ func add_to_player(source): #function to add projectile to the player
 	source.call_deferred("add_child", projectile) #adds projectile to player
 	
 func reset_collision(): #function to reset collision
-	if projectile_reference:
+	if is_instance_valid(projectile_reference):
 		projectile_reference.find_child("CollisionShape2D").disabled = true
 		projectile_reference.find_child("CollisionShape2D").disabled = false
 

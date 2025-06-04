@@ -12,7 +12,7 @@ texture_margin_bottom = 2.89847
 region_rect = Rect2(-0.876177, 0, 32.8762, 32)
 
 [node name="CharacterSlot" type="Panel"]
-custom_minimum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(100, 100)
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_ndgm5")
@@ -32,13 +32,15 @@ offset_right = 37.5
 offset_bottom = 37.5
 grow_horizontal = 2
 grow_vertical = 2
+ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Select" type="Line2D" parent="."]
-visible = false
+position = Vector2(0.572974, 2.23316)
+scale = Vector2(0.491892, 0.38342)
 points = PackedVector2Array(12, 6, 191, 5, 191, 192, 12, 192)
 closed = true
 width = 3.0
-default_color = Color(0, 0.458824, 0.615686, 1)
+default_color = Color(0.349505, 0, 0.058085, 1)
 
 [connection signal="pressed" from="TextureButton" to="." method="_button_pressed"]

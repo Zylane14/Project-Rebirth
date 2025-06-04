@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://cxt1tvyg3uor3"]
+[gd_scene load_steps=83 format=3 uid="uid://cxt1tvyg3uor3"]
 
 [ext_resource type="Script" uid="uid://iobihtft1ln3" path="res://scenes/main_menu.gd" id="1_3wgol"]
 [ext_resource type="Texture2D" uid="uid://5ywanej8h4x1" path="res://assets/Backgrounds/Nature Landscapes Free Pixel Art/nature_6/2.png" id="1_8egab"]
@@ -30,6 +30,10 @@
 [ext_resource type="Texture2D" uid="uid://ddfgfn25flovn" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/9SlicedObjects_windows_details_1.png" id="26_1a85y"]
 [ext_resource type="Script" uid="uid://b4s3c5qisgo37" path="res://scenes/character_list.gd" id="27_hl5e0"]
 [ext_resource type="PackedScene" uid="uid://cye63rjt76qsv" path="res://scenes/character_slot.tscn" id="28_engjn"]
+[ext_resource type="Script" uid="uid://bjudu0im5j1jb" path="res://scenes/Character.gd" id="29_ip0br"]
+[ext_resource type="Resource" uid="uid://dtv10dvgqe07b" path="res://resources/Characters/MainChar.tres" id="30_xyero"]
+[ext_resource type="Resource" uid="uid://q3uqovvyoat2" path="res://resources/Characters/Eleonore.tres" id="31_tcusk"]
+[ext_resource type="Resource" uid="uid://brmnst684ysvj" path="res://resources/Characters/Nora.tres" id="32_4puye"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8egab"]
 bg_color = Color(0.152139, 0.208666, 0.346595, 1)
@@ -800,7 +804,6 @@ theme_override_font_sizes/font_size = 28
 text = "Beastiary"
 
 [node name="Beastiary" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -893,16 +896,15 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_hl5e0")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CharacterSelection"]
-custom_minimum_size = Vector2(240, 80)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -120.0
-offset_top = -80.0
-offset_right = 120.0
+offset_left = -135.0
+offset_top = -104.0
+offset_right = 135.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxTexture_engjn")
@@ -912,16 +914,18 @@ layout_mode = 2
 columns = 3
 script = ExtResource("27_hl5e0")
 character_slot = ExtResource("28_engjn")
+characters = Array[ExtResource("29_ip0br")]([ExtResource("30_xyero"), ExtResource("31_tcusk"), ExtResource("32_4puye")])
 
 [node name="Panel" type="Panel" parent="CharacterSelection"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 0
 offset_left = 296.0
-offset_top = 216.0
+offset_top = 191.0
 offset_right = 344.0
-offset_bottom = 264.0
+offset_bottom = 239.0
 
-[node name="TextureRect" type="TextureRect" parent="CharacterSelection/Panel"]
+[node name="StartingWeapon" type="TextureRect" parent="CharacterSelection/Panel"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
 offset_right = 50.0
@@ -929,18 +933,19 @@ offset_bottom = 50.0
 expand_mode = 1
 stretch_mode = 5
 
-[node name="StartingWeapon" type="Label" parent="CharacterSelection/Panel/TextureRect"]
-unique_name_in_owner = true
+[node name="Label" type="Label" parent="CharacterSelection/Panel/StartingWeapon"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = -38.0
+offset_top = -37.0
+offset_right = 91.0
+offset_bottom = -14.0
 
 [node name="Start" type="Button" parent="CharacterSelection"]
 layout_mode = 0
-offset_left = 464.0
-offset_top = 304.0
-offset_right = 506.0
-offset_bottom = 331.0
+offset_left = 486.0
+offset_top = 295.0
+offset_right = 528.0
+offset_bottom = 322.0
 theme_override_font_sizes/font_size = 16
 text = "Start"
 script = ExtResource("18_a8gd2")

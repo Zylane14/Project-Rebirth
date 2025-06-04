@@ -73,8 +73,11 @@ var level : int = 1: #variable to store player level
 
 
 func _ready() -> void:
+	
 	Persistence.gain_bonus_stats(self) #call the gain bonus stats from persistence when the player node is ready
-
+	character = Persistence.character #set character, base stats, add starting weapon on ready
+	set_base_stats(character.base_stats)
+	%Options.check_item(character.starting_weapon) #adds weapon if not available
 
 func _physics_process(delta):
 	if is_instance_valid(nearest_enemy):
@@ -136,5 +139,16 @@ func animation(_delta): #plays the character animation
 	elif velocity.x > 0:
 		$Sprite2D.flip_h = false
 
+func set_base_stats(base_stats : Stats): #function to gain base stats from the character
+	max_health += base_stats.max_health
+	recovery += base_stats.recovery
+	armor += base_stats.armor
+	movement_speed += base_stats.movement_speed
+	might += base_stats.might
+	area += base_stats.area
+	magnet += base_stats.magnet
+	growth += base_stats.growth
+	luck += base_stats.luck
+	
 func _on_back_pressed() -> void:
 	pass # Replace with function body.
