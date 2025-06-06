@@ -9,8 +9,8 @@
 script = ExtResource("1_8hu17")
 title = "Goblin"
 texture = ExtResource("4_op2jl")
-health = 5.0
-damage = 2.0
+health = 100.0
+damage = 2000.0
 speed = 75.0
 frames = 8
 drops = Array[ExtResource("1_op2jl")]([ExtResource("2_0lhts")])

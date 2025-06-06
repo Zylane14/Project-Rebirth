@@ -7,7 +7,7 @@ var health : float = 100: #makes health a setter variable to updates progress ba
 		health = max(value, 0) #minimum value of health should be 0
 		%Health.value = value
 		if health <= 0:
-			get_tree().paused = true #pause the game when health reaches 0
+			die() #pause the game when health reaches 0
 
 var movement_speed : float = 150
 var max_health : float = 100: #property for max_health
@@ -103,6 +103,13 @@ func take_damage(amount):
 func _on_self_damage_body_entered(body):
 	take_damage(body.damage) #reduce health with enemy damage
 
+func die():
+	$AnimationPlayer.play("death_" + character.animation_name)
+	set_process(false) # disables _process
+	set_physics_process(false) # disables _physics_process
+	$Sprite2D.visible = true # ensure sprite is visible (optional)
+	await $AnimationPlayer.animation_finished
+	get_tree().paused = true # pause game after animation finishes
 
 func _on_timer_timeout(): #disable and enable with each timeout
 	%Collision.set_deferred("disabled", true)
