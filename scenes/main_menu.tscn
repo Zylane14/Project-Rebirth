@@ -760,7 +760,6 @@ offset_bottom = 200.0
 skill = SubResource("Resource_qw82i")
 
 [node name="Menu" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -805,6 +804,7 @@ theme_override_font_sizes/font_size = 28
 text = "Beastiary"
 
 [node name="Beastiary" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -888,12 +888,14 @@ layout_mode = 2
 text = "Health:"
 
 [node name="CharacterSelection" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(320, 180)
 theme_override_styles/panel = SubResource("StyleBoxTexture_hl5e0")
 
 [node name="CharacterPortrait" type="TextureRect" parent="CharacterSelection"]
@@ -992,6 +994,7 @@ offset_bottom = 47.0
 grow_horizontal = 0
 text = "Back"
 
+[connection signal="pressed" from="Menu/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Menu/Upgrades" to="." method="_on_upgrades_pressed"]
 [connection signal="pressed" from="Menu/Beastiary" to="." method="_on_beastiary_pressed"]
 [connection signal="pressed" from="CharacterSelection/Start" to="CharacterSelection/Start" method="_on_pressed"]

@@ -21,6 +21,7 @@ func add_to_player(source):
 	projectile.speed = 0
 	projectile.damage = damage #properties of the projectile
 	projectile.source = source
+	projectile.weapon = self
 	projectile.find_child("Sprite2D").texture = texture #set texture to sprite2d for bullets
 	projectile.hide()
 	projectile.find_child("Particle").process_material = particle

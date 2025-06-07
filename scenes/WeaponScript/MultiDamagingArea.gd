@@ -27,6 +27,7 @@ func add_to_world(source, tree):
 	projectile.source = source
 	projectile.scale = Vector2(area,area)
 	projectile.show_behind_parent = 1
+	projectile.weapon = self
 	
 	projectile.find_child("Sprite2D").texture = texture
 	projectile.find_child("CollisionShape2D").shape.radius = 12 #sets texture, collision, and hide it

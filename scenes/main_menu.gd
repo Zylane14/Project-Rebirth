@@ -16,6 +16,7 @@ func menu(): #func to show menu panel and hide others
 	$Beastiary.hide()
 	$Gold.hide()
 	$Back.hide()
+	$CharacterSelection.hide()
 	tween_pop($Menu)
 
 func skill_tree(): #func to show skill tree
@@ -42,3 +43,11 @@ func tween_pop(panel): #func to give pop effect
 	panel.scale = Vector2(0.85,0.85)
 	var tween = get_tree().create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
 	tween.tween_property(panel, "scale", Vector2(1,1), 0.5)
+
+
+func _on_start_pressed() -> void: #Character Selection
+	$CharacterSelection.show()
+	$Menu.hide()
+	$Gold.show()
+	$Back.show()
+	tween_pop($CharacterSelection)

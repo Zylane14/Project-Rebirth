@@ -17,6 +17,7 @@ func add_to_player(source, index):
 	projectile.damage = damage
 	projectile.source = source
 	projectile.scale = Vector2(area,area)
+	projectile.weapon = self
 	projectile.find_child("CollisionShape2D").shape.radius = 12
 	projectile.find_child("Particle").process_material = particle #in subclasses. load the particle while instancing projectile
 	projectile.direction = (source.get_global_mouse_position() - source.position).normalized()

@@ -107,9 +107,9 @@ func die():
 	$AnimationPlayer.play("death_" + character.animation_name)
 	set_process(false) # disables _process
 	set_physics_process(false) # disables _physics_process
-	$Sprite2D.visible = true # ensure sprite is visible (optional)
+	$Sprite2D.visible = true # ensure sprite is visible
 	await $AnimationPlayer.animation_finished
-	get_tree().paused = true # pause game after animation finishes
+	
 
 func _on_timer_timeout(): #disable and enable with each timeout
 	%Collision.set_deferred("disabled", true)

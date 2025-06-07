@@ -6,6 +6,7 @@ var speed : float = 200
 var damage : float = 1
 var knockback : float = 90
 var source #variable source in the projectile scene
+var weapon : Weapon #property to store weapon resource in projectile
 
 func _physics_process(delta):
 	position += direction * speed * delta
@@ -14,8 +15,12 @@ func _on_body_entered(body):
 	if body.has_method("take_damage"): #call take_damage function
 		if "might" in source:
 			body.take_damage(damage * source.might) #if source has property might, multiply the damage
-		else	:
+			if weapon:
+				weapon.damage_dealt += damage * source.might #damage will get added & stored in their weapon resource
+		else:
 			body.take_damage(damage)
+			if weapon:
+				weapon.damage_dealt += damage
 		
 		body.knockback += direction * knockback #knockback to body from projectiles
 
