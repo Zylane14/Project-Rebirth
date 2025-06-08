@@ -10,6 +10,7 @@ var weapon : Weapon #property to store weapon resource in projectile
 
 func _physics_process(delta):
 	position += direction * speed * delta
+	rotation = direction.angle()
 
 func _on_body_entered(body):
 	if body.has_method("take_damage"): #call take_damage function

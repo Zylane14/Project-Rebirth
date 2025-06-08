@@ -1,12 +1,15 @@
 extends GridContainer
 
 @onready var starting_weapon = %StartingWeapon
+@onready var start_button = %Start # Reference to StartButton
+@onready var portrait_display = %Portrait
 @export var character_slot : PackedScene
 
 @export var characters : Array[Character] #variable to store characters
 
 func _ready() -> void: #call the load function on ready
 	load_character()
+	start_button.visible = false # Hide button at start
 
 func load_character():
 	for character in characters:
@@ -18,5 +21,5 @@ func load_character():
 func _on_pressed(character : Character): #presseng any character slot will store a reference in Persistence Autoload
 	Persistence.character = character
 	starting_weapon.texture = character.starting_weapon.icon #updates the texture of starting weapon of currently selected character
-	
-	
+	portrait_display.texture = character.portrait
+	start_button.visible = true # Show Start button when a character is selected

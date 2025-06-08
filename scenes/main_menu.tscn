@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://cxt1tvyg3uor3"]
+[gd_scene load_steps=85 format=3 uid="uid://cxt1tvyg3uor3"]
 
 [ext_resource type="Script" uid="uid://iobihtft1ln3" path="res://scenes/main_menu.gd" id="1_3wgol"]
 [ext_resource type="Texture2D" uid="uid://5ywanej8h4x1" path="res://assets/Backgrounds/Nature Landscapes Free Pixel Art/nature_6/2.png" id="1_8egab"]
@@ -21,12 +21,12 @@
 [ext_resource type="Texture2D" uid="uid://cr044o566urrd" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/skill_icon_slot_hud_0.png" id="16_svtp6"]
 [ext_resource type="Texture2D" uid="uid://buyq6cxiew8gx" path="res://assets/Backgrounds/Nature Landscapes Free Pixel Art/nature_6/origbig.png" id="17_hstxw"]
 [ext_resource type="Script" uid="uid://oj1btmb4eqd4" path="res://scenes/start.gd" id="18_a8gd2"]
+[ext_resource type="Texture2D" uid="uid://b6v4thpim11st" path="res://assets/Backgrounds/Nature Landscapes Free Pixel Art/nature_1/origbig.png" id="19_xyero"]
 [ext_resource type="Texture2D" uid="uid://grdhbp260rur" path="res://assets/Backgrounds/Nature Landscapes Free Pixel Art/nature_6/1.png" id="20_svtp6"]
 [ext_resource type="Texture2D" uid="uid://da8r85dnw6p5k" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/9SlicedObjects_windows_7.png" id="21_qywvv"]
 [ext_resource type="Texture2D" uid="uid://c5u11r88d57ut" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/9SlicedObjects_windows_4.png" id="22_3wgol"]
 [ext_resource type="Texture2D" uid="uid://b7sthbn7i3qhd" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/9SlicedObjects_windows_details_0.png" id="23_1acrt"]
 [ext_resource type="Script" uid="uid://bypjfrm4pq3ub" path="res://scenes/enemy_list.gd" id="23_vr8o3"]
-[ext_resource type="Texture2D" uid="uid://gbel4rco8kd6" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/9SlicedObjects_windows_details_3.png" id="25_vr8o3"]
 [ext_resource type="Texture2D" uid="uid://ddfgfn25flovn" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/9SlicedObjects_windows_details_1.png" id="26_1a85y"]
 [ext_resource type="Script" uid="uid://b4s3c5qisgo37" path="res://scenes/character_list.gd" id="27_hl5e0"]
 [ext_resource type="PackedScene" uid="uid://cye63rjt76qsv" path="res://scenes/character_slot.tscn" id="28_engjn"]
@@ -35,6 +35,7 @@
 [ext_resource type="Resource" uid="uid://q3uqovvyoat2" path="res://resources/Characters/Eleonore.tres" id="31_tcusk"]
 [ext_resource type="Resource" uid="uid://brmnst684ysvj" path="res://resources/Characters/Nora.tres" id="32_4puye"]
 [ext_resource type="Texture2D" uid="uid://be4yakt40r26t" path="res://assets/main-character-of-the-story/Main Character Portraits/annoyed.png" id="33_xyero"]
+[ext_resource type="Theme" uid="uid://boqtjf88xcpu4" path="res://demo/assets/ui.theme" id="34_tcusk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8egab"]
 bg_color = Color(0.152139, 0.208666, 0.346595, 1)
@@ -486,7 +487,7 @@ stats = SubResource("Resource_c6nra")
 metadata/_custom_type_script = "uid://c72yp5iad4110"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8egab"]
-texture = ExtResource("17_hstxw")
+texture = ExtResource("19_xyero")
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
@@ -519,12 +520,11 @@ expand_margin_right = 6.0
 expand_margin_bottom = 6.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hl5e0"]
-texture = ExtResource("25_vr8o3")
+texture = ExtResource("17_hstxw")
 texture_margin_left = 7.23112
 texture_margin_top = 6.15916
 texture_margin_right = 7.10526
 texture_margin_bottom = 6.35011
-region_rect = Rect2(3.74447, 3.87338, 24.3326, 23.2838)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_engjn"]
 texture = ExtResource("26_1a85y")
@@ -888,7 +888,6 @@ layout_mode = 2
 text = "Health:"
 
 [node name="CharacterSelection" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -898,7 +897,8 @@ grow_vertical = 2
 pivot_offset = Vector2(320, 180)
 theme_override_styles/panel = SubResource("StyleBoxTexture_hl5e0")
 
-[node name="CharacterPortrait" type="TextureRect" parent="CharacterSelection"]
+[node name="Portrait" type="TextureRect" parent="CharacterSelection"]
+unique_name_in_owner = true
 z_as_relative = false
 layout_mode = 1
 anchors_preset = 5
@@ -939,10 +939,10 @@ characters = Array[ExtResource("29_ip0br")]([ExtResource("30_xyero"), ExtResourc
 [node name="Panel" type="Panel" parent="CharacterSelection"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 0
-offset_left = 296.0
-offset_top = 191.0
-offset_right = 344.0
-offset_bottom = 239.0
+offset_left = 489.0
+offset_top = 215.0
+offset_right = 537.0
+offset_bottom = 263.0
 
 [node name="StartingWeapon" type="TextureRect" parent="CharacterSelection/Panel"]
 unique_name_in_owner = true
@@ -956,17 +956,20 @@ stretch_mode = 5
 [node name="Label" type="Label" parent="CharacterSelection/Panel/StartingWeapon"]
 layout_mode = 0
 offset_left = -41.0
-offset_top = 38.0
+offset_top = -34.0
 offset_right = 88.0
-offset_bottom = 61.0
+offset_bottom = -11.0
 text = "Character Name"
 
 [node name="Start" type="Button" parent="CharacterSelection"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 488.0
 offset_top = 285.0
 offset_right = 530.0
 offset_bottom = 312.0
+focus_mode = 0
+theme = ExtResource("34_tcusk")
 theme_override_font_sizes/font_size = 16
 text = "Start"
 script = ExtResource("18_a8gd2")

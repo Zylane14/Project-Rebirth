@@ -1039,7 +1039,7 @@ offset_top = 24.0
 offset_right = 28.5
 offset_bottom = 47.0
 grow_horizontal = 2
-text = "Paused"
+text = "Total Damage"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, -5)
