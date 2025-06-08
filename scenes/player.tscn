@@ -24,15 +24,6 @@
 [ext_resource type="Texture2D" uid="uid://ddjxw2ftebndw" path="res://assets/main-character-of-the-story/MainCharacter(FullPack)/MainCharacter(FullPack-v1)/MainChar - dash(start).png" id="20_i4ail"]
 [ext_resource type="Texture2D" uid="uid://c0bvoj6tmik18" path="res://assets/main-character-of-the-story/MainCharacter(FullPack)/MainCharacter(FullPack-v1)/MainChar - walk.png" id="21_i4ail"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_oprun"]
-font_size = 12
-
-[sub_resource type="LabelSettings" id="LabelSettings_a8ls1"]
-font_size = 12
-
-[sub_resource type="LabelSettings" id="LabelSettings_qfm1y"]
-font_size = 12
-
 [sub_resource type="Gradient" id="Gradient_d2wvv"]
 offsets = PackedFloat32Array(0.868182, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.403922)
@@ -181,6 +172,15 @@ expand_margin_bottom = 1.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l71n6"]
 texture = ExtResource("16_4ni07")
+
+[sub_resource type="LabelSettings" id="LabelSettings_oprun"]
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_a8ls1"]
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_qfm1y"]
+font_size = 12
 
 [sub_resource type="Animation" id="Animation_qfm1y"]
 length = 0.001
@@ -638,60 +638,6 @@ character = ExtResource("2_i4ail")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="Debug" type="VBoxContainer" parent="UI"]
-offset_left = 26.0
-offset_top = 91.0
-offset_right = 66.0
-offset_bottom = 168.0
-
-[node name="Might" type="Label" parent="UI/Debug"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Might: 1"
-label_settings = SubResource("LabelSettings_oprun")
-
-[node name="Armor" type="Label" parent="UI/Debug"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Armor: 0"
-label_settings = SubResource("LabelSettings_a8ls1")
-
-[node name="Recovery" type="Label" parent="UI/Debug"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Recovery: 0"
-label_settings = SubResource("LabelSettings_qfm1y")
-
-[node name="MagnetL" type="Label" parent="UI/Debug"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Magnet: 0"
-label_settings = SubResource("LabelSettings_qfm1y")
-
-[node name="HealthL" type="Label" parent="UI/Debug"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Health : 0"
-label_settings = SubResource("LabelSettings_qfm1y")
-
-[node name="Area" type="Label" parent="UI/Debug"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Area: 0"
-label_settings = SubResource("LabelSettings_qfm1y")
-
-[node name="AmplifyAttack" type="Label" parent="UI/Debug"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Amplify Attack: 0"
-label_settings = SubResource("LabelSettings_qfm1y")
-
-[node name="Luck" type="Label" parent="UI/Debug"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Luck : 0"
-label_settings = SubResource("LabelSettings_qfm1y")
-
 [node name="Gold" type="Label" parent="UI"]
 unique_name_in_owner = true
 offset_left = 25.0
@@ -1011,6 +957,61 @@ offset_bottom = 120.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_l71n6")
+
+[node name="Debug" type="VBoxContainer" parent="UI/Report/Panel"]
+layout_mode = 0
+offset_left = 219.0
+offset_top = 57.0
+offset_right = 317.0
+offset_bottom = 221.0
+
+[node name="Might" type="Label" parent="UI/Report/Panel/Debug"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Might: 1"
+label_settings = SubResource("LabelSettings_oprun")
+
+[node name="Armor" type="Label" parent="UI/Report/Panel/Debug"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Armor: 0"
+label_settings = SubResource("LabelSettings_a8ls1")
+
+[node name="Recovery" type="Label" parent="UI/Report/Panel/Debug"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Recovery: 0"
+label_settings = SubResource("LabelSettings_qfm1y")
+
+[node name="MagnetL" type="Label" parent="UI/Report/Panel/Debug"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Magnet: 0"
+label_settings = SubResource("LabelSettings_qfm1y")
+
+[node name="HealthL" type="Label" parent="UI/Report/Panel/Debug"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Health : 0"
+label_settings = SubResource("LabelSettings_qfm1y")
+
+[node name="Area" type="Label" parent="UI/Report/Panel/Debug"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Area: 0"
+label_settings = SubResource("LabelSettings_qfm1y")
+
+[node name="AmplifyAttack" type="Label" parent="UI/Report/Panel/Debug"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Amplify Attack: 0"
+label_settings = SubResource("LabelSettings_qfm1y")
+
+[node name="Luck" type="Label" parent="UI/Report/Panel/Debug"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Luck : 0"
+label_settings = SubResource("LabelSettings_qfm1y")
 
 [node name="Text" type="RichTextLabel" parent="UI/Report/Panel"]
 custom_minimum_size = Vector2(420, 200)

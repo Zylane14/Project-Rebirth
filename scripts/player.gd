@@ -8,8 +8,9 @@ var health : float = 100: #makes health a setter variable to updates progress ba
 		%Health.value = value
 		if health <= 0:
 			die() #pause the game when health reaches 0
+			show_game_over_screen()
 
-var movement_speed : float = 150
+var movement_speed : float = 100
 var max_health : float = 100: #property for max_health
 	set(value):
 		max_health = value
@@ -71,6 +72,7 @@ var level : int = 1: #variable to store player level
 		elif level >= 7:
 			%XP.max_value = 40
 
+var game_over_screen = preload("res://scenes/GameOver.tscn").instantiate()
 
 func _ready() -> void:
 	
@@ -109,6 +111,12 @@ func die():
 	set_physics_process(false) # disables _physics_process
 	$Sprite2D.visible = true # ensure sprite is visible
 	await $AnimationPlayer.animation_finished
+	
+func show_game_over_screen():
+	await $AnimationPlayer.animation_finished
+	var game_over = preload("res://scenes/GameOver.tscn").instantiate()
+	add_child(game_over)
+	get_tree().paused = true  #pause the game
 	
 
 func _on_timer_timeout(): #disable and enable with each timeout

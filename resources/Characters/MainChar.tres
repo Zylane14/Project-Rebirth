@@ -9,9 +9,9 @@
 [sub_resource type="Resource" id="Resource_s7l6c"]
 script = ExtResource("1_8lqxd")
 description = ""
-max_health = 0.0
-recovery = 0.0
-armor = 0.0
+max_health = 20.0
+recovery = 0.1
+armor = 0.3
 movement_speed = 0.0
 might = 0.0
 area = 0.0

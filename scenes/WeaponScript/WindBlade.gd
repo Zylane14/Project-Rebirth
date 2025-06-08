@@ -1,7 +1,7 @@
 extends Weapon
 class_name WindBlade
 
-@export var area : float = 1.0
+@export var area : float = 1
 @export var amount : int = 1
 @export var reversible : bool = false
 @export var delay : float = 0.3
