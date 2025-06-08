@@ -9,9 +9,12 @@
 script = ExtResource("1_e58ni")
 title = "Cyclops"
 texture = ExtResource("2_watds")
-health = 25.0
+health = 40.0
 damage = 13.0
 speed = 50.0
 frames = 8
 drops = Array[ExtResource("1_g45f2")]([ExtResource("2_g45f2")])
+spawn_weight = 3.0
+unlock_minute = 6
+enemy_class = 2
 metadata/_custom_type_script = "uid://brq1oadyao0po"

@@ -68,15 +68,13 @@ func check_seperation(_delta):
 		player_reference.nearest_enemy = self
 
 
-
 func knockback_update(delta):
 	velocity = (player_reference.position - position).normalized() * speed
 	knockback = knockback.move_toward(Vector2.ZERO, 1) #knockback decay over time
 	velocity += knockback
 	var collider = move_and_collide(velocity * delta)
 	if collider: #apply knockback to bodies colliding with the enemy
-		collider.get_collider().knockback = (collider.get_collider().global_position -
-		global_position).normalized() * 50
+		collider.get_collider().knockback = (collider.get_collider().global_position - global_position).normalized() * 50
 
 
 #function to instantiate damage popup and add it to scene tree
@@ -88,6 +86,23 @@ func damage_popup(amount, modifier = 1.0):
 		ParticleFX.add_effect("blood", position)
 		popup.set("theme_override_colors/font_color", Color.DARK_RED) #change font color to red if modifier > 1.0
 	get_tree().current_scene.add_child(popup)
+
+func apply_buff(minute: int):
+	# Buff multipliers per minute
+	var health_multiplier := 1.0 + (minute * 0.25)   # +25% health per minute
+	var speed_multiplier := 1.0 + (minute * 0.01)   # +1% speed per minute
+	var damage_multiplier := 1.0 + (minute * 0.1)  # +10% damage per minute
+	
+	# Scale base values from the Enemy resource
+	health = type.health * health_multiplier
+	speed = type.speed * speed_multiplier
+	damage = type.damage * damage_multiplier
+	
+	if elite:
+		# Elite enemies get extra multipliers
+		health *= 5.0
+		speed *= 1.1
+		damage *= 2.5
 
 
 #function for enemy to take damage

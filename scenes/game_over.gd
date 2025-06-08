@@ -1,8 +1,6 @@
 extends CanvasLayer
 
 @onready var anim = $AnimationPlayer
-@onready var restart_button = $VBoxContainer/Restart
-@onready var menu_button = $VBoxContainer/Menu
 
 func _ready():
 	anim.play("fade_in")

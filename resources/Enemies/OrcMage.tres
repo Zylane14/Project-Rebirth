@@ -9,9 +9,12 @@
 script = ExtResource("3_vh51q")
 title = "OrcMage"
 texture = ExtResource("4_idlhn")
-health = 15.0
+health = 20.0
 damage = 10.0
 speed = 70.0
 frames = 8
 drops = Array[ExtResource("1_idlhn")]([ExtResource("2_j8ncs")])
+spawn_weight = 7.0
+unlock_minute = 5
+enemy_class = 4
 metadata/_custom_type_script = "uid://brq1oadyao0po"
