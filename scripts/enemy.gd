@@ -119,25 +119,32 @@ func take_damage(amount):
 	health -= amount * modifier #health will get reduced from take damage function
 
 func drop_item():
-	if type.drops.size() == 0:
-		return 
-	
-	var item = type.drops.pick_random() #function to drop item, first pick a random pickups from the array
-	if elite:
-		item = load("res://resources/Pickups/Chest.tres") #item drop will be a chest if it's an elite enemy
-	
-	
-	var item_to_drop = drop.instantiate() #instantiate pickup node, set resource and reference
-	
-	item_to_drop.type = item
-	item_to_drop.position = position
-	item_to_drop.player_reference = player_reference
-	
-	get_tree().current_scene.call_deferred("add_child", item_to_drop) #add to scene tree
-	
+	# Drop a random item if defined
+	if type.drops.size() > 0:
+		var item = type.drops.pick_random()
+		if elite:
+			item = load("res://resources/Pickups/Chest.tres")  # Drop chest if elite
+
+		var item_to_drop = drop.instantiate()
+		item_to_drop.type = item
+		item_to_drop.position = position
+		item_to_drop.player_reference = player_reference
+		get_tree().current_scene.call_deferred("add_child", item_to_drop)
+
+	# 💰 Gold drop chance
+	var gold_drop_chance := 0.3  # 50% chance to drop gold
+	if randf() < gold_drop_chance:
+		var gold_resource = load("res://resources/Pickups/Gold.tres")  # Make sure this exists
+		var gold_pickup = drop.instantiate()
+		gold_pickup.type = gold_resource
+		gold_pickup.position = position + Vector2(randf_range(-16, 16), randf_range(-16, 16))
+		gold_pickup.player_reference = player_reference
+		get_tree().current_scene.call_deferred("add_child", gold_pickup)
+
+	# End-of-life effects
 	disable()
 	await set_shader()
-	queue_free() 
+	queue_free()
 
 func set_shader_value(value: float):
 	$Sprite2D.material.set_shader_parameter("dissolve_value", value)

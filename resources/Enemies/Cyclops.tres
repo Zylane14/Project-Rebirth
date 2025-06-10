@@ -14,6 +14,7 @@ damage = 13.0
 speed = 50.0
 frames = 8
 drops = Array[ExtResource("1_g45f2")]([ExtResource("2_g45f2")])
+gold = 30
 spawn_weight = 3.0
 unlock_minute = 6
 enemy_class = 2

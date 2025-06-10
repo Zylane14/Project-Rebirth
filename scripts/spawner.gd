@@ -10,6 +10,7 @@ extends Node2D
 var distance : float = 400
 var can_spawn : bool = true #flag variable for spawning
 var unlocked_enemy_types: Array[Enemy] = []
+var gold_drop = preload("res://scenes/Gold.gd")
 
 # Time tracking
 var minute : int:
@@ -51,6 +52,7 @@ func spawn(pos : Vector2, elite : bool = false):
 
 func update_unlocked_enemies():
 	var unlock_interval = 1  #every 1 minute, unlock a new enemy type
+	@warning_ignore("integer_division")
 	var num_to_unlock = clamp(floor(minute / unlock_interval) + 1, 1, enemy_types.size())
 
 	unlocked_enemy_types.clear()

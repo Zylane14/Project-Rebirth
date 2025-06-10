@@ -14,6 +14,7 @@ damage = 10.0
 speed = 70.0
 frames = 8
 drops = Array[ExtResource("1_idlhn")]([ExtResource("2_j8ncs")])
+gold = 25
 spawn_weight = 7.0
 unlock_minute = 5
 enemy_class = 4

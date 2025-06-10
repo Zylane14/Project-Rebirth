@@ -4,8 +4,6 @@ extends CharacterBody2D
 @export var ghost_node : PackedScene
 @onready var ghost_timer: Timer = $GhostTimer
 
-var game_over_screen = preload("res://scenes/GameOver.tscn").instantiate()
-
 var health : float = 100: #makes health a setter variable to updates progress bar
 	set(value):
 		health = max(value, 0) #minimum value of health should be 0
@@ -179,10 +177,12 @@ func _on_ghost_timer_timeout() -> void:
 
 func dash():
 	ghost_timer.start()
+	%Collision.set_deferred("disabled", true)  # Disable collisions
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position", position + velocity * 1.0, 0.15) #<- duration should be multiple of timer's time wait time
+	tween.tween_property(self, "position", position + velocity * 1.0, 0.15) #1.2 = Distance, 0.15 = Duration, duration should be multiple of timer's time wait time
 	
 	await tween.finished
+	%Collision.set_deferred("disabled", false) # Re-enable collisions
 	ghost_timer.stop()
 
 func _input(event):

@@ -97,10 +97,6 @@ offset_bottom = 160.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Restart" type="Button" parent="Background/VBoxContainer"]
-layout_mode = 2
-text = "Restart"
-
 [node name="Menu" type="Button" parent="Background/VBoxContainer"]
 layout_mode = 2
 text = "Menu"
@@ -114,5 +110,4 @@ libraries = {
 stream = ExtResource("2_qae0b")
 autoplay = true
 
-[connection signal="pressed" from="Background/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/Menu" to="." method="_on_menu_pressed"]

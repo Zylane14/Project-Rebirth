@@ -6,4 +6,5 @@ func _on_pressed():
 	Persistence.character = null
 	SaveData.gold += owner.gold
 	SaveData.set_and_save() #save changes before switching scene
+	AudioController.bg_music.stop()
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

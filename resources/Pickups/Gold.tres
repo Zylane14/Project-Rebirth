@@ -6,10 +6,10 @@
 
 [resource]
 script = ExtResource("2_fm0yb")
-gold = 5
+gold = 10
 title = "Gold"
 icon = ExtResource("1_6hpao")
-description = "+5 Gold"
+description = "+10 Gold"
 sound = ExtResource("3_fm0yb")
 weight = 10.0
 metadata/_custom_type_script = "uid://csixs0ikw2obv"

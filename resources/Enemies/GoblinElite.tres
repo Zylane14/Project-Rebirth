@@ -14,6 +14,7 @@ damage = 4.0
 speed = 120.0
 frames = 6
 drops = Array[ExtResource("1_pltqi")]([ExtResource("2_3oqdy")])
+gold = 6
 spawn_weight = 7.0
 unlock_minute = 2
 enemy_class = 5

@@ -8,6 +8,7 @@ class_name Enemy
 @export var speed : float
 @export var frames : int = 1
 @export var drops : Array[Pickups]
+@export var gold : int = 0
 
 @export var spawn_weight: float = 1.0
 @export var unlock_minute: int = 0 
