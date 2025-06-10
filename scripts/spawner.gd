@@ -101,9 +101,9 @@ func amount(number : int = 1):
 func _on_timer_timeout():
 	second += 1
 	update_unlocked_enemies()
-	var base_spawn = 10 + minute # Spawns more enemies as time progresses
+	var base_spawn = 15 + minute # Spawns more enemies as time progresses
 	if minute < 3:
-		base_spawn = int(base_spawn * 0.3)  # Spawn only 30% of usual enemies early on
+		base_spawn = int(base_spawn * 0.4)  # Spawn only 30% of usual enemies early on
 	amount(base_spawn)
 
 

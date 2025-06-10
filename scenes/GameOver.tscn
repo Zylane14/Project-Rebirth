@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://y5fsl5w80d51"]
+[gd_scene load_steps=7 format=3 uid="uid://y5fsl5w80d51"]
 
 [ext_resource type="Script" uid="uid://mxso1rx2mwyw" path="res://scenes/game_over.gd" id="1_6bcno"]
+[ext_resource type="AudioStream" uid="uid://brha8uv2hjm7n" path="res://music & sfx/Era of Vampires/Era of Vampires/Tortured_Heart_Loop_Bass.wav" id="2_qae0b"]
 
 [sub_resource type="Animation" id="Animation_qae0b"]
 length = 0.001
@@ -61,12 +62,13 @@ script = ExtResource("1_6bcno")
 
 [node name="Background" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)
+z_as_relative = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.0823529, 0.00784314, 0.0392157, 0.513726)
+color = Color(0.239216, 0.00784314, 0.0392157, 0.784314)
 
 [node name="YouDied" type="Label" parent="Background"]
 layout_mode = 1
@@ -107,6 +109,10 @@ text = "Menu"
 libraries = {
 &"": SubResource("AnimationLibrary_vuicl")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_qae0b")
+autoplay = true
 
 [connection signal="pressed" from="Background/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Background/VBoxContainer/Menu" to="." method="_on_menu_pressed"]

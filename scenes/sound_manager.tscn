@@ -3,4 +3,5 @@
 [ext_resource type="Script" uid="uid://ci45hvvhoklum" path="res://scenes/sound_manager.gd" id="1_gbdfy"]
 
 [node name="SoundManager" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_gbdfy")

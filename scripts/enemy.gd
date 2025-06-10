@@ -83,13 +83,13 @@ func damage_popup(amount, modifier = 1.0):
 	popup.text = str(amount * modifier)
 	popup.position = position + Vector2(-50,-25)
 	if modifier > 1.0:
-		ParticleFX.add_effect("blood", position)
+		#ParticleFX.add_effect("blood", position)
 		popup.set("theme_override_colors/font_color", Color.DARK_RED) #change font color to red if modifier > 1.0
 	get_tree().current_scene.add_child(popup)
 
 func apply_buff(minute: int):
 	# Buff multipliers per minute
-	var health_multiplier := 1.0 + (minute * 0.25)   # +25% health per minute
+	var health_multiplier := 1.0 + (minute * 0.3)   # +30% health per minute
 	var speed_multiplier := 1.0 + (minute * 0.01)   # +1% speed per minute
 	var damage_multiplier := 1.0 + (minute * 0.1)  # +10% damage per minute
 	

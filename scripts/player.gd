@@ -1,6 +1,10 @@
 extends CharacterBody2D
 
 @export var character : Character #variable to store character
+@export var ghost_node : PackedScene
+@onready var ghost_timer: Timer = $GhostTimer
+
+var game_over_screen = preload("res://scenes/GameOver.tscn").instantiate()
 
 var health : float = 100: #makes health a setter variable to updates progress bar
 	set(value):
@@ -72,10 +76,7 @@ var level : int = 1: #variable to store player level
 		elif level >= 7:
 			%XP.max_value = 40
 
-var game_over_screen = preload("res://scenes/GameOver.tscn").instantiate()
-
 func _ready() -> void:
-	
 	Persistence.gain_bonus_stats(self) #call the gain bonus stats from persistence when the player node is ready
 	character = Persistence.character #set character, base stats, add starting weapon on ready
 	set_base_stats(character.base_stats)
@@ -96,6 +97,10 @@ func _physics_process(delta):
 	animation(delta)
 	health += recovery * delta #increase health with recovery * delta
 
+func add_ghost():
+	var ghost = ghost_node.instantiate()
+	ghost.set_property(position, $Sprite2D.scale)
+	get_tree().current_scene.add_child(ghost)
 
 #function to reduce health
 func take_damage(amount):
@@ -107,9 +112,9 @@ func _on_self_damage_body_entered(body):
 
 func die():
 	$AnimationPlayer.play("death_" + character.animation_name)
-	set_process(false) # disables _process
-	set_physics_process(false) # disables _physics_process
+	AudioController.bg_music.play()
 	$Sprite2D.visible = true # ensure sprite is visible
+	get_tree().paused = true
 	await $AnimationPlayer.animation_finished
 	
 func show_game_over_screen():
@@ -167,3 +172,19 @@ func set_base_stats(base_stats : Stats): #function to gain base stats from the c
 	
 func _on_back_pressed() -> void:
 	pass # Replace with function body.
+
+
+func _on_ghost_timer_timeout() -> void:
+	add_ghost()
+
+func dash():
+	ghost_timer.start()
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "position", position + velocity * 1.0, 0.15) #<- duration should be multiple of timer's time wait time
+	
+	await tween.finished
+	ghost_timer.stop()
+
+func _input(event):
+	if event.is_action_pressed("dash"):
+		dash()

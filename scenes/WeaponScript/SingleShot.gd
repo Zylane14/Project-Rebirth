@@ -3,7 +3,7 @@ class_name SingleShotd
 
 #declares a function shoot
 func shoot(source, target, scene_tree):
-	if target == null or scene_tree.paused == true: #it will only shoow when it's not paused
+	if target == null or scene_tree.paused == true: #it will only shoot when it's not paused
 		return
 	
 	SoundManager.play_sfx(sound) #call the sound effect
