@@ -11,7 +11,7 @@ class_name Enemy
 @export var gold : int = 0
 
 @export var spawn_weight: float = 1.0
-@export var unlock_minute: int = 0 
+@export var unlock_minute: float = 0.0 
 
 enum EnemyClass { MELEE, RANGED, BRAWLER, TANK, MAGE, ASSASSIN }
 @export var enemy_class: EnemyClass = EnemyClass.MELEE

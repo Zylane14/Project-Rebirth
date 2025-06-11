@@ -16,6 +16,6 @@ frames = 8
 drops = Array[ExtResource("1_idlhn")]([ExtResource("2_j8ncs")])
 gold = 25
 spawn_weight = 7.0
-unlock_minute = 5
+unlock_minute = 3.2
 enemy_class = 4
 metadata/_custom_type_script = "uid://brq1oadyao0po"

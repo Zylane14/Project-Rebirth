@@ -7,7 +7,9 @@ extends CharacterBody2D
 @export var dash_distance := 180.0
 @export var dash_duration := 0.4
 @export var dash_cooldown := 0.3
+
 var can_dash := true
+var last_move_dir := Vector2.RIGHT  # Default to RIGHT or any direction you prefer
 
 var health : float = 100: #makes health a setter variable to updates progress bar
 	set(value):
@@ -17,11 +19,16 @@ var health : float = 100: #makes health a setter variable to updates progress ba
 			die() #pause the game when health reaches 0
 			show_game_over_screen()
 
-var movement_speed : float = 100
+var movement_speed : float = 120:
+	set(value):
+		movement_speed = value
+		%MovementSpeed.text = "Movement Speed : " + str(value)
+	
 var max_health : float = 100: #property for max_health
 	set(value):
 		max_health = value
 		%Health.max_value = value #setter variable to change max value of the progress bar
+		%HealthMax.text = "Max Health : " + str(value)
 var recovery : float = 0:
 	set(value):
 		recovery = value
@@ -45,7 +52,7 @@ var magnet : float = 0: #pickup range
 		%MagnetL.text = "Magnet : " + str(value)
 var growth : float = 1: #growth property
 	set(value):
-		area = value
+		growth = value
 		%AmplifyAttack.text = "Amplify Attack : " + str(value)
 var luck : float = 2.5:
 	set(value):
@@ -86,11 +93,16 @@ func _ready() -> void:
 	Persistence.gain_bonus_stats(self) #call the gain bonus stats from persistence when the player node is ready
 	character = Persistence.character #set character, base stats, add starting weapon on ready
 	set_base_stats(character.base_stats)
+	%XP.max_value = get_xp_needed(level)
 	%Options.check_item(character.starting_weapon) #adds weapon if not available
+	update_xp_ui()
 
 func _physics_process(delta):
 	if is_dashing:
 		return  # Skip movement during dash
+	
+	if velocity != Vector2.ZERO:
+		last_move_dir = velocity.normalized()
 		
 	if is_instance_valid(nearest_enemy):
 		nearest_enemy_distance = nearest_enemy.seperation #if nearest enemy is not null, sotre its seperation
@@ -137,15 +149,26 @@ func _on_timer_timeout(): #disable and enable with each timeout
 	%Collision.set_deferred("disabled", true)
 	%Collision.set_deferred("disabled", false)
 
+func update_xp_ui():
+	%XP.max_value = get_xp_needed(level)
+	%XP.value = XP
+	%XPLabel.text = "XP: %d / %d" % [XP, get_xp_needed(level)]
+	
 func gain_XP(amount): #function to gain XP
 	XP += amount * growth
 	total_XP += amount * growth
+	update_xp_ui()
 
-func check_XP(): #function to check XP and increase level
-	if XP > %XP.max_value:
-		XP -= %XP.max_value
+func check_XP():
+	while XP >= get_xp_needed(level):
+		XP -= get_xp_needed(level)
 		level += 1
+	update_xp_ui()
 
+func get_xp_needed(lvl: int) -> int:
+	# Example formula: XP needed grows quadratically
+	return int(20 + pow(lvl, 1.5) * 10)
+	
 
 func _on_magnet_area_entered(pickup_area):
 	if pickup_area.has_method("follow"): #call the follow function from pickup
@@ -195,10 +218,14 @@ func dash():
 	ghost_timer.start()
 	%Collision.set_deferred("disabled", true)
 	$AnimationPlayer.play("dash_" + character.animation_name)
-	SoundManager.play_sfx(load("res://music & sfx/RPG_Essentials_Free/8_Atk_Magic_SFX/25_Wind_01.wav"))
+	SoundManager.play_sfx(load("res://music & sfx/RPG_Essentials_Free/8_Atk_Magic_SFX/Wind_02.wav"))
 
 	# Normalize direction to avoid scaling issues
-	var dash_vector = velocity.normalized() * dash_distance
+	var dash_dir = velocity.normalized()
+	if dash_dir == Vector2.ZERO:
+		dash_dir = last_move_dir  # fallback if player isn't moving
+
+	var dash_vector = dash_dir * dash_distance
 	var target_position = position + dash_vector
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "position", target_position, dash_duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)

@@ -22,8 +22,8 @@ var minute : int:
 var second : int:
 	set(value):
 		second = value
-		if second >= 10:
-			second -= 10
+		if second >= 60:
+			second -= 60
 			minute += 1
 		%Second.text = str(second).lpad(2,'0') #padding to the left
 
@@ -66,7 +66,7 @@ func pick_weighted_enemy_type() -> Enemy: #function to pick a random enemy type 
 	var total_weight: float = 0.0
 
 	for enemy_type in enemy_types:
-		if minute >= enemy_type.unlock_minute:
+		if (minute + float(second) / 60.0) >= enemy_type.unlock_minute:
 			# Increase spawn weight gradually over time
 			var scaled_weight = enemy_type.spawn_weight * (1.0 + (minute - enemy_type.unlock_minute) * 0.1)
 			weighted_list.append(enemy_type)
