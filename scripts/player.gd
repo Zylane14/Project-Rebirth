@@ -4,6 +4,11 @@ extends CharacterBody2D
 @export var ghost_node : PackedScene
 @onready var ghost_timer: Timer = $GhostTimer
 
+@export var dash_distance := 180.0
+@export var dash_duration := 0.4
+@export var dash_cooldown := 0.3
+var can_dash := true
+
 var health : float = 100: #makes health a setter variable to updates progress bar
 	set(value):
 		health = max(value, 0) #minimum value of health should be 0
@@ -74,6 +79,9 @@ var level : int = 1: #variable to store player level
 		elif level >= 7:
 			%XP.max_value = 40
 
+var is_dashing: bool = false
+
+
 func _ready() -> void:
 	Persistence.gain_bonus_stats(self) #call the gain bonus stats from persistence when the player node is ready
 	character = Persistence.character #set character, base stats, add starting weapon on ready
@@ -81,6 +89,9 @@ func _ready() -> void:
 	%Options.check_item(character.starting_weapon) #adds weapon if not available
 
 func _physics_process(delta):
+	if is_dashing:
+		return  # Skip movement during dash
+		
 	if is_instance_valid(nearest_enemy):
 		nearest_enemy_distance = nearest_enemy.seperation #if nearest enemy is not null, sotre its seperation
 		print(nearest_enemy.name)
@@ -88,12 +99,12 @@ func _physics_process(delta):
 		nearest_enemy_distance = 150 + area #update nearest distance in physics process
 		nearest_enemy = null #for resetting reference
 	
-	velocity = Input.get_vector("left","right","up","down") * movement_speed
+	velocity = Input.get_vector("left", "right", "up", "down") * movement_speed
 	move_and_collide(velocity * delta)
-	
+
 	check_XP()
 	animation(delta)
-	health += recovery * delta #increase health with recovery * delta
+	health += recovery * delta
 
 func add_ghost():
 	var ghost = ghost_node.instantiate()
@@ -176,14 +187,29 @@ func _on_ghost_timer_timeout() -> void:
 	add_ghost()
 
 func dash():
-	ghost_timer.start()
-	%Collision.set_deferred("disabled", true)  # Disable collisions
-	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position", position + velocity * 1.0, 0.15) #1.2 = Distance, 0.15 = Duration, duration should be multiple of timer's time wait time
+	if is_dashing or not can_dash:
+		return
 	
+	is_dashing = true
+	can_dash = false
+	ghost_timer.start()
+	%Collision.set_deferred("disabled", true)
+	$AnimationPlayer.play("dash_" + character.animation_name)
+	SoundManager.play_sfx(load("res://music & sfx/RPG_Essentials_Free/8_Atk_Magic_SFX/25_Wind_01.wav"))
+
+	# Normalize direction to avoid scaling issues
+	var dash_vector = velocity.normalized() * dash_distance
+	var target_position = position + dash_vector
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "position", target_position, dash_duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	await tween.finished
-	%Collision.set_deferred("disabled", false) # Re-enable collisions
+	
+	%Collision.set_deferred("disabled", false)
 	ghost_timer.stop()
+	is_dashing = false
+
+	await get_tree().create_timer(dash_cooldown).timeout
+	can_dash = true
 
 func _input(event):
 	if event.is_action_pressed("dash"):

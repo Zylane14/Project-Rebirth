@@ -89,7 +89,7 @@ func damage_popup(amount, modifier = 1.0):
 
 func apply_buff(minute: int):
 	# Buff multipliers per minute
-	var health_multiplier := 1.0 + (minute * 0.3)   # +30% health per minute
+	var health_multiplier := 1.0 + (minute * 0.35)   # +35% health per minute
 	var speed_multiplier := 1.0 + (minute * 0.01)   # +1% speed per minute
 	var damage_multiplier := 1.0 + (minute * 0.1)  # +10% damage per minute
 	
