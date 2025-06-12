@@ -24,11 +24,18 @@ var movement_speed : float = 120:
 		movement_speed = value
 		%MovementSpeed.text = "Movement Speed : " + str(value)
 	
-var max_health : float = 100: #property for max_health
+var max_health : float = 100:
 	set(value):
+		var delta = value - max_health
 		max_health = value
-		%Health.max_value = value #setter variable to change max value of the progress bar
+		%Health.max_value = value
 		%HealthMax.text = "Max Health : " + str(value)
+		
+		if delta > 0:
+			# Optionally heal proportionally to new max
+			health += delta
+			health = min(health, max_health)
+	
 var recovery : float = 0:
 	set(value):
 		recovery = value

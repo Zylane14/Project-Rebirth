@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 #variable to store player reference, direction, and speed
 @export var player_reference : CharacterBody2D
+@export var buff_interval := 30.0
 var damage_popup_node = preload("res://scenes/damage.tscn") #loads the damage popup to the enemy
 var direction : Vector2
 var speed : float
@@ -10,6 +11,9 @@ var knockback : Vector2 #adds knockback
 var seperation : float
 
 var drop = preload("res://scenes/pickups.tscn") #preloads pickup scene
+
+var buff_timer : float = 0.0
+var buff_stage: int = 0
 
 var health : float:
 	set(value):
@@ -44,6 +48,10 @@ func _physics_process(delta):
 	animation(delta) #call the animation function to enemy script physics process
 	check_seperation(delta)
 	knockback_update(delta)
+	
+	if buff_stage < GlobalManager.global_buff_stage:
+		buff_stage = GlobalManager.global_buff_stage
+		apply_buff(buff_stage)
 
 func animation(delta): #function animation that will flip sprite in the direction of player
 	if (player_reference.position.x - position.x) < 0:
@@ -87,22 +95,19 @@ func damage_popup(amount, modifier = 1.0):
 		popup.set("theme_override_colors/font_color", Color.DARK_RED) #change font color to red if modifier > 1.0
 	get_tree().current_scene.add_child(popup)
 
-func apply_buff(minute: int):
-	# Buff multipliers per minute
-	var health_multiplier := 1.0 + (minute * 0.35)   # +35% health per minute
-	var speed_multiplier := 1.0 + (minute * 0.01)   # +1% speed per minute
-	var damage_multiplier := 1.0 + (minute * 0.1)  # +10% damage per minute
-	
-	# Scale base values from the Enemy resource
+func apply_buff(stage: int):
+	var health_multiplier := pow(1.1, stage)   #Health increases by 10% each stage
+	var damage_multiplier := pow(1.1, stage)   #Damage increases by 10% each stage
+	var speed_multiplier := pow(1.02, stage)   #Speed increases by 2% each stage
+
 	health = type.health * health_multiplier
 	speed = type.speed * speed_multiplier
 	damage = type.damage * damage_multiplier
-	
+
 	if elite:
-		# Elite enemies get extra multipliers
-		health *= 5.0
-		speed *= 1.1
-		damage *= 2.5
+		health *= 10.0 #5x more health for elites
+		speed *= 1.1 #10% faster
+		damage *= 2.5 #2.5x more damage
 
 
 #function for enemy to take damage

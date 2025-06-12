@@ -29,6 +29,7 @@ ParticleFX="*res://scenes/particle_fx.tscn"
 ShaderPool="*res://scenes/shader_pool.tscn"
 MusicManager="*res://scenes/MusicManager.gd"
 AudioController="*res://scenes/audio_controller.tscn"
+GlobalManager="*res://scripts/GlobalManager.gd"
 
 [dialogic]
 
