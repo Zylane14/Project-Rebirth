@@ -3,10 +3,14 @@ extends CharacterBody2D
 #variable to store player reference, direction, and speed
 @export var player_reference : CharacterBody2D
 @export var buff_interval := 30.0
+@onready var health_bar = $HealthBar
+@onready var health_bar_timer = Timer.new()
+
 var damage_popup_node = preload("res://scenes/damage.tscn") #loads the damage popup to the enemy
 var direction : Vector2
 var speed : float
 var damage : float
+var max_health: float
 var knockback : Vector2 #adds knockback
 var seperation : float
 
@@ -15,11 +19,14 @@ var drop = preload("res://scenes/pickups.tscn") #preloads pickup scene
 var buff_timer : float = 0.0
 var buff_stage: int = 0
 
+
 var health : float:
 	set(value):
 		health = value
-		if health <= 0: #when health reaches 0, free the enemy from memory
-			drop_item() #enemy will drop item when hp reaches 0
+		if health_bar:
+			health_bar.value = health
+		if health <= 0:
+			drop_item()
 
 var elite : bool = false:
 	set(value):
@@ -42,7 +49,16 @@ var type : Enemy:
 var duration : float = 0
 var FPS : int = 10
 
-
+func _hide_health_bar():
+	if health_bar:
+		health_bar.visible = false
+		
+func _ready():
+	add_child(health_bar_timer)
+	health_bar_timer.one_shot = true
+	health_bar_timer.wait_time = 1.5
+	health_bar_timer.timeout.connect(_hide_health_bar)
+	
 #Enemy moves toward player position
 func _physics_process(delta):
 	animation(delta) #call the animation function to enemy script physics process
@@ -100,14 +116,17 @@ func apply_buff(stage: int):
 	var damage_multiplier := pow(1.1, stage)   #Damage increases by 10% each stage
 	var speed_multiplier := pow(1.02, stage)   #Speed increases by 2% each stage
 
-	health = type.health * health_multiplier
+
 	speed = type.speed * speed_multiplier
 	damage = type.damage * damage_multiplier
-
+	max_health = type.health * health_multiplier
+	
 	if elite:
-		health *= 10.0 #5x more health for elites
+		max_health *= 10.0 #5x more health for elites
 		speed *= 1.1 #10% faster
 		damage *= 2.5 #2.5x more damage
+		
+		health = max_health
 
 
 #function for enemy to take damage
@@ -122,6 +141,19 @@ func take_damage(amount):
 	
 	damage_popup(amount, modifier)
 	health -= amount * modifier #health will get reduced from take damage function
+	
+# Show and update health bar
+	if health_bar:
+		if not health_bar.visible:
+			health_bar.visible = true
+		health_bar.max_value = max_health
+		health_bar.value = health
+	
+	if health_bar_timer.is_stopped():
+		health_bar_timer.start()
+	else:
+		health_bar_timer.stop()
+		health_bar_timer.start()
 
 func drop_item():
 	# Drop a random item if defined

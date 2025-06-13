@@ -125,6 +125,7 @@ func _physics_process(delta):
 	animation(delta)
 	health += recovery * delta
 
+
 func add_ghost():
 	var ghost = ghost_node.instantiate()
 	ghost.set_property(position, $Sprite2D.scale)
@@ -133,8 +134,7 @@ func add_ghost():
 #function to reduce health
 func take_damage(amount):
 	health -= max(amount * (amount/(amount + armor)), 1) #making defense additive
-
-
+	
 func _on_self_damage_body_entered(body):
 	take_damage(body.damage) #reduce health with enemy damage
 
