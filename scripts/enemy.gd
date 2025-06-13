@@ -18,6 +18,7 @@ var drop = preload("res://scenes/pickups.tscn") #preloads pickup scene
 
 var buff_timer : float = 0.0
 var buff_stage: int = 0
+var is_dead := false
 
 
 var health : float:
@@ -61,6 +62,9 @@ func _ready():
 	
 #Enemy moves toward player position
 func _physics_process(delta):
+	if is_dead:
+		return  # Stop all processing if dead
+		
 	animation(delta) #call the animation function to enemy script physics process
 	check_seperation(delta)
 	knockback_update(delta)
@@ -156,6 +160,11 @@ func take_damage(amount):
 		health_bar_timer.start()
 
 func drop_item():
+	if is_dead:
+		return  # Prevent duplicate calls
+
+	is_dead = true  #mark as dead
+	
 	# Drop a random item if defined
 	if type.drops.size() > 0:
 		var item = type.drops.pick_random()
@@ -180,6 +189,13 @@ func drop_item():
 
 	# End-of-life effects
 	disable()
+
+	if has_node("AnimationPlayer"):
+		var anim_name = "death_" + type.animation_name
+		if $AnimationPlayer.has_animation(anim_name):
+			$AnimationPlayer.play(anim_name)
+			await $AnimationPlayer.animation_finished
+
 	await set_shader()
 	queue_free()
 
@@ -197,3 +213,4 @@ func set_shader():
 func disable(): #disable functionality of the enemy
 	speed = 0
 	$CollisionShape2D.set_deferred("disabled", true)
+	knockback = Vector2.ZERO

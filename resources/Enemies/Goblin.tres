@@ -8,6 +8,7 @@
 [resource]
 script = ExtResource("1_8hu17")
 title = "Goblin"
+animation_name = "Goblin"
 texture = ExtResource("4_op2jl")
 health = 10.0
 damage = 10.0

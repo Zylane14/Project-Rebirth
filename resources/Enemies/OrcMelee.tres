@@ -8,6 +8,7 @@
 [resource]
 script = ExtResource("3_373bf")
 title = "OrcMelee"
+animation_name = "OrcMelee"
 texture = ExtResource("4_jubfm")
 health = 30.0
 damage = 6.0

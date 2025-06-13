@@ -8,6 +8,7 @@
 [resource]
 script = ExtResource("1_ts7x5")
 title = "Golem"
+animation_name = "Golem"
 texture = ExtResource("4_q05k0")
 health = 300.0
 damage = 30.0
