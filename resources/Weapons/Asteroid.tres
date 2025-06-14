@@ -15,7 +15,7 @@ angular_speed = 0.0
 amount = 2
 damage = 2.0
 cooldown = 0.0
-description = "+2 Projectile +2 Damage"
+description = "ASTEROID"
 metadata/_custom_type_script = "uid://cnqkprtjrc6t6"
 
 [sub_resource type="Resource" id="Resource_rgxfb"]

@@ -15,7 +15,7 @@ script = ExtResource("7_yg4jm")
 amount = 1
 damage = 0.0
 cooldown = 0.0
-description = "1 Lightning"
+description = "LIGHTNING"
 metadata/_custom_type_script = "uid://c557imx4ux1uo"
 
 [sub_resource type="Resource" id="Resource_ikmcd"]

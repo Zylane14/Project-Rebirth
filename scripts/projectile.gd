@@ -14,10 +14,10 @@ func _physics_process(delta):
 
 func _on_body_entered(body):
 	if body.has_method("take_damage"): #call take_damage function
-		if "might" in source:
-			body.take_damage(damage * source.might) #if source has property might, multiply the damage
+		if "amplify" in source:
+			body.take_damage(damage * source.amplify) #if source has property amplify, multiply the damage
 			if weapon:
-				weapon.damage_dealt += damage * source.might #damage will get added & stored in their weapon resource
+				weapon.damage_dealt += damage * source.amplify #damage will get added & stored in their weapon resource
 		else:
 			body.take_damage(damage)
 			if weapon:

@@ -23,10 +23,11 @@ func upgrade_item(): #this will first check for upgrades and player reference
 	player_reference.recovery += upgrade.recovery
 	player_reference.armor += upgrade.armor
 	player_reference.movement_speed += upgrade.movement_speed
-	player_reference.might += upgrade.might
+	player_reference.amplify += upgrade.amplify
 	player_reference.area += upgrade.area
 	player_reference.magnet += upgrade.magnet
 	player_reference.growth += upgrade.growth
 	player_reference.luck += upgrade.luck
+	player_reference.dodge += upgrade.dodge
 
 	level += 1

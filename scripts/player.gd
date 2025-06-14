@@ -44,10 +44,10 @@ var armor : float = 0: #armor property
 	set(value):
 		armor = value
 		%Armor.text = "Armor : " + str(value)
-var might : float = 1.0: #amplify attack
+var amplify : float = 1.0: #amplify attack
 	set(value):
-		might = value
-		%Might.text = "Might : " + str(value)
+		amplify = value
+		%Amplify.text = "amplify : " + str(value)
 var area : float = 0: #attack range
 	set(value):
 		area = value
@@ -61,11 +61,14 @@ var growth : float = 1: #growth property
 	set(value):
 		growth = value
 		%AmplifyAttack.text = "Amplify Attack : " + str(value)
-var luck : float = 2.5:
+var luck : float = 0.5:
 	set(value):
 		luck = value
 		%Luck.text = "Luck : " + str(value)
-
+var dodge : float = 50.0:
+	set(value):
+		dodge = value
+		%Dodge.text = "Dodge : " + str(value)
 
 var nearest_enemy
 var nearest_enemy_distance : float = 150 + area #default distance, minimum + area
@@ -95,12 +98,17 @@ var level : int = 1: #variable to store player level
 
 var is_dashing: bool = false
 
+var base_stats: Stats
+var current_stats: Stats
+
+
 
 func _ready() -> void:
 	Persistence.gain_bonus_stats(self) #call the gain bonus stats from persistence when the player node is ready
 	character = Persistence.character #set character, base stats, add starting weapon on ready
 	set_base_stats(character.base_stats)
 	%XP.max_value = get_xp_needed(level)
+	
 	%Options.check_item(character.starting_weapon) #adds weapon if not available
 	update_xp_ui()
 
@@ -131,9 +139,20 @@ func add_ghost():
 	ghost.set_property(position, $Sprite2D.scale)
 	get_tree().current_scene.add_child(ghost)
 
+func show_dodge_feedback():
+	print("DODGED!")  # You can replace this with a UI popup or sound
+	SoundManager.play_sfx(preload("res://music & sfx/Minifantasy_Dungeon_SFX/18_orc_charge.wav"))
+
+
 #function to reduce health
 func take_damage(amount):
-	health -= max(amount * (amount/(amount + armor)), 1) #making defense additive
+	if randf() * 100 < dodge:
+		show_dodge_feedback()
+		return  # damage is dodged, exit early
+
+	# Basic armor calculation — reducing damage with diminishing returns
+	var reduced_damage = max(amount * (amount / (amount + armor)), 1)
+	health -= reduced_damage
 	
 func _on_self_damage_body_entered(body):
 	take_damage(body.damage) #reduce health with enemy damage
@@ -203,11 +222,12 @@ func set_base_stats(base_stats : Stats): #function to gain base stats from the c
 	recovery += base_stats.recovery
 	armor += base_stats.armor
 	movement_speed += base_stats.movement_speed
-	might += base_stats.might
+	amplify += base_stats.amplify
 	area += base_stats.area
 	magnet += base_stats.magnet
 	growth += base_stats.growth
 	luck += base_stats.luck
+	dodge += base_stats.dodge
 	
 func _on_back_pressed() -> void:
 	pass # Replace with function body.
@@ -248,3 +268,14 @@ func dash():
 func _input(event):
 	if event.is_action_pressed("dash"):
 		dash()
+
+#ARTIFACT SYSTEM
+func modify_stat(stat_name: String, value: float):
+	if current_stats.has_property(stat_name):
+		current_stats.set(stat_name, current_stats.get(stat_name) + value)
+
+func apply_stats_delta(stats_delta: Stats):
+	for property in stats_delta.get_property_list():
+		var name = property.name
+		var value = stats_delta.get(name)
+		modify_stat(name, value)

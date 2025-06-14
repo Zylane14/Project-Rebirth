@@ -148,7 +148,7 @@ func add_passive(item): #function to add passive to passive slots
 		if slot.item == null:
 			slot.item = item
 			return
-
+		
 func check_item(item): #check function, if item is already present in slot then return
 	if item in get_available_resource_in(weapons) or item in get_available_resource_in(passive_items):
 		return

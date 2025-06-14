@@ -6,9 +6,14 @@ extends PanelContainer
 			item.reset()
 		
 		item = value
-		$TextureRect.texture = value.icon
-		$Cooldown.wait_time = value.cooldown
-		item.slot = self
+
+		if value != null: # Prevent error when value is null
+			$TextureRect.texture = value.icon
+			$Cooldown.wait_time = value.cooldown
+			item.slot = self
+		else:
+			$TextureRect.texture = null
+			$Cooldown.wait_time = 0.1 # Default or safe fallback
 
 func _physics_process(delta):
 	if item != null and item.has_method("update"):

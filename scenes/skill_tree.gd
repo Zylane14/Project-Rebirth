@@ -32,7 +32,7 @@ func add_stats(stat):
 	total_stat.recovery += stat.recovery
 	total_stat.armor += stat.armor
 	total_stat.movement_speed += stat.movement_speed
-	total_stat.might += stat.might
+	total_stat.amplify += stat.amplify
 	total_stat.area += stat.area
 	total_stat.magnet += stat.magnet
 	total_stat.growth += stat.growth

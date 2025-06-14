@@ -129,7 +129,7 @@ func _change_portrait(character_node: Node2D, portrait: String, fade_animation:=
 			if packed_scene:
 				portrait_node = packed_scene.instantiate()
 			else:
-				push_error('[Dialogic] Portrait node "' + str(scene_path) + '" for character [' + character.display_name + '] could not be loaded. Your portrait might not show up on the screen. Confirm the path is correct.')
+				push_error('[Dialogic] Portrait node "' + str(scene_path) + '" for character [' + character.display_name + '] could not be loaded. Your portrait amplify not show up on the screen. Confirm the path is correct.')
 
 		if !portrait_node:
 			portrait_node = default_portrait_scene.instantiate()

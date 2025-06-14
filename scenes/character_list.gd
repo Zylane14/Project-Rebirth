@@ -9,7 +9,7 @@ extends GridContainer
 
 func _ready() -> void: #call the load function on ready
 	load_character()
-	start_button.visible = false # Hide button at start
+	start_button.visible = false #hide start button
 
 func load_character():
 	for character in characters:
@@ -22,4 +22,4 @@ func _on_pressed(character : Character): #presseng any character slot will store
 	Persistence.character = character
 	starting_weapon.texture = character.starting_weapon.icon #updates the texture of starting weapon of currently selected character
 	portrait_display.texture = character.portrait
-	start_button.visible = true # Show Start button when a character is selected
+	start_button.visible = true #show the Start button when a character is selected

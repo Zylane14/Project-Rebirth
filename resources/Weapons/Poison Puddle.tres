@@ -15,7 +15,7 @@ amount = 1
 area = 0.0
 damage = 0.0
 cooldown = 0.0
-description = "+1 Toxic Puddle"
+description = "POISON PUDDLE"
 metadata/_custom_type_script = "uid://bhud26ecmt7ug"
 
 [sub_resource type="Resource" id="Resource_6qa28"]

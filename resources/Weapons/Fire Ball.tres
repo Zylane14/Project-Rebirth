@@ -16,7 +16,7 @@ script = ExtResource("5_2lheo")
 speed = 0.0
 damage = 2.0
 cooldown = 0.0
-description = "+2 Damage"
+description = "FIREBALL"
 metadata/_custom_type_script = "uid://ldvf6v3hcrde"
 
 [sub_resource type="Resource" id="Resource_2b7by"]

@@ -2,7 +2,7 @@ extends Node
 
 var global_buff_stage: int = 0
 var elapsed_time: float = 0.0
-var buff_interval: float = 30.0
+var buff_interval: float = 15.0
 
 func _process(delta: float) -> void:
 	elapsed_time += delta

@@ -8,8 +8,9 @@ class_name Stats
 @export var recovery : float
 @export var armor : float
 @export var movement_speed : float
-@export var might : float
+@export var amplify : float
 @export var area : float
 @export var magnet : float
 @export var growth : float
 @export var luck : float
+@export var dodge : float
