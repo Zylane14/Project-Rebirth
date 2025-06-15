@@ -1,60 +1,31 @@
-[gd_resource type="Resource" script_class="Artifact" load_steps=6 format=3 uid="uid://k2qsqv1yjg0q"]
+[gd_resource type="Resource" script_class="Artifact" load_steps=5 format=3 uid="uid://k2qsqv1yjg0q"]
 
 [ext_resource type="Texture2D" uid="uid://b3sc5law24bv7" path="res://assets/epic-rpg-world-the-depths-of-the-mountain/Epic RPG World - The dephs of the Mountain V1.5.1/Props/Static/Props-individual sprites/items-necklaces_8.png" id="1_2js04"]
 [ext_resource type="Script" uid="uid://fe37a2dth2rw" path="res://scripts/Artifacts.gd" id="3_okuua"]
 [ext_resource type="Script" uid="uid://dhltvcvyn33cy" path="res://scenes/Stats.gd" id="4_4bcsd"]
 
-[sub_resource type="GDScript" id="GDScript_jgk5r"]
-script/source = "extends Node
-class_name GaiaEmbrace
-
-# Adjustable healing rate
-@export var heal_amount : float = 1.0
-@export var interval : float = 2.0
-
-var _timer := 0.0
-var _player = null
-
-func setup(player):
-	_player = player
-	_timer = interval
-
-func _process(delta):
-	if not _player:
-		return
-
-	_timer -= delta
-	if _timer <= 0.0:
-		_timer += interval
-		heal()
-
-func heal():
-	if _player.has_method(\"heal\"):
-		_player.heal(heal_amount)
-"
-
-[sub_resource type="Resource" id="Resource_khtr0"]
+[sub_resource type="Resource" id="Resource_jgk5r"]
 script = ExtResource("4_4bcsd")
-description = "+1000 Health
-+1.0 Recovery
-+0.2 Area"
+description = ""
 max_health = 1000.0
 recovery = 1.0
 armor = 0.0
 movement_speed = 0.0
-might = 0.0
-area = 0.2
+amplify = 0.0
+area = 0.0
 magnet = 0.0
 growth = 0.0
 luck = 0.0
+dodge = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [resource]
 script = ExtResource("3_okuua")
 name = "Gaia’s Embrace"
-description = "Increases recovery and area of effect."
+description = "Increases recovery and area of effect.
+"
 rarity = 4
 icon = ExtResource("1_2js04")
-stats_modifiers = SubResource("Resource_khtr0")
-passive_script = SubResource("GDScript_jgk5r")
+upgrades = Array[ExtResource("4_4bcsd")]([SubResource("Resource_jgk5r")])
+can_stack = false
 metadata/_custom_type_script = "uid://fe37a2dth2rw"

@@ -161,7 +161,7 @@ func take_damage(amount):
 
 func drop_item():
 	if is_dead:
-		return  # Prevent duplicate calls
+		return  # Prevent duplicate callsx
 
 	is_dead = true  #mark as dead
 	

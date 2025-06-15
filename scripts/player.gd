@@ -47,7 +47,7 @@ var armor : float = 0: #armor property
 var amplify : float = 1.0: #amplify attack
 	set(value):
 		amplify = value
-		%Amplify.text = "amplify : " + str(value)
+		%Amplify.text = "Amplify : " + str(value)
 var area : float = 0: #attack range
 	set(value):
 		area = value
@@ -61,7 +61,7 @@ var growth : float = 1: #growth property
 	set(value):
 		growth = value
 		%AmplifyAttack.text = "Amplify Attack : " + str(value)
-var luck : float = 0.5:
+var luck : float = 2.5:
 	set(value):
 		luck = value
 		%Luck.text = "Luck : " + str(value)
@@ -98,13 +98,9 @@ var level : int = 1: #variable to store player level
 
 var is_dashing: bool = false
 
-var base_stats: Stats
-var current_stats: Stats
-
-
 
 func _ready() -> void:
-	Persistence.gain_bonus_stats(self) #call the gain bonus stats from persistence when the player node is ready
+	Persistence.gain_bonus_stats(self) #call the gain bonus statsbas from persistence when the player node is ready
 	character = Persistence.character #set character, base stats, add starting weapon on ready
 	set_base_stats(character.base_stats)
 	%XP.max_value = get_xp_needed(level)
@@ -191,9 +187,12 @@ func check_XP():
 		level += 1
 	update_xp_ui()
 
+const XP_BASE := 20
+const XP_SCALE := 10.0
+const XP_EXP := 1.5
+
 func get_xp_needed(lvl: int) -> int:
-	# Example formula: XP needed grows quadratically
-	return int(20 + pow(lvl, 1.5) * 10)
+	return int(XP_BASE + pow(lvl, XP_EXP) * XP_SCALE)
 	
 
 func _on_magnet_area_entered(pickup_area):
@@ -228,7 +227,7 @@ func set_base_stats(base_stats : Stats): #function to gain base stats from the c
 	growth += base_stats.growth
 	luck += base_stats.luck
 	dodge += base_stats.dodge
-	
+
 func _on_back_pressed() -> void:
 	pass # Replace with function body.
 
@@ -268,14 +267,3 @@ func dash():
 func _input(event):
 	if event.is_action_pressed("dash"):
 		dash()
-
-#ARTIFACT SYSTEM
-func modify_stat(stat_name: String, value: float):
-	if current_stats.has_property(stat_name):
-		current_stats.set(stat_name, current_stats.get(stat_name) + value)
-
-func apply_stats_delta(stats_delta: Stats):
-	for property in stats_delta.get_property_list():
-		var name = property.name
-		var value = stats_delta.get(name)
-		modify_stat(name, value)
