@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c0qo4rvn5k16h"
+path="res://.godot/imported/07 Alpenglow.wav-7995085ce7412e9e11b8625e2a60a8c7.sample"
+
+[deps]
+
+source_file="res://music & sfx/The Westerlands/07 Alpenglow.wav"
+dest_files=["res://.godot/imported/07 Alpenglow.wav-7995085ce7412e9e11b8625e2a60a8c7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

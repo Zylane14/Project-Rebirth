@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://63kp1cwf1snt"]
+[gd_scene load_steps=63 format=3 uid="uid://63kp1cwf1snt"]
 
 [ext_resource type="Script" uid="uid://rd7jqoyg5ayg" path="res://scripts/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://3ninw6nm3qxc" path="res://scenes/slot.tscn" id="2_dqkch"]
@@ -6,7 +6,6 @@
 [ext_resource type="Resource" uid="uid://q3uqovvyoat2" path="res://resources/Characters/Eleonore.tres" id="2_i4ail"]
 [ext_resource type="Texture2D" uid="uid://dwjn4w41mc2p2" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/icons_items_bag.png" id="2_ur7pv"]
 [ext_resource type="PackedScene" uid="uid://bt46puqq0y8kf" path="res://scenes/ghost.tscn" id="3_l71n6"]
-[ext_resource type="Texture2D" uid="uid://ciwc6y07sl76d" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/9SlicedObjects_slot1_0.png" id="3_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://dowmeqsbbwugq" path="res://assets/UI/under.png" id="4_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://dmhukujsong7b" path="res://assets/UI/ProgressMana.png" id="5_fjrip"]
 [ext_resource type="PackedScene" uid="uid://3oy7wx1aj4tc" path="res://scenes/passive_slot.tscn" id="5_ur7pv"]
@@ -16,7 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://b63d8w5s2s3q3" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/Props/animated/treasure chest lvl 2-opening animation-cartoon style.png" id="13_a8ls1"]
 [ext_resource type="PackedScene" uid="uid://d2i68oagku42c" path="res://scenes/reward_slot.tscn" id="14_a8ls1"]
 [ext_resource type="Script" uid="uid://tyonajtpq56s" path="res://scenes/report.gd" id="14_a38lo"]
+[ext_resource type="PackedScene" uid="uid://khqdo7qeuc1c" path="res://scenes/artifact_slot.tscn" id="15_ke2ow"]
 [ext_resource type="Texture2D" uid="uid://c3fidlw2ifhch" path="res://assets/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_Slot01a.png" id="16_4ni07"]
+[ext_resource type="Resource" uid="uid://cno7bovkjxtqd" path="res://resources/Artifacts/Godly Book.tres" id="16_ujl30"]
 [ext_resource type="Texture2D" uid="uid://dxdj74ydonscy" path="res://assets/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle_full.png" id="17_qfm1y"]
 [ext_resource type="Script" uid="uid://b1fv06tfxoej" path="res://scenes/back.gd" id="18_4r5pv"]
 [ext_resource type="Texture2D" uid="uid://de0gecrk4yb36" path="res://assets/EleonoreAndJoanna/Sprites/Joanna/Idle/Nora_fullt.png" id="18_fulsm"]
@@ -689,15 +690,14 @@ offset_bottom = 116.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-texture = ExtResource("3_y4r1p")
-region_rect = Rect2(2.50137, 2.3946, 27.0203, 26.0732)
+texture = ExtResource("16_4ni07")
 
 [node name="Label" type="Label" parent="UI/Panel"]
 layout_mode = 0
 offset_left = 190.5
-offset_top = 11.0
+offset_top = 33.0
 offset_right = 262.5
-offset_bottom = 34.0
+offset_bottom = 56.0
 text = "LEVEL UP"
 
 [node name="Weapons" type="HBoxContainer" parent="UI"]
@@ -773,6 +773,29 @@ layout_mode = 2
 [node name="PassiveSlot10" parent="UI/PassiveItems" instance=ExtResource("5_ur7pv")]
 layout_mode = 2
 
+[node name="Artifacts" type="HBoxContainer" parent="UI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -145.0
+offset_top = -48.0
+offset_right = -17.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="ArtifactSlot" parent="UI/Artifacts" instance=ExtResource("15_ke2ow")]
+layout_mode = 2
+item = ExtResource("16_ujl30")
+
+[node name="ArtifactSlot2" parent="UI/Artifacts" instance=ExtResource("15_ke2ow")]
+layout_mode = 2
+
+[node name="ArtifactSlot3" parent="UI/Artifacts" instance=ExtResource("15_ke2ow")]
+layout_mode = 2
+
 [node name="XP" type="TextureProgressBar" parent="UI"]
 unique_name_in_owner = true
 offset_left = 21.0
@@ -806,7 +829,6 @@ text = "XP: 0 / 0"
 [node name="Options" type="VBoxContainer" parent="UI" node_paths=PackedStringArray("weapons", "passive_items", "particles", "panel")]
 unique_name_in_owner = true
 process_mode = 3
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -826,6 +848,7 @@ panel = NodePath("../Panel")
 
 [node name="Chest" type="NinePatchRect" parent="UI"]
 process_mode = 3
+visible = false
 z_index = 1
 custom_minimum_size = Vector2(250, 220)
 anchors_preset = 8
@@ -1032,10 +1055,10 @@ layout_mode = 2
 text = "Area: 0"
 label_settings = SubResource("LabelSettings_qfm1y")
 
-[node name="AmplifyAttack" type="Label" parent="UI/Report/Panel/Debug"]
+[node name="Growth" type="Label" parent="UI/Report/Panel/Debug"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Amplify Attack: 0"
+text = "Growth: 0"
 label_settings = SubResource("LabelSettings_qfm1y")
 
 [node name="Luck" type="Label" parent="UI/Report/Panel/Debug"]

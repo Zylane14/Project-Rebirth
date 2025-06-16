@@ -10,6 +10,7 @@ class_name Enemy
 @export var frames : int = 1
 @export var drops : Array[Pickups]
 @export var gold : int = 0
+@export var HurtSound : AudioStream #property for storing audio
 
 @export var spawn_weight: float = 1.0
 @export var unlock_minute: float = 0.0 

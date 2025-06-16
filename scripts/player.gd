@@ -44,7 +44,7 @@ var armor : float = 0: #armor property
 	set(value):
 		armor = value
 		%Armor.text = "Armor : " + str(value)
-var amplify : float = 1.0: #amplify attack
+var amplify : float = 5.0: #amplify attack
 	set(value):
 		amplify = value
 		%Amplify.text = "Amplify : " + str(value)
@@ -60,7 +60,7 @@ var magnet : float = 0: #pickup range
 var growth : float = 1: #growth property
 	set(value):
 		growth = value
-		%AmplifyAttack.text = "Amplify Attack : " + str(value)
+		%Growth.text = "Growth : " + str(value)
 var luck : float = 2.5:
 	set(value):
 		luck = value

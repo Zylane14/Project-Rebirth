@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cef6y7j0vq561"
+path="res://.godot/imported/01 Sunrise.mp3-34c4b7b4ddfe9f8b62ec6ff0b9df8b16.mp3str"
+
+[deps]
+
+source_file="res://music & sfx/The Westerlands/mp3/01 Sunrise.mp3"
+dest_files=["res://.godot/imported/01 Sunrise.mp3-34c4b7b4ddfe9f8b62ec6ff0b9df8b16.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

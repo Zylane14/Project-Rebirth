@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c03paoqwr10t0" path="res://scenes/enemy.tscn" id="2_tx2ig"]
 [ext_resource type="PackedScene" uid="uid://by6exrkw4wuup" path="res://scenes/destructible.tscn" id="3_e3f8v"]
 [ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="3_p5s3f"]
-[ext_resource type="Resource" uid="uid://d14tpynryekla" path="res://resources/Enemies/Goblin.tres" id="4_e3f8v"]
+[ext_resource type="Resource" uid="uid://d14tpynryekla" path="res://resources/Passive Items/Goblin.tres" id="4_e3f8v"]
 [ext_resource type="Resource" uid="uid://cyfp26oy6hbmm" path="res://resources/Enemies/GoblinBrawl.tres" id="5_3rx28"]
 [ext_resource type="Resource" uid="uid://bkrq0re188bjr" path="res://resources/Enemies/GoblinElite.tres" id="6_m1kbb"]
 [ext_resource type="Resource" uid="uid://q51bg0iwnqs4" path="res://resources/Enemies/Cyclops.tres" id="7_q0apd"]

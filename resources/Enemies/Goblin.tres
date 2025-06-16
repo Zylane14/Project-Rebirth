@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=5 format=3 uid="uid://d14tpynryekla"]
+[gd_resource type="Resource" script_class="Enemy" load_steps=5 format=3 uid="uid://cgg1yeewvdbth"]
 
 [ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="1_8hu17"]
 [ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="1_op2jl"]

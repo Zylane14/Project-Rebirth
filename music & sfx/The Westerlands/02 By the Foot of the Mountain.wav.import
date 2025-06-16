@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dfjnow1eq6b6a"
+path="res://.godot/imported/02 By the Foot of the Mountain.wav-59d22dafdc102bf56740af8668ba59ad.sample"
+
+[deps]
+
+source_file="res://music & sfx/The Westerlands/02 By the Foot of the Mountain.wav"
+dest_files=["res://.godot/imported/02 By the Foot of the Mountain.wav-59d22dafdc102bf56740af8668ba59ad.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

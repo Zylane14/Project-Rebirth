@@ -96,13 +96,16 @@ func dir_contents(path):
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
 		while file_name != "":
-			print("Found file: " + file_name)
-			var item_resource : Item = load(path + file_name)
-			item_resources.append(item_resource)
-			file_name =dir.get_next()
+			if file_name.ends_with(".remap") or file_name.ends_with(".tres") or file_name.ends_with(".res"): # Only load valid resource files
+				var resource = load(path + file_name)
+				if resource is Item: # ensure it's an Item before adding
+					item_resources.append(resource)
+				else:
+					print("Skipped non-item resource: ", file_name)
+			file_name = dir.get_next()
 	else:
-		print("An error occured while trying to access the path.")
-		return null
+		print("An error occurred while trying to access the path.")
+		return []
 	return item_resources
 
 

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bn5la7bfwt40"
+path="res://.godot/imported/04 Blue_Forest.wav-f4ea2c4fc0c62151155c7a2003d7fc7d.sample"
+
+[deps]
+
+source_file="res://music & sfx/The Westerlands/04 Blue_Forest.wav"
+dest_files=["res://.godot/imported/04 Blue_Forest.wav-f4ea2c4fc0c62151155c7a2003d7fc7d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

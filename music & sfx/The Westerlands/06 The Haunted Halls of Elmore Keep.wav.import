@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b5eo5qkmafbwd"
+path="res://.godot/imported/06 The Haunted Halls of Elmore Keep.wav-c03a6434b9b88162c88870a8caccd861.sample"
+
+[deps]
+
+source_file="res://music & sfx/The Westerlands/06 The Haunted Halls of Elmore Keep.wav"
+dest_files=["res://.godot/imported/06 The Haunted Halls of Elmore Keep.wav-c03a6434b9b88162c88870a8caccd861.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
