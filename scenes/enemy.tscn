@@ -1,14 +1,14 @@
 [gd_scene load_steps=21 format=3 uid="uid://c03paoqwr10t0"]
 
 [ext_resource type="Script" uid="uid://crn6aqwa25bby" path="res://scripts/enemy.gd" id="1_md0e3"]
-[ext_resource type="Texture2D" uid="uid://b6vyleewnfxma" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/Characters/Enemy1/enemy1-death.png" id="2_md0e3"]
-[ext_resource type="Texture2D" uid="uid://dw4xwfe77p4ap" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/Characters/Enemy1/enemy1-variation1-death.png" id="3_5uy6h"]
+[ext_resource type="Texture2D" uid="uid://b6vyleewnfxma" path="res://assets/Tilemaps/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/Characters/Enemy1/enemy1-death.png" id="2_md0e3"]
+[ext_resource type="Texture2D" uid="uid://dw4xwfe77p4ap" path="res://assets/Tilemaps/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/Characters/Enemy1/enemy1-variation1-death.png" id="3_5uy6h"]
 [ext_resource type="Texture2D" uid="uid://doblnn3jm34na" path="res://assets/epic-rpg-world-the-depths-of-the-mountain/Epic RPG World - The dephs of the Mountain V1.5.1/Characters/Enemy 1/enemy 1-death.png" id="4_c4w8v"]
 [ext_resource type="Texture2D" uid="uid://ctmt5eejymedf" path="res://assets/epic-rpg-world-the-depths-of-the-mountain/Epic RPG World - The dephs of the Mountain V1.5.1/Characters/Enemy 2/enemy 2-death.png" id="5_ipns3"]
-[ext_resource type="Texture2D" uid="uid://cd85g2heydmch" path="res://assets/epic-rpg-world-pack-ancient-ruins/ERW - Ancient Ruins V 1.9.1/Characters/Stone  Golem/Stone-golem v2-death-224x192.png" id="6_8qclf"]
-[ext_resource type="Texture2D" uid="uid://fc65hiw182hf" path="res://assets/ERW - Grass Land 2.0 v1.7.2/Characters/orc mage/orc1/orc mage - with hand fx-death.png" id="7_w8i8w"]
-[ext_resource type="Texture2D" uid="uid://pvkmxx2lgqib" path="res://assets/ERW - Grass Land 2.0 v1.7.2/Characters/orc warrior/orc2/orc melee - anims color2-death.png" id="8_otmr2"]
-[ext_resource type="Texture2D" uid="uid://ssg8jpyn5pt4" path="res://assets/ERW - Grass Land 2.0 v1.7.2/Characters/orc warrior/orc1/orc melee - anims-death.png" id="9_wtq4b"]
+[ext_resource type="Texture2D" uid="uid://cd85g2heydmch" path="res://assets/Tilemaps/epic-rpg-world-pack-ancient-ruins/ERW - Ancient Ruins V 1.9.1/Characters/Stone  Golem/Stone-golem v2-death-224x192.png" id="6_8qclf"]
+[ext_resource type="Texture2D" uid="uid://fc65hiw182hf" path="res://assets/Tilemaps/ERW - Grass Land 2.0 v1.7.2/Characters/orc mage/orc1/orc mage - with hand fx-death.png" id="7_w8i8w"]
+[ext_resource type="Texture2D" uid="uid://pvkmxx2lgqib" path="res://assets/Tilemaps/ERW - Grass Land 2.0 v1.7.2/Characters/orc warrior/orc2/orc melee - anims color2-death.png" id="8_otmr2"]
+[ext_resource type="Texture2D" uid="uid://ssg8jpyn5pt4" path="res://assets/Tilemaps/ERW - Grass Land 2.0 v1.7.2/Characters/orc warrior/orc1/orc melee - anims-death.png" id="9_wtq4b"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5uy6h"]
 radius = 9.0
@@ -507,9 +507,10 @@ z_index = 1
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_md0e3")
+buff_interval = 15.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1, -16)
+position = Vector2(15, -9)
 texture = ExtResource("2_md0e3")
 hframes = 13
 

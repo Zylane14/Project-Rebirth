@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Character" load_steps=7 format=3 uid="uid://q3uqovvyoat2"]
 
 [ext_resource type="Script" uid="uid://dhltvcvyn33cy" path="res://scenes/Stats.gd" id="1_j7lpw"]
-[ext_resource type="Texture2D" uid="uid://dpoe2deq7fwcj" path="res://assets/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle6.png" id="2_i80kj"]
-[ext_resource type="Texture2D" uid="uid://bxtokebarwk4" path="res://assets/EleonoreAndJoanna/Portraits/Eleonore/Eleonore1.png" id="3_3cii4"]
+[ext_resource type="Texture2D" uid="uid://dpoe2deq7fwcj" path="res://assets/Characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle6.png" id="2_i80kj"]
+[ext_resource type="Texture2D" uid="uid://bxtokebarwk4" path="res://assets/Characters/EleonoreAndJoanna/Portraits/Eleonore/Eleonore1.png" id="3_3cii4"]
 [ext_resource type="Script" uid="uid://bjudu0im5j1jb" path="res://scenes/Character.gd" id="3_22iko"]
 [ext_resource type="Resource" uid="uid://bc6hknxlqyxm0" path="res://resources/Weapons/Fire Ball.tres" id="4_i80kj"]
 

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Gem" load_steps=4 format=3 uid="uid://brhulfmqu2bs1"]
 
-[ext_resource type="Texture2D" uid="uid://cvqwekebrk2qb" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/inputs_controller_button_3.png" id="1_p5dlv"]
+[ext_resource type="Texture2D" uid="uid://cvqwekebrk2qb" path="res://assets/Tilemaps/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/inputs_controller_button_3.png" id="1_p5dlv"]
 [ext_resource type="Script" uid="uid://xl6mh4kudeuh" path="res://scripts/Gem.gd" id="2_8mdkf"]
 [ext_resource type="AudioStream" uid="uid://dx1xdwld4b3i5" path="res://music & sfx/RPG_Essentials_Free/10_UI_Menu_SFX/013_Confirm_03.wav" id="3_8mdkf"]
 

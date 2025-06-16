@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PassiveItem" load_steps=8 format=3 uid="uid://dw478itjqgfrt"]
 
-[ext_resource type="Texture2D" uid="uid://blbywyd18c05k" path="res://assets/epic-rpg-world-pack-ancient-ruins/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/flooded gras details_6.png" id="1_si68l"]
+[ext_resource type="Texture2D" uid="uid://blbywyd18c05k" path="res://assets/Tilemaps/epic-rpg-world-pack-ancient-ruins/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/flooded gras details_6.png" id="1_si68l"]
 [ext_resource type="Script" uid="uid://oh3fq60et0sw" path="res://scenes/PassiveItem.gd" id="2_v7d1i"]
 [ext_resource type="Script" uid="uid://dhltvcvyn33cy" path="res://scenes/Stats.gd" id="3_6qo2h"]
 

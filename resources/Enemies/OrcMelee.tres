@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="1_pi32d"]
 [ext_resource type="Resource" uid="uid://brhulfmqu2bs1" path="res://resources/Pickups/Orange EXP.tres" id="2_s7xvb"]
 [ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="3_373bf"]
-[ext_resource type="Texture2D" uid="uid://c70x0uiuji2es" path="res://assets/ERW - Grass Land 2.0 v1.7.2/Characters/orc warrior/orc1/orc melee - anims-walk.png" id="4_jubfm"]
+[ext_resource type="Texture2D" uid="uid://c70x0uiuji2es" path="res://assets/Tilemaps/ERW - Grass Land 2.0 v1.7.2/Characters/orc warrior/orc1/orc melee - anims-walk.png" id="4_jubfm"]
 
 [resource]
 script = ExtResource("3_373bf")

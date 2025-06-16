@@ -28,6 +28,10 @@ func close_option(): #will hide option and resume the scene tree
 	hide()
 	particles.hide() #hide both while closing option
 	panel.hide()
+	weapons.show()
+	passive_items.show()
+	%Gold.show()
+	%XP.show()
 	get_tree().paused = false
 
 func get_available_resource_in(items)-> Array[Item]: #function to extract resource from the slot present in the container
@@ -87,6 +91,10 @@ func show_option():
 	show()
 	particles.show() #show both while showing option
 	panel.show()
+	weapons.hide()
+	passive_items.hide()
+	%Gold.hide()
+	%XP.hide()
 	get_tree().paused = true #else show the option and pause the scene tree
 
 func dir_contents(path):

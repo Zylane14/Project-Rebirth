@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Character" load_steps=7 format=3 uid="uid://brmnst684ysvj"]
 
 [ext_resource type="Script" uid="uid://dhltvcvyn33cy" path="res://scenes/Stats.gd" id="1_cu3pu"]
-[ext_resource type="Texture2D" uid="uid://br73wbiq0iid" path="res://assets/EleonoreAndJoanna/Sprites/Joanna/Idle/Idle2.png" id="2_1napf"]
-[ext_resource type="Texture2D" uid="uid://bpvr4jj0m41ju" path="res://assets/EleonoreAndJoanna/Portraits/Joanna/JoannaPortrait1(NOBG)1.png" id="3_1napf"]
+[ext_resource type="Texture2D" uid="uid://br73wbiq0iid" path="res://assets/Characters/EleonoreAndJoanna/Sprites/Joanna/Idle/Idle2.png" id="2_1napf"]
+[ext_resource type="Texture2D" uid="uid://bpvr4jj0m41ju" path="res://assets/Characters/EleonoreAndJoanna/Portraits/Joanna/JoannaPortrait1(NOBG)1.png" id="3_1napf"]
 [ext_resource type="Script" uid="uid://bjudu0im5j1jb" path="res://scenes/Character.gd" id="3_8h5y8"]
 [ext_resource type="Resource" uid="uid://k0qec0duaiuq" path="res://resources/Weapons/Asteroid.tres" id="4_cu3pu"]
 

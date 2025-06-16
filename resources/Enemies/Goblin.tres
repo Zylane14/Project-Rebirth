@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="1_8hu17"]
 [ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="1_op2jl"]
 [ext_resource type="Resource" uid="uid://bsdwvs8d0sd32" path="res://resources/Pickups/Blue EXP.tres" id="2_0lhts"]
-[ext_resource type="Texture2D" uid="uid://cu5am7l7awr2u" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/Characters/Enemy1/enemy1-run.png" id="4_op2jl"]
+[ext_resource type="Texture2D" uid="uid://cu5am7l7awr2u" path="res://assets/Tilemaps/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/Characters/Enemy1/enemy1-run.png" id="4_op2jl"]
 
 [resource]
 script = ExtResource("1_8hu17")

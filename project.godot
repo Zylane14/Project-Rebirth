@@ -61,6 +61,12 @@ folder_colors={
 "res://resources/Weapons/": "blue"
 }
 
+[gui]
+
+theme/custom_font="uid://cvdv0gjcr46hk"
+theme/default_font_multichannel_signed_distance_field=true
+theme/default_font_generate_mipmaps=true
+
 [input]
 
 up={

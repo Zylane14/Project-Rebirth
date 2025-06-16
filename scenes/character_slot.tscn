@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cye63rjt76qsv"]
 
-[ext_resource type="Texture2D" uid="uid://dia4u56cokgcb" path="res://assets/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/9SlicedObjects_windows_details_4.png" id="1_h3508"]
+[ext_resource type="Texture2D" uid="uid://dia4u56cokgcb" path="res://assets/Tilemaps/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/9SlicedObjects_windows_details_4.png" id="1_h3508"]
 [ext_resource type="Script" uid="uid://dl3ejjkmclkq2" path="res://scenes/character_slot.gd" id="2_ndgm5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ndgm5"]
