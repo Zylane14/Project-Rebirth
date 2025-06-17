@@ -17,13 +17,14 @@ func menu(): #func to show menu panel and hide others
 	$Gold.hide()
 	$Back.hide()
 	$CharacterSelection.hide()
-	tween_pop($Menu)
 
 func skill_tree(): #func to show skill tree
 	$SkillTree.show()
 	$Gold.show()
 	$Menu.hide()
 	$Back.show()
+	$ConstellationMenu.hide()
+	$ConstellationMenu2.show()
 	tween_pop($SkillTree)
 
 func beastiary(): #func to show beastiary
@@ -32,22 +33,25 @@ func beastiary(): #func to show beastiary
 	$Gold.hide()
 	$Back.show()
 	tween_pop($Beastiary)
-
+	$ConstellationMenu.hide()
+	$ConstellationMenu2.show()
 
 func _on_back_pressed() -> void: #back button
 	menu()
+	$ConstellationMenu.show()
+	$ConstellationMenu2.hide()
+	tween_pop($Back)
 
 
 func tween_pop(panel): #func to give pop effect
-	SoundManager.play_sfx(load("res://music & sfx/RPG_Essentials_Free/10_UI_Menu_SFX/070_Equip_10.wav"))
-	panel.scale = Vector2(0.85,0.85)
-	var tween = get_tree().create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
-	tween.tween_property(panel, "scale", Vector2(1,1), 0.5)
-
-
+	SoundManager.play_sfx(load("res://music & sfx/Be Not Afraid UI/--Unholy/Be Not Afraid UI/BNA_UI49.wav"))
+	#panel.scale = Vector2(1.0,1.0)
+	#var tween = get_tree().create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+	#tween.tween_property(panel, "scale", Vector2(1,1), 0.5)
+	
 func _on_start_pressed() -> void: #Character Selection
 	$CharacterSelection.show()
 	$Menu.hide()
-	$Gold.show()
+	$Gold.hide()
 	$Back.show()
 	tween_pop($CharacterSelection)

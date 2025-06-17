@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://be5kfn8srw6w8"
+path="res://.godot/imported/0617.WAV-a3f8d7e5cf1161a72a414622f3f262ac.sample"
+
+[deps]
+
+source_file="res://music & sfx/The Westerlands/0617.WAV"
+dest_files=["res://.godot/imported/0617.WAV-a3f8d7e5cf1161a72a414622f3f262ac.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

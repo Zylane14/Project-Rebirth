@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b0b7vkupayvf0"
+path="res://.godot/imported/Seraphim_Voice9.wav-056e6bfc92a2a651603a0b41a31f97d3.sample"
+
+[deps]
+
+source_file="res://music & sfx/Be Not Afraid/Be Not Afraid/Seraphim_Voice9.wav"
+dest_files=["res://.godot/imported/Seraphim_Voice9.wav-056e6bfc92a2a651603a0b41a31f97d3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
