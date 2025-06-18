@@ -1,14 +1,16 @@
-[gd_scene load_steps=21 format=3 uid="uid://c03paoqwr10t0"]
+[gd_scene load_steps=25 format=3 uid="uid://c03paoqwr10t0"]
 
 [ext_resource type="Script" uid="uid://crn6aqwa25bby" path="res://scripts/enemy.gd" id="1_md0e3"]
-[ext_resource type="Texture2D" uid="uid://b6vyleewnfxma" path="res://assets/Tilemaps/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/Characters/Enemy1/enemy1-death.png" id="2_md0e3"]
-[ext_resource type="Texture2D" uid="uid://dw4xwfe77p4ap" path="res://assets/Tilemaps/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/Characters/Enemy1/enemy1-variation1-death.png" id="3_5uy6h"]
-[ext_resource type="Texture2D" uid="uid://doblnn3jm34na" path="res://assets/epic-rpg-world-the-depths-of-the-mountain/Epic RPG World - The dephs of the Mountain V1.5.1/Characters/Enemy 1/enemy 1-death.png" id="4_c4w8v"]
-[ext_resource type="Texture2D" uid="uid://ctmt5eejymedf" path="res://assets/epic-rpg-world-the-depths-of-the-mountain/Epic RPG World - The dephs of the Mountain V1.5.1/Characters/Enemy 2/enemy 2-death.png" id="5_ipns3"]
-[ext_resource type="Texture2D" uid="uid://cd85g2heydmch" path="res://assets/Tilemaps/epic-rpg-world-pack-ancient-ruins/ERW - Ancient Ruins V 1.9.1/Characters/Stone  Golem/Stone-golem v2-death-224x192.png" id="6_8qclf"]
-[ext_resource type="Texture2D" uid="uid://fc65hiw182hf" path="res://assets/Tilemaps/ERW - Grass Land 2.0 v1.7.2/Characters/orc mage/orc1/orc mage - with hand fx-death.png" id="7_w8i8w"]
-[ext_resource type="Texture2D" uid="uid://pvkmxx2lgqib" path="res://assets/Tilemaps/ERW - Grass Land 2.0 v1.7.2/Characters/orc warrior/orc2/orc melee - anims color2-death.png" id="8_otmr2"]
-[ext_resource type="Texture2D" uid="uid://ssg8jpyn5pt4" path="res://assets/Tilemaps/ERW - Grass Land 2.0 v1.7.2/Characters/orc warrior/orc1/orc melee - anims-death.png" id="9_wtq4b"]
+[ext_resource type="Texture2D" uid="uid://b6vyleewnfxma" path="res://assets/World/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/Characters/Enemy1/enemy1-death.png" id="2_md0e3"]
+[ext_resource type="Texture2D" uid="uid://dw4xwfe77p4ap" path="res://assets/World/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/Characters/Enemy1/enemy1-variation1-death.png" id="3_5uy6h"]
+[ext_resource type="Texture2D" uid="uid://doblnn3jm34na" path="res://assets/World/epic-rpg-world-the-depths-of-the-mountain/Epic RPG World - The dephs of the Mountain V1.5.1/Characters/Enemy 1/enemy 1-death.png" id="4_c4w8v"]
+[ext_resource type="Texture2D" uid="uid://ctmt5eejymedf" path="res://assets/World/epic-rpg-world-the-depths-of-the-mountain/Epic RPG World - The dephs of the Mountain V1.5.1/Characters/Enemy 2/enemy 2-death.png" id="5_ipns3"]
+[ext_resource type="Texture2D" uid="uid://cd85g2heydmch" path="res://assets/World/epic-rpg-world-pack-ancient-ruins/ERW - Ancient Ruins V 1.9.1/Characters/Stone  Golem/Stone-golem v2-death-224x192.png" id="6_8qclf"]
+[ext_resource type="Texture2D" uid="uid://fc65hiw182hf" path="res://assets/World/ERW - Grass Land 2.0 v1.7.2/Characters/orc mage/orc1/orc mage - with hand fx-death.png" id="7_w8i8w"]
+[ext_resource type="Texture2D" uid="uid://pvkmxx2lgqib" path="res://assets/World/ERW - Grass Land 2.0 v1.7.2/Characters/orc warrior/orc2/orc melee - anims color2-death.png" id="8_otmr2"]
+[ext_resource type="Texture2D" uid="uid://1m8ajacx6pow" path="res://assets/World/EPIC RPG World - Sewers V1.5/Characters/Mutant Rat/mutant rat - death.png" id="8_w8i8w"]
+[ext_resource type="Texture2D" uid="uid://ssg8jpyn5pt4" path="res://assets/World/ERW - Grass Land 2.0 v1.7.2/Characters/orc warrior/orc1/orc melee - anims-death.png" id="9_wtq4b"]
+[ext_resource type="Texture2D" uid="uid://c8kp4ncnhc1a0" path="res://assets/World/epic-rpg-world-the-depths-of-the-mountain/Epic RPG World - The dephs of the Mountain V1.5.1/Characters/Enemy 1/variation1/enemy 1 var1-death.png" id="11_w8i8w"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5uy6h"]
 radius = 9.0
@@ -16,6 +18,7 @@ height = 32.0
 
 [sub_resource type="Animation" id="Animation_5uy6h"]
 length = 0.001
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -276,6 +279,59 @@ tracks/3/keys = {
 "values": [ExtResource("5_ipns3")]
 }
 
+[sub_resource type="Animation" id="Animation_otmr2"]
+resource_name = "death_GoblinTank"
+length = 1.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_w8i8w")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+}
+
 [sub_resource type="Animation" id="Animation_g0wcc"]
 resource_name = "death_Golem"
 length = 1.30001
@@ -327,6 +383,59 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+}
+
+[sub_resource type="Animation" id="Animation_w8i8w"]
+resource_name = "death_MutantRat"
+length = 1.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_w8i8w")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [12]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 }
 
 [sub_resource type="Animation" id="Animation_s1ycm"]
@@ -495,7 +604,9 @@ _data = {
 &"death_Goblin": SubResource("Animation_4ra3w"),
 &"death_GoblinBrawl": SubResource("Animation_xwavj"),
 &"death_GoblinElite": SubResource("Animation_j0cyh"),
+&"death_GoblinTank": SubResource("Animation_otmr2"),
 &"death_Golem": SubResource("Animation_g0wcc"),
+&"death_MutantRat": SubResource("Animation_w8i8w"),
 &"death_OrcMage": SubResource("Animation_s1ycm"),
 &"death_OrcMelee": SubResource("Animation_ile5s"),
 &"death_OrcWarror": SubResource("Animation_shcg2")

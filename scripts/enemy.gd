@@ -20,7 +20,6 @@ var buff_timer : float = 0.0
 var buff_stage: int = 0
 var is_dead := false
 
-
 var health : float:
 	set(value):
 		health = value
@@ -35,7 +34,6 @@ var elite : bool = false:
 		if value:
 			$Sprite2D.material = ShaderPool.outline #change elite outline
 			scale = Vector2(1.5,1.5) #scales up elite
-
 
 #variable to store enemy resource that updates Sprite2D
 var type : Enemy:
@@ -95,7 +93,6 @@ func check_seperation(_delta):
 	if seperation < player_reference.nearest_enemy_distance: #if any enemy is nearer, it will update the nearest_enemy from enemy to player
 		player_reference.nearest_enemy = self
 
-
 func knockback_update(delta):
 	velocity = (player_reference.position - position).normalized() * speed
 	knockback = knockback.move_toward(Vector2.ZERO, 1) #knockback decay over time
@@ -103,7 +100,6 @@ func knockback_update(delta):
 	var collider = move_and_collide(velocity * delta)
 	if collider: #apply knockback to bodies colliding with the enemy
 		collider.get_collider().knockback = (collider.get_collider().global_position - global_position).normalized() * 50
-
 
 #function to instantiate damage popup and add it to scene tree
 func damage_popup(amount, modifier = 1.0):
@@ -120,7 +116,6 @@ func apply_buff(stage: int):
 	var damage_multiplier := pow(1.1, stage)   #Damage increases by 10% each stage
 	var speed_multiplier := pow(1.02, stage)   #Speed increases by 2% each stage
 
-
 	speed = type.speed * speed_multiplier
 	damage = type.damage * damage_multiplier
 	max_health = type.health * health_multiplier
@@ -131,7 +126,6 @@ func apply_buff(stage: int):
 		damage *= 2.5 #2.5x more damage
 		
 		health = max_health
-
 
 #function for enemy to take damage
 func take_damage(amount):
@@ -177,7 +171,7 @@ func drop_item():
 		item_to_drop.player_reference = player_reference
 		get_tree().current_scene.call_deferred("add_child", item_to_drop)
 
-	# 💰 Gold drop chance
+	#Gold drop chance
 	var gold_drop_chance := 0.3  # 50% chance to drop gold
 	if randf() < gold_drop_chance:
 		var gold_resource = load("res://resources/Pickups/Gold.tres")  # Make sure this exists
@@ -187,7 +181,7 @@ func drop_item():
 		gold_pickup.player_reference = player_reference
 		get_tree().current_scene.call_deferred("add_child", gold_pickup)
 
-	# End-of-life effects
+	#End-of-life effects
 	disable()
 
 	if has_node("AnimationPlayer"):

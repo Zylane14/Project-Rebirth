@@ -44,7 +44,7 @@ func _on_back_pressed() -> void: #back button
 
 
 func tween_pop(panel): #func to give pop effect
-	SoundManager.play_sfx(load("res://music & sfx/Be Not Afraid UI/--Unholy/Be Not Afraid UI/BNA_UI49.wav"))
+	SoundManager.play_sfx(load("res://music & sfx/Be Not Afraid UI/--Unholy/Souls/Unholy UI - Souls (2).wav"))
 	#panel.scale = Vector2(1.0,1.0)
 	#var tween = get_tree().create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
 	#tween.tween_property(panel, "scale", Vector2(1,1), 0.5)

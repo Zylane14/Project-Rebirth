@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dudlrhcosn0ih"
+path="res://.godot/imported/wall-1-2-water-premade corners.png-cb8d3297fcb98a69d91f8f29dc8bf391.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/World/EPIC RPG World - Sewers V1.5/Tilesets/wall-1-2-water-premade corners.png"
+dest_files=["res://.godot/imported/wall-1-2-water-premade corners.png-cb8d3297fcb98a69d91f8f29dc8bf391.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

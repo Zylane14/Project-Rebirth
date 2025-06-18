@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="1_q05k0"]
 [ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="1_ts7x5"]
 [ext_resource type="Resource" uid="uid://brhulfmqu2bs1" path="res://resources/Pickups/Orange EXP.tres" id="2_veemv"]
-[ext_resource type="Texture2D" uid="uid://dvxe6cnp4idu8" path="res://assets/Tilemaps/epic-rpg-world-pack-ancient-ruins/ERW - Ancient Ruins V 1.9.1/Characters/Stone  Golem/Stone-golem v2-run-224x192.png" id="4_q05k0"]
+[ext_resource type="Texture2D" uid="uid://dvxe6cnp4idu8" path="res://assets/World/epic-rpg-world-pack-ancient-ruins/ERW - Ancient Ruins V 1.9.1/Characters/Stone  Golem/Stone-golem v2-run-224x192.png" id="4_q05k0"]
 
 [resource]
 script = ExtResource("1_ts7x5")
@@ -15,8 +15,6 @@ damage = 30.0
 speed = 70.0
 frames = 8
 drops = Array[ExtResource("1_q05k0")]([ExtResource("2_veemv")])
-gold = 50
-spawn_weight = 1.0
+spawn_weight = 10.0
 unlock_minute = 4.0
-enemy_class = 3
 metadata/_custom_type_script = "uid://brq1oadyao0po"

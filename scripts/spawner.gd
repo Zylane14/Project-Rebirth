@@ -4,7 +4,7 @@ extends Node2D
 @export var player : CharacterBody2D
 @export var enemy : PackedScene
 @export var destructible : PackedScene
-@export var enemy_types : Array[Enemy] #declare a variable to store array of enemy
+var enemy_types: Array[Enemy] = [] #declare a variable to store array of enemy
 
 #distance for enemy spawning
 var distance : float = 400
@@ -28,6 +28,25 @@ var second : int:
 		%Second.text = str(second).lpad(2,'0') #padding to the left
 
 
+func load_enemy_types(path: String):
+	enemy_types.clear()
+	var dir := DirAccess.open(path)
+	if dir:
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		while file_name != "":
+			if not dir.current_is_dir() and file_name.ends_with(".tres"):
+				var full_path = path + "/" + file_name
+				var res = load(full_path)
+				if res is Enemy:
+					enemy_types.append(res)
+			file_name = dir.get_next()
+		dir.list_dir_end()
+
+# Called when the node enters the scene tree
+func _ready():
+	load_enemy_types("res://resources/Enemies/")
+	
 func _physics_process(_delta):
 	if get_tree().get_node_count_in_group("Enemy") < 700: #limit mob spawns below 700
 		can_spawn = true
@@ -47,7 +66,9 @@ func spawn(pos : Vector2, elite : bool = false):
 	enemy_instance.player_reference = player
 	enemy_instance.elite = elite
 	enemy_instance.apply_buff(minute)
-
+	
+	enemy_instance.scale = enemy_instance.type.scale
+	
 	get_tree().current_scene.add_child(enemy_instance)
 
 func update_unlocked_enemies():
@@ -86,18 +107,14 @@ func pick_weighted_enemy_type() -> Enemy: #function to pick a random enemy type 
 
 	return weighted_list[0] # safety fallback
 
-
-
 #function to get random postion from player at a particular distance
 func get_random_position() -> Vector2:
 	return player.position + distance * Vector2.RIGHT.rotated(randf_range(0, 2 * PI))
-
 
 #function to spawn multiple enemies at a time
 func amount(number : int = 1):
 	for i in range(number):
 		spawn(get_random_position())
-
 
 #increment "second" with each timeout and spawn enemies
 func _on_timer_timeout():
@@ -108,15 +125,12 @@ func _on_timer_timeout():
 		base_spawn = int(base_spawn * 0.6)  # Spawn only 30% of usual enemies early on
 	amount(base_spawn)
 
-
 func _on_pattern_timeout():
 	for i in range(100 + minute * 10):
 		spawn(get_random_position())
 
-
 func _on_elite_timeout():
 	spawn(get_random_position(), true)
-
 
 func _on_destructible_timeout():
 	spawn_destructible(get_random_position()) #spawning destructible with each timeout

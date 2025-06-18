@@ -22,4 +22,5 @@ func _on_pressed(character : Character): #presseng any character slot will store
 	Persistence.character = character
 	starting_weapon.texture = character.starting_weapon.icon #updates the texture of starting weapon of currently selected character
 	portrait_display.texture = character.portrait
+	%Portrait.show()
 	start_button.visible = true #show the Start button when a character is selected

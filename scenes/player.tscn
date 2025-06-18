@@ -4,15 +4,15 @@
 [ext_resource type="PackedScene" uid="uid://3ninw6nm3qxc" path="res://scenes/slot.tscn" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://gdw0uqu72fms" path="res://assets/Characters/main-character-of-the-story/MainCharacter(FullPack)/MainCharacter(FullPack-v1)/MainChar - idle.png" id="2_i3pqv"]
 [ext_resource type="Resource" uid="uid://q3uqovvyoat2" path="res://resources/Characters/Eleonore.tres" id="2_i4ail"]
-[ext_resource type="Texture2D" uid="uid://dwjn4w41mc2p2" path="res://assets/Tilemaps/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/icons_items_bag.png" id="2_ur7pv"]
+[ext_resource type="Texture2D" uid="uid://dwjn4w41mc2p2" path="res://assets/World/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/icons_items_bag.png" id="2_ur7pv"]
 [ext_resource type="PackedScene" uid="uid://bt46puqq0y8kf" path="res://scenes/ghost.tscn" id="3_l71n6"]
 [ext_resource type="Texture2D" uid="uid://dowmeqsbbwugq" path="res://assets/UI/under.png" id="4_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://dmhukujsong7b" path="res://assets/UI/ProgressMana.png" id="5_fjrip"]
 [ext_resource type="PackedScene" uid="uid://3oy7wx1aj4tc" path="res://scenes/passive_slot.tscn" id="5_ur7pv"]
 [ext_resource type="Script" uid="uid://bgvfyn7ko4eu" path="res://scenes/options.gd" id="6_fjrip"]
-[ext_resource type="Texture2D" uid="uid://da8r85dnw6p5k" path="res://assets/Tilemaps/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/9SlicedObjects_windows_7.png" id="11_f1ej7"]
+[ext_resource type="Texture2D" uid="uid://da8r85dnw6p5k" path="res://assets/World/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/9SlicedObjects_windows_7.png" id="11_f1ej7"]
 [ext_resource type="Script" uid="uid://d0ua8kdhyqf7c" path="res://scenes/chest.gd" id="12_oprun"]
-[ext_resource type="Texture2D" uid="uid://b63d8w5s2s3q3" path="res://assets/Tilemaps/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/Props/animated/treasure chest lvl 2-opening animation-cartoon style.png" id="13_a8ls1"]
+[ext_resource type="Texture2D" uid="uid://b63d8w5s2s3q3" path="res://assets/World/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/Props/animated/treasure chest lvl 2-opening animation-cartoon style.png" id="13_a8ls1"]
 [ext_resource type="PackedScene" uid="uid://d2i68oagku42c" path="res://scenes/reward_slot.tscn" id="14_a8ls1"]
 [ext_resource type="Script" uid="uid://tyonajtpq56s" path="res://scenes/report.gd" id="14_a38lo"]
 [ext_resource type="PackedScene" uid="uid://khqdo7qeuc1c" path="res://scenes/artifact_slot.tscn" id="15_ke2ow"]
@@ -641,6 +641,7 @@ radius = 50.0
 [node name="Player" type="CharacterBody2D"]
 visibility_layer = 2
 z_index = 1
+position = Vector2(0, 1)
 script = ExtResource("1_onrkg")
 character = ExtResource("2_i4ail")
 ghost_node = ExtResource("3_l71n6")
@@ -664,6 +665,7 @@ offset_left = 25.0
 offset_top = 57.0
 offset_right = 121.0
 offset_bottom = 80.0
+theme_override_font_sizes/font_size = 12
 text = "Gold: 0"
 
 [node name="Particle" type="GPUParticles2D" parent="UI"]
@@ -816,15 +818,17 @@ offset_left = 4.0
 offset_top = 26.0
 offset_right = 58.0
 offset_bottom = 49.0
+theme_override_font_sizes/font_size = 14
 text = "Level 1"
 
 [node name="XPLabel" type="Label" parent="UI/XP"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 65.0
-offset_top = 27.0
-offset_right = 127.0
-offset_bottom = 50.0
+offset_left = 76.0
+offset_top = 12.0
+offset_right = 104.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 7
 text = "XP: 0 / 0"
 
 [node name="Options" type="VBoxContainer" parent="UI" node_paths=PackedStringArray("weapons", "passive_items", "particles", "panel")]
@@ -849,7 +853,6 @@ panel = NodePath("../Panel")
 
 [node name="Chest" type="NinePatchRect" parent="UI"]
 process_mode = 3
-visible = false
 z_index = 1
 custom_minimum_size = Vector2(250, 220)
 anchors_preset = 8
@@ -877,6 +880,7 @@ frame = 12
 frame_progress = 1.0
 
 [node name="Open" type="Button" parent="UI/Chest"]
+visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = 7
@@ -895,7 +899,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_487ah")
 text = "Open"
 
 [node name="Close" type="Button" parent="UI/Chest"]
-visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -908,6 +911,7 @@ offset_right = 25.0
 offset_bottom = -28.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_font_sizes/font_size = 14
 theme_override_styles/focus = SubResource("StyleBoxEmpty_gl8cc")
 theme_override_styles/normal = SubResource("StyleBoxFlat_487ah")
 text = "Close"

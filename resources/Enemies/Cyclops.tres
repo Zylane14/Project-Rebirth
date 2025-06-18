@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="1_e58ni"]
 [ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="1_g45f2"]
 [ext_resource type="Resource" uid="uid://brhulfmqu2bs1" path="res://resources/Pickups/Orange EXP.tres" id="2_g45f2"]
-[ext_resource type="Texture2D" uid="uid://chwlulqjwaf43" path="res://assets/epic-rpg-world-the-depths-of-the-mountain/Epic RPG World - The dephs of the Mountain V1.5.1/Characters/Enemy 1/enemy 1-walk.png" id="2_watds"]
+[ext_resource type="Texture2D" uid="uid://chwlulqjwaf43" path="res://assets/World/epic-rpg-world-the-depths-of-the-mountain/Epic RPG World - The dephs of the Mountain V1.5.1/Characters/Enemy 1/enemy 1-walk.png" id="2_watds"]
 
 [resource]
 script = ExtResource("1_e58ni")
@@ -11,12 +11,10 @@ title = "Cyclops"
 animation_name = "Cyclops"
 texture = ExtResource("2_watds")
 health = 40.0
-damage = 13.0
+damage = 15.0
 speed = 50.0
 frames = 8
 drops = Array[ExtResource("1_g45f2")]([ExtResource("2_g45f2")])
-gold = 30
-spawn_weight = 3.0
+spawn_weight = 30.0
 unlock_minute = 2.0
-enemy_class = 2
 metadata/_custom_type_script = "uid://brq1oadyao0po"

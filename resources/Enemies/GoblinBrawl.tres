@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="1_3xd4o"]
 [ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="1_6r0uh"]
 [ext_resource type="Resource" uid="uid://bsdwvs8d0sd32" path="res://resources/Pickups/Blue EXP.tres" id="2_cc8tm"]
-[ext_resource type="Texture2D" uid="uid://bb27tkxnrikn4" path="res://assets/Tilemaps/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/Characters/Enemy1/enemy1-variation1-run.png" id="4_3xd4o"]
+[ext_resource type="Texture2D" uid="uid://bb27tkxnrikn4" path="res://assets/World/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/Characters/Enemy1/enemy1-variation1-run.png" id="4_3xd4o"]
 
 [resource]
 script = ExtResource("1_6r0uh")
@@ -15,8 +15,6 @@ damage = 12.0
 speed = 75.0
 frames = 8
 drops = Array[ExtResource("1_3xd4o")]([ExtResource("2_cc8tm")])
-gold = 3
-spawn_weight = 7.5
-unlock_minute = 0.15
-enemy_class = 0
+spawn_weight = 65.0
+unlock_minute = 0.5
 metadata/_custom_type_script = "uid://brq1oadyao0po"
