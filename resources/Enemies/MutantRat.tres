@@ -11,7 +11,6 @@ script = ExtResource("2_t85i8")
 title = "MutantRat"
 animation_name = "MutantRat"
 texture = ExtResource("3_yvnva")
-frames = 8
 scale = Vector2(1, 1)
 health = 16.0
 damage = 15.0

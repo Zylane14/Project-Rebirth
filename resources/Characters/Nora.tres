@@ -29,4 +29,5 @@ portrait = ExtResource("3_1napf")
 animation_name = "Nora"
 base_stats = SubResource("Resource_uy0uk")
 starting_weapon = ExtResource("4_cu3pu")
+scale = Vector2(1, 1)
 metadata/_custom_type_script = "uid://bjudu0im5j1jb"

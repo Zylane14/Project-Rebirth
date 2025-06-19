@@ -11,7 +11,6 @@ script = ExtResource("1_e58ni")
 title = "Cyclops"
 animation_name = "Cyclops"
 texture = ExtResource("2_watds")
-frames = 8
 scale = Vector2(1, 1)
 health = 40.0
 damage = 15.0

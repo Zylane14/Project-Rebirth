@@ -29,4 +29,5 @@ portrait = ExtResource("3_3cii4")
 animation_name = "Eleonore"
 base_stats = SubResource("Resource_3cii4")
 starting_weapon = ExtResource("4_i80kj")
+scale = Vector2(1, 1)
 metadata/_custom_type_script = "uid://bjudu0im5j1jb"

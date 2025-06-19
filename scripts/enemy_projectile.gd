@@ -14,6 +14,7 @@ func _on_body_entered(body):
 			body.take_damage(damage)
 		queue_free()
 
+@warning_ignore("unused_parameter")
 func _process(delta):
 	if not get_viewport_rect().has_point(global_position):
 		queue_free()

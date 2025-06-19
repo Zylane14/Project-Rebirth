@@ -87,6 +87,7 @@ func _physics_process(delta):
 		Enemy.EnemyClass.RANGED:
 			perform_ranged_attack()
 		
+@warning_ignore("unused_parameter")
 func animation(delta): #function animation that will flip sprite in the direction of player
 	if (player_reference.position.x - position.x) < 0:
 		$Sprite2D.flip_h = true

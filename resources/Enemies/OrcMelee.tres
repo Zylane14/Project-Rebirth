@@ -8,15 +8,14 @@
 script = ExtResource("3_373bf")
 title = "OrcMelee"
 animation_name = "OrcMelee"
-frames = 8
 scale = Vector2(1, 1)
 health = 30.0
 damage = 6.0
 speed = 70.0
 drops = Array[ExtResource("1_pi32d")]([ExtResource("2_s7xvb")])
 spawn_weight = 65.0
-unlock_minute = 0.0
+unlock_minute = 1.2
 enemy_class = 0
 attack_cooldown = 0.8
-attack_range = 60.0
+attack_range = 50.0
 metadata/_custom_type_script = "uid://brq1oadyao0po"
