@@ -1,20 +1,22 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=5 format=3 uid="uid://8t86jgvkply2"]
+[gd_resource type="Resource" script_class="Enemy" load_steps=4 format=3 uid="uid://8t86jgvkply2"]
 
 [ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="1_pi32d"]
 [ext_resource type="Resource" uid="uid://brhulfmqu2bs1" path="res://resources/Pickups/Orange EXP.tres" id="2_s7xvb"]
 [ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="3_373bf"]
-[ext_resource type="Texture2D" uid="uid://c70x0uiuji2es" path="res://assets/World/ERW - Grass Land 2.0 v1.7.2/Characters/orc warrior/orc1/orc melee - anims-walk.png" id="4_jubfm"]
 
 [resource]
 script = ExtResource("3_373bf")
 title = "OrcMelee"
 animation_name = "OrcMelee"
-texture = ExtResource("4_jubfm")
+frames = 8
+scale = Vector2(1, 1)
 health = 30.0
 damage = 6.0
 speed = 70.0
-frames = 8
 drops = Array[ExtResource("1_pi32d")]([ExtResource("2_s7xvb")])
 spawn_weight = 65.0
-unlock_minute = 1.0
+unlock_minute = 0.0
+enemy_class = 0
+attack_cooldown = 0.8
+attack_range = 60.0
 metadata/_custom_type_script = "uid://brq1oadyao0po"

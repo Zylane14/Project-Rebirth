@@ -3,18 +3,22 @@
 [ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="1_83h7g"]
 [ext_resource type="Resource" uid="uid://bsdwvs8d0sd32" path="res://resources/Pickups/Blue EXP.tres" id="2_jssjf"]
 [ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="3_0cicc"]
-[ext_resource type="Texture2D" uid="uid://cu5am7l7awr2u" path="res://assets/World/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/Characters/Enemy1/enemy1-run.png" id="4_op2jl"]
+[ext_resource type="PackedScene" uid="uid://b8k11td5n644u" path="res://scenes/enemy_projectile.tscn" id="3_0lhts"]
 
 [resource]
 script = ExtResource("3_0cicc")
 title = "Goblin"
 animation_name = "Goblin"
-texture = ExtResource("4_op2jl")
+frames = 8
+scale = Vector2(0.9, 0.9)
 health = 10.0
 damage = 10.0
 speed = 75.0
-frames = 8
 drops = Array[ExtResource("1_83h7g")]([ExtResource("2_jssjf")])
 spawn_weight = 100.0
 unlock_minute = 0.0
+enemy_class = 0
+attack_cooldown = 1.5
+attack_range = 15.0
+projectile_scene = ExtResource("3_0lhts")
 metadata/_custom_type_script = "uid://brq1oadyao0po"

@@ -65,7 +65,7 @@ var luck : float = 2.5:
 	set(value):
 		luck = value
 		%Luck.text = "Luck : " + str(value)
-var dodge : float = 50.0:
+var dodge : float = 90.0:
 	set(value):
 		dodge = value
 		%Dodge.text = "Dodge : " + str(value)
@@ -102,6 +102,10 @@ var is_dashing: bool = false
 func _ready() -> void:
 	Persistence.gain_bonus_stats(self) #call the gain bonus statsbas from persistence when the player node is ready
 	character = Persistence.character #set character, base stats, add starting weapon on ready
+	
+	if character:
+		scale = character.scale
+		
 	set_base_stats(character.base_stats)
 	%XP.max_value = get_xp_needed(level)
 	

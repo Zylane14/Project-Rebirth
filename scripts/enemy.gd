@@ -16,6 +16,9 @@ var seperation : float
 
 var drop = preload("res://scenes/pickups.tscn") #preloads pickup scene
 
+var attack_timer := 0.0
+var is_attacking := false
+
 var buff_timer : float = 0.0
 var buff_stage: int = 0
 var is_dead := false
@@ -40,7 +43,7 @@ var type : Enemy:
 	set(value):
 		type = value
 		$Sprite2D.texture = value.texture
-		$Sprite2D.hframes = value.frames
+		$Sprite2D.scale = value.scale
 		damage = value.damage
 		speed = value.speed
 		health = value.health #updates health from resource
@@ -58,6 +61,9 @@ func _ready():
 	health_bar_timer.wait_time = 1.5
 	health_bar_timer.timeout.connect(_hide_health_bar)
 	
+	if $AnimationPlayer:
+		$AnimationPlayer.animation_finished.connect(_on_animation_finished)
+	
 #Enemy moves toward player position
 func _physics_process(delta):
 	if is_dead:
@@ -65,25 +71,27 @@ func _physics_process(delta):
 		
 	animation(delta) #call the animation function to enemy script physics process
 	check_seperation(delta)
-	knockback_update(delta)
+
+	if not is_attacking:
+		knockback_update(delta)
+		play_walk_animation()  #start walk animation while not attacking
 	
 	if buff_stage < GlobalManager.global_buff_stage:
 		buff_stage = GlobalManager.global_buff_stage
 		apply_buff(buff_stage)
 
+	attack_timer -= delta
+	match type.enemy_class:
+		Enemy.EnemyClass.MELEE:
+			perform_melee_attack()
+		Enemy.EnemyClass.RANGED:
+			perform_ranged_attack()
+		
 func animation(delta): #function animation that will flip sprite in the direction of player
 	if (player_reference.position.x - position.x) < 0:
 		$Sprite2D.flip_h = true
 	else:
 		$Sprite2D.flip_h = false
-	
-	if type.frames <= 1: #return function if frames are still 1
-		return
-	
-	duration += delta
-	if type.frames > 1 and duration >= 1.0/FPS: #else increase frame with resepect to FPS
-		$Sprite2D.frame = ($Sprite2D.frame + 1) % type.frames
-		duration = 0
 
 func check_seperation(_delta):
 	seperation = (player_reference.position - position).length() #calculate seperations and store in through a function
@@ -208,3 +216,56 @@ func disable(): #disable functionality of the enemy
 	speed = 0
 	$CollisionShape2D.set_deferred("disabled", true)
 	knockback = Vector2.ZERO
+
+#Enemy Attack Function
+func perform_melee_attack():
+	if attack_timer > 0 or is_attacking:
+		return
+		
+	if position.distance_to(player_reference.position) <= type.attack_range:
+		if has_node("AnimationPlayer"):
+			var anim_name = "melee_attack_" + type.animation_name
+			if $AnimationPlayer.has_animation(anim_name):
+				is_attacking = true
+				$AnimationPlayer.play(anim_name)
+				attack_timer = type.attack_cooldown
+
+#Ranged
+func perform_ranged_attack():
+	if attack_timer > 0 or is_attacking or not is_instance_valid(player_reference):
+		return
+
+	if position.distance_to(player_reference.position) <= 300:
+		if has_node("AnimationPlayer"):
+			var anim_name = "range_attack_" + type.animation_name
+			if $AnimationPlayer.has_animation(anim_name):
+				is_attacking = true
+				$AnimationPlayer.play(anim_name)
+				attack_timer = type.attack_cooldown
+
+func _on_animation_finished(anim_name: String): #To Reset the Attack State
+	if anim_name.begins_with("melee_attack_") or anim_name.begins_with("range_attack_"):
+		is_attacking = false
+		
+
+func do_melee_hit():
+	if player_reference and position.distance_to(player_reference.position) <= type.attack_range:
+		if player_reference.has_method("take_damage"):
+			player_reference.take_damage(type.damage)
+
+func spawn_projectile(): #make sure to add in animationplayer track when range
+	if type.projectile_scene and is_instance_valid(player_reference):
+		var projectile = type.projectile_scene.instantiate()
+		projectile.global_position = global_position
+		projectile.direction = (player_reference.global_position - global_position).normalized()
+		projectile.damage = type.damage
+		projectile.player_reference = player_reference
+		get_tree().current_scene.add_child(projectile)
+		
+func play_walk_animation():
+	if not $AnimationPlayer:
+		return
+
+	var walk_anim = "walk_" + type.animation_name
+	if $AnimationPlayer.has_animation(walk_anim):
+		$AnimationPlayer.play(walk_anim)

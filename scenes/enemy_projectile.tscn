@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8k11td5n644u"]
+
+[ext_resource type="Script" uid="uid://dlgdn7h41fj60" path="res://scripts/enemy_projectile.gd" id="1_lofwd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lofwd"]
+
+[node name="EnemyProjectile" type="Area2D"]
+script = ExtResource("1_lofwd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_lofwd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

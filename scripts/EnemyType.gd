@@ -8,7 +8,6 @@ class_name Enemy
 @export var health : float
 @export var damage : float
 @export var speed : float
-@export var frames : int = 1
 @export var drops : Array[Pickups]
 #@export var gold : int = 0
 #@export var HurtSound : AudioStream #property for storing audio
@@ -16,5 +15,11 @@ class_name Enemy
 @export var spawn_weight: float = 1.0
 @export var unlock_minute: float = 0.0 
 
-#enum EnemyClass { MELEE, RANGED, BRAWLER, TANK, MAGE, ASSASSIN }
-#@export var enemy_class: EnemyClass = EnemyClass.MELEE
+enum EnemyClass { MELEE, RANGED, BRAWLER, TANK, MAGE, ASSASSIN }
+@export var enemy_class: EnemyClass = EnemyClass.MELEE
+
+
+#Enemy Attack
+@export var attack_cooldown : float = 1.5
+@export var attack_range : float = 60.0 # used for melee
+@export var projectile_scene : PackedScene = null # used for ranged
