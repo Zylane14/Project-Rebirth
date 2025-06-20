@@ -252,14 +252,14 @@ func perform_ranged_attack():
 	if attack_timer > 0 or is_attacking or has_done_ranged_attack or not is_instance_valid(player_reference):
 		return
 
-	var range = type.ranged_attack_range if type.enemy_class == Enemy.EnemyClass.HYBRID else 300.0
+	var attack_range = type.ranged_attack_range if type.enemy_class == Enemy.EnemyClass.HYBRID else 300.0
 
-	if position.distance_to(player_reference.position) <= range:
+	if position.distance_to(player_reference.position) <= attack_range:
 		if has_node("AnimationPlayer"):
 			var anim_name = "range_attack_" + type.animation_name
 			if $AnimationPlayer.has_animation(anim_name):
 				is_attacking = true
-				$AnimationPlayer.play(anim_name)
+				$AnimationPlayer.play(anim_name) 
 				attack_timer = type.attack_cooldown
 				has_done_ranged_attack = true  # Lock out further ranged attacks
 				hybrid_mode = "melee"  # Switch to melee after attack
@@ -281,12 +281,20 @@ func do_melee_hit():
 func spawn_projectile():
 	if type.projectile_scene and is_instance_valid(player_reference):
 		var projectile = type.projectile_scene.instantiate()
-		projectile.global_position = global_position
-		projectile.direction = (player_reference.global_position - global_position).normalized()
+
+		if type.projectile_spawns_at_player:
+			# Poison vial: spawns directly at the player's position
+			projectile.global_position = player_reference.global_position
+		else:
+			# Fireball or other ranged projectile: launch from enemy toward player
+			projectile.global_position = global_position
+			projectile.direction = (player_reference.global_position - global_position).normalized()
+
 		projectile.player_reference = player_reference
 		get_tree().current_scene.add_child(projectile)
 		
 		#projectile.global_position = player_reference.global_position  # Spawns at player
+		
 func play_walk_animation():
 	if not $AnimationPlayer:
 		return

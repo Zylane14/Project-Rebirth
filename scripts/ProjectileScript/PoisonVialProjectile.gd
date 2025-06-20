@@ -1,8 +1,8 @@
 extends Area2D
 
-@export var speed: float = 300.0
+@export var speed: float = 200.0
 @export var damage: float = 5.0
-@export var poison_pool_scene: PackedScene  # assign PoisonPool.tscn in Inspector
+@export var poison_pool_scene: PackedScene
 @export var stop_distance: float = 10.0  # distance threshold to trigger explosion
 
 var direction: Vector2 = Vector2.ZERO

@@ -9,9 +9,6 @@ func _ready():
 	if $AnimatedSprite2D.sprite_frames.has_animation("poison"):
 		$AnimatedSprite2D.play("poison")
 
-	# Optionally offset slightly (e.g., for a visual effect)
-	position += Vector2(20, -20)
-
 	# Auto-remove after `lifetime`
 	await get_tree().create_timer(lifetime).timeout
 	queue_free()

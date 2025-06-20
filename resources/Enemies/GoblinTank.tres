@@ -8,8 +8,8 @@
 script = ExtResource("2_pe3d7")
 title = "GoblinTank"
 animation_name = "GoblinTank"
-scale = Vector2(1.2, 1.2)
-health = 30.0
+scale = Vector2(1.1, 1.1)
+health = 50.0
 damage = 13.0
 speed = 60.0
 drops = Array[ExtResource("1_r565b")]([ExtResource("2_i6jus")])
@@ -19,4 +19,5 @@ enemy_class = 0
 attack_cooldown = 1.5
 attack_range = 45.0
 ranged_attack_range = 300.0
+projectile_spawns_at_player = false
 metadata/_custom_type_script = "uid://brq1oadyao0po"

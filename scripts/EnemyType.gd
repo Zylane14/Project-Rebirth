@@ -23,4 +23,5 @@ enum EnemyClass { MELEE, RANGED, BRAWLER, TANK, MAGE, ASSASSIN, HYBRID }
 @export var attack_cooldown : float = 1.5
 @export var attack_range : float = 60.0 # used for melee
 @export var ranged_attack_range : float = 300.0 # used for hybrid or ranged attacks
+@export var projectile_spawns_at_player: bool = false
 @export var projectile_scene : PackedScene = null # used for ranged

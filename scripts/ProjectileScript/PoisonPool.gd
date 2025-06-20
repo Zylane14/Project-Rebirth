@@ -1,7 +1,7 @@
 extends Area2D
 
-@export var damage: float = 5.0
-@export var linger_time: float = 3.0
+@export var damage: float = 8.0
+@export var linger_time: float = 6.0
 @export var tick_interval: float = 0.4  # how often to apply damage
 var player_reference: CharacterBody2D
 
