@@ -1,13 +1,114 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8k11td5n644u"]
+[gd_scene load_steps=17 format=3 uid="uid://b8k11td5n644u"]
 
-[ext_resource type="Script" uid="uid://dlgdn7h41fj60" path="res://scripts/enemy_projectile.gd" id="1_lofwd"]
+[ext_resource type="Script" uid="uid://dlgdn7h41fj60" path="res://scripts/ProjectileScript/PoisonProjectile.gd" id="1_lofwd"]
+[ext_resource type="Texture2D" uid="uid://cc0pif0jdouft" path="res://assets/World/ERW - Grass Land 2.0 v1.7.2/Characters/orc mage/atk1 fx-energy ish fx-pack.png" id="2_e8ik0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lofwd"]
 
-[node name="EnemyProjectile" type="Area2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8ik0"]
+atlas = ExtResource("2_e8ik0")
+region = Rect2(0, 0, 192, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7vux"]
+atlas = ExtResource("2_e8ik0")
+region = Rect2(192, 0, 192, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtqwx"]
+atlas = ExtResource("2_e8ik0")
+region = Rect2(384, 0, 192, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldodw"]
+atlas = ExtResource("2_e8ik0")
+region = Rect2(576, 0, 192, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nb2xg"]
+atlas = ExtResource("2_e8ik0")
+region = Rect2(768, 0, 192, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yowe"]
+atlas = ExtResource("2_e8ik0")
+region = Rect2(960, 0, 192, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hny1x"]
+atlas = ExtResource("2_e8ik0")
+region = Rect2(1152, 0, 192, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwjc6"]
+atlas = ExtResource("2_e8ik0")
+region = Rect2(1344, 0, 192, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nr4kc"]
+atlas = ExtResource("2_e8ik0")
+region = Rect2(1536, 0, 192, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypkj3"]
+atlas = ExtResource("2_e8ik0")
+region = Rect2(1728, 0, 192, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2t1x"]
+atlas = ExtResource("2_e8ik0")
+region = Rect2(1920, 0, 192, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ay20h"]
+atlas = ExtResource("2_e8ik0")
+region = Rect2(2112, 0, 192, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j7vux"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8ik0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7vux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtqwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldodw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nb2xg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6yowe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hny1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwjc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nr4kc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypkj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2t1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ay20h")
+}],
+"loop": true,
+"name": &"poison",
+"speed": 12.0
+}]
+
+[node name="ProjectilePoison" type="Area2D"]
 script = ExtResource("1_lofwd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(17, 37)
+scale = Vector2(2.5, 2.5)
 shape = SubResource("CircleShape2D_lofwd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_j7vux")
+animation = &"poison"
+frame = 7
+frame_progress = 0.946474
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

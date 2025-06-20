@@ -23,6 +23,9 @@ var buff_timer : float = 0.0
 var buff_stage: int = 0
 var is_dead := false
 
+var hybrid_mode := "ranged"  #or "melee"
+var has_done_ranged_attack := false
+
 var health : float:
 	set(value):
 		health = value
@@ -64,6 +67,13 @@ func _ready():
 	if $AnimationPlayer:
 		$AnimationPlayer.animation_finished.connect(_on_animation_finished)
 	
+	if type.enemy_class == Enemy.EnemyClass.HYBRID:
+		var mode_switch_timer = Timer.new()
+		mode_switch_timer.wait_time = 5.0
+		mode_switch_timer.autostart = true
+		#mode_switch_timer.timeout.connect(switch_hybrid_mode)
+		add_child(mode_switch_timer)
+	
 #Enemy moves toward player position
 func _physics_process(delta):
 	if is_dead:
@@ -81,11 +91,17 @@ func _physics_process(delta):
 		apply_buff(buff_stage)
 
 	attack_timer -= delta
+	
 	match type.enemy_class:
 		Enemy.EnemyClass.MELEE:
 			perform_melee_attack()
 		Enemy.EnemyClass.RANGED:
 			perform_ranged_attack()
+		Enemy.EnemyClass.HYBRID:
+			if hybrid_mode == "ranged":
+				perform_ranged_attack()
+			else:
+				perform_melee_attack()
 		
 @warning_ignore("unused_parameter")
 func animation(delta): #function animation that will flip sprite in the direction of player
@@ -222,7 +238,7 @@ func disable(): #disable functionality of the enemy
 func perform_melee_attack():
 	if attack_timer > 0 or is_attacking:
 		return
-		
+
 	if position.distance_to(player_reference.position) <= type.attack_range:
 		if has_node("AnimationPlayer"):
 			var anim_name = "melee_attack_" + type.animation_name
@@ -233,36 +249,44 @@ func perform_melee_attack():
 
 #Ranged
 func perform_ranged_attack():
-	if attack_timer > 0 or is_attacking or not is_instance_valid(player_reference):
+	if attack_timer > 0 or is_attacking or has_done_ranged_attack or not is_instance_valid(player_reference):
 		return
 
-	if position.distance_to(player_reference.position) <= 300:
+	var range = type.ranged_attack_range if type.enemy_class == Enemy.EnemyClass.HYBRID else 300.0
+
+	if position.distance_to(player_reference.position) <= range:
 		if has_node("AnimationPlayer"):
 			var anim_name = "range_attack_" + type.animation_name
 			if $AnimationPlayer.has_animation(anim_name):
 				is_attacking = true
 				$AnimationPlayer.play(anim_name)
 				attack_timer = type.attack_cooldown
+				has_done_ranged_attack = true  # Lock out further ranged attacks
+				hybrid_mode = "melee"  # Switch to melee after attack
 
 func _on_animation_finished(anim_name: String): #To Reset the Attack State
 	if anim_name.begins_with("melee_attack_") or anim_name.begins_with("range_attack_"):
 		is_attacking = false
 		
 
+#Hybrid
+func switch_hybrid_mode():
+	hybrid_mode = "melee" if hybrid_mode == "ranged" else "ranged"
+	
 func do_melee_hit():
 	if player_reference and position.distance_to(player_reference.position) <= type.attack_range:
 		if player_reference.has_method("take_damage"):
 			player_reference.take_damage(type.damage)
 
-func spawn_projectile(): #make sure to add in animationplayer track when range
+func spawn_projectile():
 	if type.projectile_scene and is_instance_valid(player_reference):
 		var projectile = type.projectile_scene.instantiate()
 		projectile.global_position = global_position
 		projectile.direction = (player_reference.global_position - global_position).normalized()
-		projectile.damage = type.damage
 		projectile.player_reference = player_reference
 		get_tree().current_scene.add_child(projectile)
 		
+		#projectile.global_position = player_reference.global_position  # Spawns at player
 func play_walk_animation():
 	if not $AnimationPlayer:
 		return
