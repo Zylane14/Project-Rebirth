@@ -97,7 +97,9 @@ var level : int = 1: #variable to store player level
 			%XP.max_value = 40
 
 var is_dashing: bool = false
-
+var knockback_velocity: Vector2 = Vector2.ZERO
+var knockback_timer: float = 0.0
+var knockback_duration: float = 0.2
 
 func _ready() -> void:
 	Persistence.gain_bonus_stats(self) #call the gain bonus statsbas from persistence when the player node is ready
@@ -114,25 +116,29 @@ func _ready() -> void:
 
 func _physics_process(delta):
 	if is_dashing:
-		return  # Skip movement during dash
+		return #skip movement during dash
 	
+	# Knockback overrides normal movement
+	if knockback_timer > 0:
+		knockback_timer -= delta
+		velocity = knockback_velocity
+	else:
+		velocity = Input.get_vector("left", "right", "up", "down") * movement_speed
+
 	if velocity != Vector2.ZERO:
 		last_move_dir = velocity.normalized()
-		
+
 	if is_instance_valid(nearest_enemy):
-		nearest_enemy_distance = nearest_enemy.seperation #if nearest enemy is not null, sotre its seperation
-		print(nearest_enemy.name)
+		nearest_enemy_distance = nearest_enemy.seperation  #if nearest enemy is not null, sotre its seperation
 	else:
-		nearest_enemy_distance = 150 + area #update nearest distance in physics process
-		nearest_enemy = null #for resetting reference
-	
-	velocity = Input.get_vector("left", "right", "up", "down") * movement_speed
+		nearest_enemy_distance = 150 + area#update nearest distance in physics process
+		nearest_enemy = null  #for resetting reference
+
 	move_and_collide(velocity * delta)
 
 	check_XP()
 	animation(delta)
 	health += recovery * delta
-
 
 func add_ghost():
 	var ghost = ghost_node.instantiate()
@@ -154,6 +160,12 @@ func take_damage(amount):
 	var reduced_damage = max(amount * (amount / (amount + armor)), 1)
 	health -= reduced_damage
 	
+
+func apply_knockback(force: Vector2):
+	if is_dashing:
+		return  # Don't get knocked back while dashing
+	knockback_velocity = force
+	knockback_timer = knockback_duration
 	
 func _on_self_damage_body_entered(body):
 	take_damage(body.damage) #reduce health with enemy damage
