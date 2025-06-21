@@ -8,7 +8,7 @@
 script = ExtResource("2_pe3d7")
 title = "GoblinTank"
 animation_name = "GoblinTank"
-scale = Vector2(1.1, 1.1)
+scale = Vector2(1.12, 1.12)
 health = 50.0
 damage = 13.0
 speed = 60.0

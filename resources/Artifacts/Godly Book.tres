@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Artifact" load_steps=5 format=3 uid="uid://cno7bovkjxtqd"]
 
-[ext_resource type="Texture2D" uid="uid://c63pvcdw31k7f" path="res://assets/World/epic-rpg-world-the-depths-of-the-mountain/Epic RPG World - The dephs of the Mountain V1.5.1/Props/Static/Props-individual sprites/items-books_0.png" id="1_woyia"]
+[ext_resource type="Texture2D" uid="uid://c63pvcdw31k7f" path="res://assets/World/Epic RPG World - The dephs of the Mountain V1.5.1/Props/Static/Props-individual sprites/items-books_0.png" id="1_woyia"]
 [ext_resource type="Script" uid="uid://bkio3sa0rgydf" path="res://scripts/Artifact.gd" id="2_ir18y"]
 [ext_resource type="Script" uid="uid://dhltvcvyn33cy" path="res://scenes/Stats.gd" id="3_qcj5q"]
 

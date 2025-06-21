@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dqldv6uorcvwo"
+path="res://.godot/imported/Werewolf_Growl5.wav-c586189d77e530fa8368adc8c9e911e4.sample"
+
+[deps]
+
+source_file="res://music & sfx/Werewolf/Werewolf/Werewolf_Growl5.wav"
+dest_files=["res://.godot/imported/Werewolf_Growl5.wav-c586189d77e530fa8368adc8c9e911e4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

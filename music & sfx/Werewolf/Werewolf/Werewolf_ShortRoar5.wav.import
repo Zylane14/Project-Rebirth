@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cpo1ocrnjvkff"
+path="res://.godot/imported/Werewolf_ShortRoar5.wav-b9ea7d38772db37847cad343fe436f7a.sample"
+
+[deps]
+
+source_file="res://music & sfx/Werewolf/Werewolf/Werewolf_ShortRoar5.wav"
+dest_files=["res://.godot/imported/Werewolf_ShortRoar5.wav-b9ea7d38772db37847cad343fe436f7a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

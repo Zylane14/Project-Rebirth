@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://by6exrkw4wuup"]
 
-[ext_resource type="Texture2D" uid="uid://ciegyam261d6c" path="res://assets/World/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/Props/animated/shrine3-available.png" id="1_l8yo0"]
+[ext_resource type="Texture2D" uid="uid://ciegyam261d6c" path="res://assets/World/EPIC RPG World Pack - Grass Land V. 1.6/Props/animated/shrine3-available.png" id="1_l8yo0"]
 [ext_resource type="Script" uid="uid://dg378ae4wpvdr" path="res://scenes/destructible.gd" id="2_u70qa"]
 [ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="3_iw4aa"]
 [ext_resource type="Resource" uid="uid://ci2o2efevbw1o" path="res://resources/Pickups/Food.tres" id="4_aay8l"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bmh3a8id7u7qj" path="res://assets/Projectiles/fireball_V_1_1/FB500-1.png" id="1_je35h"]
 [ext_resource type="Script" uid="uid://b2plm87fnhmh4" path="res://scenes/option_slot.gd" id="2_bux6k"]
-[ext_resource type="Texture2D" uid="uid://c5u11r88d57ut" path="res://assets/World/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/9SlicedObjects_windows_4.png" id="3_11gh2"]
+[ext_resource type="Texture2D" uid="uid://c5u11r88d57ut" path="res://assets/World/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/9SlicedObjects_windows_4.png" id="3_11gh2"]
 
 [node name="OptionSlot" type="TextureButton"]
 custom_minimum_size = Vector2(315, 40)

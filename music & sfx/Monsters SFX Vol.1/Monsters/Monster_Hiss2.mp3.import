@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://chg01dwaien6j"
+path="res://.godot/imported/Monster_Hiss2.mp3-d0deeea655bee913211ef0a232f62e27.mp3str"
+
+[deps]
+
+source_file="res://music & sfx/Monsters SFX Vol.1/Monsters/Monster_Hiss2.mp3"
+dest_files=["res://.godot/imported/Monster_Hiss2.mp3-d0deeea655bee913211ef0a232f62e27.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

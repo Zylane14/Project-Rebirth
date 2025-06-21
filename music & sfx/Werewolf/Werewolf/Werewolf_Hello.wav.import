@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c55d4gvrykw1j"
+path="res://.godot/imported/Werewolf_Hello.wav-c17fe2a387e48ac1431a9cc5dbe5bd2f.sample"
+
+[deps]
+
+source_file="res://music & sfx/Werewolf/Werewolf/Werewolf_Hello.wav"
+dest_files=["res://.godot/imported/Werewolf_Hello.wav-c17fe2a387e48ac1431a9cc5dbe5bd2f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

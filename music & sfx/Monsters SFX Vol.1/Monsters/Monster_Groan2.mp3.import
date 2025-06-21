@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://5xobd4rod82c"
+path="res://.godot/imported/Monster_Groan2.mp3-e6c344c08ac71fe523e42830fd69db3d.mp3str"
+
+[deps]
+
+source_file="res://music & sfx/Monsters SFX Vol.1/Monsters/Monster_Groan2.mp3"
+dest_files=["res://.godot/imported/Monster_Groan2.mp3-e6c344c08ac71fe523e42830fd69db3d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

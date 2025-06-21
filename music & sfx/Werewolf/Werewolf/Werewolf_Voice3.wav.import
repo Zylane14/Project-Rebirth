@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://i43ff2y18qyc"
+path="res://.godot/imported/Werewolf_Voice3.wav-796dd93b6ec40f72ea1547a9265fd447.sample"
+
+[deps]
+
+source_file="res://music & sfx/Werewolf/Werewolf/Werewolf_Voice3.wav"
+dest_files=["res://.godot/imported/Werewolf_Voice3.wav-796dd93b6ec40f72ea1547a9265fd447.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

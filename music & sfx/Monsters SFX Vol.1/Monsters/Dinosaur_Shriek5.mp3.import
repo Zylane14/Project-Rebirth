@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dpwyx6p62u71p"
+path="res://.godot/imported/Dinosaur_Shriek5.mp3-10cf10df69bfaf5a8f1fc864f0f5bb77.mp3str"
+
+[deps]
+
+source_file="res://music & sfx/Monsters SFX Vol.1/Monsters/Dinosaur_Shriek5.mp3"
+dest_files=["res://.godot/imported/Dinosaur_Shriek5.mp3-10cf10df69bfaf5a8f1fc864f0f5bb77.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

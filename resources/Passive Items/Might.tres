@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PassiveItem" load_steps=7 format=3 uid="uid://bg2vjx7ir7rx2"]
 
 [ext_resource type="Script" uid="uid://oh3fq60et0sw" path="res://scenes/PassiveItem.gd" id="1_4ot63"]
-[ext_resource type="Texture2D" uid="uid://djkr6aabcl7of" path="res://assets/World/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/icons_items_book2.png" id="2_m4f37"]
+[ext_resource type="Texture2D" uid="uid://djkr6aabcl7of" path="res://assets/World/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/icons_items_book2.png" id="2_m4f37"]
 [ext_resource type="Script" uid="uid://dhltvcvyn33cy" path="res://scenes/Stats.gd" id="3_5gmcu"]
 
 [sub_resource type="Resource" id="Resource_ubqop"]

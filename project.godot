@@ -8,6 +8,10 @@
 
 config_version=5
 
+[animation]
+
+warnings/check_invalid_track_paths=false
+
 [application]
 
 config/name="Project Rebirth"
@@ -54,6 +58,7 @@ folder_colors={
 "res://assets/Backgrounds/": "yellow",
 "res://assets/Characters/": "orange",
 "res://assets/Effects/": "purple",
+"res://assets/Enemies/": "red",
 "res://assets/Fonts/": "gray",
 "res://assets/Icons/": "pink",
 "res://assets/Projectiles/": "green",

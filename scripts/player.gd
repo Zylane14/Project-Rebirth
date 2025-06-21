@@ -65,7 +65,7 @@ var luck : float = 2.5:
 	set(value):
 		luck = value
 		%Luck.text = "Luck : " + str(value)
-var dodge : float = 90.0:
+var dodge : float = 10.0:
 	set(value):
 		dodge = value
 		%Dodge.text = "Dodge : " + str(value)
@@ -140,7 +140,7 @@ func add_ghost():
 	get_tree().current_scene.add_child(ghost)
 
 func show_dodge_feedback():
-	print("DODGED!")  # You can replace this with a UI popup or sound
+	print("DODGED!")  #replace this with a UI popup or sound
 	SoundManager.play_sfx(preload("res://music & sfx/Minifantasy_Dungeon_SFX/18_orc_charge.wav"))
 
 
@@ -154,9 +154,10 @@ func take_damage(amount):
 	var reduced_damage = max(amount * (amount / (amount + armor)), 1)
 	health -= reduced_damage
 	
+	
 func _on_self_damage_body_entered(body):
 	take_damage(body.damage) #reduce health with enemy damage
-
+		
 func die():
 	$AnimationPlayer.play("death_" + character.animation_name)
 	AudioController.bg_music.play()

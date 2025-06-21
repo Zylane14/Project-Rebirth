@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://gv5wq0lww2nj"
+path="res://.godot/imported/Werewolf_Acknowledge.wav-1d77e3b7791bb1de157ff1973427ac21.sample"
+
+[deps]
+
+source_file="res://music & sfx/Werewolf/Werewolf/Werewolf_Acknowledge.wav"
+dest_files=["res://.godot/imported/Werewolf_Acknowledge.wav-1d77e3b7791bb1de157ff1973427ac21.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

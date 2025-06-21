@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Gold" load_steps=4 format=3 uid="uid://cbti8t33h3fr3"]
 
-[ext_resource type="Texture2D" uid="uid://dwjn4w41mc2p2" path="res://assets/World/epic-rpg-world-pack-grass-land/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/icons_items_bag.png" id="1_6hpao"]
+[ext_resource type="Texture2D" uid="uid://dwjn4w41mc2p2" path="res://assets/World/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/icons_items_bag.png" id="1_6hpao"]
 [ext_resource type="Script" uid="uid://csixs0ikw2obv" path="res://scenes/Gold.gd" id="2_fm0yb"]
 [ext_resource type="AudioStream" uid="uid://wcbvrhkadniw" path="res://music & sfx/RPG_Essentials_Free/10_UI_Menu_SFX/079_Buy_sell_01.wav" id="3_fm0yb"]
 

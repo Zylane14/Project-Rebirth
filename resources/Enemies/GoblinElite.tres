@@ -3,14 +3,14 @@
 [ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="1_pltqi"]
 [ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="1_y5rs7"]
 [ext_resource type="Resource" uid="uid://brhulfmqu2bs1" path="res://resources/Pickups/Orange EXP.tres" id="2_3oqdy"]
-[ext_resource type="Texture2D" uid="uid://d3ujkw5sgbgeo" path="res://assets/World/epic-rpg-world-the-depths-of-the-mountain/Epic RPG World - The dephs of the Mountain V1.5.1/Characters/Enemy 2/enemy 2-walk.png" id="4_pltqi"]
+[ext_resource type="Texture2D" uid="uid://d3ujkw5sgbgeo" path="res://assets/World/Epic RPG World - The dephs of the Mountain V1.5.1/Characters/Enemy 2/enemy 2-walk.png" id="4_pltqi"]
 
 [resource]
 script = ExtResource("1_y5rs7")
 title = "GoblinElite"
 animation_name = "GoblinElite"
 texture = ExtResource("4_pltqi")
-scale = Vector2(1, 1)
+scale = Vector2(0.9, 0.9)
 health = 20.0
 damage = 6.0
 speed = 125.0
