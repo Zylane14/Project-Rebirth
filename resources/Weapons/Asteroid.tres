@@ -57,7 +57,7 @@ metadata/_custom_type_script = "uid://cnqkprtjrc6t6"
 
 [resource]
 script = ExtResource("2_5v0xx")
-angular_speed = 90
+angular_speed = 110
 radius = 75
 amount = 1
 damage = 4.0

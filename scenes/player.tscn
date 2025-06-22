@@ -699,6 +699,7 @@ z_index = 1
 script = ExtResource("1_onrkg")
 character = ExtResource("2_i4ail")
 ghost_node = ExtResource("3_l71n6")
+dash_cooldown = 0.2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, -5)

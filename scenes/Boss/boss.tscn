@@ -1461,8 +1461,10 @@ material = ExtResource("1_nj2c0")
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_uotkj")
+phase_2_material = ExtResource("1_nj2c0")
 run_speed = 200.0
 run_attack_speed = 250.0
+curve_speed = 1.0
 regen_rate = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -37,19 +37,15 @@ var health : float:
 var elite : bool = false:
 	set(value):
 		elite = value
-		if value:
-			$Sprite2D.material = ShaderPool.outline #change elite outline
-			scale = Vector2(1.5,1.5) #scales up elite
+		update_sprite_visuals()
 
-#variable to store enemy resource that updates Sprite2D
 var type : Enemy:
 	set(value):
 		type = value
-		$Sprite2D.texture = value.texture
-		$Sprite2D.scale = value.scale
 		damage = value.damage
 		speed = value.speed
-		health = value.health #updates health from resource
+		health = value.health
+		update_sprite_visuals()
 
 var duration : float = 0
 var FPS : int = 10
@@ -216,6 +212,14 @@ func drop_item():
 	await set_shader()
 	queue_free()
 
+func update_sprite_visuals():
+	if type:
+		var scale_multiplier = 1.5 if elite else 1.0
+		$Sprite2D.texture = type.texture
+		$Sprite2D.scale = type.scale * scale_multiplier
+		if elite:
+			$Sprite2D.material = ShaderPool.outline
+			
 func set_shader_value(value: float):
 	$Sprite2D.material.set_shader_parameter("dissolve_value", value)
 

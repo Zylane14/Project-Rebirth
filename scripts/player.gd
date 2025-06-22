@@ -45,7 +45,7 @@ var recovery : float = 0:
 var armor : float = 0: #armor property
 	set(value):
 		armor = value
-		%Armor.text = "Armor : " + str(value)
+		%Armor.text = "Armor : %.1f" % value
 var amplify : float = 5.0: #amplify attack
 	set(value):
 		amplify = value
@@ -93,10 +93,6 @@ var level : int = 1: #variable to store player level
 		%Level.text = "Lv " + str(value)
 		%Options.show_option() #during level up, show option
 		
-		if level >= 3:
-			%XP.max_value = 20 #available to change max value when needed after certain level
-		elif level >= 7:
-			%XP.max_value = 40
 
 var is_dashing: bool = false
 var knockback_velocity: Vector2 = Vector2.ZERO
@@ -111,6 +107,7 @@ func _ready() -> void:
 		scale = character.scale
 		
 	set_base_stats(character.base_stats)
+	refresh_stat_ui() 
 	%XP.max_value = get_xp_needed(level)
 	
 	%Options.check_item(character.starting_weapon) #adds weapon if not available
@@ -140,7 +137,7 @@ func _physics_process(delta):
 
 	check_XP()
 	animation(delta)
-	health += recovery * delta
+	health = min(health + recovery * delta, max_health)
 
 func add_ghost():
 	var ghost = ghost_node.instantiate()
@@ -175,7 +172,9 @@ func _on_self_damage_body_entered(body):
 	take_damage(body.damage) #reduce health with enemy damage
 		
 func die():
-	$AnimationPlayer.play("death_" + character.animation_name)
+	if character:
+		$AnimationPlayer.play("death_" + character.animation_name)
+		
 	AudioController.bg_music.play()
 	$Sprite2D.visible = true # ensure sprite is visible
 	get_tree().paused = true
@@ -249,6 +248,18 @@ func set_base_stats(base_stats : Stats): #function to gain base stats from the c
 	luck += base_stats.luck
 	dodge += base_stats.dodge
 
+func refresh_stat_ui():
+	%HealthMax.text = "Max Health : " + str(max_health)
+	%Recovery.text = "Recovery : " + str(recovery)
+	%Armor.text = "Armor : " + str(armor)
+	%Amplify.text = "Amplify : " + str(amplify)
+	%Area.text = "Area : " + str(area)
+	%MagnetL.text = "Magnet : " + str(magnet)
+	%Growth.text = "Growth : " + str(growth)
+	%Luck.text = "Luck : " + str(luck)
+	%Dodge.text = "Dodge : " + str(dodge)
+	%MovementSpeed.text = "Movement Speed : " + str(movement_speed)
+	
 func _on_back_pressed() -> void:
 	pass # Replace with function body.
 
