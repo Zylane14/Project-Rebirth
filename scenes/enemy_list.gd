@@ -15,13 +15,15 @@ func dir_contents():
 		while file_name != "":
 			print("Found file: " + file_name)
 			
-			var enemy_resources : Enemy = load(path + file_name) #gets all the enemy resources from the folder
-			enemies.append(enemy_resources)
-			
-			var button = Button.new()
-			button.pressed.connect(_on_pressed.bind(button))
-			button.text = enemy_resources.title #number of enemy is number of buttons
-			add_child(button)
+			var resource = load(path + file_name)
+			if resource is Enemy:
+				var enemy_resource: Enemy = resource
+				enemies.append(enemy_resource)
+
+				var button = Button.new()
+				button.pressed.connect(_on_pressed.bind(button))
+				button.text = enemy_resource.title
+				add_child(button)
 			
 			file_name = dir.get_next()
 	else:

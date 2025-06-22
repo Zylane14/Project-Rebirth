@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Boss" load_steps=4 format=3 uid="uid://dudlcsei5ftwm"]
+
+[ext_resource type="AudioStream" uid="uid://c2jp220adilao" path="res://music & sfx/Era of Vampires/Era of Vampires/Heartbeat_Horror_Loop_Bass.wav" id="1_ww3rf"]
+[ext_resource type="Script" uid="uid://bmpwd82vfu30t" path="res://scripts/BossType.gd" id="2_eorei"]
+[ext_resource type="Texture2D" uid="uid://cdjabq50s7la4" path="res://assets/Enemies/Wulfstan - The Wolf/Wulfstan - The Wolf/Idle.png" id="3_jb6qt"]
+
+[resource]
+script = ExtResource("2_eorei")
+title = "Wulfstan"
+texture = ExtResource("3_jb6qt")
+scale = Vector2(1, 1)
+health = 1000.0
+damage = 50.0
+speed = 120.0
+boss_music = ExtResource("1_ww3rf")
+has_phase_2 = true
+phase_2_health_threshold = 0.5
+intro_animation = ""
+special_attacks = Array[String]([])
+metadata/_custom_type_script = "uid://bmpwd82vfu30t"

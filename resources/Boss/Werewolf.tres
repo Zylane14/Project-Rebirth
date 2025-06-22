@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=5 format=3 uid="uid://bsynahe73hjv3"]
+
+[ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="1_224qh"]
+[ext_resource type="Resource" uid="uid://brhulfmqu2bs1" path="res://resources/Pickups/Orange EXP.tres" id="2_8e2wu"]
+[ext_resource type="Resource" uid="uid://l0ac2tjhv1w4" path="res://resources/Pickups/Death.tres" id="3_tpx1q"]
+[ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="4_4pt03"]
+
+[resource]
+script = ExtResource("4_4pt03")
+title = "Werewolf"
+animation_name = "Werewolf"
+scale = Vector2(1, 1)
+health = 1000.0
+damage = 50.0
+speed = 100.0
+drops = Array[ExtResource("1_224qh")]([ExtResource("2_8e2wu"), ExtResource("2_8e2wu"), ExtResource("2_8e2wu"), ExtResource("3_tpx1q")])
+spawn_weight = 1.0
+unlock_minute = 0.0
+enemy_class = 0
+is_boss = true
+boss_intro_animation = ""
+has_phase_2 = true
+phase_2_health_threshold = 0.5
+attack_cooldown = 1.5
+attack_range = 60.0
+ranged_attack_range = 300.0
+projectile_spawns_at_player = false
+metadata/_custom_type_script = "uid://brq1oadyao0po"

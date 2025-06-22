@@ -222,12 +222,9 @@ tracks/7/path = NodePath(".")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"melee_attack"
-}]
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -301,12 +298,9 @@ tracks/4/path = NodePath(".")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"melee_attack"
-}]
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -627,9 +621,12 @@ tracks/4/path = NodePath(".")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"values": []
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"dodge"
+}]
 }
 tracks/5/type = "audio"
 tracks/5/imported = false
@@ -1059,11 +1056,14 @@ tracks/4/path = NodePath(".")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.833333),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
 "method": &"run"
+}, {
+"args": [],
+"method": &"can_do_bite"
 }]
 }
 tracks/5/type = "audio"
@@ -1430,11 +1430,11 @@ advance_mode = 2
 states/End/position = Vector2(1148.5, 98.25)
 states/Start/position = Vector2(121.25, -131.147)
 states/attack_1/node = SubResource("AnimationNodeAnimation_4vq7k")
-states/attack_1/position = Vector2(554.75, 187.895)
+states/attack_1/position = Vector2(580.75, 186.89)
 states/attack_2/node = SubResource("AnimationNodeAnimation_i0cfg")
 states/attack_2/position = Vector2(763, 186.292)
 states/bite/node = SubResource("AnimationNodeAnimation_f6awk")
-states/bite/position = Vector2(491.128, 301.657)
+states/bite/position = Vector2(469.628, 297.798)
 states/death/node = SubResource("AnimationNodeAnimation_tivtr")
 states/death/position = Vector2(974, 98.6875)
 states/dodge/node = SubResource("AnimationNodeAnimation_88t4m")
@@ -1452,7 +1452,7 @@ states/run_attack/position = Vector2(325.526, 187.487)
 states/run_start/node = SubResource("AnimationNodeAnimation_bwu8e")
 states/run_start/position = Vector2(133.253, 78.9705)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_hva8q"), "death", "End", SubResource("AnimationNodeStateMachineTransition_lp3bm"), "attack_2", "dodge", SubResource("AnimationNodeStateMachineTransition_uotkj"), "jump_start", "jump_up", SubResource("AnimationNodeStateMachineTransition_6yd8y"), "run_start", "run", SubResource("AnimationNodeStateMachineTransition_5gicb"), "attack_1", "attack_2", SubResource("AnimationNodeStateMachineTransition_aub7x"), "run_attack", "attack_1", SubResource("AnimationNodeStateMachineTransition_f6awk"), "run", "run_attack", SubResource("AnimationNodeStateMachineTransition_nj2c0"), "run", "jump_start", SubResource("AnimationNodeStateMachineTransition_1u0vs"), "jump_up", "run_attack", SubResource("AnimationNodeStateMachineTransition_n2gvr"), "dodge", "idle", SubResource("AnimationNodeStateMachineTransition_b0g7r"), "jump_up", "bite", SubResource("AnimationNodeStateMachineTransition_goydd"), "bite", "dodge", SubResource("AnimationNodeStateMachineTransition_22lwr")]
-graph_offset = Vector2(-284.808, -24.5312)
+graph_offset = Vector2(-8.99387, -86.5753)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f6awk"]
 radius = 300.0
@@ -1462,13 +1462,14 @@ height = 600.0
 visibility_layer = 4
 z_index = 3
 z_as_relative = false
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_uotkj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-11, 8)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_i0cfg")
-disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.2, 1.2)
