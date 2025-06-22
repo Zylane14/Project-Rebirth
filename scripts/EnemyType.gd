@@ -18,12 +18,6 @@ class_name Enemy
 enum EnemyClass { MELEE, RANGED, BRAWLER, TANK, MAGE, ASSASSIN, HYBRID }
 @export var enemy_class: EnemyClass = EnemyClass.MELEE
 
-@export var is_boss: bool = false  # ✅ New boss flag
-@export var boss_intro_animation: String = ""
-@export var boss_music: AudioStream
-@export var has_phase_2: bool = false
-@export var phase_2_health_threshold: float = 0.5
-
 #Enemy Attack
 @export var attack_cooldown : float = 1.5
 @export var attack_range : float = 60.0 # used for melee

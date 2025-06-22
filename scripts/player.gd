@@ -41,15 +41,19 @@ var max_health : float = 100:
 var recovery : float = 0:
 	set(value):
 		recovery = value
-		%Recovery.text = "Recovery : " + str(value)
+		%Recovery.text = "Recovery : " + str(value) + " hp/sec"
 var armor : float = 0: #armor property
 	set(value):
 		armor = value
-		%Armor.text = "Armor : %.1f" % value
+		%Armor.text = "Armor : %.1f" % value + "%"
+var damage : float = 10.0: # flat bonus damage
+	set(value):
+		damage = value
+		%Damage.text = "Damage : " + str(value)
 var amplify : float = 5.0: #amplify attack
 	set(value):
 		amplify = value
-		%Amplify.text = "Amplify : " + str(value)
+		%Amplify.text = "Amplify : " + str(value) + "%"
 var area : float = 0: #attack range
 	set(value):
 		area = value
@@ -62,16 +66,25 @@ var magnet : float = 0: #pickup range
 var growth : float = 1: #growth property
 	set(value):
 		growth = value
-		%Growth.text = "Growth : " + str(value)
+		%Growth.text = "Growth : " + str(value)+ " exp/rate"
 var luck : float = 2.5:
 	set(value):
 		luck = value
-		%Luck.text = "Luck : " + str(value)
+		%Luck.text = "Luck : " + str(value)+ "%"
 var dodge : float = 10.0:
 	set(value):
 		dodge = value
-		%Dodge.text = "Dodge : " + str(value)
-
+		%Dodge.text = "Dodge : " + str(value) + "%"
+var crit : float = 10.0: # chance in %
+	set(value):
+		crit = value
+		%Crit.text = "Crit : " + str(value) + "%"
+		
+var crit_damage : float = 2.0: # multiplier, e.g., 2.0 = 200%
+	set(value):
+		crit_damage = value
+		%CritDamage.text = "Crit Damage : " + str(value) + "%"
+		
 var nearest_enemy
 var nearest_enemy_distance : float = 150 + area #default distance, minimum + area
 
@@ -107,7 +120,6 @@ func _ready() -> void:
 		scale = character.scale
 		
 	set_base_stats(character.base_stats)
-	refresh_stat_ui() 
 	%XP.max_value = get_xp_needed(level)
 	
 	%Options.check_item(character.starting_weapon) #adds weapon if not available
@@ -241,24 +253,15 @@ func set_base_stats(base_stats : Stats): #function to gain base stats from the c
 	recovery += base_stats.recovery
 	armor += base_stats.armor
 	movement_speed += base_stats.movement_speed
+	damage += base_stats.damage
 	amplify += base_stats.amplify
 	area += base_stats.area
 	magnet += base_stats.magnet
 	growth += base_stats.growth
 	luck += base_stats.luck
 	dodge += base_stats.dodge
-
-func refresh_stat_ui():
-	%HealthMax.text = "Max Health : " + str(max_health)
-	%Recovery.text = "Recovery : " + str(recovery)
-	%Armor.text = "Armor : " + str(armor)
-	%Amplify.text = "Amplify : " + str(amplify)
-	%Area.text = "Area : " + str(area)
-	%MagnetL.text = "Magnet : " + str(magnet)
-	%Growth.text = "Growth : " + str(growth)
-	%Luck.text = "Luck : " + str(luck)
-	%Dodge.text = "Dodge : " + str(dodge)
-	%MovementSpeed.text = "Movement Speed : " + str(movement_speed)
+	crit += base_stats.crit
+	crit_damage += base_stats.crit_damage
 	
 func _on_back_pressed() -> void:
 	pass # Replace with function body.
@@ -303,3 +306,6 @@ func dash():
 func _input(event):
 	if event.is_action_pressed("dash"):
 		dash()
+		
+
+#===Pet===

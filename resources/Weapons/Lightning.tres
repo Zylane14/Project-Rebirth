@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d0w4mxy7dgrpa" path="res://assets/Projectiles/Thunder Effect 02/Thunder Strike/Lightning.png" id="2_8078k"]
 [ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="2_d8nxx"]
 [ext_resource type="Script" uid="uid://c0anj5l8vyvkr" path="res://scenes/WeaponScript/Lightning.gd" id="3_8hp45"]
-[ext_resource type="Resource" uid="uid://bg2vjx7ir7rx2" path="res://resources/Passive Items/Might.tres" id="3_r8hb1"]
+[ext_resource type="Resource" uid="uid://bg2vjx7ir7rx2" path="res://resources/Passive Items/Amplify.tres" id="3_r8hb1"]
 [ext_resource type="AudioStream" uid="uid://b8nwmsne0o08o" path="res://music & sfx/RPG_Essentials_Free/8_Atk_Magic_SFX/18_Thunder_02.wav" id="4_8hp45"]
 [ext_resource type="Material" uid="uid://b7vipbcopj15v" path="res://Paticles/Radial.tres" id="4_ikmcd"]
 [ext_resource type="Script" uid="uid://co5wubqlbfsyl" path="res://scenes/Upgrade.gd" id="4_yg4jm"]
