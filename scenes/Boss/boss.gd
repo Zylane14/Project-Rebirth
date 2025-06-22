@@ -12,7 +12,6 @@ extends CharacterBody2D
 @export var regen_interval: float = 1.0
 @export var has_phase_2: bool = true
 @export var phase_2_health_threshold: float = 0.5
-@export var boss_music: AudioStream
 @export var player: CharacterBody2D
 
 # --- Animation States ---
@@ -23,7 +22,7 @@ var facing_right: bool
 var run_target: Vector2
 var is_running: bool = false
 var run_speed: float = 150.0
-var run_attack_speed: float = 300.0
+var run_attack_speed: float = 100.0
 var t: float = 1.0
 var p0: Vector2
 var p1: Vector2
@@ -40,8 +39,6 @@ var regen_timer := 0.0
 func _ready():
 	%HealthBar.max_value = max_health
 	%HealthBar.value = health
-	if boss_music:
-		SoundManager.play_music(boss_music)
 
 func _process(delta):
 	if has_phase_2 and not in_phase_2 and health <= max_health * phase_2_health_threshold:

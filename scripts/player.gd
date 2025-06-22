@@ -7,8 +7,10 @@ extends CharacterBody2D
 @export var dash_distance := 180.0
 @export var dash_duration := 0.4
 @export var dash_cooldown := 0.3
+@export var post_dash_invincibility_duration := 0.2
 
 var can_dash := true
+var is_invincible: bool = false
 var last_move_dir := Vector2.RIGHT  # Default to RIGHT or any direction you prefer
 
 var health : float = 100: #makes health a setter variable to updates progress bar
@@ -151,12 +153,14 @@ func show_dodge_feedback():
 
 
 #function to reduce health
-func take_damage(amount):
+func take_damage(amount, bypass_invincibility := false):
+	if is_invincible and not bypass_invincibility:
+		return  # Ignore all damage while invincible
+
 	if randf() * 100 < dodge:
 		show_dodge_feedback()
-		return  # damage is dodged, exit early
+		return  # Dodged
 
-	# Basic armor calculation — reducing damage with diminishing returns
 	var reduced_damage = max(amount * (amount / (amount + armor)), 1)
 	health -= reduced_damage
 	
@@ -255,8 +259,9 @@ func _on_ghost_timer_timeout() -> void:
 func dash():
 	if is_dashing or not can_dash:
 		return
-	
+
 	is_dashing = true
+	is_invincible = true 
 	can_dash = false
 	ghost_timer.start()
 	%Collision.set_deferred("disabled", true)
@@ -277,6 +282,9 @@ func dash():
 	%Collision.set_deferred("disabled", false)
 	ghost_timer.stop()
 	is_dashing = false
+
+	await get_tree().create_timer(post_dash_invincibility_duration).timeout
+	is_invincible = false
 
 	await get_tree().create_timer(dash_cooldown).timeout
 	can_dash = true

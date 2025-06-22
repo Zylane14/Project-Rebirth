@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://dokvfv4owwc3b"]
+[gd_scene load_steps=76 format=3 uid="uid://dokvfv4owwc3b"]
 
 [ext_resource type="Texture2D" uid="uid://cdjabq50s7la4" path="res://assets/Enemies/Wulfstan - The Wolf/Wulfstan - The Wolf/Idle.png" id="1_3j8dn"]
 [ext_resource type="Script" uid="uid://chisqwhfkvb47" path="res://scenes/Boss/boss.gd" id="1_uotkj"]
@@ -23,12 +23,12 @@
 [ext_resource type="AudioStream" uid="uid://df5mnspi51btu" path="res://music & sfx/Werewolf/Werewolf/Werewolf_ShortRoar1.wav" id="14_ur35v"]
 [ext_resource type="Script" uid="uid://brynpnfqdboiy" path="res://scenes/Boss/hitbox.gd" id="15_htuwn"]
 [ext_resource type="Texture2D" uid="uid://lr06x8kplnht" path="res://assets/Enemies/Wulfstan - The Wolf/Wulfstan - The Wolf/Hit.png" id="15_i0cfg"]
-[ext_resource type="AudioStream" uid="uid://csc46okhsllkm" path="res://music & sfx/Werewolf/Werewolf/Werewolf_Grunt2.wav" id="15_lp3bm"]
 [ext_resource type="Texture2D" uid="uid://dqrxy1m4jekuc" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Boss-bars/Bossbar_2.png" id="16_4vq7k"]
 [ext_resource type="AudioStream" uid="uid://jgoyhtpv4so7" path="res://music & sfx/Werewolf/Werewolf/Werewolf_Hit2.wav" id="16_f6awk"]
 [ext_resource type="Texture2D" uid="uid://blmvnl4jyysyt" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Boss-bars/Filler2.png" id="17_i0cfg"]
 [ext_resource type="AudioStream" uid="uid://df3jmget4l6v" path="res://music & sfx/Werewolf/Werewolf/Werewolf_Chase.wav" id="17_r2u3r"]
 [ext_resource type="AudioStream" uid="uid://c36fffgd2k7f6" path="res://music & sfx/Werewolf/Werewolf/Werewolf_Anger.wav" id="19_6yd8y"]
+[ext_resource type="AudioStream" uid="uid://bjf5oerey3hvb" path="res://music & sfx/Werewolf/Werewolf/Werewolf_FoamyGrowl.wav" id="20_f6awk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i0cfg"]
 radius = 33.0
@@ -846,21 +846,6 @@ tracks/4/keys = {
 "method": &"melee_attack"
 }]
 }
-tracks/5/type = "audio"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("SFXPlayer")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("15_lp3bm")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_2yo2b"]
 resource_name = "jump_start"
@@ -991,7 +976,7 @@ tracks/5/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("15_lp3bm")
+"stream": ExtResource("20_f6awk")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -1063,7 +1048,7 @@ tracks/4/keys = {
 "method": &"run"
 }, {
 "args": [],
-"method": &"can_do_bite"
+"method": &"jump"
 }]
 }
 tracks/5/type = "audio"
@@ -1357,6 +1342,9 @@ animation = &"dodge"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xfk3i"]
 animation = &"idle"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nj2c0"]
+animation = &"jump_land"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uotkj"]
 animation = &"jump_start"
 
@@ -1400,11 +1388,11 @@ switch_mode = 2
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nj2c0"]
+priority = 2
 switch_mode = 2
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1u0vs"]
-priority = 2
 switch_mode = 2
 advance_mode = 2
 advance_condition = &"can_jump"
@@ -1418,11 +1406,15 @@ advance_mode = 2
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_22lwr"]
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_goydd"]
 switch_mode = 2
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_22lwr"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tsrmg"]
 switch_mode = 2
 advance_mode = 2
 
@@ -1434,24 +1426,26 @@ states/attack_1/position = Vector2(580.75, 186.89)
 states/attack_2/node = SubResource("AnimationNodeAnimation_i0cfg")
 states/attack_2/position = Vector2(763, 186.292)
 states/bite/node = SubResource("AnimationNodeAnimation_f6awk")
-states/bite/position = Vector2(469.628, 297.798)
+states/bite/position = Vector2(618.564, 299.385)
 states/death/node = SubResource("AnimationNodeAnimation_tivtr")
 states/death/position = Vector2(974, 98.6875)
 states/dodge/node = SubResource("AnimationNodeAnimation_88t4m")
 states/dodge/position = Vector2(566, -51.197)
 states/idle/node = SubResource("AnimationNodeAnimation_xfk3i")
 states/idle/position = Vector2(122.875, -32.4214)
+states/jump_land/node = SubResource("AnimationNodeAnimation_nj2c0")
+states/jump_land/position = Vector2(482.506, 298.655)
 states/jump_start/node = SubResource("AnimationNodeAnimation_uotkj")
-states/jump_start/position = Vector2(134.495, 302.168)
+states/jump_start/position = Vector2(134.503, 301.553)
 states/jump_up/node = SubResource("AnimationNodeAnimation_htuwn")
-states/jump_up/position = Vector2(326.034, 299.939)
+states/jump_up/position = Vector2(325.78, 300.469)
 states/run/node = SubResource("AnimationNodeAnimation_hva8q")
 states/run/position = Vector2(134.512, 184.69)
 states/run_attack/node = SubResource("AnimationNodeAnimation_lp3bm")
 states/run_attack/position = Vector2(325.526, 187.487)
 states/run_start/node = SubResource("AnimationNodeAnimation_bwu8e")
 states/run_start/position = Vector2(133.253, 78.9705)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_hva8q"), "death", "End", SubResource("AnimationNodeStateMachineTransition_lp3bm"), "attack_2", "dodge", SubResource("AnimationNodeStateMachineTransition_uotkj"), "jump_start", "jump_up", SubResource("AnimationNodeStateMachineTransition_6yd8y"), "run_start", "run", SubResource("AnimationNodeStateMachineTransition_5gicb"), "attack_1", "attack_2", SubResource("AnimationNodeStateMachineTransition_aub7x"), "run_attack", "attack_1", SubResource("AnimationNodeStateMachineTransition_f6awk"), "run", "run_attack", SubResource("AnimationNodeStateMachineTransition_nj2c0"), "run", "jump_start", SubResource("AnimationNodeStateMachineTransition_1u0vs"), "jump_up", "run_attack", SubResource("AnimationNodeStateMachineTransition_n2gvr"), "dodge", "idle", SubResource("AnimationNodeStateMachineTransition_b0g7r"), "jump_up", "bite", SubResource("AnimationNodeStateMachineTransition_goydd"), "bite", "dodge", SubResource("AnimationNodeStateMachineTransition_22lwr")]
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_hva8q"), "death", "End", SubResource("AnimationNodeStateMachineTransition_lp3bm"), "attack_2", "dodge", SubResource("AnimationNodeStateMachineTransition_uotkj"), "jump_start", "jump_up", SubResource("AnimationNodeStateMachineTransition_6yd8y"), "run_start", "run", SubResource("AnimationNodeStateMachineTransition_5gicb"), "attack_1", "attack_2", SubResource("AnimationNodeStateMachineTransition_aub7x"), "run_attack", "attack_1", SubResource("AnimationNodeStateMachineTransition_f6awk"), "run", "run_attack", SubResource("AnimationNodeStateMachineTransition_nj2c0"), "run", "jump_start", SubResource("AnimationNodeStateMachineTransition_1u0vs"), "jump_up", "run_attack", SubResource("AnimationNodeStateMachineTransition_n2gvr"), "dodge", "idle", SubResource("AnimationNodeStateMachineTransition_b0g7r"), "bite", "dodge", SubResource("AnimationNodeStateMachineTransition_22lwr"), "jump_up", "jump_land", SubResource("AnimationNodeStateMachineTransition_goydd"), "jump_land", "bite", SubResource("AnimationNodeStateMachineTransition_tsrmg")]
 graph_offset = Vector2(-8.99387, -86.5753)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f6awk"]
@@ -1465,6 +1459,9 @@ z_as_relative = false
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_uotkj")
+speed = 1.0
+damage = 50.0
+regen_rate = 50.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-11, 8)
@@ -1507,22 +1504,25 @@ disabled = true
 
 [node name="HealthBar" type="TextureProgressBar" parent="UI"]
 unique_name_in_owner = true
-visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -134.0
-offset_top = 26.0
-offset_right = 58.0
-offset_bottom = 44.0
+offset_left = -153.0
+offset_top = 29.0
+offset_right = 39.0
+offset_bottom = 47.0
 grow_horizontal = 2
-scale = Vector2(1.4, 1.4)
+scale = Vector2(1.6, 1.6)
 value = 100.0
 texture_under = ExtResource("16_4vq7k")
 texture_progress = ExtResource("17_i0cfg")
 texture_progress_offset = Vector2(2, 4)
 
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = 10.0
+autoplay = true
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_entered"]
 [connection signal="body_entered" from="Hitbox" to="Hitbox" method="_on_body_entered"]
