@@ -1,6 +1,7 @@
-[gd_scene load_steps=76 format=3 uid="uid://dokvfv4owwc3b"]
+[gd_scene load_steps=77 format=3 uid="uid://dokvfv4owwc3b"]
 
 [ext_resource type="Texture2D" uid="uid://cdjabq50s7la4" path="res://assets/Enemies/Wulfstan - The Wolf/Wulfstan - The Wolf/Idle.png" id="1_3j8dn"]
+[ext_resource type="Material" uid="uid://bhrwvaf5ewwi4" path="res://shaders/Red.tres" id="1_nj2c0"]
 [ext_resource type="Script" uid="uid://chisqwhfkvb47" path="res://scenes/Boss/boss.gd" id="1_uotkj"]
 [ext_resource type="Texture2D" uid="uid://jl00eew8k7ux" path="res://assets/Enemies/Wulfstan - The Wolf/Wulfstan - The Wolf/JumpSoar.png" id="2_pdnns"]
 [ext_resource type="AudioStream" uid="uid://c0l8d2x2mcnxl" path="res://music & sfx/Werewolf/Werewolf/Werewolf_nom.wav" id="3_6yd8y"]
@@ -1397,11 +1398,6 @@ switch_mode = 2
 advance_mode = 2
 advance_condition = &"can_jump"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n2gvr"]
-priority = 2
-switch_mode = 2
-advance_mode = 2
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b0g7r"]
 switch_mode = 2
 advance_mode = 2
@@ -1415,6 +1411,11 @@ switch_mode = 2
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tsrmg"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n2gvr"]
+priority = 2
 switch_mode = 2
 advance_mode = 2
 
@@ -1445,8 +1446,8 @@ states/run_attack/node = SubResource("AnimationNodeAnimation_lp3bm")
 states/run_attack/position = Vector2(325.526, 187.487)
 states/run_start/node = SubResource("AnimationNodeAnimation_bwu8e")
 states/run_start/position = Vector2(133.253, 78.9705)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_hva8q"), "death", "End", SubResource("AnimationNodeStateMachineTransition_lp3bm"), "attack_2", "dodge", SubResource("AnimationNodeStateMachineTransition_uotkj"), "jump_start", "jump_up", SubResource("AnimationNodeStateMachineTransition_6yd8y"), "run_start", "run", SubResource("AnimationNodeStateMachineTransition_5gicb"), "attack_1", "attack_2", SubResource("AnimationNodeStateMachineTransition_aub7x"), "run_attack", "attack_1", SubResource("AnimationNodeStateMachineTransition_f6awk"), "run", "run_attack", SubResource("AnimationNodeStateMachineTransition_nj2c0"), "run", "jump_start", SubResource("AnimationNodeStateMachineTransition_1u0vs"), "jump_up", "run_attack", SubResource("AnimationNodeStateMachineTransition_n2gvr"), "dodge", "idle", SubResource("AnimationNodeStateMachineTransition_b0g7r"), "bite", "dodge", SubResource("AnimationNodeStateMachineTransition_22lwr"), "jump_up", "jump_land", SubResource("AnimationNodeStateMachineTransition_goydd"), "jump_land", "bite", SubResource("AnimationNodeStateMachineTransition_tsrmg")]
-graph_offset = Vector2(-8.99387, -86.5753)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_hva8q"), "death", "End", SubResource("AnimationNodeStateMachineTransition_lp3bm"), "attack_2", "dodge", SubResource("AnimationNodeStateMachineTransition_uotkj"), "jump_start", "jump_up", SubResource("AnimationNodeStateMachineTransition_6yd8y"), "run_start", "run", SubResource("AnimationNodeStateMachineTransition_5gicb"), "attack_1", "attack_2", SubResource("AnimationNodeStateMachineTransition_aub7x"), "run_attack", "attack_1", SubResource("AnimationNodeStateMachineTransition_f6awk"), "run", "run_attack", SubResource("AnimationNodeStateMachineTransition_nj2c0"), "run", "jump_start", SubResource("AnimationNodeStateMachineTransition_1u0vs"), "dodge", "idle", SubResource("AnimationNodeStateMachineTransition_b0g7r"), "bite", "dodge", SubResource("AnimationNodeStateMachineTransition_22lwr"), "jump_up", "jump_land", SubResource("AnimationNodeStateMachineTransition_goydd"), "jump_land", "bite", SubResource("AnimationNodeStateMachineTransition_tsrmg"), "jump_up", "run_attack", SubResource("AnimationNodeStateMachineTransition_n2gvr")]
+graph_offset = Vector2(-272.816, 193.532)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f6awk"]
 radius = 300.0
@@ -1456,12 +1457,13 @@ height = 600.0
 visibility_layer = 4
 z_index = 3
 z_as_relative = false
+material = ExtResource("1_nj2c0")
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_uotkj")
-speed = 1.0
-damage = 50.0
-regen_rate = 50.0
+run_speed = 200.0
+run_attack_speed = 250.0
+regen_rate = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-11, 8)
