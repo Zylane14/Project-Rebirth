@@ -11,4 +11,5 @@ func start_looping_fade():
 	var tween = create_tween()
 	tween.tween_property(self, "modulate:a", 1.0, fade_duration)
 	tween.tween_property(self, "modulate:a", 0.0, fade_duration)
-	tween.set_loops()  # loops infinitely
+	tween.set_loops() 
+	

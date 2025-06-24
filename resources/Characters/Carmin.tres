@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="Character" load_steps=7 format=3 uid="uid://f5qyoi3qreht"]
+
+[ext_resource type="Script" uid="uid://dhltvcvyn33cy" path="res://scenes/Stats.gd" id="1_qvugs"]
+[ext_resource type="Texture2D" uid="uid://e4w056ineuf8" path="res://assets/Characters/NightLord_v1/Sprites/Idle/Idle1.png" id="2_y8qjh"]
+[ext_resource type="Texture2D" uid="uid://djv5mod7knucb" path="res://assets/Characters/NightLord_v1/Sprites/Death/Death9.png" id="3_aakr3"]
+[ext_resource type="Script" uid="uid://bjudu0im5j1jb" path="res://scenes/Character.gd" id="4_ywfep"]
+[ext_resource type="Resource" uid="uid://bc6hknxlqyxm0" path="res://resources/Weapons/Fire Ball.tres" id="5_lg4mb"]
+
+[sub_resource type="Resource" id="Resource_xkeah"]
+script = ExtResource("1_qvugs")
+description = ""
+max_health = 100.0
+recovery = 5.0
+armor = 0.0
+movement_speed = 100.0
+damage = 50.0
+amplify = 2.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.0
+dodge = 0.0
+crit = 0.1
+crit_damage = 2.0
+metadata/_custom_type_script = "uid://dhltvcvyn33cy"
+
+[resource]
+script = ExtResource("4_ywfep")
+title = "Carmin The Night Lord"
+icon = ExtResource("2_y8qjh")
+portrait = ExtResource("3_aakr3")
+animation_name = "Carmin"
+base_stats = SubResource("Resource_xkeah")
+starting_weapon = ExtResource("5_lg4mb")
+scale = Vector2(1, 1)
+dash_distance = 0.0
+dash_duration = 0.0
+dash_cooldown = 0.0
+metadata/_custom_type_script = "uid://bjudu0im5j1jb"

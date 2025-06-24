@@ -7351,6 +7351,7 @@ blend_mode = 2
 environment = SubResource("Environment_6qxox")
 
 [node name="Boss" parent="." node_paths=PackedStringArray("player") instance=ExtResource("13_ntc4i")]
+position = Vector2(604, 163)
 player = NodePath("../Player")
 
 [node name="Day&Night" type="CanvasModulate" parent="."]

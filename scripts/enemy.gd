@@ -267,6 +267,8 @@ func perform_ranged_attack():
 func _on_animation_finished(anim_name: String):
 	if anim_name.begins_with("melee_attack_") or anim_name.begins_with("range_attack_"):
 		is_attacking = false
+		if anim_name.begins_with("range_attack_"):
+			has_done_ranged_attack = false 
 
 func switch_hybrid_mode():
 	hybrid_mode = "melee" if hybrid_mode == "ranged" else "ranged"

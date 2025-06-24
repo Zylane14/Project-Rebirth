@@ -5,49 +5,41 @@ extends CharacterBody2D
 @onready var state_machine = animation_tree["parameters/playback"]
 @export var phase_2_material: Material
 
-# === Exposed Stats ===
-@export var max_health: float = 1000.0
-@export var health: float = 1000.0
-@export var walk_speed: float = 100.0
-@export var run_speed: float = 300.0
-@export var run_attack_speed: float = 400.0
-@export var curve_speed: float = 2.0  # used for bezier jump/dodge
-@export var damage: float = 10.0
-@export var regen_rate: float = 5.0
-@export var regen_interval: float = 1.0
-@export var has_phase_2: bool = true
-@export var phase_2_health_threshold: float = 0.5
+@export var max_health := 1000.0
+@export var health := 1000.0
+@export var run_speed := 300.0
+@export var run_attack_speed := 400.0
+@export var curve_speed := 2.0
+@export var damage := 10.0
+@export var regen_rate := 5.0
+@export var regen_interval := 1.0
+@export var has_phase_2 := true
+@export var phase_2_health_threshold := 0.5
 @export var player: CharacterBody2D
-@export var player_knockback_multiplier: float = 0.3
+@export var player_knockback_multiplier := 0.3
 
-# --- Animation States ---
 const MELEE_ATTACKS = ["attack_1", "attack_2", "bite"]
 
-# --- Movement ---
-var facing_right: bool
+var facing_right := true
 var run_target: Vector2
-var is_running: bool = false
-var t: float = 1.0
+var is_running := false
+var t := 1.0
 var p0: Vector2
 var p1: Vector2
 var p2: Vector2
-var knockback: Vector2 = Vector2.ZERO
-
-# --- Combat ---
-var current_knockback_strength: float = 0.0
+var knockback := Vector2.ZERO
+var current_knockback_strength := 0.0
 var in_phase_2 := false
-var is_immovable: bool = false
-
-# --- Regen ---
+var is_immovable := false
+var is_transforming := false
+var has_attacked_during_run := false
 var regen_timer := 0.0
 
 func _ready():
 	%HealthBar.max_value = max_health
 	%HealthBar.value = health
-
-	if animation_tree:
-		animation_player.connect("animation_finished", _on_animation_finished)
-
+	
+	
 func _process(delta):
 	if has_phase_2 and not in_phase_2 and health <= max_health * phase_2_health_threshold:
 		enter_phase_2()
@@ -60,77 +52,83 @@ func _process(delta):
 			%HealthBar.value = health
 
 func _physics_process(delta):
-	facing_right = (player.position - global_position).x <= 0
-	$Sprite2D.flip_h = facing_right
-	%Hitbox.scale.x = -1 if facing_right else 1
+	if is_transforming or is_immovable:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
 
-	# Bezier movement (jump or dodge)
+	update_facing()
+
 	if t < 1.0:
-		t += curve_speed * delta
-		global_position = global_position.bezier_interpolate(p0, p1, p2, t)
-		velocity = Vector2.ZERO
-		move_and_slide()
+		update_bezier(delta)
 		return
 
-	# Skip movement if immovable
-	if is_immovable:
-		velocity = Vector2.ZERO
-		move_and_slide()
-		return
-
-	# Running movement
 	var move_vector := Vector2.ZERO
 
 	if is_running:
 		var dir = (run_target - global_position).normalized()
-		var current_run_speed := run_speed
+		move_vector = dir * run_speed
 
-		if global_position.distance_to(player.global_position) < 40:
+		if global_position.distance_to(run_target) < 10:
 			is_running = false
-			current_run_speed = 300.0
-			melee_attack()
-		elif global_position.distance_to(run_target) < 10:
-			is_running = false
-			current_run_speed = 200.0
+			run_speed = run_attack_speed
 
-		move_vector = dir * current_run_speed
-	else:
-		move_vector = (player.position - global_position).normalized() * walk_speed
+	velocity = move_vector + update_knockback(delta)
+	move_and_slide()
+	apply_knockback_to_player()
 
-	# Knockback logic
-	knockback = knockback.move_toward(Vector2.ZERO, 100 * delta)
+func update_facing():
+	facing_right = (player.position - global_position).x <= 0
+	$Sprite2D.flip_h = facing_right
+	%Hitbox.scale.x = -1 if facing_right else 1
 
-	# Clamp knockback strength
-	var max_knockback_strength := 300.0
-	if knockback.length() > max_knockback_strength:
-		knockback = knockback.normalized() * max_knockback_strength
-
-	move_vector += knockback
-
-	# Apply final velocity
-	self.velocity = move_vector
+func update_bezier(delta):
+	t += curve_speed * delta
+	global_position = global_position.bezier_interpolate(p0, p1, p2, t)
+	velocity = Vector2.ZERO
 	move_and_slide()
 
-	# Knockback player on contact
+func update_knockback(delta) -> Vector2:
+	knockback = knockback.move_toward(Vector2.ZERO, 100 * delta)
+	return knockback.limit_length(300.0)
+
+func apply_knockback_to_player():
 	var collision = get_last_slide_collision()
 	if collision and collision.get_collider().has_method("apply_knockback"):
 		var force_dir = (collision.get_collider().global_position - global_position).normalized()
 		collision.get_collider().apply_knockback(force_dir * current_knockback_strength * player_knockback_multiplier)
 
 # === Actions ===
+func transform():
+	is_immovable = true
+	is_transforming = true
+	state_machine.travel("Transform")
+
+	await get_tree().create_timer(3.0).timeout # tiny buffer to allow animation to start
+	var tween = create_tween()
+	tween.tween_property(self, "scale", Vector2(1.4, 1.4), 1.5)
+
+func _on_transform_end():
+	is_transforming = false
+	is_immovable = false
+
+
 func run():
-	run_target = player.global_position
+	current_knockback_strength = 500.0
+	var to_player = (player.global_position - global_position).normalized()
+	run_target = player.global_position + to_player * 100.0 + Vector2(0, randf_range(-30, 30))
 	is_running = true
+	run_speed = run_attack_speed
 	state_machine.travel("run")
 
-func run_to_player():
-	run_target = player.global_position
-	is_running = true
-	state_machine.travel("run")
+func run_attack():
+	run()
+	state_machine.travel("run_attack")
+	has_attacked_during_run = true
 
 func jump():
 	t = 0
-	curve_speed = 2.0
+	curve_speed = 3.0
 	var offset = Vector2(25, -7) if facing_right else Vector2(-25, -7)
 	set_destination(player.position + offset)
 
@@ -145,19 +143,16 @@ func melee_attack():
 	is_immovable = true
 	state_machine.travel(MELEE_ATTACKS.pick_random())
 
-func run_attack():
-	current_knockback_strength = 500.0
-	var to_player = (player.global_position - global_position).normalized()
-	run_target = player.global_position + to_player * 100.0
-	run_target += Vector2(0, randf_range(-30, 30))
-	is_running = true
-	run_speed = run_attack_speed
-	state_machine.travel("run_attack")
+func _on_melee_end():
+	is_immovable = false
+	has_attacked_during_run = false
 
 func can_do_bite():
-	state_machine.travel("dodge")
+	state_machine.travel("bite")
 
-# === Helpers ===
+func _on_bite_end():
+	has_attacked_during_run = false
+
 func set_destination(final_position: Vector2):
 	p0 = global_position
 	p2 = final_position
@@ -167,8 +162,11 @@ func set_destination(final_position: Vector2):
 
 func _on_player_entered(_body):
 	%PlayerCollision.set_deferred("disabled", true)
-	run_attack()
+	transform()
 	%HealthBar.show()
+
+	if global_position.distance_to(player.global_position) < 100:
+		run_attack()
 
 func take_damage(amount := 1):
 	health -= amount
@@ -176,25 +174,30 @@ func take_damage(amount := 1):
 	if health <= 0:
 		state_machine.travel("death")
 		set_physics_process(false)
+		await animation_player.animation_finished
+		await start_dissolve()
 
 func enter_phase_2():
 	in_phase_2 = true
 	print("Boss has entered Phase 2!")
-
-	# Apply the red outline material
 	$Sprite2D.material = phase_2_material
 
-	# Stat upgrades
-	walk_speed *= 1.2
 	damage *= 1.5
-	run_speed *= 1.2
-	run_attack_speed *= 1.2
 	max_health += 1500
 	health += 100
 	%HealthBar.max_value = max_health
 	%HealthBar.value = health
-	state_machine.travel("phase_2_intro")
 
-func _on_animation_finished(anim_name: String):
-	if anim_name in MELEE_ATTACKS:
-		is_immovable = false
+func start_dissolve():
+	$Sprite2D.material = ShaderPool.burn.duplicate()
+	$Sprite2D.material.set_shader_parameter("dissolve_texture", $Sprite2D.texture)
+	
+	var tween = get_tree().create_tween()
+	tween.tween_method(_set_dissolve_value, 0.0, 1.0, 1.2)
+	await tween.finished
+	queue_free()
+
+func _set_dissolve_value(val: float):
+	if $Sprite2D.material:
+		$Sprite2D.material.set_shader_parameter("dissolve_value", val)
+	

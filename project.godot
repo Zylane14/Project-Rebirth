@@ -66,6 +66,7 @@ folder_colors={
 "res://assets/UI/": "teal",
 "res://assets/World/": "blue",
 "res://resources/Artifacts/": "yellow",
+"res://resources/Boss/": "pink",
 "res://resources/Characters/": "orange",
 "res://resources/Enemies/": "red",
 "res://resources/Others/": "gray",
