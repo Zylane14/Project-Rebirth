@@ -65,4 +65,7 @@ particle = ExtResource("4_ikmcd")
 title = "Lightning"
 icon = ExtResource("2_8078k")
 texture = ExtResource("2_8078k")
+rarity = 2
+attribute_type = ""
+attribute_value = 0
 metadata/_custom_type_script = "uid://c0anj5l8vyvkr"

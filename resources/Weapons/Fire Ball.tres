@@ -65,4 +65,7 @@ particle = ExtResource("4_gu283")
 title = "Fireball"
 icon = ExtResource("3_2b7by")
 texture = ExtResource("7_bsojs")
+rarity = 2
+attribute_type = ""
+attribute_value = 0
 metadata/_custom_type_script = "uid://bthks1pwcgkfj"

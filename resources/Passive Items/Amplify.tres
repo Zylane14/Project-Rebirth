@@ -18,6 +18,8 @@ magnet = 0.0
 growth = 0.0
 luck = 0.0
 dodge = 0.0
+crit = 0.1
+crit_damage = 2.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [sub_resource type="Resource" id="Resource_pix5o"]
@@ -34,6 +36,8 @@ magnet = 0.0
 growth = 0.0
 luck = 0.0
 dodge = 0.0
+crit = 0.1
+crit_damage = 2.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [sub_resource type="Resource" id="Resource_mdq7l"]
@@ -50,6 +54,8 @@ magnet = 0.0
 growth = 0.0
 luck = 0.0
 dodge = 0.0
+crit = 0.1
+crit_damage = 2.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [resource]
@@ -58,4 +64,7 @@ upgrades = Array[ExtResource("3_5gmcu")]([SubResource("Resource_ubqop"), SubReso
 title = "Amplify"
 icon = ExtResource("2_m4f37")
 texture = ExtResource("2_m4f37")
+rarity = 1
+attribute_type = "Strength"
+attribute_value = 5
 metadata/_custom_type_script = "uid://oh3fq60et0sw"

@@ -161,7 +161,7 @@ func take_damage(amount):
 	var chance = randf()
 	var modifier : float = 2.0 if (chance < (1.0 - (1.0/player_reference.luck))) else 1.0
 	damage_popup(amount, modifier)
-	health -= amount * modifier
+	health = clamp(health - amount * modifier, 0, max_health)
 	
 	if health_bar:
 		if not health_bar.visible:

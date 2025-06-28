@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://kob240l1y6xk"]
+[gd_scene load_steps=29 format=4 uid="uid://kob240l1y6xk"]
 
 [ext_resource type="PackedScene" uid="uid://63kp1cwf1snt" path="res://scenes/player.tscn" id="1_g7g4h"]
 [ext_resource type="Texture2D" uid="uid://1pn1vpo8ol6a" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Tilesets/grass1 to water.png" id="1_h3xc6"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cqojmim05b0x4" path="res://scenes/pickups.tscn" id="10_s36qc"]
 [ext_resource type="Resource" uid="uid://bsdwvs8d0sd32" path="res://resources/Pickups/Blue EXP.tres" id="11_6qxox"]
 [ext_resource type="PackedScene" uid="uid://dokvfv4owwc3b" path="res://scenes/Boss/boss.tscn" id="13_ntc4i"]
+[ext_resource type="Material" uid="uid://bhrwvaf5ewwi4" path="res://shaders/Red.tres" id="14_pln1h"]
 [ext_resource type="Shader" uid="uid://cgynfnqoms3wq" path="res://scenes/fog_shader.gdshader" id="14_u0xbq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8gixj"]
@@ -7351,7 +7352,8 @@ blend_mode = 2
 environment = SubResource("Environment_6qxox")
 
 [node name="Boss" parent="." node_paths=PackedStringArray("player") instance=ExtResource("13_ntc4i")]
-position = Vector2(604, 163)
+position = Vector2(544, 170)
+phase_2_material = ExtResource("14_pln1h")
 player = NodePath("../Player")
 
 [node name="Day&Night" type="CanvasModulate" parent="."]

@@ -70,4 +70,7 @@ sound = ExtResource("6_ei8u1")
 title = "Poison Puddle"
 icon = ExtResource("2_us0vl")
 texture = ExtResource("2_us0vl")
+rarity = 3
+attribute_type = ""
+attribute_value = 0
 metadata/_custom_type_script = "uid://xs5efml7d1rs"

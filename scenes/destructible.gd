@@ -1,5 +1,5 @@
 extends Sprite2D
-
+	
 var frame_counter = 0
 var health : float = 10:
 	set(value):

@@ -52,6 +52,8 @@ func tween_pop(panel): #func to give pop effect
 	
 func _on_start_pressed() -> void: #Character Selection
 	$CharacterSelection.show()
+	$ConstellationMenuOld.show()
+	$ConstellationMenu.hide()
 	$Menu.hide()
 	$Gold.hide()
 	$Back.show()

@@ -19,8 +19,6 @@ func _on_body_entered(body):
 		if weapon:
 			weapon.damage_dealt += final_damage
 
-		body.knockback += direction * knockback
-
 func _on_area_entered(area: Area2D) -> void:
 	var target = area.get_parent()
 	if target.has_method("take_damage") and source != null:

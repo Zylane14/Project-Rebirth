@@ -11,7 +11,7 @@ extends CharacterBody2D
 @export var run_attack_speed := 400.0
 @export var curve_speed := 2.0
 @export var damage := 10.0
-@export var regen_rate := 5.0
+@export var regen_rate := 100.0
 @export var regen_interval := 1.0
 @export var has_phase_2 := true
 @export var phase_2_health_threshold := 0.5
@@ -27,7 +27,6 @@ var t := 1.0
 var p0: Vector2
 var p1: Vector2
 var p2: Vector2
-var knockback := Vector2.ZERO
 var current_knockback_strength := 0.0
 var in_phase_2 := false
 var is_immovable := false
@@ -73,7 +72,7 @@ func _physics_process(delta):
 			is_running = false
 			run_speed = run_attack_speed
 
-	velocity = move_vector + update_knockback(delta)
+	velocity = move_vector
 	move_and_slide()
 	apply_knockback_to_player()
 
@@ -88,15 +87,12 @@ func update_bezier(delta):
 	velocity = Vector2.ZERO
 	move_and_slide()
 
-func update_knockback(delta) -> Vector2:
-	knockback = knockback.move_toward(Vector2.ZERO, 100 * delta)
-	return knockback.limit_length(300.0)
-
 func apply_knockback_to_player():
 	var collision = get_last_slide_collision()
 	if collision and collision.get_collider().has_method("apply_knockback"):
 		var force_dir = (collision.get_collider().global_position - global_position).normalized()
 		collision.get_collider().apply_knockback(force_dir * current_knockback_strength * player_knockback_multiplier)
+
 
 # === Actions ===
 func transform():
@@ -168,6 +164,19 @@ func _on_player_entered(_body):
 	if global_position.distance_to(player.global_position) < 100:
 		run_attack()
 
+func start_dissolve():
+	$Sprite2D.material = ShaderPool.burn.duplicate()
+	$Sprite2D.material.set_shader_parameter("dissolve_texture", $Sprite2D.texture)
+	
+	var tween = get_tree().create_tween()
+	tween.tween_method(_set_dissolve_value, 0.0, 1.0, 1.5)
+	await tween.finished
+	queue_free()
+
+func _set_dissolve_value(val: float):
+	if $Sprite2D.material:
+		$Sprite2D.material.set_shader_parameter("dissolve_value", val)
+		
 func take_damage(amount := 1):
 	health -= amount
 	%HealthBar.value = health
@@ -187,17 +196,3 @@ func enter_phase_2():
 	health += 100
 	%HealthBar.max_value = max_health
 	%HealthBar.value = health
-
-func start_dissolve():
-	$Sprite2D.material = ShaderPool.burn.duplicate()
-	$Sprite2D.material.set_shader_parameter("dissolve_texture", $Sprite2D.texture)
-	
-	var tween = get_tree().create_tween()
-	tween.tween_method(_set_dissolve_value, 0.0, 1.0, 1.2)
-	await tween.finished
-	queue_free()
-
-func _set_dissolve_value(val: float):
-	if $Sprite2D.material:
-		$Sprite2D.material.set_shader_parameter("dissolve_value", val)
-	

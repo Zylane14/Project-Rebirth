@@ -23,3 +23,13 @@ func _on_cooldown_timeout():
 	if item:
 		$Cooldown.wait_time = item.cooldown #any upgrade/level up will update the wait time of the timer(cooldown)
 		item.activate(owner, owner.nearest_enemy, get_tree()) #with each timeout, call activate from weapon
+
+func _on_mouse_entered() -> void:
+	if item == null:
+		return
+		
+	Popups.ItemPopup(Rect2i( Vector2i(global_position), Vector2i(size) ), item)
+
+
+func _on_mouse_exited() -> void:
+	Popups.HideItemPopup() #hide ItemPopup when mouse exits the slot

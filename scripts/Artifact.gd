@@ -1,17 +1,8 @@
 extends Item
 class_name Artifact
 
-enum Rarity {
-	COMMON,
-	RARE,
-	EPIC,
-	SPECIAL,
-	LEGENDARY
-}
-
 @export var stat_bonus: Stats # Flat stats added when picked
 @export_multiline var description: String
-@export var rarity: Rarity = Rarity.COMMON
 @export var passive_script: Script
 
 var player_reference

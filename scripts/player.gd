@@ -1,135 +1,172 @@
 extends CharacterBody2D
 
-@export var character : Character #variable to store character
-@export var ghost_node : PackedScene
+##==============================
+## EXPORTS AND NODE REFERENCES
+##==============================
+@export var character: Character
+@export var ghost_node: PackedScene
+
 @onready var ghost_timer: Timer = $GhostTimer
 
+##==============================
+## DASH SETTINGS
+##==============================
 @export var dash_distance := 180.0
 @export var dash_duration := 0.4
 @export var dash_cooldown := 0.3
 @export var post_dash_invincibility_duration := 0.2
 
 var can_dash := true
+var is_dashing := false
 var is_invincible: bool = false
-var last_move_dir := Vector2.RIGHT  # Default to RIGHT or any direction you prefer
+var last_move_dir := Vector2.RIGHT
 
-var health : float = 100: #makes health a setter variable to updates progress bar
+##==============================
+## HEALTH, STATS, AND UI
+##==============================
+var health: float = 100:
 	set(value):
-		health = max(value, 0) #minimum value of health should be 0
+		health = max(value, 0)
 		%Health.value = value
 		if health <= 0:
-			die() #pause the game when health reaches 0
+			die()
 			show_game_over_screen()
 
-var movement_speed : float = 120:
-	set(value):
-		movement_speed = value
-		%MovementSpeed.text = "Movement Speed : " + str(value)
-	
-var max_health : float = 100:
+var max_health: float = 100:
 	set(value):
 		var delta = value - max_health
 		max_health = value
 		%Health.max_value = value
 		%HealthMax.text = "Max Health : " + str(value)
-		
 		if delta > 0:
-			# Optionally heal proportionally to new max
-			health += delta
-			health = min(health, max_health)
-	
-var recovery : float = 0:
+			health = min(health + delta, max_health)
+
+var movement_speed: float = 120:
+	set(value):
+		movement_speed = value
+		%MovementSpeed.text = "Movement Speed : " + str(value)
+
+var recovery: float = 0:
 	set(value):
 		recovery = value
 		%Recovery.text = "Recovery : " + str(value) + " hp/sec"
-var armor : float = 0: #armor property
+
+var armor: float = 0:
 	set(value):
 		armor = value
 		%Armor.text = "Armor : %.1f" % value + "%"
-var damage : float = 10.0: # flat bonus damage
+
+var damage: float = 10.0:
 	set(value):
 		damage = value
 		%Damage.text = "Damage : " + str(value)
-var amplify : float = 5.0: #amplify attack
+
+var amplify: float = 5.0:
 	set(value):
 		amplify = value
 		%Amplify.text = "Amplify : " + str(value) + "%"
-var area : float = 0: #attack range
+
+var area: float = 0:
 	set(value):
 		area = value
 		%Area.text = "Area : " + str(value)
-var magnet : float = 0: #pickup range
+
+var magnet: float = 0:
 	set(value):
 		magnet = value
 		%Magnet.shape.radius = 50 + value
 		%MagnetL.text = "Magnet : " + str(value)
-var growth : float = 1: #growth property
+
+var growth: float = 1:
 	set(value):
 		growth = value
-		%Growth.text = "Growth : " + str(value)+ " exp/rate"
-var luck : float = 2.5:
+		%Growth.text = "Growth : " + str(value) + " exp/rate"
+
+var luck: float = 2.5:
 	set(value):
 		luck = value
-		%Luck.text = "Luck : " + str(value)+ "%"
-var dodge : float = 10.0:
+		%Luck.text = "Luck : " + str(value) + "%"
+
+var dodge: float = 10.0:
 	set(value):
 		dodge = value
 		%Dodge.text = "Dodge : " + str(value) + "%"
-var crit : float = 10.0: # chance in %
+
+var crit: float = 10.0:
 	set(value):
 		crit = value
 		%Crit.text = "Crit : " + str(value) + "%"
-		
-var crit_damage : float = 2.0: # multiplier, e.g., 2.0 = 200%
+
+var crit_damage: float = 2.0:
 	set(value):
 		crit_damage = value
 		%CritDamage.text = "Crit Damage : " + str(value) + "%"
-		
+
+##==============================
+## ENEMY DETECTION
+##==============================
 var nearest_enemy
-var nearest_enemy_distance : float = 150 + area #default distance, minimum + area
+var nearest_enemy_distance: float = 150 + area
 
-var gold : int = 0:
+##==============================
+## XP AND LEVELING
+##==============================
+var XP: int = 0:
 	set(value):
-		gold = value
-		%Gold.text = "Gold : " + str(value) #setter variable gold that updates the label
-
-#variable to store XP and total XP
-var XP : int = 0:
-	set(value): #make XP a setter var to update XP value
 		XP = value
 		%XP.value = value
-var total_XP : int = 0
 
-var level : int = 1: #variable to store player level
+var total_XP: int = 0
+
+var level: int = 1:
 	set(value):
 		level = value
-		%Level.text = "Lv " + str(value)
-		%Options.show_option() #during level up, show option
-		
+		%Level.text = "Level " + str(value)
+		%Options.show_option()
 
-var is_dashing: bool = false
+const XP_BASE := 20
+const XP_SCALE := 10.0
+const XP_EXP := 1.5
+
+##==============================
+## GOLD
+##==============================
+var gold: int = 0:
+	set(value):
+		gold = value
+		%Gold.text = "$ " + str(value)
+
+##==============================
+## COMBAT STATUS EFFECTS
+##==============================
 var knockback_velocity: Vector2 = Vector2.ZERO
 var knockback_timer: float = 0.0
 var knockback_duration: float = 0.2
+var is_stunned := false
+var stun_timer := 0.0
 
+##==============================
+## READY
+##==============================
 func _ready() -> void:
-	Persistence.gain_bonus_stats(self) #call the gain bonus statsbas from persistence when the player node is ready
-	character = Persistence.character #set character, base stats, add starting weapon on ready
-	
+	Persistence.gain_bonus_stats(self)
+	character = Persistence.character
+
 	if character:
 		scale = character.scale
-		
-	set_base_stats(character.base_stats)
+		set_base_stats(character.base_stats)
+
 	%XP.max_value = get_xp_needed(level)
-	
-	%Options.check_item(character.starting_weapon) #adds weapon if not available
+	%Options.check_item(character.starting_weapon)
 	update_xp_ui()
 
+##==============================
+## PHYSICS PROCESS
+##==============================
 func _physics_process(delta):
 	if is_dashing:
-		return #skip movement during dash
-	
-	# Knockback overrides normal movement
+		return
+
 	if knockback_timer > 0:
 		knockback_timer -= delta
 		velocity = knockback_velocity
@@ -140,10 +177,10 @@ func _physics_process(delta):
 		last_move_dir = velocity.normalized()
 
 	if is_instance_valid(nearest_enemy):
-		nearest_enemy_distance = nearest_enemy.seperation  #if nearest enemy is not null, sotre its seperation
+		nearest_enemy_distance = nearest_enemy.seperation
 	else:
-		nearest_enemy_distance = 150 + area#update nearest distance in physics process
-		nearest_enemy = null  #for resetting reference
+		nearest_enemy_distance = 150 + area
+		nearest_enemy = null
 
 	move_and_collide(velocity * delta)
 
@@ -151,148 +188,31 @@ func _physics_process(delta):
 	animation(delta)
 	health = min(health + recovery * delta, max_health)
 
-func add_ghost():
-	var ghost = ghost_node.instantiate()
-	ghost.set_property(position, $Sprite2D.scale)
-	get_tree().current_scene.add_child(ghost)
-
-func show_dodge_feedback():
-	print("DODGED!")  #replace this with a UI popup or sound
-	SoundManager.play_sfx(preload("res://music & sfx/Minifantasy_Dungeon_SFX/18_orc_charge.wav"))
-
-
-#function to reduce health
-func take_damage(amount, bypass_invincibility := false):
-	if is_invincible and not bypass_invincibility:
-		return  # Ignore all damage while invincible
-
-	if randf() * 100 < dodge:
-		show_dodge_feedback()
-		return  # Dodged
-
-	var reduced_damage = max(amount * (amount / (amount + armor)), 1)
-	health -= reduced_damage
-	
-
-func apply_knockback(force: Vector2):
-	if is_dashing:
-		return  # Don't get knocked back while dashing
-	knockback_velocity = force
-	knockback_timer = knockback_duration
-	
-func _on_self_damage_body_entered(body):
-	take_damage(body.damage) #reduce health with enemy damage
-		
-func die():
-	if character:
-		$AnimationPlayer.play("death_" + character.animation_name)
-		
-	AudioController.bg_music.play()
-	$Sprite2D.visible = true # ensure sprite is visible
-	get_tree().paused = true
-	await $AnimationPlayer.animation_finished
-	
-func show_game_over_screen():
-	await $AnimationPlayer.animation_finished
-	var game_over = preload("res://scenes/GameOver.tscn").instantiate()
-	add_child(game_over)
-	get_tree().paused = true  #pause the game
-	
-
-func _on_timer_timeout(): #disable and enable with each timeout
-	%Collision.set_deferred("disabled", true)
-	%Collision.set_deferred("disabled", false)
-
-func update_xp_ui():
-	%XP.max_value = get_xp_needed(level)
-	%XP.value = XP
-	%XPLabel.text = "XP: %d / %d" % [XP, get_xp_needed(level)]
-	
-func gain_XP(amount): #function to gain XP
-	XP += amount * growth
-	total_XP += amount * growth
-	update_xp_ui()
-
-func check_XP():
-	while XP >= get_xp_needed(level):
-		XP -= get_xp_needed(level)
-		level += 1
-	update_xp_ui()
-
-const XP_BASE := 20
-const XP_SCALE := 10.0
-const XP_EXP := 1.5
-
-func get_xp_needed(lvl: int) -> int:
-	return int(XP_BASE + pow(lvl, XP_EXP) * XP_SCALE)
-	
-
-func _on_magnet_area_entered(pickup_area):
-	if pickup_area.has_method("follow"): #call the follow function from pickup
-		pickup_area.follow(self)
-
-func gain_gold(amount): #function to gain gold
-	gold += amount
-
-func open_chest(): #function to call open from player
-	$UI/Chest.open()
-
-func animation(_delta): #plays the character animation
-	if velocity == Vector2.ZERO:
-		$AnimationPlayer.play("idle_" + character.animation_name)
-	else:
-		$AnimationPlayer.play("walk_" + character.animation_name)
-	
-	if velocity.x < 0: #flipping sprites according to movement direction
-		$Sprite2D.flip_h = true
-	elif velocity.x > 0:
-		$Sprite2D.flip_h = false
-
-func set_base_stats(base_stats : Stats): #function to gain base stats from the character
-	max_health += base_stats.max_health
-	recovery += base_stats.recovery
-	armor += base_stats.armor
-	movement_speed += base_stats.movement_speed
-	damage += base_stats.damage
-	amplify += base_stats.amplify
-	area += base_stats.area
-	magnet += base_stats.magnet
-	growth += base_stats.growth
-	luck += base_stats.luck
-	dodge += base_stats.dodge
-	crit += base_stats.crit
-	crit_damage += base_stats.crit_damage
-	
-func _on_back_pressed() -> void:
-	pass # Replace with function body.
-
-
-func _on_ghost_timer_timeout() -> void:
-	add_ghost()
-
+##==============================
+## DASHING
+##==============================
 func dash():
 	if is_dashing or not can_dash:
 		return
 
 	is_dashing = true
-	is_invincible = true 
+	is_invincible = true
 	can_dash = false
 	ghost_timer.start()
 	%Collision.set_deferred("disabled", true)
+
 	$AnimationPlayer.play("dash_" + character.animation_name)
 	SoundManager.play_sfx(load("res://music & sfx/RPG_Essentials_Free/8_Atk_Magic_SFX/Wind_02.wav"))
 
-	# Normalize direction to avoid scaling issues
 	var dash_dir = velocity.normalized()
 	if dash_dir == Vector2.ZERO:
-		dash_dir = last_move_dir  # fallback if player isn't moving
+		dash_dir = last_move_dir
 
-	var dash_vector = dash_dir * dash_distance
-	var target_position = position + dash_vector
+	var target_position = position + dash_dir * dash_distance
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "position", target_position, dash_duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	await tween.finished
-	
+
 	%Collision.set_deferred("disabled", false)
 	ghost_timer.stop()
 	is_dashing = false
@@ -306,6 +226,126 @@ func dash():
 func _input(event):
 	if event.is_action_pressed("dash"):
 		dash()
-		
 
-#===Pet===
+##==============================
+## COMBAT / DAMAGE
+##==============================
+func take_damage(amount, bypass_invincibility := false):
+	if is_invincible and not bypass_invincibility:
+		return
+
+	if randf() * 100 < dodge:
+		show_dodge_feedback()
+		return
+
+	var reduced_damage = max(amount * (amount / (amount + armor)), 1)
+	health -= reduced_damage
+
+func apply_knockback(force: Vector2):
+	if is_dashing:
+		return
+	knockback_velocity = force
+	knockback_timer = knockback_duration
+
+func show_dodge_feedback():
+	print("DODGED!")
+	SoundManager.play_sfx(preload("res://music & sfx/Minifantasy_Dungeon_SFX/18_orc_charge.wav"))
+
+func _on_self_damage_body_entered(body):
+	take_damage(body.damage)
+
+##==============================
+## DEATH
+##==============================
+func die():
+	if character:
+		$AnimationPlayer.play("death_" + character.animation_name)
+	AudioController.bg_music.play()
+	$Sprite2D.visible = true
+	get_tree().paused = true
+	await $AnimationPlayer.animation_finished
+
+func show_game_over_screen():
+	await $AnimationPlayer.animation_finished
+	var game_over = preload("res://scenes/GameOver.tscn").instantiate()
+	add_child(game_over)
+	get_tree().paused = true
+
+##==============================
+## XP SYSTEM
+##==============================
+func get_xp_needed(lvl: int) -> int:
+	return int(XP_BASE + pow(lvl, XP_EXP) * XP_SCALE)
+
+func gain_XP(amount):
+	XP += amount * growth
+	total_XP += amount * growth
+	update_xp_ui()
+
+func check_XP():
+	while XP >= get_xp_needed(level):
+		XP -= get_xp_needed(level)
+		level += 1
+	update_xp_ui()
+
+func update_xp_ui():
+	%XP.max_value = get_xp_needed(level)
+	%XP.value = XP
+	%XPLabel.text = "XP: %d / %d" % [XP, get_xp_needed(level)]
+
+##==============================
+## STATS & GOLD
+##==============================
+func set_base_stats(base_stats: Stats):
+	max_health += base_stats.max_health
+	recovery += base_stats.recovery
+	armor += base_stats.armor
+	movement_speed += base_stats.movement_speed
+	damage += base_stats.damage
+	amplify += base_stats.amplify
+	area += base_stats.area
+	magnet += base_stats.magnet
+	growth += base_stats.growth
+	luck += base_stats.luck
+	dodge += base_stats.dodge
+	crit += base_stats.crit
+	crit_damage += base_stats.crit_damage
+
+func gain_gold(amount):
+	gold += amount
+
+##==============================
+## GHOST & CHEST
+##==============================
+func add_ghost():
+	var ghost = ghost_node.instantiate()
+	ghost.set_property(position, $Sprite2D.scale)
+	get_tree().current_scene.add_child(ghost)
+
+func open_chest():
+	$UI/Chest.open()
+
+func _on_ghost_timer_timeout():
+	add_ghost()
+
+##==============================
+## UI / MISC
+##==============================
+func animation(_delta):
+	if velocity == Vector2.ZERO:
+		$AnimationPlayer.play("idle_" + character.animation_name)
+	else:
+		$AnimationPlayer.play("walk_" + character.animation_name)
+
+	$Sprite2D.flip_h = velocity.x < 0
+
+func _on_magnet_area_entered(pickup_area):
+	if pickup_area.has_method("follow"):
+		pickup_area.follow(self)
+
+func _on_timer_timeout():
+	%Collision.set_deferred("disabled", true)
+	%Collision.set_deferred("disabled", false)
+
+func _on_back_pressed():
+	pass

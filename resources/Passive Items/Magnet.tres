@@ -64,4 +64,7 @@ upgrades = Array[ExtResource("3_6ljra")]([SubResource("Resource_mgu2e"), SubReso
 title = "Magnet"
 icon = ExtResource("2_d2ge8")
 texture = ExtResource("2_d2ge8")
+rarity = 1
+attribute_type = "Magnet"
+attribute_value = 0
 metadata/_custom_type_script = "uid://oh3fq60et0sw"
