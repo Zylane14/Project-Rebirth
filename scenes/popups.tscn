@@ -35,14 +35,15 @@ script = ExtResource("1_fk52g")
 [node name="ItemPopup" type="PopupPanel" parent="UI"]
 unique_name_in_owner = true
 position = Vector2i(260, 130)
-size = Vector2i(161, 158)
+size = Vector2i(161, 191)
+visible = true
 theme_override_styles/panel = SubResource("StyleBoxTexture_jha0h")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/ItemPopup"]
 offset_left = 5.0
 offset_top = 5.0
 offset_right = 156.0
-offset_bottom = 153.0
+offset_bottom = 186.0
 
 [node name="Title" type="Label" parent="UI/ItemPopup/VBoxContainer"]
 unique_name_in_owner = true
@@ -65,14 +66,21 @@ bbcode_enabled = true
 text = "Rare"
 scroll_active = false
 
-[node name="HBoxContainer21" type="HBoxContainer" parent="UI/ItemPopup/VBoxContainer"]
+[node name="HBoxContainer1" type="HBoxContainer" parent="UI/ItemPopup/VBoxContainer"]
 layout_mode = 2
 
-[node name="Description" type="Label" parent="UI/ItemPopup/VBoxContainer/HBoxContainer21"]
+[node name="Description" type="RichTextLabel" parent="UI/ItemPopup/VBoxContainer"]
 unique_name_in_owner = true
+clip_contents = false
+custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
+size_flags_vertical = 8
+theme_override_colors/font_shadow_color = Color(0.131379, 0.131379, 0.131379, 1)
+theme_override_fonts/normal_font = SubResource("FontVariation_jha0h")
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
 text = "Description"
+scroll_active = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/ItemPopup/VBoxContainer"]
 layout_mode = 2

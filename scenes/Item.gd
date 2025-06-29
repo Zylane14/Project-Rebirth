@@ -7,6 +7,7 @@ enum Rarity { COMMON, RARE, EPIC, SPECIAL, LEGENDARY }
 #common properties for Item
 @export_category("Information")
 @export var title : String
+@export_multiline var description: String = ""
 @export var icon : Texture2D #texture and icon stored seperately
 @export var texture : Texture2D
 @export var rarity: Rarity = Rarity.COMMON #default to COMMON

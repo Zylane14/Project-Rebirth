@@ -25,13 +25,14 @@ func set_value(item: Item):
 	%Rarity.text = set_text_effect(Item.Rarity.keys()[item.rarity])
 	%AttributeValue.text = item.attribute_type
 	%AttributeValue.text = str(item.attribute_value)
-
-	# Toggleable Description Section
+	
+	# Set description and toggle visibility
 	if item.description.strip_edges() != "":
-		%DescriptionSection.visible = true
+		%Description.visible = true
 		%Description.text = item.description
 	else:
-		%DescriptionSection.visible = false
+		%Description.visible = false
+
 
 	if item is Weapon:
 		var weapon = item as Weapon

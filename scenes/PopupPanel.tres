@@ -1,0 +1,15 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bd6hy4xwy7gup"]
+
+[ext_resource type="Texture2D" uid="uid://dchbvryra6a57" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Scalable screen/Scalable_3.png" id="1_nrrbo"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hhpqf"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 12.0
+texture = ExtResource("1_nrrbo")
+region_rect = Rect2(0, 0, 80, 64)
+
+[resource]
+default_font_size = 10
+PopupPanel/styles/panel = SubResource("StyleBoxTexture_hhpqf")
