@@ -62,6 +62,7 @@ metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 script = ExtResource("1_82em7")
 upgrades = Array[ExtResource("3_6ljra")]([SubResource("Resource_mgu2e"), SubResource("Resource_7tv1t"), SubResource("Resource_g1hcx")])
 title = "Magnet"
+description = ""
 icon = ExtResource("2_d2ge8")
 texture = ExtResource("2_d2ge8")
 rarity = 1

@@ -7332,9 +7332,9 @@ player = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("1_g7g4h")]
 position = Vector2(318, 173)
-dash_distance = null
-dash_duration = null
-post_dash_invincibility_duration = null
+dash_distance = 180.0
+dash_duration = 0.4
+post_dash_invincibility_duration = 0.2
 
 [node name="Pickups" parent="." node_paths=PackedStringArray("player_reference") instance=ExtResource("10_s36qc")]
 position = Vector2(145, 185)

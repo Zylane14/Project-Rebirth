@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://df5fdtvevwssj"]
+[gd_scene load_steps=2 format=3 uid="uid://8gakxutrwsda"]
 
-[ext_resource type="Script" uid="uid://h2h36oef3nv7" path="res://scenes/damage.gd" id="1_1gm86"]
+[sub_resource type="GDScript" id="GDScript_ljrwy"]
+script/source = "extends Label
+
+func _ready():
+	pop()
+
+func pop():
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, \"scale\", Vector2(2,2), 0.1)
+	tween.chain().tween_property(self, \"scale\", Vector2(1,1), 0.1) #tween the scale from 1 to 2 then 2 to 1 by chaining
+	await tween.finished
+	queue_free()
+"
 
 [node name="Damage" type="Label"]
 offset_left = -50.0
@@ -12,4 +24,4 @@ text = "0
 "
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("1_1gm86")
+script = SubResource("GDScript_ljrwy")

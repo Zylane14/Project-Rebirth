@@ -63,6 +63,7 @@ evolution = ExtResource("1_ap575")
 sound = ExtResource("5_wuo0d")
 particle = ExtResource("4_gu283")
 title = "Fireball"
+description = ""
 icon = ExtResource("3_2b7by")
 texture = ExtResource("7_bsojs")
 rarity = 2

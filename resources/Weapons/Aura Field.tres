@@ -62,6 +62,7 @@ item_needed = ExtResource("3_vrytw")
 evolution = ExtResource("1_pmude")
 sound = ExtResource("6_pmude")
 title = "Aura Field"
+description = ""
 icon = ExtResource("1_dga1w")
 texture = ExtResource("1_dga1w")
 rarity = 0

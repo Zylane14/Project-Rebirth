@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://63kp1cwf1snt"]
+[gd_scene load_steps=82 format=3 uid="uid://63kp1cwf1snt"]
 
 [ext_resource type="Script" uid="uid://rd7jqoyg5ayg" path="res://scripts/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://3ninw6nm3qxc" path="res://scenes/slot.tscn" id="2_dqkch"]
@@ -15,10 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://d2i68oagku42c" path="res://scenes/reward_slot.tscn" id="14_a8ls1"]
 [ext_resource type="Script" uid="uid://tyonajtpq56s" path="res://scenes/report.gd" id="14_a38lo"]
 [ext_resource type="Texture2D" uid="uid://cbgx3xcgivc6s" path="res://assets/Characters/EleonoreAndJoanna/Sprites/Eleonore/Sprites/Move/Full/spritesheet-3.png" id="14_dt7fs"]
-[ext_resource type="PackedScene" uid="uid://khqdo7qeuc1c" path="res://scenes/artifact_slot.tscn" id="15_ke2ow"]
 [ext_resource type="Texture2D" uid="uid://djroyiohnhh42" path="res://assets/Characters/NightLord_v1/Sprites/Idle/Idle.png" id="15_wqfne"]
 [ext_resource type="Texture2D" uid="uid://c3fidlw2ifhch" path="res://assets/UI/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_Slot01a.png" id="16_4ni07"]
-[ext_resource type="Resource" uid="uid://cno7bovkjxtqd" path="res://resources/Artifacts/Godly Book.tres" id="16_ujl30"]
 [ext_resource type="Texture2D" uid="uid://bsabvclaqff31" path="res://assets/Characters/NightLord_v1/Sprites/Walk/Walking/walk_carmin.png" id="16_wnwbv"]
 [ext_resource type="Texture2D" uid="uid://k3b1xqb0rw4k" path="res://assets/Characters/NightLord_v1/Sprites/Death/death_carmin.png" id="17_gl8cc"]
 [ext_resource type="Texture2D" uid="uid://dxdj74ydonscy" path="res://assets/Characters/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle_full.png" id="17_qfm1y"]
@@ -35,14 +33,12 @@
 [ext_resource type="Texture2D" uid="uid://cs0bq6oxl60le" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Buttons/Buttons_4.png" id="22_hax0n"]
 [ext_resource type="Script" uid="uid://bbvhpeiafo6h3" path="res://scripts/weapons.gd" id="25_hhpqf"]
 [ext_resource type="Texture2D" uid="uid://ctaletg5y5xlm" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Boss-bars/Bossbar_6.png" id="28_jc3p3"]
-[ext_resource type="PackedScene" uid="uid://cqdwgnc2rjpee" path="res://scenes/PopupSlot.tscn" id="29_giy8y"]
 [ext_resource type="Texture2D" uid="uid://crpkl8dgv00g2" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Boss-bars/Filler_loading.png" id="29_hax0n"]
 [ext_resource type="Resource" uid="uid://byk5so652svi8" path="res://resources/Passive Items/Recovery.tres" id="29_mx1m4"]
 [ext_resource type="Resource" uid="uid://cdqw7gta62gvm" path="res://resources/Passive Items/Magnet.tres" id="30_4gjji"]
 [ext_resource type="Resource" uid="uid://bm011iemi6tjk" path="res://resources/Passive Items/Movement_Speed.tres" id="30_fdfoy"]
 [ext_resource type="Texture2D" uid="uid://dlmxkfiyrj3ct" path="res://assets/UI/Astrology UI/game/gui/overlay/game_menu.png" id="32_t4otl"]
 [ext_resource type="Texture2D" uid="uid://34lq1ahlsvnf" path="res://assets/World/EPIC RPG World - Sewers V1.5/Props/atlas props - individual sprites/chest - animation style 1_0.png" id="34_2dvfe"]
-[ext_resource type="Resource" uid="uid://smmit2hxxxxi" path="res://resources/Weapons/Aura Field.tres" id="34_u2ulf"]
 [ext_resource type="Texture2D" uid="uid://drm35d0qb4jl3" path="res://assets/World/EPIC RPG World - Sewers V1.5/Props/rustic chest-opening animation style3.png" id="35_giy8y"]
 [ext_resource type="Texture2D" uid="uid://p666mkx807s2" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Buttons/Button_Selected.png" id="35_j2b1d"]
 [ext_resource type="Texture2D" uid="uid://bj666pcsbdiqf" path="res://assets/UI/Astrology UI/game/gui/border.png" id="37_cs1tg"]
@@ -1156,10 +1152,7 @@ z_index = 1
 script = ExtResource("1_onrkg")
 character = ExtResource("2_i4ail")
 ghost_node = ExtResource("3_l71n6")
-dash_distance = null
-dash_duration = null
 dash_cooldown = 0.2
-post_dash_invincibility_duration = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-10, -5)
@@ -1227,7 +1220,6 @@ text = "LEVEL UP"
 
 [node name="Weapons" type="HBoxContainer" parent="UI"]
 unique_name_in_owner = true
-visible = false
 offset_left = 27.0
 offset_top = 268.0
 offset_right = 155.0
@@ -1265,7 +1257,6 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="PassiveItems" type="HBoxContainer" parent="UI"]
-visible = false
 offset_left = 27.0
 offset_top = 313.0
 offset_right = 155.0
@@ -1303,28 +1294,6 @@ layout_mode = 2
 
 [node name="PassiveSlot10" parent="UI/PassiveItems" instance=ExtResource("5_ur7pv")]
 layout_mode = 2
-
-[node name="Artifacts" type="HBoxContainer" parent="UI"]
-visible = false
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -145.0
-offset_top = -48.0
-offset_right = -17.0
-offset_bottom = -8.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="ArtifactSlot" parent="UI/Artifacts" instance=ExtResource("15_ke2ow")]
-layout_mode = 2
-item = ExtResource("16_ujl30")
-
-[node name="Slot" parent="UI/Artifacts" instance=ExtResource("29_giy8y")]
-layout_mode = 2
-item = ExtResource("34_u2ulf")
 
 [node name="XP" type="TextureProgressBar" parent="UI"]
 unique_name_in_owner = true

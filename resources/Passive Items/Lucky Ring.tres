@@ -80,6 +80,7 @@ metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 script = ExtResource("2_v7d1i")
 upgrades = Array[ExtResource("3_6qo2h")]([SubResource("Resource_opdgn"), SubResource("Resource_63bs6"), SubResource("Resource_m7p3p"), SubResource("Resource_asl7t")])
 title = "Lucky Ring"
+description = ""
 icon = ExtResource("1_si68l")
 texture = ExtResource("1_si68l")
 rarity = 2
