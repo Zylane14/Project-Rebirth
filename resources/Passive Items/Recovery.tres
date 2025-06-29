@@ -65,6 +65,7 @@ title = "HP Regen"
 icon = ExtResource("2_yg5t0")
 texture = ExtResource("2_yg5t0")
 rarity = 3
+level = 1
 attribute_type = "HP Regen"
 attribute_value = 0
 metadata/_custom_type_script = "uid://oh3fq60et0sw"

@@ -83,6 +83,7 @@ title = "Lucky Ring"
 icon = ExtResource("1_si68l")
 texture = ExtResource("1_si68l")
 rarity = 2
+level = 1
 attribute_type = "Luck"
 attribute_value = 0
 metadata/_custom_type_script = "uid://oh3fq60et0sw"

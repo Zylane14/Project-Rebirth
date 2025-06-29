@@ -43,4 +43,6 @@ func update(_delta):
 	pass
 
 func reset():
-	pass
+	damage_dealt = 0
+	slot = null
+	level = 1

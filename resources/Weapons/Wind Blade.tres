@@ -79,6 +79,7 @@ title = "Wind Blade"
 icon = ExtResource("1_mr5q2")
 texture = ExtResource("1_mr5q2")
 rarity = 0
+level = 1
 attribute_type = ""
 attribute_value = 0
 metadata/_custom_type_script = "uid://sur3de5kfqnl"

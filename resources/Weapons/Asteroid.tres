@@ -10,38 +10,39 @@
 
 [sub_resource type="Resource" id="Resource_3xwug"]
 script = ExtResource("5_5v0xx")
-angular_speed = 0.0
-amount = 2
-damage = 2.0
+angular_speed = 60.0
+amount = 1
+damage = 1.0
 cooldown = 0.0
 description = "ASTEROID"
 metadata/_custom_type_script = "uid://cnqkprtjrc6t6"
 
 [sub_resource type="Resource" id="Resource_rgxfb"]
 script = ExtResource("5_5v0xx")
-angular_speed = 90.0
-amount = 0
-damage = 4.0
+angular_speed = 60.0
+amount = 1
+damage = 2.0
 cooldown = 0.0
-description = "+90 Speed +4 Damage"
+description = "+60 Speed +1 Amount +2 Damage"
 metadata/_custom_type_script = "uid://cnqkprtjrc6t6"
 
 [sub_resource type="Resource" id="Resource_ye6g7"]
 script = ExtResource("5_5v0xx")
-angular_speed = 0.0
-amount = 2
+angular_speed = 40.0
+amount = 1
 damage = 2.0
 cooldown = 0.0
-description = "+2 Projectile +2 Damage"
+description = "+1 Projectile +2 Damage
++40 Speed"
 metadata/_custom_type_script = "uid://cnqkprtjrc6t6"
 
 [sub_resource type="Resource" id="Resource_viqsq"]
 script = ExtResource("5_5v0xx")
 angular_speed = 0.0
-amount = 0
-damage = 5.0
+amount = 1
+damage = 4.0
 cooldown = 0.0
-description = "+5 Damage"
+description = "+4 Damage"
 metadata/_custom_type_script = "uid://cnqkprtjrc6t6"
 
 [sub_resource type="Resource" id="Resource_1303o"]
@@ -70,6 +71,7 @@ title = "Asteroid"
 icon = ExtResource("4_3xwug")
 texture = ExtResource("4_3xwug")
 rarity = 4
+level = 1
 attribute_type = ""
 attribute_value = 0
 metadata/_custom_type_script = "uid://4711pfsdiwbb"

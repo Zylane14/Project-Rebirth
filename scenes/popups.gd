@@ -19,12 +19,33 @@ func ItemPopup(slot : Rect2i, item : Item):
 func HideItemPopup():
 	%ItemPopup.hide()
 
-func set_value(item : Item):
+func set_value(item: Item):
 	%Title.text = item.title
-	%Level.text = str(item.level)
+	%Level.text = "Level: " + str(item.level)
 	%Rarity.text = set_text_effect(Item.Rarity.keys()[item.rarity])
 	%AttributeValue.text = item.attribute_type
 	%AttributeValue.text = str(item.attribute_value)
+
+	# Toggleable Description Section
+	if item.description.strip_edges() != "":
+		%DescriptionSection.visible = true
+		%Description.text = item.description
+	else:
+		%DescriptionSection.visible = false
+
+	if item is Weapon:
+		var weapon = item as Weapon
+
+		%WeaponStats.visible = true
+		%Damage.text = "Damage: " + str(weapon.damage)
+		%Cooldown.text = "Cooldown: " + str("%.2f" % weapon.cooldown) + "s"
+		%Speed.text = "Speed: " + str(weapon.speed)
+
+		if weapon.max_level_reached():
+			%Level.text += " (MAX)"
+	else:
+		%WeaponStats.visible = false
+
 
 func set_text_effect(rarity : String):
 	var text : String = rarity #store rarity in a local variable

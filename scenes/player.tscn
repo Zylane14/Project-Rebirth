@@ -1156,7 +1156,10 @@ z_index = 1
 script = ExtResource("1_onrkg")
 character = ExtResource("2_i4ail")
 ghost_node = ExtResource("3_l71n6")
+dash_distance = null
+dash_duration = null
 dash_cooldown = 0.2
+post_dash_invincibility_duration = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-10, -5)
@@ -1224,6 +1227,7 @@ text = "LEVEL UP"
 
 [node name="Weapons" type="HBoxContainer" parent="UI"]
 unique_name_in_owner = true
+visible = false
 offset_left = 27.0
 offset_top = 268.0
 offset_right = 155.0
@@ -1261,6 +1265,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="PassiveItems" type="HBoxContainer" parent="UI"]
+visible = false
 offset_left = 27.0
 offset_top = 313.0
 offset_right = 155.0
