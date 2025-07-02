@@ -34,6 +34,9 @@ func add_to_world(source, tree):
 	projectile.find_child("Particle").process_material = particle
 	projectile.hide()
 	projectile.knockback = -40
+	
+	projectile.animation_to_play = projectile_animation_name
+	
 	projectile_reference.append(projectile) #store the reference
 	
 	tree.current_scene.call_deferred("add_child",projectile)

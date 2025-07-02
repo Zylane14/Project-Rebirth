@@ -62,6 +62,7 @@ item_needed = ExtResource("2_wuo0d")
 evolution = ExtResource("1_ap575")
 sound = ExtResource("5_wuo0d")
 particle = ExtResource("4_gu283")
+projectile_animation_name = "Fireball"
 title = "Fireball"
 description = ""
 icon = ExtResource("3_2b7by")

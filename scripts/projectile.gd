@@ -1,5 +1,10 @@
 extends Area2D
 
+
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+var animation_to_play: String = ""
+
+
 var direction : Vector2 = Vector2.RIGHT
 var speed : float = 200
 var damage : float = 1
@@ -7,6 +12,10 @@ var knockback : float = 90
 var source # The node that fired this projectile (usually the player)
 var weapon : Weapon # Optional: stores weapon reference
 
+func _ready():
+	if animation_to_play != "" and animation_player.has_animation(animation_to_play):
+		animation_player.play(animation_to_play)
+		
 func _physics_process(delta):
 	position += direction * speed * delta
 	rotation = direction.angle()

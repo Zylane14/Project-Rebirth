@@ -21,6 +21,7 @@ func add_to_player(source, index):
 	projectile.find_child("CollisionShape2D").shape.radius = 12
 	projectile.find_child("Particle").process_material = particle #in subclasses. load the particle while instancing projectile
 	projectile.direction = (source.get_global_mouse_position() - source.position).normalized()
+	projectile.animation_to_play = projectile_animation_name
 	
 	if index % 2 == 1 and reversible: #reverse the projectile for alternate shots
 		projectile.direction *= -1

@@ -45,6 +45,9 @@ func add_to_player(source): #function to add projectile to the player
 	projectile.find_child("CollisionShape2D").shape.radius = 90
 	projectile.find_child("Particle").process_material = particle
 	projectile.knockback = -40
+	
+	projectile.animation_to_play = projectile_animation_name
+	
 	projectile_reference = projectile
 	
 	source.call_deferred("add_child", projectile) #adds projectile to player

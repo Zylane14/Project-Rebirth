@@ -18,6 +18,8 @@ func shoot(source, target, scene_tree):
 	projectile.find_child("Sprite2D").texture = texture
 	projectile.find_child("Particle").process_material = particle
 	
+	projectile.animation_to_play = projectile_animation_name
+	
 	scene_tree.current_scene.add_child(projectile) #add to the scene tree
 	
 #overried the activate function and call shoot

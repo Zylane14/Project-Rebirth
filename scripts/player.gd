@@ -167,6 +167,9 @@ func _physics_process(delta):
 	if is_dashing:
 		return
 
+	if character and character.starting_weapon:
+		character.starting_weapon.update(delta)
+	
 	if knockback_timer > 0:
 		knockback_timer -= delta
 		velocity = knockback_velocity
@@ -346,6 +349,3 @@ func _on_magnet_area_entered(pickup_area):
 func _on_timer_timeout():
 	%Collision.set_deferred("disabled", true)
 	%Collision.set_deferred("disabled", false)
-
-func _on_back_pressed():
-	pass

@@ -67,6 +67,7 @@ projectile_node = ExtResource("1_40gbq")
 upgrades = Array[ExtResource("4_rgxfb")]([SubResource("Resource_3xwug"), SubResource("Resource_rgxfb"), SubResource("Resource_ye6g7"), SubResource("Resource_viqsq"), SubResource("Resource_1303o")])
 item_needed = ExtResource("3_viqsq")
 evolution = ExtResource("1_ye6g7")
+projectile_animation_name = "Fireball"
 title = "Asteroid"
 description = ""
 icon = ExtResource("4_3xwug")

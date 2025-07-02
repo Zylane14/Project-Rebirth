@@ -23,8 +23,7 @@ func set_value(item: Item):
 	%Title.text = item.title
 	%Level.text = "Level: " + str(item.level)
 	%Rarity.text = set_text_effect(Item.Rarity.keys()[item.rarity])
-	%AttributeValue.text = item.attribute_type
-	%AttributeValue.text = str(item.attribute_value)
+
 	
 	# Set description and toggle visibility
 	if item.description.strip_edges() != "":

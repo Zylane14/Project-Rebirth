@@ -1507,7 +1507,6 @@ texture = ExtResource("38_2dvfe")
 
 [node name="Report" type="Panel" parent="UI"]
 process_mode = 3
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1576,6 +1575,8 @@ scale = Vector2(0.7, 0.7)
 [node name="Damage" type="Label" parent="UI/Report/Panel/Debug"]
 unique_name_in_owner = true
 layout_mode = 2
+tooltip_text = "Flat damage to enemies."
+mouse_filter = 1
 text = "Damage: 0"
 label_settings = SubResource("LabelSettings_oprun")
 

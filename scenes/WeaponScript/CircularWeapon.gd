@@ -27,6 +27,7 @@ func add_to_player(source):
 	projectile.find_child("Particle").process_material = particle
 	projectile_reference.append(projectile)
 	source.call_deferred("add_child",projectile) #stores reference and add to player (source)
+	projectile.animation_to_play = projectile_animation_name
 
 
 func update(delta):

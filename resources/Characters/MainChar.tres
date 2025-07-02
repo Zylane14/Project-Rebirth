@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cgy4pip6uqoop" path="res://assets/Characters/main-character-of-the-story/MainCharacter(FullPack)/MainCharacter(FullPack-v1)/Idlemain.png" id="2_8lqxd"]
 [ext_resource type="Texture2D" uid="uid://be4yakt40r26t" path="res://assets/Characters/main-character-of-the-story/Main Character Portraits/annoyed.png" id="3_njbcg"]
 [ext_resource type="Script" uid="uid://bjudu0im5j1jb" path="res://scenes/Character.gd" id="3_rjgif"]
-[ext_resource type="Resource" uid="uid://dtuaquges8at1" path="res://resources/Weapons/Wind Blade.tres" id="4_1fhsn"]
+[ext_resource type="Resource" uid="uid://fibp7evam2id" path="res://resources/Weapons/Sword Slash.tres" id="5_njbcg"]
 
 [sub_resource type="Resource" id="Resource_s7l6c"]
 script = ExtResource("1_8lqxd")
@@ -31,7 +31,7 @@ icon = ExtResource("2_8lqxd")
 portrait = ExtResource("3_njbcg")
 animation_name = "MainChar"
 base_stats = SubResource("Resource_s7l6c")
-starting_weapon = ExtResource("4_1fhsn")
+starting_weapon = ExtResource("5_njbcg")
 scale = Vector2(0.9, 0.9)
 dash_distance = 0.0
 dash_duration = 0.0

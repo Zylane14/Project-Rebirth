@@ -1,7 +1,7 @@
 extends Item
 class_name Weapon
 
-#properties for projectiles
+#properties for projectilesw
 @export var damage : float
 @export var cooldown : float
 @export var speed : float
@@ -11,9 +11,18 @@ class_name Weapon
 @export var evolution : Weapon
 @export var sound : AudioStream #property for storing audio
 @export var particle : ParticleProcessMaterial = null #new property to store particles
+@export var projectile_animation_name: String = "" #animation to play on projectile
 
 var slot
 var damage_dealt : float = 0
+var cooldown_timer := 0.0
+
+func can_attack() -> bool:
+	return cooldown_timer <= 0
+
+func update(delta):
+	if cooldown_timer > 0:
+		cooldown_timer -= delta
 
 func activate(_source, _target, _scene_tree):
 	pass
@@ -39,9 +48,6 @@ func max_level_reached(): #function to check if an item reached max level or not
 		return true
 	return false
 	
-func update(_delta):
-	pass
-
 func reset():
 	damage_dealt = 0
 	slot = null
