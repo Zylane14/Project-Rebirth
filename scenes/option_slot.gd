@@ -22,3 +22,4 @@ func _on_gui_input(event: InputEvent) -> void:
 		get_parent().check_item(item)
 		item.upgrade_item()
 		get_parent().close_option()
+	

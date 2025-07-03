@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="MeleeWeapon" load_steps=6 format=3 uid="uid://dl3pke1a7j06"]
+
+[ext_resource type="Texture2D" uid="uid://no68xu318exi" path="res://assets/Projectiles/Pixel Art Animations - Warrior (FREE)-2/VFX 4/Frames/warrior_skill4_frame4.png" id="1_3ky3r"]
+[ext_resource type="PackedScene" uid="uid://dv4awvadvvx50" path="res://scenes/melee_hitbox.tscn" id="2_0sm8g"]
+[ext_resource type="Script" uid="uid://cqmidlvj261s8" path="res://scripts/MeleeWeapon.gd" id="3_ge8gv"]
+[ext_resource type="AudioStream" uid="uid://coc4xrnmajmc4" path="res://music & sfx/RPG_Essentials_Free/10_Battle_SFX/77_flesh_02.wav" id="4_8gwki"]
+[ext_resource type="Script" uid="uid://co5wubqlbfsyl" path="res://scenes/Upgrade.gd" id="5_qysft"]
+
+[resource]
+script = ExtResource("3_ge8gv")
+area = 1.0
+amount = 2
+arc_angle = 90.0
+delay = 0.15
+reversible = true
+damage = 20.0
+cooldown = 1.0
+speed = 250.0
+projectile_node = ExtResource("2_0sm8g")
+upgrades = Array[ExtResource("5_qysft")]([])
+sound = ExtResource("4_8gwki")
+projectile_animation_name = "melee3_MainChar"
+manual_only = true
+title = "Dark Blade"
+description = "Dark Blade"
+icon = ExtResource("1_3ky3r")
+texture = ExtResource("1_3ky3r")
+rarity = 3
+level = 1
+attribute_type = ""
+attribute_value = 0
+metadata/_custom_type_script = "uid://cqmidlvj261s8"

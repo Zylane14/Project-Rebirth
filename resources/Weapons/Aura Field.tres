@@ -62,6 +62,7 @@ item_needed = ExtResource("3_vrytw")
 evolution = ExtResource("1_pmude")
 sound = ExtResource("6_pmude")
 projectile_animation_name = ""
+manual_only = false
 title = "Aura Field"
 description = ""
 icon = ExtResource("1_dga1w")

@@ -5,7 +5,6 @@ extends CharacterBody2D
 ##==============================
 @export var character: Character
 @export var ghost_node: PackedScene
-
 @onready var ghost_timer: Timer = $GhostTimer
 
 ##==============================
@@ -156,6 +155,9 @@ func _ready() -> void:
 		scale = character.scale
 		set_base_stats(character.base_stats)
 
+	if character.starting_weapon:
+		character.starting_weapon.owner = self
+
 	%XP.max_value = get_xp_needed(level)
 	%Options.check_item(character.starting_weapon)
 	update_xp_ui()
@@ -227,6 +229,10 @@ func dash():
 	can_dash = true
 
 func _input(event):
+	if event.is_action_pressed("attack_primary"):
+		if character and character.starting_weapon and character.starting_weapon.manual_only:
+			character.starting_weapon.activate(self, nearest_enemy, get_tree())
+
 	if event.is_action_pressed("dash"):
 		dash()
 

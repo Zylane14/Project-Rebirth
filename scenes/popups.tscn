@@ -33,7 +33,6 @@ script = ExtResource("1_fk52g")
 unique_name_in_owner = true
 position = Vector2i(260, 130)
 size = Vector2i(161, 191)
-visible = true
 theme_override_styles/panel = SubResource("StyleBoxTexture_jha0h")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/ItemPopup"]

@@ -12,10 +12,12 @@ class_name Weapon
 @export var sound : AudioStream #property for storing audio
 @export var particle : ParticleProcessMaterial = null #new property to store particles
 @export var projectile_animation_name: String = "" #animation to play on projectile
+@export var manual_only := false
 
 var slot
 var damage_dealt : float = 0
 var cooldown_timer := 0.0
+var owner: CharacterBody2D
 
 func can_attack() -> bool:
 	return cooldown_timer <= 0
@@ -23,6 +25,8 @@ func can_attack() -> bool:
 func update(delta):
 	if cooldown_timer > 0:
 		cooldown_timer -= delta
+	elif not manual_only and is_instance_valid(owner):
+		activate(owner, owner.nearest_enemy, owner.get_tree())
 
 func activate(_source, _target, _scene_tree):
 	pass

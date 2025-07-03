@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="MeleeWeapon" load_steps=13 format=3 uid="uid://fibp7evam2id"]
+[gd_resource type="Resource" script_class="MeleeWeapon" load_steps=14 format=3 uid="uid://fibp7evam2id"]
 
 [ext_resource type="Texture2D" uid="uid://no68xu318exi" path="res://assets/Projectiles/Pixel Art Animations - Warrior (FREE)-2/VFX 4/Frames/warrior_skill4_frame4.png" id="1_610hy"]
+[ext_resource type="Resource" uid="uid://dl3pke1a7j06" path="res://resources/Weapons Evolved/DarkBlade.tres" id="1_d4vqs"]
 [ext_resource type="Resource" uid="uid://bg2vjx7ir7rx2" path="res://resources/Passive Items/Amplify.tres" id="2_yxyj4"]
 [ext_resource type="PackedScene" uid="uid://dv4awvadvvx50" path="res://scenes/melee_hitbox.tscn" id="3_hyye0"]
 [ext_resource type="Script" uid="uid://cqmidlvj261s8" path="res://scripts/MeleeWeapon.gd" id="4_d4vqs"]
@@ -61,13 +62,15 @@ arc_angle = 90.0
 delay = 0.15
 reversible = false
 damage = 10.0
-cooldown = 0.85
+cooldown = 1.0
 speed = 400.0
 projectile_node = ExtResource("3_hyye0")
 upgrades = Array[ExtResource("5_qdh4m")]([SubResource("Resource_d4vqs"), SubResource("Resource_qdh4m"), SubResource("Resource_lbphi"), SubResource("Resource_8wgia"), SubResource("Resource_cc6c8")])
 item_needed = ExtResource("2_yxyj4")
+evolution = ExtResource("1_d4vqs")
 sound = ExtResource("5_yxyj4")
-projectile_animation_name = "melee3_MainChar"
+projectile_animation_name = "melee_MainChar"
+manual_only = true
 title = "Sword Slash"
 description = "Slash of blood"
 icon = ExtResource("1_610hy")
