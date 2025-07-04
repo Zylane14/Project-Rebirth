@@ -3,7 +3,7 @@ extends Node2D
 @onready var canvas_modulate := $"Day&Night"
 @onready var fog_sprite = get_node("FogParallax/ParallaxLayer/ColorRect")
 
-@export var cycle_duration := 30.0 # total time (in seconds) for full day-night cycle
+@export var cycle_duration := 300.0 # total time (in seconds) for full day-night cycle
 @export var max_fog_opacity := 0.5
 
 var time := 0.0
