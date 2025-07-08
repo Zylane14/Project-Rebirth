@@ -1,16 +1,80 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=6 format=3 uid="uid://q51bg0iwnqs4"]
+[gd_resource type="Resource" script_class="Enemy" load_steps=15 format=3 uid="uid://q51bg0iwnqs4"]
 
 [ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="1_e58ni"]
 [ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="1_g45f2"]
 [ext_resource type="Resource" uid="uid://brhulfmqu2bs1" path="res://resources/Pickups/Orange EXP.tres" id="2_g45f2"]
-[ext_resource type="Texture2D" uid="uid://chwlulqjwaf43" path="res://assets/World/Epic RPG World - The dephs of the Mountain V1.5.1/Characters/Enemy 1/enemy 1-walk.png" id="2_watds"]
+[ext_resource type="Texture2D" uid="uid://cdgb52in7qxen" path="res://assets/World/Epic RPG World - The dephs of the Mountain V1.5.1/Characters/Enemy 1/enemy 1-idle.png" id="3_80cnl"]
 [ext_resource type="PackedScene" uid="uid://b8k11td5n644u" path="res://scenes/enemy_projectile.tscn" id="3_uj4fl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edwde"]
+atlas = ExtResource("3_80cnl")
+region = Rect2(0, 0, 256, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bx5qe"]
+atlas = ExtResource("3_80cnl")
+region = Rect2(256, 0, 256, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3pwj"]
+atlas = ExtResource("3_80cnl")
+region = Rect2(512, 0, 256, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ms3lj"]
+atlas = ExtResource("3_80cnl")
+region = Rect2(768, 0, 256, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8jbo"]
+atlas = ExtResource("3_80cnl")
+region = Rect2(1024, 0, 256, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnfan"]
+atlas = ExtResource("3_80cnl")
+region = Rect2(1280, 0, 256, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe0l8"]
+atlas = ExtResource("3_80cnl")
+region = Rect2(1536, 0, 256, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjjre"]
+atlas = ExtResource("3_80cnl")
+region = Rect2(1792, 0, 256, 224)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j18mo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edwde")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bx5qe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3pwj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ms3lj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8jbo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gnfan")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe0l8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjjre")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
 
 [resource]
 script = ExtResource("1_e58ni")
 title = "Cyclops"
 animation_name = "Cyclops"
-texture = ExtResource("2_watds")
+frames = SubResource("SpriteFrames_j18mo")
 scale = Vector2(1.15, 1.15)
 health = 40.0
 damage = 15.0

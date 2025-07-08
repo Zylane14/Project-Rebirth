@@ -1,13 +1,79 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=4 format=3 uid="uid://cqefmtdn5uq6c"]
+[gd_resource type="Resource" script_class="Enemy" load_steps=14 format=3 uid="uid://cqefmtdn5uq6c"]
 
 [ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="1_r565b"]
 [ext_resource type="Resource" uid="uid://brhulfmqu2bs1" path="res://resources/Pickups/Orange EXP.tres" id="2_i6jus"]
 [ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="2_pe3d7"]
+[ext_resource type="Texture2D" uid="uid://b1t1qleihb5xl" path="res://assets/World/Epic RPG World - The dephs of the Mountain V1.5.1/Characters/Enemy 1/variation1/enemy 1 var1-idle.png" id="3_pe3d7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6jus"]
+atlas = ExtResource("3_pe3d7")
+region = Rect2(0, 0, 256, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsrac"]
+atlas = ExtResource("3_pe3d7")
+region = Rect2(256, 0, 256, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xo0d"]
+atlas = ExtResource("3_pe3d7")
+region = Rect2(512, 0, 256, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54gpr"]
+atlas = ExtResource("3_pe3d7")
+region = Rect2(768, 0, 256, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0akx"]
+atlas = ExtResource("3_pe3d7")
+region = Rect2(1024, 0, 256, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vih4h"]
+atlas = ExtResource("3_pe3d7")
+region = Rect2(1280, 0, 256, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jl8p"]
+atlas = ExtResource("3_pe3d7")
+region = Rect2(1536, 0, 256, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2oma"]
+atlas = ExtResource("3_pe3d7")
+region = Rect2(1792, 0, 256, 224)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r565b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6jus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsrac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xo0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54gpr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0akx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vih4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jl8p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2oma")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
 
 [resource]
 script = ExtResource("2_pe3d7")
 title = "GoblinTank"
 animation_name = "GoblinTank"
+frames = SubResource("SpriteFrames_r565b")
 scale = Vector2(1.12, 1.12)
 health = 50.0
 damage = 13.0

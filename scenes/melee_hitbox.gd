@@ -57,7 +57,3 @@ func calculate_final_damage() -> float:
 				source.show_feedback()
 
 	return amplified_damage
-
-
-func _on_body_exited(body: Node2D) -> void:
-	pass # Replace with function body.

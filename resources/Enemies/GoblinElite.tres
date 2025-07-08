@@ -1,15 +1,65 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=5 format=3 uid="uid://bkrq0re188bjr"]
+[gd_resource type="Resource" script_class="Enemy" load_steps=12 format=3 uid="uid://bkrq0re188bjr"]
 
 [ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="1_pltqi"]
 [ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="1_y5rs7"]
 [ext_resource type="Resource" uid="uid://brhulfmqu2bs1" path="res://resources/Pickups/Orange EXP.tres" id="2_3oqdy"]
-[ext_resource type="Texture2D" uid="uid://d3ujkw5sgbgeo" path="res://assets/World/Epic RPG World - The dephs of the Mountain V1.5.1/Characters/Enemy 2/enemy 2-walk.png" id="4_pltqi"]
+[ext_resource type="Texture2D" uid="uid://bgu7dcuos8dww" path="res://assets/World/Epic RPG World - The dephs of the Mountain V1.5.1/Characters/Enemy 2/enemy 2-idle.png" id="3_pltqi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3oqdy"]
+atlas = ExtResource("3_pltqi")
+region = Rect2(0, 0, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyomp"]
+atlas = ExtResource("3_pltqi")
+region = Rect2(160, 0, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0efs"]
+atlas = ExtResource("3_pltqi")
+region = Rect2(320, 0, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k47py"]
+atlas = ExtResource("3_pltqi")
+region = Rect2(480, 0, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yfnc"]
+atlas = ExtResource("3_pltqi")
+region = Rect2(640, 0, 160, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53bwe"]
+atlas = ExtResource("3_pltqi")
+region = Rect2(800, 0, 160, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o4cvl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3oqdy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyomp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0efs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k47py")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yfnc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53bwe")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
 
 [resource]
 script = ExtResource("1_y5rs7")
 title = "GoblinElite"
 animation_name = "GoblinElite"
-texture = ExtResource("4_pltqi")
+frames = SubResource("SpriteFrames_o4cvl")
 scale = Vector2(0.9, 0.9)
 health = 20.0
 damage = 6.0

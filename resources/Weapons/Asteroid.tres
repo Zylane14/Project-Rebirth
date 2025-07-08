@@ -68,6 +68,7 @@ upgrades = Array[ExtResource("4_rgxfb")]([SubResource("Resource_3xwug"), SubReso
 item_needed = ExtResource("3_viqsq")
 evolution = ExtResource("1_ye6g7")
 projectile_animation_name = "Fireball"
+manual_only = false
 title = "Asteroid"
 description = ""
 icon = ExtResource("4_3xwug")

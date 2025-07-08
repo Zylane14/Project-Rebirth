@@ -20,7 +20,7 @@ func shoot(source : CharacterBody2D, scene_tree : SceneTree):
 	SoundManager.play_sfx(sound)
 	for i in range(amount):
 			var enemy = enemies.pick_random() #pick a randon enemy
-			
+
 			var projectile = projectile_node.instantiate() #instantiate the projectile node
 			projectile.speed = 0
 			projectile.damage = damage
@@ -31,6 +31,11 @@ func shoot(source : CharacterBody2D, scene_tree : SceneTree):
 		
 			projectile.find_child("Sprite2D").texture = texture
 			projectile.find_child("Particle").process_material = particle
+			
+			var sprite = projectile.find_child("Sprite2D")
+
+			if randi() % 2 == 0:
+				sprite.flip_h = true
 			
 			projectile.animation_to_play = projectile_animation_name
 			

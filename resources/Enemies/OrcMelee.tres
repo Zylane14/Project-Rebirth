@@ -1,13 +1,86 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=4 format=3 uid="uid://8t86jgvkply2"]
+[gd_resource type="Resource" script_class="Enemy" load_steps=15 format=3 uid="uid://8t86jgvkply2"]
 
 [ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="1_pi32d"]
 [ext_resource type="Resource" uid="uid://brhulfmqu2bs1" path="res://resources/Pickups/Orange EXP.tres" id="2_s7xvb"]
 [ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="3_373bf"]
+[ext_resource type="Texture2D" uid="uid://bujwvvwy3gtpn" path="res://assets/World/ERW - Grass Land 2.0 v1.7.2/Characters/orc warrior/orc1/orc melee - anims-idle.png" id="3_pi32d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7xvb"]
+atlas = ExtResource("3_pi32d")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_373bf"]
+atlas = ExtResource("3_pi32d")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jubfm"]
+atlas = ExtResource("3_pi32d")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sggwt"]
+atlas = ExtResource("3_pi32d")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57xs5"]
+atlas = ExtResource("3_pi32d")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_507vq"]
+atlas = ExtResource("3_pi32d")
+region = Rect2(1280, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nw3vt"]
+atlas = ExtResource("3_pi32d")
+region = Rect2(1536, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8u6c"]
+atlas = ExtResource("3_pi32d")
+region = Rect2(1792, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tfkk"]
+atlas = ExtResource("3_pi32d")
+region = Rect2(2048, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o4jj4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7xvb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_373bf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jubfm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sggwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57xs5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_507vq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nw3vt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8u6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tfkk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
 
 [resource]
 script = ExtResource("3_373bf")
 title = "OrcMelee"
 animation_name = "OrcMelee"
+frames = SubResource("SpriteFrames_o4jj4")
 scale = Vector2(0.9, 0.9)
 health = 30.0
 damage = 6.0

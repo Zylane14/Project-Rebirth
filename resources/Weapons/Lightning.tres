@@ -6,14 +6,14 @@
 [ext_resource type="Script" uid="uid://c0anj5l8vyvkr" path="res://scenes/WeaponScript/Lightning.gd" id="3_8hp45"]
 [ext_resource type="Resource" uid="uid://bg2vjx7ir7rx2" path="res://resources/Passive Items/Amplify.tres" id="3_r8hb1"]
 [ext_resource type="AudioStream" uid="uid://b8nwmsne0o08o" path="res://music & sfx/RPG_Essentials_Free/8_Atk_Magic_SFX/18_Thunder_02.wav" id="4_8hp45"]
-[ext_resource type="Material" uid="uid://b7vipbcopj15v" path="res://Paticles/Radial.tres" id="4_ikmcd"]
+[ext_resource type="Material" uid="uid://b7vipbcopj15v" path="res://Paticles FX/Radial.tres" id="4_ikmcd"]
 [ext_resource type="Script" uid="uid://co5wubqlbfsyl" path="res://scenes/Upgrade.gd" id="4_yg4jm"]
 [ext_resource type="Script" uid="uid://c557imx4ux1uo" path="res://scenes/WeaponScript/LightningUpgrade.gd" id="7_yg4jm"]
 
 [sub_resource type="Resource" id="Resource_8078k"]
 script = ExtResource("7_yg4jm")
 amount = 1
-damage = 0.0
+damage = 2.0
 cooldown = 0.0
 description = "LIGHTNING"
 metadata/_custom_type_script = "uid://c557imx4ux1uo"
@@ -36,10 +36,11 @@ metadata/_custom_type_script = "uid://c557imx4ux1uo"
 
 [sub_resource type="Resource" id="Resource_yy5p1"]
 script = ExtResource("7_yg4jm")
-amount = 0
+amount = 1
 damage = 4.0
 cooldown = -1.0
-description = "+4 Damage  -1s Cooldown"
+description = "+4 Damage  -1s Cooldown
++1 Lightning"
 metadata/_custom_type_script = "uid://c557imx4ux1uo"
 
 [sub_resource type="Resource" id="Resource_230km"]
@@ -53,8 +54,8 @@ metadata/_custom_type_script = "uid://c557imx4ux1uo"
 [resource]
 script = ExtResource("3_8hp45")
 amount = 1
-damage = 8.0
-cooldown = 5.0
+damage = 15.0
+cooldown = 4.5
 speed = 0.0
 projectile_node = ExtResource("2_d8nxx")
 upgrades = Array[ExtResource("4_yg4jm")]([SubResource("Resource_8078k"), SubResource("Resource_ikmcd"), SubResource("Resource_r8hb1"), SubResource("Resource_yy5p1"), SubResource("Resource_230km")])

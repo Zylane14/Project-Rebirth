@@ -1,15 +1,79 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=5 format=3 uid="uid://c4udbpqvqruxj"]
+[gd_resource type="Resource" script_class="Enemy" load_steps=14 format=3 uid="uid://c4udbpqvqruxj"]
 
 [ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="1_q05k0"]
 [ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="1_ts7x5"]
 [ext_resource type="Resource" uid="uid://brhulfmqu2bs1" path="res://resources/Pickups/Orange EXP.tres" id="2_veemv"]
-[ext_resource type="Texture2D" uid="uid://dvxe6cnp4idu8" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Characters/Stone  Golem/Stone-golem v2-run-224x192.png" id="4_q05k0"]
+[ext_resource type="Texture2D" uid="uid://cscr1mu0vfo57" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Characters/Stone  Golem/Stone-golem v2-idle-224x192.png" id="3_q05k0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_veemv"]
+atlas = ExtResource("3_q05k0")
+region = Rect2(0, 0, 224, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbqad"]
+atlas = ExtResource("3_q05k0")
+region = Rect2(224, 0, 224, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pke6a"]
+atlas = ExtResource("3_q05k0")
+region = Rect2(448, 0, 224, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gyf7m"]
+atlas = ExtResource("3_q05k0")
+region = Rect2(672, 0, 224, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqtil"]
+atlas = ExtResource("3_q05k0")
+region = Rect2(896, 0, 224, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pixwg"]
+atlas = ExtResource("3_q05k0")
+region = Rect2(1120, 0, 224, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tu0k4"]
+atlas = ExtResource("3_q05k0")
+region = Rect2(1344, 0, 224, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h02ap"]
+atlas = ExtResource("3_q05k0")
+region = Rect2(1568, 0, 224, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1rq3f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_veemv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbqad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pke6a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gyf7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqtil")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pixwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tu0k4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h02ap")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
 
 [resource]
 script = ExtResource("1_ts7x5")
 title = "Golem"
 animation_name = "Golem"
-texture = ExtResource("4_q05k0")
+frames = SubResource("SpriteFrames_1rq3f")
 scale = Vector2(1.2, 1.2)
 health = 500.0
 damage = 50.0

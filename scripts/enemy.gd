@@ -67,7 +67,7 @@ func _ready():
 		var mode_switch_timer = Timer.new()
 		mode_switch_timer.wait_time = 5.0
 		mode_switch_timer.autostart = true
-		#mode_switch_timer.timeout.connect(switch_hybrid_mode)
+
 		add_child(mode_switch_timer)
 
 func _physics_process(delta):
@@ -180,6 +180,8 @@ func drop_item():
 		return
 
 	is_dead = true
+	
+	GlobalManager.enemy_kill_count += 1
 	
 	if type.drops.size() > 0:
 		var item = type.drops.pick_random()

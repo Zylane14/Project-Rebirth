@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfnf7ypnplbb5"]
+[gd_scene load_steps=5 format=3 uid="uid://cfnf7ypnplbb5"]
 
 [ext_resource type="Script" uid="uid://ch2ld8abmiubv" path="res://scenes/particle_fx.gd" id="1_con6l"]
+[ext_resource type="Material" uid="uid://c86gbstqtbdlq" path="res://Paticles FX/Fire.tres" id="2_tyh42"]
+[ext_resource type="Material" uid="uid://djvjop6kmlya2" path="res://Paticles FX/Magic.tres" id="3_u516d"]
+[ext_resource type="Material" uid="uid://b7vipbcopj15v" path="res://Paticles FX/Radial.tres" id="4_f76ew"]
 
 [node name="ParticleFX" type="Node2D"]
 script = ExtResource("1_con6l")
+every_effect = Array[ParticleProcessMaterial]([ExtResource("2_tyh42"), ExtResource("3_u516d"), ExtResource("4_f76ew")])

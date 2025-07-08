@@ -1,16 +1,80 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=6 format=3 uid="uid://rdvqfst83nqu"]
+[gd_resource type="Resource" script_class="Enemy" load_steps=15 format=3 uid="uid://rdvqfst83nqu"]
 
 [ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="1_ymgrw"]
 [ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="2_t85i8"]
 [ext_resource type="Resource" uid="uid://bsdwvs8d0sd32" path="res://resources/Pickups/Blue EXP.tres" id="2_yvnva"]
 [ext_resource type="PackedScene" uid="uid://bcupmhfdpk6vh" path="res://scenes/PoisonVialProjectile.tscn" id="3_14gvv"]
-[ext_resource type="Texture2D" uid="uid://d4h2nbimileji" path="res://assets/World/EPIC RPG World - Sewers V1.5/Characters/Mutant Rat/mutant rat - walk.png" id="3_yvnva"]
+[ext_resource type="Texture2D" uid="uid://dogrig7sly1wd" path="res://assets/World/EPIC RPG World - Sewers V1.5/Characters/Mutant Rat/mutant rat - idle.png" id="3_yvnva"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14gvv"]
+atlas = ExtResource("3_yvnva")
+region = Rect2(0, 0, 128, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6sv55"]
+atlas = ExtResource("3_yvnva")
+region = Rect2(128, 0, 128, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0xee"]
+atlas = ExtResource("3_yvnva")
+region = Rect2(256, 0, 128, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndwan"]
+atlas = ExtResource("3_yvnva")
+region = Rect2(384, 0, 128, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kjpx"]
+atlas = ExtResource("3_yvnva")
+region = Rect2(512, 0, 128, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5o4g0"]
+atlas = ExtResource("3_yvnva")
+region = Rect2(640, 0, 128, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vx5w0"]
+atlas = ExtResource("3_yvnva")
+region = Rect2(768, 0, 128, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nojpu"]
+atlas = ExtResource("3_yvnva")
+region = Rect2(896, 0, 128, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t85i8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14gvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6sv55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0xee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndwan")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kjpx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5o4g0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vx5w0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nojpu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
 
 [resource]
 script = ExtResource("2_t85i8")
 title = "MutantRat"
 animation_name = "MutantRat"
-texture = ExtResource("3_yvnva")
+frames = SubResource("SpriteFrames_t85i8")
 scale = Vector2(1, 1)
 health = 16.0
 damage = 15.0

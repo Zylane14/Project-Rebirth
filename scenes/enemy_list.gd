@@ -35,5 +35,7 @@ func _on_pressed(button : Button):
 	%Name.text = "Name : " + enemies[index].title #function to update beastiary labels
 	%Health.text = "Health : " + str(enemies[index].health)
 	%Damage.text = "Damage : " + str(enemies[index].damage)
-	%Texture.texture = enemies[index].texture
+	var sprite_node: AnimatedSprite2D = %Texture
+	sprite_node.sprite_frames = enemies[index].frames
+	sprite_node.play("idle")
 	SoundManager.play_sfx(load("res://music & sfx/RPG_Essentials_Free/10_UI_Menu_SFX/071_Unequip_01.wav"))

@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://cvvo1wgg3i1uq" path="res://resources/Weapons Evolved/Blade Slash.tres" id="1_o8pbe"]
 [ext_resource type="Resource" uid="uid://dw478itjqgfrt" path="res://resources/Passive Items/Lucky Ring.tres" id="2_dmrje"]
 [ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="2_lnykp"]
-[ext_resource type="Material" uid="uid://djvjop6kmlya2" path="res://Paticles/Magic.tres" id="4_kiewn"]
+[ext_resource type="Material" uid="uid://djvjop6kmlya2" path="res://Paticles FX/Magic.tres" id="4_kiewn"]
 [ext_resource type="AudioStream" uid="uid://ctfl5kwg6ohhl" path="res://music & sfx/RPG_Essentials_Free/10_Battle_SFX/22_Slash_04.wav" id="4_o8pbe"]
 [ext_resource type="Script" uid="uid://sur3de5kfqnl" path="res://scenes/WeaponScript/WindBlade.gd" id="5_03jd5"]
 [ext_resource type="Script" uid="uid://co5wubqlbfsyl" path="res://scenes/Upgrade.gd" id="5_kiewn"]

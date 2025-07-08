@@ -12,7 +12,8 @@ class_name Weapon
 @export var sound : AudioStream #property for storing audio
 @export var particle : ParticleProcessMaterial = null #new property to store particles
 @export var projectile_animation_name: String = "" #animation to play on projectile
-@export var manual_only := false
+@export var manual_only: bool = false  #requires pressing button
+
 
 var slot
 var damage_dealt : float = 0
@@ -29,8 +30,11 @@ func update(delta):
 		activate(owner, owner.nearest_enemy, owner.get_tree())
 
 func activate(_source, _target, _scene_tree):
-	pass
+	if not can_attack():
+		return
 
+	cooldown_timer = cooldown 
+	
 func is_upgradeable() -> bool:
 	if level <= upgrades.size(): #function to check if item is upgradeable or not
 		return true

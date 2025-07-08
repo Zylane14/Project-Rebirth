@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://63kp1cwf1snt"]
+[gd_scene load_steps=84 format=3 uid="uid://63kp1cwf1snt"]
 
 [ext_resource type="Script" uid="uid://rd7jqoyg5ayg" path="res://scripts/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://3ninw6nm3qxc" path="res://scenes/slot.tscn" id="2_dqkch"]
@@ -32,17 +32,19 @@
 [ext_resource type="Texture2D" uid="uid://cbkrhjtcx1mt6" path="res://assets/Characters/main-character-of-the-story/MainCharacter(FullPack)/MainCharacter(FullPack-v1)/MainChar - stun(end).png" id="21_t4otl"]
 [ext_resource type="Texture2D" uid="uid://cs0bq6oxl60le" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Buttons/Buttons_4.png" id="22_hax0n"]
 [ext_resource type="Script" uid="uid://bbvhpeiafo6h3" path="res://scripts/weapons.gd" id="25_hhpqf"]
-[ext_resource type="Texture2D" uid="uid://ctaletg5y5xlm" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Boss-bars/Bossbar_6.png" id="28_jc3p3"]
 [ext_resource type="Texture2D" uid="uid://crpkl8dgv00g2" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Boss-bars/Filler_loading.png" id="29_hax0n"]
 [ext_resource type="Resource" uid="uid://byk5so652svi8" path="res://resources/Passive Items/Recovery.tres" id="29_mx1m4"]
 [ext_resource type="Resource" uid="uid://cdqw7gta62gvm" path="res://resources/Passive Items/Magnet.tres" id="30_4gjji"]
 [ext_resource type="Resource" uid="uid://bm011iemi6tjk" path="res://resources/Passive Items/Movement_Speed.tres" id="30_fdfoy"]
+[ext_resource type="Texture2D" uid="uid://c17f6d35uar7g" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Scalable screen/Selected_.png" id="31_hhpqf"]
+[ext_resource type="Texture2D" uid="uid://b1av1bkg0ndva" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Scalable screen/Scalable_4.png" id="32_g5jhy"]
 [ext_resource type="Texture2D" uid="uid://dlmxkfiyrj3ct" path="res://assets/UI/Astrology UI/game/gui/overlay/game_menu.png" id="32_t4otl"]
 [ext_resource type="Texture2D" uid="uid://34lq1ahlsvnf" path="res://assets/World/EPIC RPG World - Sewers V1.5/Props/atlas props - individual sprites/chest - animation style 1_0.png" id="34_2dvfe"]
 [ext_resource type="Texture2D" uid="uid://drm35d0qb4jl3" path="res://assets/World/EPIC RPG World - Sewers V1.5/Props/rustic chest-opening animation style3.png" id="35_giy8y"]
 [ext_resource type="Texture2D" uid="uid://p666mkx807s2" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Buttons/Button_Selected.png" id="35_j2b1d"]
 [ext_resource type="Texture2D" uid="uid://bj666pcsbdiqf" path="res://assets/UI/Astrology UI/game/gui/border.png" id="37_cs1tg"]
 [ext_resource type="Texture2D" uid="uid://cv07vjtinku07" path="res://assets/UI/Astrology UI/game/gui/button/q_about.png" id="38_2dvfe"]
+[ext_resource type="Script" uid="uid://crxcidbxm6nnk" path="res://scenes/KillCount.gd" id="45_g5jhy"]
 
 [sub_resource type="Animation" id="Animation_qfm1y"]
 length = 0.001
@@ -1167,19 +1169,19 @@ libraries = {
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="Money" type="TextureRect" parent="UI"]
-offset_left = 543.0
-offset_top = 14.0
-offset_right = 631.0
-offset_bottom = 31.0
+[node name="MoneyBar" type="TextureRect" parent="UI"]
+offset_left = 539.0
+offset_top = 15.0
+offset_right = 627.0
+offset_bottom = 32.0
 texture = ExtResource("22_hax0n")
 
-[node name="Gold" type="Label" parent="UI/Money"]
+[node name="Gold" type="Label" parent="UI/MoneyBar"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 16.0
+offset_left = 11.0
 offset_top = 2.0
-offset_right = 56.0
+offset_right = 51.0
 offset_bottom = 24.0
 theme_override_font_sizes/font_size = 10
 text = "$ 0"
@@ -1218,83 +1220,6 @@ offset_right = 262.5
 offset_bottom = 56.0
 text = "LEVEL UP"
 
-[node name="Weapons" type="HBoxContainer" parent="UI"]
-unique_name_in_owner = true
-offset_left = 27.0
-offset_top = 268.0
-offset_right = 155.0
-offset_bottom = 308.0
-script = ExtResource("25_hhpqf")
-
-[node name="Slot" parent="UI/Weapons" instance=ExtResource("2_dqkch")]
-layout_mode = 2
-
-[node name="Slot2" parent="UI/Weapons" instance=ExtResource("2_dqkch")]
-layout_mode = 2
-
-[node name="Slot3" parent="UI/Weapons" instance=ExtResource("2_dqkch")]
-layout_mode = 2
-
-[node name="Slot4" parent="UI/Weapons" instance=ExtResource("2_dqkch")]
-layout_mode = 2
-
-[node name="Slot5" parent="UI/Weapons" instance=ExtResource("2_dqkch")]
-layout_mode = 2
-
-[node name="Slot6" parent="UI/Weapons" instance=ExtResource("2_dqkch")]
-layout_mode = 2
-
-[node name="Slot7" parent="UI/Weapons" instance=ExtResource("2_dqkch")]
-layout_mode = 2
-
-[node name="Slot8" parent="UI/Weapons" instance=ExtResource("2_dqkch")]
-layout_mode = 2
-
-[node name="Slot9" parent="UI/Weapons" instance=ExtResource("2_dqkch")]
-layout_mode = 2
-
-[node name="Slot10" parent="UI/Weapons" instance=ExtResource("2_dqkch")]
-layout_mode = 2
-
-[node name="PassiveItems" type="HBoxContainer" parent="UI"]
-offset_left = 27.0
-offset_top = 313.0
-offset_right = 155.0
-offset_bottom = 353.0
-
-[node name="PassiveSlot" parent="UI/PassiveItems" instance=ExtResource("5_ur7pv")]
-layout_mode = 2
-item = ExtResource("30_fdfoy")
-
-[node name="PassiveSlot2" parent="UI/PassiveItems" instance=ExtResource("5_ur7pv")]
-layout_mode = 2
-item = ExtResource("29_mx1m4")
-
-[node name="PassiveSlot3" parent="UI/PassiveItems" instance=ExtResource("5_ur7pv")]
-layout_mode = 2
-item = ExtResource("30_4gjji")
-
-[node name="PassiveSlot4" parent="UI/PassiveItems" instance=ExtResource("5_ur7pv")]
-layout_mode = 2
-
-[node name="PassiveSlot5" parent="UI/PassiveItems" instance=ExtResource("5_ur7pv")]
-layout_mode = 2
-
-[node name="PassiveSlot6" parent="UI/PassiveItems" instance=ExtResource("5_ur7pv")]
-layout_mode = 2
-
-[node name="PassiveSlot7" parent="UI/PassiveItems" instance=ExtResource("5_ur7pv")]
-layout_mode = 2
-
-[node name="PassiveSlot8" parent="UI/PassiveItems" instance=ExtResource("5_ur7pv")]
-layout_mode = 2
-
-[node name="PassiveSlot9" parent="UI/PassiveItems" instance=ExtResource("5_ur7pv")]
-layout_mode = 2
-
-[node name="PassiveSlot10" parent="UI/PassiveItems" instance=ExtResource("5_ur7pv")]
-layout_mode = 2
-
 [node name="XP" type="TextureProgressBar" parent="UI"]
 unique_name_in_owner = true
 anchors_preset = 7
@@ -1302,29 +1227,41 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -240.0
-offset_top = -30.0
-offset_right = -48.0
-offset_bottom = -12.0
+offset_left = -96.0
+offset_top = -25.0
+offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(2.5, 2.5)
+scale = Vector2(2, 2)
 size_flags_horizontal = 4
 size_flags_vertical = 8
 max_value = 5.0
-texture_under = ExtResource("28_jc3p3")
+value = 1.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 2
+stretch_margin_right = 2
+stretch_margin_bottom = 2
+texture_under = ExtResource("31_hhpqf")
+texture_over = ExtResource("32_g5jhy")
 texture_progress = ExtResource("29_hax0n")
-texture_progress_offset = Vector2(2, 8)
 
 [node name="Level" type="Label" parent="UI/XP"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 88.4
-offset_top = 1.2
-offset_right = 137.4
-offset_bottom = 21.2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.0
+offset_top = -2.5
+offset_right = 36.0
+offset_bottom = 14.5
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.3, 0.3)
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 10
 text = "Level 1"
 
 [node name="XPLabel" type="Label" parent="UI/XP"]
@@ -1353,16 +1290,15 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_fjrip")
-weapons = NodePath("../Weapons")
-passive_items = NodePath("../PassiveItems")
+weapons = NodePath("../WeaponInventory/Weapons")
+passive_items = NodePath("../WeaponInventory/PassiveItems")
 particles = NodePath("../Particle")
 panel = NodePath("../Panel")
 
-[node name="Chest" type="NinePatchRect" parent="UI"]
+[node name="WeaponInventory" type="VBoxContainer" parent="UI" node_paths=PackedStringArray("weapons", "passive_items", "particles", "panel")]
+unique_name_in_owner = true
 process_mode = 3
 visible = false
-z_index = 1
-custom_minimum_size = Vector2(250, 220)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1372,6 +1308,98 @@ offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
 offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_fjrip")
+weapons = NodePath("Weapons")
+passive_items = NodePath("PassiveItems")
+particles = NodePath("../Particle")
+panel = NodePath("../Panel")
+
+[node name="Weapons" type="HBoxContainer" parent="UI/WeaponInventory"]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("25_hhpqf")
+
+[node name="Slot" parent="UI/WeaponInventory/Weapons" instance=ExtResource("2_dqkch")]
+layout_mode = 2
+
+[node name="Slot2" parent="UI/WeaponInventory/Weapons" instance=ExtResource("2_dqkch")]
+layout_mode = 2
+
+[node name="Slot3" parent="UI/WeaponInventory/Weapons" instance=ExtResource("2_dqkch")]
+layout_mode = 2
+
+[node name="Slot4" parent="UI/WeaponInventory/Weapons" instance=ExtResource("2_dqkch")]
+layout_mode = 2
+
+[node name="Slot5" parent="UI/WeaponInventory/Weapons" instance=ExtResource("2_dqkch")]
+layout_mode = 2
+
+[node name="Slot6" parent="UI/WeaponInventory/Weapons" instance=ExtResource("2_dqkch")]
+layout_mode = 2
+
+[node name="Slot7" parent="UI/WeaponInventory/Weapons" instance=ExtResource("2_dqkch")]
+layout_mode = 2
+
+[node name="Slot8" parent="UI/WeaponInventory/Weapons" instance=ExtResource("2_dqkch")]
+layout_mode = 2
+
+[node name="Slot9" parent="UI/WeaponInventory/Weapons" instance=ExtResource("2_dqkch")]
+layout_mode = 2
+
+[node name="Slot10" parent="UI/WeaponInventory/Weapons" instance=ExtResource("2_dqkch")]
+layout_mode = 2
+
+[node name="PassiveItems" type="HBoxContainer" parent="UI/WeaponInventory"]
+layout_mode = 2
+
+[node name="PassiveSlot" parent="UI/WeaponInventory/PassiveItems" instance=ExtResource("5_ur7pv")]
+layout_mode = 2
+item = ExtResource("30_fdfoy")
+
+[node name="PassiveSlot2" parent="UI/WeaponInventory/PassiveItems" instance=ExtResource("5_ur7pv")]
+layout_mode = 2
+item = ExtResource("29_mx1m4")
+
+[node name="PassiveSlot3" parent="UI/WeaponInventory/PassiveItems" instance=ExtResource("5_ur7pv")]
+layout_mode = 2
+item = ExtResource("30_4gjji")
+
+[node name="PassiveSlot4" parent="UI/WeaponInventory/PassiveItems" instance=ExtResource("5_ur7pv")]
+layout_mode = 2
+
+[node name="PassiveSlot5" parent="UI/WeaponInventory/PassiveItems" instance=ExtResource("5_ur7pv")]
+layout_mode = 2
+
+[node name="PassiveSlot6" parent="UI/WeaponInventory/PassiveItems" instance=ExtResource("5_ur7pv")]
+layout_mode = 2
+
+[node name="PassiveSlot7" parent="UI/WeaponInventory/PassiveItems" instance=ExtResource("5_ur7pv")]
+layout_mode = 2
+
+[node name="PassiveSlot8" parent="UI/WeaponInventory/PassiveItems" instance=ExtResource("5_ur7pv")]
+layout_mode = 2
+
+[node name="PassiveSlot9" parent="UI/WeaponInventory/PassiveItems" instance=ExtResource("5_ur7pv")]
+layout_mode = 2
+
+[node name="PassiveSlot10" parent="UI/WeaponInventory/PassiveItems" instance=ExtResource("5_ur7pv")]
+layout_mode = 2
+
+[node name="Chest" type="NinePatchRect" parent="UI"]
+process_mode = 3
+z_index = 1
+custom_minimum_size = Vector2(250, 220)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -110.0
+offset_right = 125.0
+offset_bottom = 110.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("32_t4otl")
@@ -1499,14 +1527,19 @@ offset_bottom = 138.0
 position = Vector2(124.5, 108.5)
 scale = Vector2(0.130729, 0.234259)
 texture = ExtResource("37_cs1tg")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
 
 [node name="Sprite2D2" type="Sprite2D" parent="UI/Chest"]
 position = Vector2(125, -6)
 scale = Vector2(0.316754, 0.316754)
 texture = ExtResource("38_2dvfe")
+region_enabled = true
+region_rect = Rect2(0, 0, 191, 191)
 
 [node name="Report" type="Panel" parent="UI"]
 process_mode = 3
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1695,6 +1728,19 @@ offset_bottom = 49.0
 grow_horizontal = 2
 text = "Total Damage"
 
+[node name="KillCount" type="TextureRect" parent="UI"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("45_g5jhy")
+
+[node name="EnemyKills" type="Label" parent="UI/KillCount"]
+offset_left = 547.0
+offset_top = 37.0
+offset_right = 606.0
+offset_bottom = 59.0
+theme_override_font_sizes/font_size = 10
+text = "Kills: 0"
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_hqtel")
@@ -1736,7 +1782,7 @@ shape = SubResource("CircleShape2D_tuyoq")
 [node name="GhostTimer" type="Timer" parent="."]
 wait_time = 0.06
 
-[connection signal="mouse_entered" from="UI/Weapons" to="." method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="UI/WeaponInventory/Weapons" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="UI/Chest/Open" to="UI/Chest" method="_on_open_pressed"]
 [connection signal="pressed" from="UI/Chest/Close" to="UI/Chest" method="_on_close_pressed"]
 [connection signal="pressed" from="UI/Report/Back" to="UI/Report/Back" method="_on_pressed"]

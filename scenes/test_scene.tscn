@@ -7360,6 +7360,7 @@ player = NodePath("../Player")
 
 [node name="FogParallax" type="ParallaxBackground" parent="."]
 layer = 2
+visible = false
 scroll_ignore_camera_zoom = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="FogParallax"]

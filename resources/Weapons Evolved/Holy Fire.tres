@@ -8,11 +8,18 @@
 [resource]
 script = ExtResource("2_dhg5w")
 damage = 10.0
-cooldown = 0.1
+cooldown = 0.5
 speed = 500.0
 projectile_node = ExtResource("1_tew3o")
 upgrades = Array[ExtResource("4_va0ch")]([])
+projectile_animation_name = "Fireball"
+manual_only = false
 title = "Holy Fire"
+description = ""
 icon = ExtResource("3_7aepq")
 texture = ExtResource("3_7aepq")
+rarity = 0
+level = 1
+attribute_type = ""
+attribute_value = 0
 metadata/_custom_type_script = "uid://cnx1yfvbpbkka"

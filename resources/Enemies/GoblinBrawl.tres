@@ -1,13 +1,79 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=4 format=3 uid="uid://cyfp26oy6hbmm"]
+[gd_resource type="Resource" script_class="Enemy" load_steps=14 format=3 uid="uid://cyfp26oy6hbmm"]
 
 [ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="1_3xd4o"]
 [ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="1_6r0uh"]
 [ext_resource type="Resource" uid="uid://bsdwvs8d0sd32" path="res://resources/Pickups/Blue EXP.tres" id="2_cc8tm"]
+[ext_resource type="Texture2D" uid="uid://k8u6uwhr6v7h" path="res://assets/World/EPIC RPG World Pack - Grass Land V. 1.6/Characters/Enemy1/enemy1-variation1-idle.png" id="3_3xd4o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cc8tm"]
+atlas = ExtResource("3_3xd4o")
+region = Rect2(0, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jh6p"]
+atlas = ExtResource("3_3xd4o")
+region = Rect2(192, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7wx3"]
+atlas = ExtResource("3_3xd4o")
+region = Rect2(384, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ghhd"]
+atlas = ExtResource("3_3xd4o")
+region = Rect2(576, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kebtf"]
+atlas = ExtResource("3_3xd4o")
+region = Rect2(768, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvyj2"]
+atlas = ExtResource("3_3xd4o")
+region = Rect2(960, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_511s7"]
+atlas = ExtResource("3_3xd4o")
+region = Rect2(1152, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgyer"]
+atlas = ExtResource("3_3xd4o")
+region = Rect2(1344, 0, 192, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q0vlg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cc8tm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jh6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7wx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ghhd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kebtf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvyj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_511s7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgyer")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
 
 [resource]
 script = ExtResource("1_6r0uh")
 title = "GoblinBrawl"
 animation_name = "GoblinBrawl"
+frames = SubResource("SpriteFrames_q0vlg")
 scale = Vector2(0.95, 0.95)
 health = 12.0
 damage = 12.0

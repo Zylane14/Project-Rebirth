@@ -4,6 +4,7 @@ class_name Enemy
 @export var title : String
 @export var animation_name: String
 @export var texture : Texture2D #set different propert for the enemy
+@export var frames: SpriteFrames
 @export var scale: Vector2 = Vector2(1, 1)
 @export var health : float
 @export var damage : float

@@ -1,13 +1,79 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=4 format=3 uid="uid://c1jx184x8uyau"]
+[gd_resource type="Resource" script_class="Enemy" load_steps=14 format=3 uid="uid://c1jx184x8uyau"]
 
 [ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="1_83h7g"]
 [ext_resource type="Resource" uid="uid://bsdwvs8d0sd32" path="res://resources/Pickups/Blue EXP.tres" id="2_jssjf"]
 [ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="3_0cicc"]
+[ext_resource type="Texture2D" uid="uid://bvq4nciq24n8j" path="res://assets/World/EPIC RPG World Pack - Grass Land V. 1.6/Characters/Enemy1/enemy1-idle.png" id="3_op2jl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lhts"]
+atlas = ExtResource("3_op2jl")
+region = Rect2(0, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8uv3f"]
+atlas = ExtResource("3_op2jl")
+region = Rect2(192, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8je8"]
+atlas = ExtResource("3_op2jl")
+region = Rect2(384, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0i5gu"]
+atlas = ExtResource("3_op2jl")
+region = Rect2(576, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_meo67"]
+atlas = ExtResource("3_op2jl")
+region = Rect2(768, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6axo"]
+atlas = ExtResource("3_op2jl")
+region = Rect2(960, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75csy"]
+atlas = ExtResource("3_op2jl")
+region = Rect2(1152, 0, 192, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_binul"]
+atlas = ExtResource("3_op2jl")
+region = Rect2(1344, 0, 192, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t4duc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lhts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8uv3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8je8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0i5gu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_meo67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6axo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75csy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_binul")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
 
 [resource]
 script = ExtResource("3_0cicc")
 title = "Goblin"
 animation_name = "Goblin"
+frames = SubResource("SpriteFrames_t4duc")
 scale = Vector2(0.9, 0.9)
 health = 10.0
 damage = 10.0
@@ -18,4 +84,6 @@ unlock_minute = 0.0
 enemy_class = 0
 attack_cooldown = 1.5
 attack_range = 30.0
+ranged_attack_range = 300.0
+projectile_spawns_at_player = false
 metadata/_custom_type_script = "uid://brq1oadyao0po"

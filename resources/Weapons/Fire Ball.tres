@@ -1,15 +1,36 @@
-[gd_resource type="Resource" script_class="SingleShotd" load_steps=16 format=3 uid="uid://bc6hknxlqyxm0"]
+[gd_resource type="Resource" script_class="SingleShot" load_steps=18 format=3 uid="uid://bc6hknxlqyxm0"]
 
-[ext_resource type="Resource" uid="uid://cunwxqhggo8i6" path="res://resources/Weapons Evolved/Holy Fire 2.tres" id="1_ap575"]
+[ext_resource type="Texture2D" uid="uid://bho7swdnc67ua" path="res://assets/Projectiles/fireball_V_1_1/FB500-2.png" id="1_8strf"]
 [ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="1_msqgw"]
 [ext_resource type="Script" uid="uid://bthks1pwcgkfj" path="res://scenes/WeaponScript/SingleShot.gd" id="2_ja44x"]
 [ext_resource type="Resource" uid="uid://cdqw7gta62gvm" path="res://resources/Passive Items/Magnet.tres" id="2_wuo0d"]
 [ext_resource type="Texture2D" uid="uid://bmh3a8id7u7qj" path="res://assets/Projectiles/fireball_V_1_1/FB500-1.png" id="3_2b7by"]
 [ext_resource type="Script" uid="uid://co5wubqlbfsyl" path="res://scenes/Upgrade.gd" id="4_2b7by"]
-[ext_resource type="Material" uid="uid://c86gbstqtbdlq" path="res://Paticles/Fire.tres" id="4_gu283"]
+[ext_resource type="Material" uid="uid://c86gbstqtbdlq" path="res://Paticles FX/Fire.tres" id="4_gu283"]
 [ext_resource type="Script" uid="uid://ldvf6v3hcrde" path="res://scenes/ProjectileUpgrade.gd" id="5_2lheo"]
+[ext_resource type="Texture2D" uid="uid://do4cpsthd0qp7" path="res://assets/Projectiles/fireball_V_1_1/FB500-5.png" id="5_mo0gf"]
 [ext_resource type="AudioStream" uid="uid://cqyg5sl2bkne5" path="res://music & sfx/RPG_Essentials_Free/8_Atk_Magic_SFX/04_Fire_explosion_04_medium.wav" id="5_wuo0d"]
 [ext_resource type="Texture2D" uid="uid://cy6ox0m8adg4o" path="res://assets/Projectiles/fireball_V_1_1/FB500-4.png" id="7_bsojs"]
+
+[sub_resource type="Resource" id="Resource_wi8ma"]
+script = ExtResource("2_ja44x")
+damage = 14.0
+cooldown = 0.5
+speed = 600.0
+projectile_node = ExtResource("1_msqgw")
+upgrades = Array[ExtResource("4_2b7by")]([])
+sound = ExtResource("5_wuo0d")
+projectile_animation_name = ""
+manual_only = false
+title = "Holy Fire 2"
+description = ""
+icon = ExtResource("1_8strf")
+texture = ExtResource("5_mo0gf")
+rarity = 0
+level = 1
+attribute_type = ""
+attribute_value = 0
+metadata/_custom_type_script = "uid://bthks1pwcgkfj"
 
 [sub_resource type="Resource" id="Resource_ap575"]
 script = ExtResource("5_2lheo")
@@ -55,15 +76,15 @@ metadata/_custom_type_script = "uid://ldvf6v3hcrde"
 script = ExtResource("2_ja44x")
 damage = 2.0
 cooldown = 0.8
-speed = 250.0
+speed = 300.0
 projectile_node = ExtResource("1_msqgw")
 upgrades = Array[ExtResource("4_2b7by")]([SubResource("Resource_ap575"), SubResource("Resource_2b7by"), SubResource("Resource_2lheo"), SubResource("Resource_wuo0d"), SubResource("Resource_bsojs")])
 item_needed = ExtResource("2_wuo0d")
-evolution = ExtResource("1_ap575")
+evolution = SubResource("Resource_wi8ma")
 sound = ExtResource("5_wuo0d")
 particle = ExtResource("4_gu283")
 projectile_animation_name = "Fireball"
-manual_only = false
+manual_only = true
 title = "Fireball"
 description = ""
 icon = ExtResource("3_2b7by")

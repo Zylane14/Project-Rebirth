@@ -26,7 +26,7 @@ func spawn_hitboxes(source, scene_tree):
 
 	for i in range(amount):
 		var current_angle = start_angle + i * angle_step
-		var dir = Vector2.RIGHT.rotated(current_angle)
+		var _dir = Vector2.RIGHT.rotated(current_angle)
 
 		var hitbox = hitbox_scene.instantiate()
 
