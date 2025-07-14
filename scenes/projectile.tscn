@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bga3lfxfnpqra"]
+[gd_scene load_steps=45 format=3 uid="uid://bga3lfxfnpqra"]
 
 [ext_resource type="Script" uid="uid://dk6lqkbnlbvv4" path="res://scripts/projectile.gd" id="1_q3m7n"]
 [ext_resource type="Texture2D" uid="uid://bp8p6hwncjcsp" path="res://assets/Projectiles/Demo/Colored/T_Projectile_Colored_12.PNG" id="2_q3m7n"]
@@ -21,8 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://bpfoxpe1jc72d" path="res://assets/Characters/EleonoreAndJoanna/Sprites/Eleonore/Sprites/Spells/Thunder/ThunderBolt/ThunderBolt.png" id="19_xfonq"]
 [ext_resource type="Texture2D" uid="uid://divfm3jstwiip" path="res://assets/Projectiles/Wind Effect 01/Wind Projectile.png" id="20_m0b1s"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_q3m7n"]
-resource_local_to_scene = true
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m0b1s"]
+radius = 19.0
+height = 88.0
 
 [sub_resource type="Animation" id="Animation_byeak"]
 resource_name = "Blackhole"
@@ -152,6 +153,96 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+}
+
+[sub_resource type="Animation" id="Animation_ybp1d"]
+resource_name = "Fire_Tornado_loop"
+length = 0.3
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_pl1gp")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [19]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.066667, 0.133334, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [7, 8, 9, 10, 11]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CollisionShape2D:shape")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CapsuleShape2D_m0b1s")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CollisionShape2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-14, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer:speed_scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.0593798),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.2]
 }
 
 [sub_resource type="Animation" id="Animation_softn"]
@@ -358,6 +449,42 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-10, -7)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CollisionShape2D:shape")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CapsuleShape2D_m0b1s")]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CollisionShape2D:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-14, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AnimationPlayer:speed_scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.2]
 }
 
 [sub_resource type="Animation" id="Animation_lcad0"]
@@ -834,6 +961,83 @@ tracks/5/keys = {
 "values": [Vector2(27, -180)]
 }
 
+[sub_resource type="Animation" id="Animation_abxgx"]
+resource_name = "diagonal_red_Electricity"
+length = 0.666675
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("17_sbbd4")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, 7.779)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(27, -180)]
+}
+
 [sub_resource type="Animation" id="Animation_dst7e"]
 resource_name = "dissipate_ThunderTwins"
 length = 0.666675
@@ -1235,6 +1439,7 @@ tracks/5/keys = {
 _data = {
 &"Blackhole": SubResource("Animation_byeak"),
 &"Fire_Tornado": SubResource("Animation_l47rv"),
+&"Fire_Tornado_loop": SubResource("Animation_ybp1d"),
 &"Fireball": SubResource("Animation_softn"),
 &"IcePillar": SubResource("Animation_fooc5"),
 &"RESET": SubResource("Animation_6q2a6"),
@@ -1246,6 +1451,7 @@ _data = {
 &"cast_ThunderTwins": SubResource("Animation_rimnf"),
 &"casted_MagicShield": SubResource("Animation_g1ida"),
 &"diagonal_Electricity": SubResource("Animation_sy2ol"),
+&"diagonal_red_Electricity": SubResource("Animation_abxgx"),
 &"dissipate_ThunderTwins": SubResource("Animation_dst7e"),
 &"hit_MagicShield": SubResource("Animation_xfonq"),
 &"hit_ThunderTwins": SubResource("Animation_kf3ha"),
@@ -1270,8 +1476,8 @@ hframes = 4
 vframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-10, -7)
-shape = SubResource("CircleShape2D_q3m7n")
+position = Vector2(-14, 0)
+shape = SubResource("CapsuleShape2D_m0b1s")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-10, -8)
@@ -1284,6 +1490,10 @@ amount = 200
 libraries = {
 &"": SubResource("AnimationLibrary_byeak")
 }
+speed_scale = 1.2
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

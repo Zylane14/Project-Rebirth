@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://cqmidlvj261s8" path="res://scripts/MeleeWeapon.gd" id="4_d4vqs"]
 [ext_resource type="Script" uid="uid://co5wubqlbfsyl" path="res://scenes/Upgrade.gd" id="5_qdh4m"]
 [ext_resource type="AudioStream" uid="uid://coc4xrnmajmc4" path="res://music & sfx/RPG_Essentials_Free/10_Battle_SFX/77_flesh_02.wav" id="5_yxyj4"]
-[ext_resource type="Script" uid="uid://d0amiabxudau7" path="res://MeleeWeaponUpgrade.gd" id="7_hyye0"]
+[ext_resource type="Script" uid="uid://d0amiabxudau7" path="res://scripts/MeleeWeaponUpgrade.gd" id="7_hyye0"]
 
 [sub_resource type="Resource" id="Resource_d4vqs"]
 script = ExtResource("7_hyye0")
@@ -84,6 +84,4 @@ icon = ExtResource("1_610hy")
 texture = ExtResource("1_610hy")
 rarity = 3
 level = 1
-attribute_type = ""
-attribute_value = 0
 metadata/_custom_type_script = "uid://cqmidlvj261s8"

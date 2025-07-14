@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Death" load_steps=4 format=3 uid="uid://l0ac2tjhv1w4"]
 
-[ext_resource type="Texture2D" uid="uid://c03up34fcisdv" path="res://assets/World/Epic RPG World - The dephs of the Mountain V1.5.1/Props/Animated props/individual files/power balls-2-frame1.png" id="1_6ie2f"]
+[ext_resource type="Texture2D" uid="uid://d08qlgf23q4e" path="res://assets/World/Epic RPG World - The dephs of the Mountain V1.5.1/Props/Animated props/power balls-2.png" id="1_6ie2f"]
 [ext_resource type="Script" uid="uid://c651kl7ka5dv5" path="res://scenes/Death.gd" id="2_6ie2f"]
 [ext_resource type="AudioStream" uid="uid://bfag4megjqfbj" path="res://music & sfx/Minifantasy_Dungeon_SFX/24_orc_death_spin.wav" id="3_6ie2f"]
 
@@ -8,6 +8,8 @@
 script = ExtResource("2_6ie2f")
 title = "Death"
 icon = ExtResource("1_6ie2f")
+frame_count = 6
+frame_duration = 0.12
 description = "Kills all enemies."
 sound = ExtResource("3_6ie2f")
 weight = 1.0

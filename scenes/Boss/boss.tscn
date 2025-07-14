@@ -1,8 +1,9 @@
-[gd_scene load_steps=97 format=3 uid="uid://dokvfv4owwc3b"]
+[gd_scene load_steps=98 format=3 uid="uid://dokvfv4owwc3b"]
 
 [ext_resource type="Texture2D" uid="uid://cdjabq50s7la4" path="res://assets/Enemies/Wulfstan - The Wolf/Wulfstan - The Wolf/Idle.png" id="1_3j8dn"]
 [ext_resource type="Script" uid="uid://chisqwhfkvb47" path="res://scenes/Boss/boss.gd" id="1_uotkj"]
 [ext_resource type="Texture2D" uid="uid://jl00eew8k7ux" path="res://assets/Enemies/Wulfstan - The Wolf/Wulfstan - The Wolf/JumpSoar.png" id="2_pdnns"]
+[ext_resource type="Material" uid="uid://bhrwvaf5ewwi4" path="res://shaders/Red.tres" id="2_udgfo"]
 [ext_resource type="AudioStream" uid="uid://c0l8d2x2mcnxl" path="res://music & sfx/Werewolf/Werewolf/Werewolf_nom.wav" id="3_6yd8y"]
 [ext_resource type="Texture2D" uid="uid://bt0x2ca6l56qe" path="res://assets/Enemies/Wulfstan - The Wolf/Wulfstan - The Wolf/JumpStart.png" id="3_pdnns"]
 [ext_resource type="AudioStream" uid="uid://bbiw2fnu7f6cu" path="res://music & sfx/Werewolf/Werewolf/Werewolf_Attack2.wav" id="4_tivtr"]
@@ -109,9 +110,20 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0)
 }
 tracks/4/use_blend = true
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uotkj"]
-size = Vector2(129, 61)
+size = Vector2(101.812, 61)
 
 [sub_resource type="Animation" id="Animation_vqcf1"]
 length = 0.001
@@ -1928,6 +1940,7 @@ scale = Vector2(0.9, 0.9)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_uotkj")
+phase_2_material = ExtResource("2_udgfo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-11, 8)
@@ -1987,6 +2000,11 @@ texture_progress_offset = Vector2(2, 4)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 volume_db = 10.0
 autoplay = true
+
+[node name="OnScreen" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="FleeCheck" type="Timer" parent="."]
+wait_time = 0.1
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_entered"]
 [connection signal="body_entered" from="Hitbox" to="Hitbox" method="_on_body_entered"]

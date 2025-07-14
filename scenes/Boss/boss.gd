@@ -5,12 +5,12 @@ extends CharacterBody2D
 @onready var state_machine = animation_tree["parameters/playback"]
 @export var phase_2_material: Material
 
-@export var max_health := 1000.0
-@export var health := 1000.0
+@export var max_health := 10000.0
+@export var health := 10000.0
 @export var run_speed := 300.0
 @export var run_attack_speed := 400.0
 @export var curve_speed := 2.0
-@export var damage := 10.0
+@export var damage := 20.0
 @export var regen_rate := 100.0
 @export var regen_interval := 1.0
 @export var has_phase_2 := true

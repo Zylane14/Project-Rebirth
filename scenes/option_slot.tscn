@@ -6,7 +6,7 @@
 
 [node name="OptionSlot" type="TextureButton"]
 custom_minimum_size = Vector2(315, 40)
-offset_right = 40.0
+offset_right = 315.0
 offset_bottom = 40.0
 mouse_filter = 1
 texture_normal = ExtResource("1_je35h")
@@ -37,7 +37,7 @@ horizontal_alignment = 1
 show_behind_parent = true
 custom_minimum_size = Vector2(315, 40)
 layout_mode = 0
-offset_right = 40.0
+offset_right = 315.0
 offset_bottom = 40.0
 texture = ExtResource("3_11gh2")
 region_rect = Rect2(6.11519, 6.07167, 19.8574, 20.0465)

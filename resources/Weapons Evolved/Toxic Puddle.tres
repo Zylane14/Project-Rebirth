@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MultiDamagingArea" load_steps=6 format=3 uid="uid://cjtkcusgqhpuh"]
 
-[ext_resource type="Texture2D" uid="uid://us8uiob2jibo" path="res://assets/Projectiles/Free  Effect Bullet Impact Explosion 32x32 V1/ToxicSludge.png" id="1_lr0j3"]
+[ext_resource type="Texture2D" uid="uid://ca2exm6pab42m" path="res://assets/Icons/SkillIcons/blackhole 1.png" id="1_a80up"]
 [ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="2_a5syj"]
 [ext_resource type="Script" uid="uid://xs5efml7d1rs" path="res://scenes/WeaponScript/MultiDamagingArea.gd" id="3_j6310"]
 [ext_resource type="AudioStream" uid="uid://dqy2e2lstypbn" path="res://music & sfx/Minifantasy_Dungeon_SFX/21_orc_damage_1.wav" id="4_h11p2"]
@@ -17,7 +17,12 @@ speed = 0.0
 projectile_node = ExtResource("2_a5syj")
 upgrades = Array[ExtResource("5_3efch")]([])
 sound = ExtResource("4_h11p2")
-title = "Venom Puddle"
-icon = ExtResource("1_lr0j3")
-texture = ExtResource("1_lr0j3")
+projectile_animation_name = ""
+manual_only = false
+title = "BlackHole"
+description = ""
+icon = ExtResource("1_a80up")
+texture = ExtResource("1_a80up")
+rarity = 0
+level = 1
 metadata/_custom_type_script = "uid://xs5efml7d1rs"

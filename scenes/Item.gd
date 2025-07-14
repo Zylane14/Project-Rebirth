@@ -13,9 +13,5 @@ enum Rarity { COMMON, RARE, EPIC, SPECIAL, LEGENDARY }
 @export var rarity: Rarity = Rarity.COMMON #default to COMMON
 @export var level = 1
 
-@export_category("Attribute Bonus")
-@export var attribute_type : String
-@export var attribute_value : int
-
 func upgrade_item(): #abstract function in item to keep a track
 	pass

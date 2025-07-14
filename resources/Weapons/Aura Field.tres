@@ -69,6 +69,4 @@ icon = ExtResource("1_dga1w")
 texture = ExtResource("1_dga1w")
 rarity = 0
 level = 1
-attribute_type = "7"
-attribute_value = 0
 metadata/_custom_type_script = "uid://bp7xh7ffcmotq"

@@ -67,6 +67,4 @@ icon = ExtResource("2_cbwvd")
 texture = ExtResource("2_cbwvd")
 rarity = 4
 level = 1
-attribute_type = "Movement Speed"
-attribute_value = 0
 metadata/_custom_type_script = "uid://oh3fq60et0sw"

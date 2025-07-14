@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="1_40gbq"]
 [ext_resource type="Resource" uid="uid://ci5ieqn2o8pmk" path="res://resources/Weapons Evolved/Meteor Strike.tres" id="1_ye6g7"]
 [ext_resource type="Script" uid="uid://4711pfsdiwbb" path="res://scenes/WeaponScript/CircularWeapon.gd" id="2_5v0xx"]
+[ext_resource type="Texture2D" uid="uid://cywryp28lwa50" path="res://assets/Icons/SkillIcons/pyro vortex level 1.png" id="2_rgxfb"]
 [ext_resource type="Resource" uid="uid://byk5so652svi8" path="res://resources/Passive Items/Recovery.tres" id="3_viqsq"]
-[ext_resource type="Texture2D" uid="uid://bmh3a8id7u7qj" path="res://assets/Projectiles/fireball_V_1_1/FB500-1.png" id="4_3xwug"]
 [ext_resource type="Script" uid="uid://co5wubqlbfsyl" path="res://scenes/Upgrade.gd" id="4_rgxfb"]
 [ext_resource type="Script" uid="uid://cnqkprtjrc6t6" path="res://scenes/WeaponScript/CircularUpgrade.gd" id="5_5v0xx"]
 
@@ -57,8 +57,8 @@ metadata/_custom_type_script = "uid://cnqkprtjrc6t6"
 
 [resource]
 script = ExtResource("2_5v0xx")
-angular_speed = 110
-radius = 75
+angular_speed = 75
+radius = 100
 amount = 1
 damage = 4.0
 cooldown = 2.0
@@ -67,14 +67,12 @@ projectile_node = ExtResource("1_40gbq")
 upgrades = Array[ExtResource("4_rgxfb")]([SubResource("Resource_3xwug"), SubResource("Resource_rgxfb"), SubResource("Resource_ye6g7"), SubResource("Resource_viqsq"), SubResource("Resource_1303o")])
 item_needed = ExtResource("3_viqsq")
 evolution = ExtResource("1_ye6g7")
-projectile_animation_name = "Fireball"
+projectile_animation_name = "Fire_Tornado_loop"
 manual_only = false
 title = "Asteroid"
 description = ""
-icon = ExtResource("4_3xwug")
-texture = ExtResource("4_3xwug")
+icon = ExtResource("2_rgxfb")
+texture = ExtResource("2_rgxfb")
 rarity = 4
 level = 1
-attribute_type = ""
-attribute_value = 0
 metadata/_custom_type_script = "uid://4711pfsdiwbb"

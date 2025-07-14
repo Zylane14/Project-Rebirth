@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://63kp1cwf1snt"]
+[gd_scene load_steps=86 format=3 uid="uid://63kp1cwf1snt"]
 
 [ext_resource type="Script" uid="uid://rd7jqoyg5ayg" path="res://scripts/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://3ninw6nm3qxc" path="res://scenes/slot.tscn" id="2_dqkch"]
@@ -45,6 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://bj666pcsbdiqf" path="res://assets/UI/Astrology UI/game/gui/border.png" id="37_cs1tg"]
 [ext_resource type="Texture2D" uid="uid://cv07vjtinku07" path="res://assets/UI/Astrology UI/game/gui/button/q_about.png" id="38_2dvfe"]
 [ext_resource type="Script" uid="uid://crxcidbxm6nnk" path="res://scenes/KillCount.gd" id="45_g5jhy"]
+[ext_resource type="Shader" uid="uid://c7n5en1vkusyr" path="res://scenes/Vignette.gdshader" id="46_holxr"]
 
 [sub_resource type="Animation" id="Animation_qfm1y"]
 length = 0.001
@@ -1139,16 +1140,22 @@ font_size = 12
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hqtel"]
 radius = 8.0
-height = 38.0
+height = 28.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
 radius = 9.0
 height = 58.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mx1m4"]
+shader = ExtResource("46_holxr")
+shader_parameter/outerRadius = 2.481
+shader_parameter/MainAlpha = 1.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_tuyoq"]
 radius = 50.0
 
 [node name="Player" type="CharacterBody2D"]
+process_mode = 1
 visibility_layer = 2
 z_index = 1
 script = ExtResource("1_onrkg")
@@ -1168,6 +1175,20 @@ libraries = {
 }
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="KillCount" type="TextureRect" parent="UI"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("45_g5jhy")
+
+[node name="EnemyKills" type="Label" parent="UI/KillCount"]
+layout_mode = 0
+offset_left = 547.0
+offset_top = 37.0
+offset_right = 606.0
+offset_bottom = 59.0
+theme_override_font_sizes/font_size = 10
+text = "Kills: 0"
 
 [node name="MoneyBar" type="TextureRect" parent="UI"]
 offset_left = 539.0
@@ -1278,6 +1299,7 @@ text = "XP: 0 / 0"
 [node name="Options" type="VBoxContainer" parent="UI" node_paths=PackedStringArray("weapons", "passive_items", "particles", "panel")]
 unique_name_in_owner = true
 process_mode = 3
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1389,6 +1411,7 @@ layout_mode = 2
 
 [node name="Chest" type="NinePatchRect" parent="UI"]
 process_mode = 3
+visible = false
 z_index = 1
 custom_minimum_size = Vector2(250, 220)
 anchors_preset = 8
@@ -1728,21 +1751,7 @@ offset_bottom = 49.0
 grow_horizontal = 2
 text = "Total Damage"
 
-[node name="KillCount" type="TextureRect" parent="UI"]
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("45_g5jhy")
-
-[node name="EnemyKills" type="Label" parent="UI/KillCount"]
-offset_left = 547.0
-offset_top = 37.0
-offset_right = 606.0
-offset_bottom = 59.0
-theme_override_font_sizes/font_size = 10
-text = "Kills: 0"
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_hqtel")
 
 [node name="SelfDamage" type="Area2D" parent="."]
@@ -1769,6 +1778,21 @@ show_percentage = false
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D"]
+material = SubResource("ShaderMaterial_mx1m4")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.0
+offset_top = -213.5
+offset_right = 375.0
+offset_bottom = 213.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="Magnet" type="Area2D" parent="."]
 visible = false

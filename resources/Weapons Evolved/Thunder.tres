@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Lightning" load_steps=6 format=3 uid="uid://btaq7k4spibi5"]
 
+[ext_resource type="Texture2D" uid="uid://pbb5g43dl6xs" path="res://assets/Icons/SkillIcons/evolved thunder.png" id="1_lbg8k"]
 [ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="2_nlopo"]
 [ext_resource type="Script" uid="uid://c0anj5l8vyvkr" path="res://scenes/WeaponScript/Lightning.gd" id="3_xar88"]
 [ext_resource type="AudioStream" uid="uid://b8nwmsne0o08o" path="res://music & sfx/RPG_Essentials_Free/8_Atk_Magic_SFX/18_Thunder_02.wav" id="4_nlopo"]
 [ext_resource type="Script" uid="uid://co5wubqlbfsyl" path="res://scenes/Upgrade.gd" id="5_vin65"]
-[ext_resource type="Texture2D" uid="uid://d0w4mxy7dgrpa" path="res://assets/Projectiles/Thunder Effect 02/Thunder Strike/Lightning.png" id="5_xar88"]
 
 [resource]
 script = ExtResource("3_xar88")
@@ -15,14 +15,12 @@ speed = 0.0
 projectile_node = ExtResource("2_nlopo")
 upgrades = Array[ExtResource("5_vin65")]([])
 sound = ExtResource("4_nlopo")
-projectile_animation_name = "blue_ThunderStrike"
+projectile_animation_name = "diagonal_red_Electricity"
 manual_only = false
 title = "Thunder"
 description = ""
-icon = ExtResource("5_xar88")
-texture = ExtResource("5_xar88")
+icon = ExtResource("1_lbg8k")
+texture = ExtResource("1_lbg8k")
 rarity = 0
 level = 1
-attribute_type = ""
-attribute_value = 0
 metadata/_custom_type_script = "uid://c0anj5l8vyvkr"

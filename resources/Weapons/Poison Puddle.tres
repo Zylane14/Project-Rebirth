@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MultiDamagingArea" load_steps=14 format=3 uid="uid://b8d44jntry46n"]
 
 [ext_resource type="Resource" uid="uid://cjtkcusgqhpuh" path="res://resources/Weapons Evolved/Toxic Puddle.tres" id="1_qwnwl"]
-[ext_resource type="Texture2D" uid="uid://us8uiob2jibo" path="res://assets/Projectiles/Free  Effect Bullet Impact Explosion 32x32 V1/ToxicSludge.png" id="2_us0vl"]
+[ext_resource type="Texture2D" uid="uid://ca2exm6pab42m" path="res://assets/Icons/SkillIcons/blackhole 1.png" id="2_8ucpa"]
 [ext_resource type="Resource" uid="uid://dylur0xig1asu" path="res://resources/Passive Items/Area.tres" id="3_8ucpa"]
 [ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="4_7jhm2"]
 [ext_resource type="Script" uid="uid://xs5efml7d1rs" path="res://scenes/WeaponScript/MultiDamagingArea.gd" id="5_wh30j"]
@@ -15,7 +15,7 @@ amount = 0
 area = 0.0
 damage = 10.0
 cooldown = 0.0
-description = "POISON PUDDLE"
+description = "BLACK HOLE"
 metadata/_custom_type_script = "uid://bhud26ecmt7ug"
 
 [sub_resource type="Resource" id="Resource_6qa28"]
@@ -69,12 +69,10 @@ evolution = ExtResource("1_qwnwl")
 sound = ExtResource("6_ei8u1")
 projectile_animation_name = "Blackhole"
 manual_only = false
-title = "Poison Puddle"
+title = "BlackHole"
 description = ""
-icon = ExtResource("2_us0vl")
-texture = ExtResource("2_us0vl")
+icon = ExtResource("2_8ucpa")
+texture = ExtResource("2_8ucpa")
 rarity = 3
 level = 1
-attribute_type = ""
-attribute_value = 0
 metadata/_custom_type_script = "uid://xs5efml7d1rs"

@@ -67,6 +67,4 @@ icon = ExtResource("2_nyo22")
 texture = ExtResource("2_nyo22")
 rarity = 1
 level = 1
-attribute_type = "Magnet"
-attribute_value = 0
 metadata/_custom_type_script = "uid://oh3fq60et0sw"

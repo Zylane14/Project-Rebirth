@@ -4,6 +4,10 @@ extends Node2D
 @export var player : CharacterBody2D
 @export var enemy : PackedScene
 @export var destructible : PackedScene
+@export var boss_scene: PackedScene
+@export var boss_unlock_minute := 5  # change this to whatever minute you want
+
+var boss_spawned := false
 var enemy_types: Array[Enemy] = [] #declare a variable to store array of enemy
 
 #distance for enemy spawning
@@ -71,6 +75,17 @@ func spawn(pos : Vector2, elite : bool = false):
 	
 	get_tree().current_scene.add_child(enemy_instance)
 
+func spawn_boss():
+	if boss_spawned:
+		return
+
+	var boss = boss_scene.instantiate()
+	boss.global_position = get_random_position()
+	boss.player = player
+	get_tree().current_scene.add_child(boss)
+
+	boss_spawned = true
+
 func update_unlocked_enemies():
 	var unlock_interval = 1  #every 1 minute, unlock a new enemy type
 	@warning_ignore("integer_division")
@@ -120,10 +135,16 @@ func amount(number : int = 1):
 func _on_timer_timeout():
 	second += 1
 	update_unlocked_enemies()
-	var base_spawn = 20 + minute # Spawns more enemies as time progresses
+
+	var base_spawn = 20 + minute
 	if minute < 3:
-		base_spawn = int(base_spawn * 0.6)  # Spawn only 30% of usual enemies early on
+		base_spawn = int(base_spawn * 0.6)
 	amount(base_spawn)
+
+	# === Boss unlock check ===
+	if not boss_spawned and minute >= boss_unlock_minute:
+		spawn_boss()
+
 
 func _on_pattern_timeout():
 	for i in range(100 + minute * 10):

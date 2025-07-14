@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuo1q61ro7vl2"]
+
+[ext_resource type="Script" uid="uid://dswrkwynt7w08" path="res://LevelUpPopup.gd" id="1_eei4v"]
+
+[node name="LevelUpPopup" type="CanvasLayer"]
+script = ExtResource("1_eei4v")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LeftPanel" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="GodPotrait" type="TextureRect" parent="HBoxContainer/LeftPanel"]
+layout_mode = 2
+
+[node name="GodDialogue" type="Label" parent="HBoxContainer/LeftPanel"]
+layout_mode = 2
+
+[node name="BlessingOptions" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2

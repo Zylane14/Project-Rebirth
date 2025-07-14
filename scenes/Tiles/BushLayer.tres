@@ -1,0 +1,1265 @@
+[gd_resource type="TileSet" load_steps=309 format=3 uid="uid://coqhmdu340wfl"]
+
+[ext_resource type="Texture2D" uid="uid://dmrx5d7iifb2i" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/bushes_0.png" id="1_ctfe0"]
+[ext_resource type="Texture2D" uid="uid://blli31k5lmrew" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/bushes_1.png" id="2_trxkd"]
+[ext_resource type="Texture2D" uid="uid://c0vww6pmvu2al" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/bushes_10.png" id="3_ynqgo"]
+[ext_resource type="Texture2D" uid="uid://dbwnt1g47nbbu" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations3_18.png" id="4_kx8mf"]
+[ext_resource type="Texture2D" uid="uid://dpfh3xfwoy8eh" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations3_19.png" id="5_q61ff"]
+[ext_resource type="Texture2D" uid="uid://c6spmr3gq1ld1" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations3_20.png" id="6_ec7oc"]
+[ext_resource type="Texture2D" uid="uid://dlgm8e7fiqjto" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations3_21.png" id="7_ut766"]
+[ext_resource type="Texture2D" uid="uid://76x0fw52qtn5" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations3_22.png" id="8_otdyo"]
+[ext_resource type="Texture2D" uid="uid://cey4g2di53grs" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations3_24.png" id="9_lgi44"]
+[ext_resource type="Texture2D" uid="uid://hjyl4axjc4t5" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations3_25.png" id="10_bgkhj"]
+[ext_resource type="Texture2D" uid="uid://k1jlrs10unvb" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations3_26.png" id="11_bcutt"]
+[ext_resource type="Texture2D" uid="uid://8uiks3g22gks" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations3_27.png" id="12_n513e"]
+[ext_resource type="Texture2D" uid="uid://nkih4qpxvysl" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations3_28.png" id="13_h56yb"]
+[ext_resource type="Texture2D" uid="uid://ccfcwjnbmlxbi" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/bushes_11.png" id="14_lnysv"]
+[ext_resource type="Texture2D" uid="uid://bsaqwkjqux5g6" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations3_29.png" id="15_q2icv"]
+[ext_resource type="Texture2D" uid="uid://c0swi7rx6h2mb" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations3_30.png" id="16_g48ud"]
+[ext_resource type="Texture2D" uid="uid://b1si3ebco8sry" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_0.png" id="17_eox88"]
+[ext_resource type="Texture2D" uid="uid://2c32p2r28mwl" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_1.png" id="18_ny518"]
+[ext_resource type="Texture2D" uid="uid://dgfhwxs7gi7y8" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_2.png" id="19_g5iq8"]
+[ext_resource type="Texture2D" uid="uid://civwkamkvupv1" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_3.png" id="20_25j42"]
+[ext_resource type="Texture2D" uid="uid://qhy64vosat67" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_4.png" id="21_uifmy"]
+[ext_resource type="Texture2D" uid="uid://bnnp4fyx6vm2s" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_5.png" id="22_g82b7"]
+[ext_resource type="Texture2D" uid="uid://cogcypen6sj35" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_6.png" id="23_lnnwy"]
+[ext_resource type="Texture2D" uid="uid://bt1htjluyopsn" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_7.png" id="24_cceul"]
+[ext_resource type="Texture2D" uid="uid://b2ri3gkvkg0we" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/flooded gras details_0.png" id="25_pf2dt"]
+[ext_resource type="Texture2D" uid="uid://dqiq6qduvkk8h" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_8.png" id="26_7bluu"]
+[ext_resource type="Texture2D" uid="uid://bmvjup066w2id" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_9.png" id="27_3s32s"]
+[ext_resource type="Texture2D" uid="uid://cbh8jwfqt7uoe" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_10.png" id="28_i1crc"]
+[ext_resource type="Texture2D" uid="uid://ddin8e4coqub4" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_11.png" id="29_m480n"]
+[ext_resource type="Texture2D" uid="uid://cjd5nwi56atgv" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_12.png" id="30_gnowj"]
+[ext_resource type="Texture2D" uid="uid://bl0ab28vuufsk" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_13.png" id="31_cbn4q"]
+[ext_resource type="Texture2D" uid="uid://dr1nav044hmyv" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_14.png" id="32_pwral"]
+[ext_resource type="Texture2D" uid="uid://4abpua6n41m3" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_15.png" id="33_3dnct"]
+[ext_resource type="Texture2D" uid="uid://ddp5qlh3u6a2u" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_16.png" id="34_f07fg"]
+[ext_resource type="Texture2D" uid="uid://cdket4l0agpwv" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_17.png" id="35_3x3hs"]
+[ext_resource type="Texture2D" uid="uid://ckukt3k3r13j1" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/flooded gras details_1.png" id="36_f3bup"]
+[ext_resource type="Texture2D" uid="uid://b7xqjk4rsdyoo" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_18.png" id="37_beqy2"]
+[ext_resource type="Texture2D" uid="uid://b2rmw5a4d4xmb" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_19.png" id="38_vxgxo"]
+[ext_resource type="Texture2D" uid="uid://bj6xnkpmf4vn4" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_20.png" id="39_8oeq3"]
+[ext_resource type="Texture2D" uid="uid://ciww4b575mbqg" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_21.png" id="40_2jxpj"]
+[ext_resource type="Texture2D" uid="uid://grbpuwnv8p6w" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_22.png" id="41_sqoeb"]
+[ext_resource type="Texture2D" uid="uid://dyrwnhvcgk6kb" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_23.png" id="42_88ban"]
+[ext_resource type="Texture2D" uid="uid://c30bru3bqhgpv" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_24.png" id="43_qey7d"]
+[ext_resource type="Texture2D" uid="uid://bys3g3wtewvne" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_25.png" id="44_xhcre"]
+[ext_resource type="Texture2D" uid="uid://c0bpn64i0xi5h" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_26.png" id="45_yy6x7"]
+[ext_resource type="Texture2D" uid="uid://wosyvdolkuw6" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_27.png" id="46_1tfbv"]
+[ext_resource type="Texture2D" uid="uid://itme5otagn4b" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/flooded gras details_2.png" id="47_3v4hy"]
+[ext_resource type="Texture2D" uid="uid://ce5q6h33skv2k" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_28.png" id="48_xh7wp"]
+[ext_resource type="Texture2D" uid="uid://d2xbf3aoq552h" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations4_29.png" id="49_52u4r"]
+[ext_resource type="Texture2D" uid="uid://cosfjkfxthilm" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations7_7.png" id="50_l2we0"]
+[ext_resource type="Texture2D" uid="uid://dwfr40fpmumkw" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations8_8.png" id="51_okc04"]
+[ext_resource type="Texture2D" uid="uid://b6r4bpl5gvkyp" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations11_11.png" id="52_e3jdc"]
+[ext_resource type="Texture2D" uid="uid://cq4pyddwaxpaf" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations14_14.png" id="53_i3378"]
+[ext_resource type="Texture2D" uid="uid://dnirbpglsbdc6" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations15_15.png" id="54_i3f1n"]
+[ext_resource type="Texture2D" uid="uid://crply6vplxd67" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations20_20.png" id="55_hur47"]
+[ext_resource type="Texture2D" uid="uid://bou6brtwur2n5" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations21_21.png" id="56_b5rw4"]
+[ext_resource type="Texture2D" uid="uid://bpl4trlywwaog" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations23_23.png" id="57_83b7y"]
+[ext_resource type="Texture2D" uid="uid://bwf8qyr10x8ni" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/flooded gras details_3.png" id="58_dxq2h"]
+[ext_resource type="Texture2D" uid="uid://dfhykjxomhf1b" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations25_25.png" id="59_hso56"]
+[ext_resource type="Texture2D" uid="uid://vpj8pvas6kwt" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations30_30.png" id="60_gd4lr"]
+[ext_resource type="Texture2D" uid="uid://fyjihkc8r7cq" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations31_31.png" id="61_g1khw"]
+[ext_resource type="Texture2D" uid="uid://caam6psof888n" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations34_34.png" id="62_320m5"]
+[ext_resource type="Texture2D" uid="uid://clcqf627fae8g" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations44_44.png" id="63_ek3ix"]
+[ext_resource type="Texture2D" uid="uid://drckrccaf5xia" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/flooded gras details_4.png" id="64_d51pb"]
+[ext_resource type="Texture2D" uid="uid://cp3aknxw6yc2t" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/flooded gras details_5.png" id="65_hdb3h"]
+[ext_resource type="Texture2D" uid="uid://b0ffo4wu7p07g" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations1_0.png" id="66_bcf7o"]
+[ext_resource type="Texture2D" uid="uid://c3m64i8khmfl7" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/bushes_2.png" id="67_baebw"]
+[ext_resource type="Texture2D" uid="uid://drk1b20uojoop" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations1_1.png" id="68_jq203"]
+[ext_resource type="Texture2D" uid="uid://blo5uqerpp2ed" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations1_2.png" id="69_xug6q"]
+[ext_resource type="Texture2D" uid="uid://rtsgnw5amtxw" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations1_3.png" id="70_8i5h7"]
+[ext_resource type="Texture2D" uid="uid://clkgw726u6q0n" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations1_4.png" id="71_oryc1"]
+[ext_resource type="Texture2D" uid="uid://cqm45a6hgs6l3" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations1_5.png" id="72_wbys8"]
+[ext_resource type="Texture2D" uid="uid://bviq3u5np6le1" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations1_6.png" id="73_3a8m2"]
+[ext_resource type="Texture2D" uid="uid://dp4ixiputfkbf" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations1_7.png" id="74_pkjlk"]
+[ext_resource type="Texture2D" uid="uid://tdalqvuwjpqd" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations1_9.png" id="75_8fkx2"]
+[ext_resource type="Texture2D" uid="uid://c8xwf2tc6q7vc" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations1_10.png" id="76_gukvq"]
+[ext_resource type="Texture2D" uid="uid://crbpv7m8uns8g" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations1_11.png" id="77_udcyf"]
+[ext_resource type="Texture2D" uid="uid://i5luaruobe6r" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/bushes_3.png" id="78_itmlr"]
+[ext_resource type="Texture2D" uid="uid://11m8emtwai14" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations1_12.png" id="79_sljk8"]
+[ext_resource type="Texture2D" uid="uid://ckpuqvkdkwpk8" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations1_13.png" id="80_2rxc0"]
+[ext_resource type="Texture2D" uid="uid://hww8lx4ophkl" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations1_15.png" id="81_v4iss"]
+[ext_resource type="Texture2D" uid="uid://5ukesfgtals7" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations1_16.png" id="82_v7ng5"]
+[ext_resource type="Texture2D" uid="uid://bode5hp7363o7" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations1_17.png" id="83_ft84h"]
+[ext_resource type="Texture2D" uid="uid://dl3hb6l7fypj0" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations1_18.png" id="84_0bi2w"]
+[ext_resource type="Texture2D" uid="uid://baoi732s5qkku" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations1_19.png" id="85_mjc75"]
+[ext_resource type="Texture2D" uid="uid://b677o0a8sussk" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations1_20.png" id="86_j4qld"]
+[ext_resource type="Texture2D" uid="uid://mcbv5i8c2jnm" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations1_22.png" id="87_xq5mj"]
+[ext_resource type="Texture2D" uid="uid://vjrchekwe0fc" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations1_23.png" id="88_5h25h"]
+[ext_resource type="Texture2D" uid="uid://ddj5mcyqkr08f" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/bushes_4.png" id="89_8yrm4"]
+[ext_resource type="Texture2D" uid="uid://dbals4fiu7h2n" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations1_24.png" id="90_d4jf3"]
+[ext_resource type="Texture2D" uid="uid://bb1s4wqwttmnl" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations1_25.png" id="91_7fcft"]
+[ext_resource type="Texture2D" uid="uid://ie6ov4fwgi3t" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_0.png" id="92_na4r7"]
+[ext_resource type="Texture2D" uid="uid://ckpocs4eht72g" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_1.png" id="93_soidf"]
+[ext_resource type="Texture2D" uid="uid://dcqfa436infnd" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_2.png" id="94_dj1cc"]
+[ext_resource type="Texture2D" uid="uid://6pxthy5ujcq3" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_3.png" id="95_bctds"]
+[ext_resource type="Texture2D" uid="uid://ddv4l7o00w51x" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_4.png" id="96_eckio"]
+[ext_resource type="Texture2D" uid="uid://d4k6ho5aijabq" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_5.png" id="97_vpcmr"]
+[ext_resource type="Texture2D" uid="uid://do2nk586p15sk" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_6.png" id="98_sb8fv"]
+[ext_resource type="Texture2D" uid="uid://dnepamhju3gpr" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_7.png" id="99_qwjj4"]
+[ext_resource type="Texture2D" uid="uid://cm4l8cbaewfut" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/bushes_5.png" id="100_i47nh"]
+[ext_resource type="Texture2D" uid="uid://cev1p2rthqrjx" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_8.png" id="101_p4cya"]
+[ext_resource type="Texture2D" uid="uid://c8inb5pj2h1bf" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_9.png" id="102_vjlyo"]
+[ext_resource type="Texture2D" uid="uid://butggvti770he" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_10.png" id="103_8wiii"]
+[ext_resource type="Texture2D" uid="uid://pf6luhgp6n6w" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_11.png" id="104_5rnus"]
+[ext_resource type="Texture2D" uid="uid://caxtt2n5h1p6q" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_12.png" id="105_3pjje"]
+[ext_resource type="Texture2D" uid="uid://dc6wiricl0p3c" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_13.png" id="106_370yh"]
+[ext_resource type="Texture2D" uid="uid://ciyrh7qsx0q3c" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_14.png" id="107_yjeua"]
+[ext_resource type="Texture2D" uid="uid://bjowu16o4icya" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_15.png" id="108_3hlmg"]
+[ext_resource type="Texture2D" uid="uid://jbms7flbnh1" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_16.png" id="109_k32dg"]
+[ext_resource type="Texture2D" uid="uid://bys7dduwy3lso" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_17.png" id="110_vfgty"]
+[ext_resource type="Texture2D" uid="uid://dwrkvic81nar8" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/bushes_6.png" id="111_70bpm"]
+[ext_resource type="Texture2D" uid="uid://fidngio2tpfg" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_18.png" id="112_v0ogy"]
+[ext_resource type="Texture2D" uid="uid://c7lwy1tfowyi3" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_19.png" id="113_rtjnm"]
+[ext_resource type="Texture2D" uid="uid://cwcneppj1n04m" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_21.png" id="114_xg3yj"]
+[ext_resource type="Texture2D" uid="uid://kkrl3wewycyt" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_22.png" id="115_28vxw"]
+[ext_resource type="Texture2D" uid="uid://dl4e1qsjfb25w" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_23.png" id="116_ssp72"]
+[ext_resource type="Texture2D" uid="uid://c54b87f43kdwk" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_24.png" id="117_4k4ry"]
+[ext_resource type="Texture2D" uid="uid://c1cersnrv41pj" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_26.png" id="118_uer5t"]
+[ext_resource type="Texture2D" uid="uid://dnefi8b5nfcx1" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_27.png" id="119_52gw4"]
+[ext_resource type="Texture2D" uid="uid://dh554wlkqgalj" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_28.png" id="120_qtahl"]
+[ext_resource type="Texture2D" uid="uid://yhilst7bpj1r" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_29.png" id="121_3n0ru"]
+[ext_resource type="Texture2D" uid="uid://cql8k3xxfyarw" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/bushes_7.png" id="122_qx535"]
+[ext_resource type="Texture2D" uid="uid://bpprpifrfum27" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_31.png" id="123_dg8br"]
+[ext_resource type="Texture2D" uid="uid://b0e2vxpkky7xy" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_32.png" id="124_ost7e"]
+[ext_resource type="Texture2D" uid="uid://ye2htyxbdifi" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_33.png" id="125_k46as"]
+[ext_resource type="Texture2D" uid="uid://b63iln0jc1irb" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_35.png" id="126_dl3hd"]
+[ext_resource type="Texture2D" uid="uid://d2h67be16caff" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_36.png" id="127_3iquv"]
+[ext_resource type="Texture2D" uid="uid://c423b5jqgu7vk" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_37.png" id="128_k7ytb"]
+[ext_resource type="Texture2D" uid="uid://barxd5ghowm7a" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_38.png" id="129_icf7n"]
+[ext_resource type="Texture2D" uid="uid://dj8dso4kxlgcb" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_39.png" id="130_iah8l"]
+[ext_resource type="Texture2D" uid="uid://c58ow7ln66esf" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_40.png" id="131_3aubq"]
+[ext_resource type="Texture2D" uid="uid://b0cqusu340foo" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_41.png" id="132_qnrob"]
+[ext_resource type="Texture2D" uid="uid://bfek30wf5jqn1" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/bushes_8.png" id="133_ycdnq"]
+[ext_resource type="Texture2D" uid="uid://cjeqnfyswnu5i" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_42.png" id="134_x74m5"]
+[ext_resource type="Texture2D" uid="uid://b04iqxk4osboj" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_43.png" id="135_4dofj"]
+[ext_resource type="Texture2D" uid="uid://bbo3j2fb020c0" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_45.png" id="136_07ayy"]
+[ext_resource type="Texture2D" uid="uid://dowiv4p51roi8" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_46.png" id="137_afxfa"]
+[ext_resource type="Texture2D" uid="uid://cjcbreplm5p37" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations2_47.png" id="138_x6xdx"]
+[ext_resource type="Texture2D" uid="uid://7abknbulbysv" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations3_0.png" id="139_gic6h"]
+[ext_resource type="Texture2D" uid="uid://h5dxly4itwt4" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations3_1.png" id="140_kw2fx"]
+[ext_resource type="Texture2D" uid="uid://dy8won5u45b2n" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations3_2.png" id="141_028oc"]
+[ext_resource type="Texture2D" uid="uid://cdvhk3pmxc7en" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations3_3.png" id="142_a4lfl"]
+[ext_resource type="Texture2D" uid="uid://l84cb0rkbcvi" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations3_4.png" id="143_3kdc3"]
+[ext_resource type="Texture2D" uid="uid://bi0wdd162momi" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/bushes_9.png" id="144_wnw7v"]
+[ext_resource type="Texture2D" uid="uid://cxxp20fx6bhm" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations3_5.png" id="145_or4ib"]
+[ext_resource type="Texture2D" uid="uid://cwujbcw8cg8g4" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations3_6.png" id="146_aiota"]
+[ext_resource type="Texture2D" uid="uid://odpu3t5brq8u" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations3_8.png" id="147_06etb"]
+[ext_resource type="Texture2D" uid="uid://uhhur0tto6f5" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations3_9.png" id="148_mtk0j"]
+[ext_resource type="Texture2D" uid="uid://b38v3n0w5ne1x" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations3_10.png" id="149_ydaoa"]
+[ext_resource type="Texture2D" uid="uid://6pgkg2qpgosg" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations3_12.png" id="150_2v5s6"]
+[ext_resource type="Texture2D" uid="uid://dj22xy2us4qki" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations3_13.png" id="151_smk5r"]
+[ext_resource type="Texture2D" uid="uid://b7xkvkjlmmjo" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations3_14.png" id="152_5oadd"]
+[ext_resource type="Texture2D" uid="uid://dwhyirtk7lxau" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations3_16.png" id="153_nns0b"]
+[ext_resource type="Texture2D" uid="uid://dqa1ks8a5hgad" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Props/atlas-props-individual sprites/vegetations3_17.png" id="154_yddnh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7i1x8"]
+texture = ExtResource("1_ctfe0")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ps153"]
+texture = ExtResource("2_trxkd")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mky80"]
+texture = ExtResource("3_ynqgo")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nsjn3"]
+texture = ExtResource("4_kx8mf")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4yklq"]
+texture = ExtResource("5_q61ff")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_guvyn"]
+texture = ExtResource("6_ec7oc")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bf74l"]
+texture = ExtResource("7_ut766")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jxioy"]
+texture = ExtResource("8_otdyo")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nmvox"]
+texture = ExtResource("9_lgi44")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k6gi5"]
+texture = ExtResource("10_bgkhj")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lddd7"]
+texture = ExtResource("11_bcutt")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m0duu"]
+texture = ExtResource("12_n513e")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6yndn"]
+texture = ExtResource("13_h56yb")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_scnmi"]
+texture = ExtResource("14_lnysv")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ati4b"]
+texture = ExtResource("15_q2icv")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jpgj4"]
+texture = ExtResource("16_g48ud")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hwm27"]
+texture = ExtResource("17_eox88")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xvhte"]
+texture = ExtResource("18_ny518")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pshrk"]
+texture = ExtResource("19_g5iq8")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ntb1t"]
+texture = ExtResource("20_25j42")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xclld"]
+texture = ExtResource("21_uifmy")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s7wpf"]
+texture = ExtResource("22_g82b7")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6bvkc"]
+texture = ExtResource("23_lnnwy")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c5ca1"]
+texture = ExtResource("24_cceul")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t63tx"]
+texture = ExtResource("25_pf2dt")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s1ewd"]
+texture = ExtResource("26_7bluu")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xhjfb"]
+texture = ExtResource("27_3s32s")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tef2a"]
+texture = ExtResource("28_i1crc")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_thy0p"]
+texture = ExtResource("29_m480n")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kb3vr"]
+texture = ExtResource("30_gnowj")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g3kkp"]
+texture = ExtResource("31_cbn4q")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gw7un"]
+texture = ExtResource("32_pwral")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2xcrw"]
+texture = ExtResource("33_3dnct")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mem1a"]
+texture = ExtResource("34_f07fg")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fb1ww"]
+texture = ExtResource("35_3x3hs")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k03n1"]
+texture = ExtResource("36_f3bup")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mn77s"]
+texture = ExtResource("37_beqy2")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bi3ps"]
+texture = ExtResource("38_vxgxo")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7xw5"]
+texture = ExtResource("39_8oeq3")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yspbm"]
+texture = ExtResource("40_2jxpj")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yxvej"]
+texture = ExtResource("41_sqoeb")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_quvw2"]
+texture = ExtResource("42_88ban")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uv20b"]
+texture = ExtResource("43_qey7d")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oqgvc"]
+texture = ExtResource("44_xhcre")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_udl4y"]
+texture = ExtResource("45_yy6x7")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_egrle"]
+texture = ExtResource("46_1tfbv")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5jjw0"]
+texture = ExtResource("47_3v4hy")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ca1u5"]
+texture = ExtResource("48_xh7wp")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bywaj"]
+texture = ExtResource("49_52u4r")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k7wmh"]
+texture = ExtResource("50_l2we0")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nd385"]
+texture = ExtResource("51_okc04")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hfyiq"]
+texture = ExtResource("52_e3jdc")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uo33o"]
+texture = ExtResource("53_i3378")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sydub"]
+texture = ExtResource("54_i3f1n")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_05pvk"]
+texture = ExtResource("55_hur47")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ixkn"]
+texture = ExtResource("56_b5rw4")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feuka"]
+texture = ExtResource("57_83b7y")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ft3nx"]
+texture = ExtResource("58_dxq2h")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4wrb7"]
+texture = ExtResource("59_hso56")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x4eh1"]
+texture = ExtResource("60_gd4lr")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e5fgr"]
+texture = ExtResource("61_g1khw")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t06sp"]
+texture = ExtResource("62_320m5")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7os6q"]
+texture = ExtResource("63_ek3ix")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gktv7"]
+texture = ExtResource("64_d51pb")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7invb"]
+texture = ExtResource("65_hdb3h")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ootu"]
+texture = ExtResource("66_bcf7o")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eidn2"]
+texture = ExtResource("67_baebw")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfgs0"]
+texture = ExtResource("68_jq203")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_esepw"]
+texture = ExtResource("69_xug6q")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w3qq1"]
+texture = ExtResource("70_8i5h7")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fgini"]
+texture = ExtResource("71_oryc1")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0i40w"]
+texture = ExtResource("72_wbys8")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0drv0"]
+texture = ExtResource("73_3a8m2")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w27wr"]
+texture = ExtResource("74_pkjlk")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_72qns"]
+texture = ExtResource("75_8fkx2")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qb4vi"]
+texture = ExtResource("76_gukvq")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uk38d"]
+texture = ExtResource("77_udcyf")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_imr1l"]
+texture = ExtResource("78_itmlr")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0sbrw"]
+texture = ExtResource("79_sljk8")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_drhk7"]
+texture = ExtResource("80_2rxc0")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_if8sl"]
+texture = ExtResource("81_v4iss")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iu6qp"]
+texture = ExtResource("82_v7ng5")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3rdmj"]
+texture = ExtResource("83_ft84h")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_icbfn"]
+texture = ExtResource("84_0bi2w")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iydkt"]
+texture = ExtResource("85_mjc75")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s3yji"]
+texture = ExtResource("86_j4qld")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t1kdq"]
+texture = ExtResource("87_xq5mj")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a7sjx"]
+texture = ExtResource("88_5h25h")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wucm5"]
+texture = ExtResource("89_8yrm4")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a5ey4"]
+texture = ExtResource("90_d4jf3")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o4d6t"]
+texture = ExtResource("91_7fcft")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_geyfn"]
+texture = ExtResource("92_na4r7")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g8awl"]
+texture = ExtResource("93_soidf")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xot7e"]
+texture = ExtResource("94_dj1cc")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_emy4u"]
+texture = ExtResource("95_bctds")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kxec5"]
+texture = ExtResource("96_eckio")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bhnyq"]
+texture = ExtResource("97_vpcmr")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x3udn"]
+texture = ExtResource("98_sb8fv")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nlebg"]
+texture = ExtResource("99_qwjj4")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2jn43"]
+texture = ExtResource("100_i47nh")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jcbqq"]
+texture = ExtResource("101_p4cya")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hdsx3"]
+texture = ExtResource("102_vjlyo")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j3nku"]
+texture = ExtResource("103_8wiii")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iqbo1"]
+texture = ExtResource("104_5rnus")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0u863"]
+texture = ExtResource("105_3pjje")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_62vsy"]
+texture = ExtResource("106_370yh")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wppmr"]
+texture = ExtResource("107_yjeua")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tnsvl"]
+texture = ExtResource("108_3hlmg")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_clfus"]
+texture = ExtResource("109_k32dg")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d4xdg"]
+texture = ExtResource("110_vfgty")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gfebj"]
+texture = ExtResource("111_70bpm")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y0f6u"]
+texture = ExtResource("112_v0ogy")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_01em1"]
+texture = ExtResource("113_rtjnm")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ss1vu"]
+texture = ExtResource("114_xg3yj")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_46jdg"]
+texture = ExtResource("115_28vxw")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_doa37"]
+texture = ExtResource("116_ssp72")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bii3"]
+texture = ExtResource("117_4k4ry")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v8y4c"]
+texture = ExtResource("118_uer5t")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rlbe7"]
+texture = ExtResource("119_52gw4")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dyo8g"]
+texture = ExtResource("120_qtahl")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eygxm"]
+texture = ExtResource("121_3n0ru")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_68wh6"]
+texture = ExtResource("122_qx535")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5xp4x"]
+texture = ExtResource("123_dg8br")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o5eln"]
+texture = ExtResource("124_ost7e")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_osr00"]
+texture = ExtResource("125_k46as")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_glnrg"]
+texture = ExtResource("126_dl3hd")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yusil"]
+texture = ExtResource("127_3iquv")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_300ro"]
+texture = ExtResource("128_k7ytb")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nyn5m"]
+texture = ExtResource("129_icf7n")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a56vg"]
+texture = ExtResource("130_iah8l")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8pkft"]
+texture = ExtResource("131_3aubq")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k3417"]
+texture = ExtResource("132_qnrob")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dj58w"]
+texture = ExtResource("133_ycdnq")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m6nlw"]
+texture = ExtResource("134_x74m5")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_05tp6"]
+texture = ExtResource("135_4dofj")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2dr52"]
+texture = ExtResource("136_07ayy")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m61ml"]
+texture = ExtResource("137_afxfa")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_66kkm"]
+texture = ExtResource("138_x6xdx")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7i7dg"]
+texture = ExtResource("139_gic6h")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8t8d8"]
+texture = ExtResource("140_kw2fx")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_durij"]
+texture = ExtResource("141_028oc")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b40hm"]
+texture = ExtResource("142_a4lfl")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6y12q"]
+texture = ExtResource("143_3kdc3")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uulwi"]
+texture = ExtResource("144_wnw7v")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nrdks"]
+texture = ExtResource("145_or4ib")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o8gba"]
+texture = ExtResource("146_aiota")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1iqv1"]
+texture = ExtResource("147_06etb")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rc381"]
+texture = ExtResource("148_mtk0j")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_houex"]
+texture = ExtResource("149_ydaoa")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rjepk"]
+texture = ExtResource("150_2v5s6")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ihqv"]
+texture = ExtResource("151_smk5r")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_re1hr"]
+texture = ExtResource("152_5oadd")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bn3k7"]
+texture = ExtResource("153_nns0b")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dd237"]
+texture = ExtResource("154_yddnh")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[resource]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_7i1x8")
+sources/1 = SubResource("TileSetAtlasSource_ps153")
+sources/2 = SubResource("TileSetAtlasSource_eidn2")
+sources/3 = SubResource("TileSetAtlasSource_imr1l")
+sources/4 = SubResource("TileSetAtlasSource_wucm5")
+sources/5 = SubResource("TileSetAtlasSource_2jn43")
+sources/6 = SubResource("TileSetAtlasSource_gfebj")
+sources/7 = SubResource("TileSetAtlasSource_68wh6")
+sources/8 = SubResource("TileSetAtlasSource_dj58w")
+sources/9 = SubResource("TileSetAtlasSource_uulwi")
+sources/10 = SubResource("TileSetAtlasSource_mky80")
+sources/11 = SubResource("TileSetAtlasSource_scnmi")
+sources/12 = SubResource("TileSetAtlasSource_t63tx")
+sources/13 = SubResource("TileSetAtlasSource_k03n1")
+sources/14 = SubResource("TileSetAtlasSource_5jjw0")
+sources/15 = SubResource("TileSetAtlasSource_ft3nx")
+sources/16 = SubResource("TileSetAtlasSource_gktv7")
+sources/17 = SubResource("TileSetAtlasSource_7invb")
+sources/19 = SubResource("TileSetAtlasSource_8ootu")
+sources/20 = SubResource("TileSetAtlasSource_mfgs0")
+sources/21 = SubResource("TileSetAtlasSource_esepw")
+sources/22 = SubResource("TileSetAtlasSource_w3qq1")
+sources/23 = SubResource("TileSetAtlasSource_fgini")
+sources/24 = SubResource("TileSetAtlasSource_0i40w")
+sources/25 = SubResource("TileSetAtlasSource_0drv0")
+sources/26 = SubResource("TileSetAtlasSource_w27wr")
+sources/27 = SubResource("TileSetAtlasSource_72qns")
+sources/28 = SubResource("TileSetAtlasSource_qb4vi")
+sources/29 = SubResource("TileSetAtlasSource_uk38d")
+sources/30 = SubResource("TileSetAtlasSource_0sbrw")
+sources/31 = SubResource("TileSetAtlasSource_drhk7")
+sources/32 = SubResource("TileSetAtlasSource_if8sl")
+sources/33 = SubResource("TileSetAtlasSource_iu6qp")
+sources/34 = SubResource("TileSetAtlasSource_3rdmj")
+sources/35 = SubResource("TileSetAtlasSource_icbfn")
+sources/36 = SubResource("TileSetAtlasSource_iydkt")
+sources/37 = SubResource("TileSetAtlasSource_s3yji")
+sources/38 = SubResource("TileSetAtlasSource_t1kdq")
+sources/39 = SubResource("TileSetAtlasSource_a7sjx")
+sources/40 = SubResource("TileSetAtlasSource_a5ey4")
+sources/41 = SubResource("TileSetAtlasSource_o4d6t")
+sources/42 = SubResource("TileSetAtlasSource_geyfn")
+sources/43 = SubResource("TileSetAtlasSource_g8awl")
+sources/44 = SubResource("TileSetAtlasSource_xot7e")
+sources/45 = SubResource("TileSetAtlasSource_emy4u")
+sources/46 = SubResource("TileSetAtlasSource_kxec5")
+sources/47 = SubResource("TileSetAtlasSource_bhnyq")
+sources/48 = SubResource("TileSetAtlasSource_x3udn")
+sources/49 = SubResource("TileSetAtlasSource_nlebg")
+sources/50 = SubResource("TileSetAtlasSource_jcbqq")
+sources/51 = SubResource("TileSetAtlasSource_hdsx3")
+sources/52 = SubResource("TileSetAtlasSource_j3nku")
+sources/53 = SubResource("TileSetAtlasSource_iqbo1")
+sources/54 = SubResource("TileSetAtlasSource_0u863")
+sources/55 = SubResource("TileSetAtlasSource_62vsy")
+sources/56 = SubResource("TileSetAtlasSource_wppmr")
+sources/57 = SubResource("TileSetAtlasSource_tnsvl")
+sources/58 = SubResource("TileSetAtlasSource_clfus")
+sources/59 = SubResource("TileSetAtlasSource_d4xdg")
+sources/60 = SubResource("TileSetAtlasSource_y0f6u")
+sources/61 = SubResource("TileSetAtlasSource_01em1")
+sources/62 = SubResource("TileSetAtlasSource_ss1vu")
+sources/63 = SubResource("TileSetAtlasSource_46jdg")
+sources/64 = SubResource("TileSetAtlasSource_doa37")
+sources/65 = SubResource("TileSetAtlasSource_1bii3")
+sources/66 = SubResource("TileSetAtlasSource_v8y4c")
+sources/67 = SubResource("TileSetAtlasSource_rlbe7")
+sources/68 = SubResource("TileSetAtlasSource_dyo8g")
+sources/69 = SubResource("TileSetAtlasSource_eygxm")
+sources/70 = SubResource("TileSetAtlasSource_5xp4x")
+sources/71 = SubResource("TileSetAtlasSource_o5eln")
+sources/72 = SubResource("TileSetAtlasSource_osr00")
+sources/73 = SubResource("TileSetAtlasSource_glnrg")
+sources/74 = SubResource("TileSetAtlasSource_yusil")
+sources/75 = SubResource("TileSetAtlasSource_300ro")
+sources/76 = SubResource("TileSetAtlasSource_nyn5m")
+sources/77 = SubResource("TileSetAtlasSource_a56vg")
+sources/78 = SubResource("TileSetAtlasSource_8pkft")
+sources/79 = SubResource("TileSetAtlasSource_k3417")
+sources/80 = SubResource("TileSetAtlasSource_m6nlw")
+sources/81 = SubResource("TileSetAtlasSource_05tp6")
+sources/82 = SubResource("TileSetAtlasSource_2dr52")
+sources/83 = SubResource("TileSetAtlasSource_m61ml")
+sources/84 = SubResource("TileSetAtlasSource_66kkm")
+sources/85 = SubResource("TileSetAtlasSource_7i7dg")
+sources/86 = SubResource("TileSetAtlasSource_8t8d8")
+sources/87 = SubResource("TileSetAtlasSource_durij")
+sources/88 = SubResource("TileSetAtlasSource_b40hm")
+sources/89 = SubResource("TileSetAtlasSource_6y12q")
+sources/90 = SubResource("TileSetAtlasSource_nrdks")
+sources/91 = SubResource("TileSetAtlasSource_o8gba")
+sources/92 = SubResource("TileSetAtlasSource_1iqv1")
+sources/93 = SubResource("TileSetAtlasSource_rc381")
+sources/94 = SubResource("TileSetAtlasSource_houex")
+sources/95 = SubResource("TileSetAtlasSource_rjepk")
+sources/96 = SubResource("TileSetAtlasSource_3ihqv")
+sources/97 = SubResource("TileSetAtlasSource_re1hr")
+sources/98 = SubResource("TileSetAtlasSource_bn3k7")
+sources/99 = SubResource("TileSetAtlasSource_dd237")
+sources/100 = SubResource("TileSetAtlasSource_nsjn3")
+sources/101 = SubResource("TileSetAtlasSource_4yklq")
+sources/102 = SubResource("TileSetAtlasSource_guvyn")
+sources/103 = SubResource("TileSetAtlasSource_bf74l")
+sources/104 = SubResource("TileSetAtlasSource_jxioy")
+sources/105 = SubResource("TileSetAtlasSource_nmvox")
+sources/106 = SubResource("TileSetAtlasSource_k6gi5")
+sources/107 = SubResource("TileSetAtlasSource_lddd7")
+sources/108 = SubResource("TileSetAtlasSource_m0duu")
+sources/109 = SubResource("TileSetAtlasSource_6yndn")
+sources/110 = SubResource("TileSetAtlasSource_ati4b")
+sources/111 = SubResource("TileSetAtlasSource_jpgj4")
+sources/112 = SubResource("TileSetAtlasSource_hwm27")
+sources/113 = SubResource("TileSetAtlasSource_xvhte")
+sources/114 = SubResource("TileSetAtlasSource_pshrk")
+sources/115 = SubResource("TileSetAtlasSource_ntb1t")
+sources/116 = SubResource("TileSetAtlasSource_xclld")
+sources/117 = SubResource("TileSetAtlasSource_s7wpf")
+sources/118 = SubResource("TileSetAtlasSource_6bvkc")
+sources/119 = SubResource("TileSetAtlasSource_c5ca1")
+sources/120 = SubResource("TileSetAtlasSource_s1ewd")
+sources/121 = SubResource("TileSetAtlasSource_xhjfb")
+sources/122 = SubResource("TileSetAtlasSource_tef2a")
+sources/123 = SubResource("TileSetAtlasSource_thy0p")
+sources/124 = SubResource("TileSetAtlasSource_kb3vr")
+sources/125 = SubResource("TileSetAtlasSource_g3kkp")
+sources/126 = SubResource("TileSetAtlasSource_gw7un")
+sources/127 = SubResource("TileSetAtlasSource_2xcrw")
+sources/128 = SubResource("TileSetAtlasSource_mem1a")
+sources/129 = SubResource("TileSetAtlasSource_fb1ww")
+sources/130 = SubResource("TileSetAtlasSource_mn77s")
+sources/131 = SubResource("TileSetAtlasSource_bi3ps")
+sources/132 = SubResource("TileSetAtlasSource_j7xw5")
+sources/133 = SubResource("TileSetAtlasSource_yspbm")
+sources/134 = SubResource("TileSetAtlasSource_yxvej")
+sources/135 = SubResource("TileSetAtlasSource_quvw2")
+sources/136 = SubResource("TileSetAtlasSource_uv20b")
+sources/137 = SubResource("TileSetAtlasSource_oqgvc")
+sources/138 = SubResource("TileSetAtlasSource_udl4y")
+sources/139 = SubResource("TileSetAtlasSource_egrle")
+sources/140 = SubResource("TileSetAtlasSource_ca1u5")
+sources/141 = SubResource("TileSetAtlasSource_bywaj")
+sources/142 = SubResource("TileSetAtlasSource_k7wmh")
+sources/143 = SubResource("TileSetAtlasSource_nd385")
+sources/144 = SubResource("TileSetAtlasSource_hfyiq")
+sources/145 = SubResource("TileSetAtlasSource_uo33o")
+sources/146 = SubResource("TileSetAtlasSource_sydub")
+sources/147 = SubResource("TileSetAtlasSource_05pvk")
+sources/148 = SubResource("TileSetAtlasSource_8ixkn")
+sources/149 = SubResource("TileSetAtlasSource_feuka")
+sources/150 = SubResource("TileSetAtlasSource_4wrb7")
+sources/151 = SubResource("TileSetAtlasSource_x4eh1")
+sources/152 = SubResource("TileSetAtlasSource_e5fgr")
+sources/153 = SubResource("TileSetAtlasSource_t06sp")
+sources/154 = SubResource("TileSetAtlasSource_7os6q")

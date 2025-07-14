@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://do5ufcaajv7dk"]
+[gd_scene load_steps=62 format=3 uid="uid://do5ufcaajv7dk"]
 
 [ext_resource type="Texture2D" uid="uid://d4cyilokpr0oq" path="res://assets/World/EPIC RPG World - Sewers V1.5/Characters/Beholder/beholder-atk2-back view-finishing.png" id="1_3fpyk"]
 [ext_resource type="Script" uid="uid://dljo48ryyd73s" path="res://scenes/beholder.gd" id="1_53efv"]
@@ -25,6 +25,11 @@
 [ext_resource type="Texture2D" uid="uid://b5lhacgpm7ukh" path="res://assets/World/EPIC RPG World - Sewers V1.5/Characters/Beholder/beholder-atk2-back view-loop.png" id="13_p0qli"]
 [ext_resource type="Texture2D" uid="uid://bjav3tdfissod" path="res://assets/World/EPIC RPG World - Sewers V1.5/Characters/Beholder/beholder-atk3-finishing the spin.png" id="13_vse5o"]
 [ext_resource type="Texture2D" uid="uid://bnrmcsbrmf5ln" path="res://assets/World/EPIC RPG World - Sewers V1.5/Characters/Beholder/beholder-atk3-spin loop.png" id="14_01di8"]
+[ext_resource type="Script" uid="uid://dn3jtdswxk4w7" path="res://scenes/finite_state_machine.gd" id="26_8a21i"]
+[ext_resource type="Script" uid="uid://ds1sdf2ff3ghk" path="res://scenes/idle.gd" id="27_3e0nk"]
+[ext_resource type="Script" uid="uid://clk82wf4lpa3y" path="res://scenes/state.gd" id="27_ssj0x"]
+[ext_resource type="Script" uid="uid://bticwvqpf87d3" path="res://scenes/5_leaf.gd" id="28_3e0nk"]
+[ext_resource type="Script" uid="uid://cmelogvdthjut" path="res://scenes/4_leaf.gd" id="29_dtiw4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cdt50"]
 radius = 26.0192
@@ -1309,7 +1314,11 @@ states/walk_front/node = SubResource("AnimationNodeAnimation_p0qli")
 states/walk_front/position = Vector2(353, 90.5)
 transitions = ["Start", "walk_front", SubResource("AnimationNodeStateMachineTransition_i60sd")]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_p0qli"]
+radius = 210.343
+
 [node name="Beholder" type="CharacterBody2D"]
+position = Vector2(1, 0)
 script = ExtResource("1_53efv")
 alpha = 0.8
 bullet_node = ExtResource("2_p0qli")
@@ -1320,6 +1329,7 @@ hframes = 16
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_cdt50")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -1333,6 +1343,42 @@ anim_player = NodePath("../AnimationPlayer")
 
 [node name="Speed" type="Timer" parent="."]
 wait_time = 0.05
-autostart = true
+
+[node name="Duration" type="Timer" parent="."]
+wait_time = 4.0
+
+[node name="debug" type="Label" parent="."]
+offset_left = -17.0
+offset_top = -45.0
+offset_right = 16.0
+offset_bottom = -31.0
+theme_override_font_sizes/font_size = 10
+text = "debug"
+horizontal_alignment = 1
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+unique_name_in_owner = true
+shape = SubResource("CircleShape2D_p0qli")
+
+[node name="FiniteStateMachine" type="Node2D" parent="."]
+script = ExtResource("26_8a21i")
+
+[node name="idle" type="Node2D" parent="FiniteStateMachine"]
+script = ExtResource("27_3e0nk")
+
+[node name="5Leaf" type="Node2D" parent="FiniteStateMachine"]
+script = ExtResource("28_3e0nk")
+
+[node name="4Leaf" type="Node2D" parent="FiniteStateMachine"]
+script = ExtResource("29_dtiw4")
+
+[node name="3Leaf" type="Node2D" parent="FiniteStateMachine"]
+script = ExtResource("27_ssj0x")
+
+[node name="2Leaf" type="Node2D" parent="FiniteStateMachine"]
+script = ExtResource("27_ssj0x")
 
 [connection signal="timeout" from="Speed" to="." method="_on_speed_timeout"]
+[connection signal="body_entered" from="PlayerDetection" to="FiniteStateMachine/idle" method="_on_player_entered"]
