@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://divfm3jstwiip" path="res://assets/Projectiles/Wind Effect 01/Wind Projectile.png" id="20_m0b1s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m0b1s"]
-radius = 19.0
+radius = 65.192
 
 [sub_resource type="Animation" id="Animation_byeak"]
 resource_name = "Blackhole"

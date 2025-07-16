@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb6y3t8qhgxqu"]
+
+[ext_resource type="PackedScene" uid="uid://ck7cj1epxwfpb" path="res://scripts/SettingsScript/tan-2/Options Menu/option_display_button.tscn" id="1_nv4tn"]
+[ext_resource type="Script" uid="uid://og77yrq5mnxb" path="res://scripts/SettingsScript/tan-2/script/resolution_mode_button.gd" id="2_ruqlu"]
+
+[node name="Resolution_Mode_Button" instance=ExtResource("1_nv4tn")]
+script = ExtResource("2_ruqlu")
+
+[node name="HBoxContainer" parent="." index="0"]
+theme_override_constants/separation = 40
+
+[node name="Label" parent="HBoxContainer" index="0"]
+text = "Resolution"

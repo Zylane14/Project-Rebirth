@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcn3lxhiy6m4j"]
+
+[ext_resource type="Script" uid="uid://clyl3e3fdfnn8" path="res://scripts/SettingsScript/tan-2/script/audio_slider_settings.gd" id="1_8rwt4"]
+
+[sub_resource type="SystemFont" id="SystemFont_dqfn4"]
+font_names = PackedStringArray("Century")
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_rfsrf"]
+font_names = PackedStringArray("Century")
+subpixel_positioning = 0
+
+[node name="audio_slider_settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8rwt4")
+bus_name = "Master"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 20
+
+[node name="Audio_Name_LBL" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_dqfn4")
+theme_override_font_sizes/font_size = 22
+text = "Master Volume"
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer"]
+custom_minimum_size = Vector2(130, 25)
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.001
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Audio_Num_LBL" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_rfsrf")
+theme_override_font_sizes/font_size = 22
+text = "100"

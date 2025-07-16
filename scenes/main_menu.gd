@@ -58,3 +58,7 @@ func _on_start_pressed() -> void: #Character Selection
 	$Gold.hide()
 	$Back.show()
 	tween_pop($CharacterSelection)
+
+
+func _on_exit_pressed() -> void:
+	get_tree().quit()

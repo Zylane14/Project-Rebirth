@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://0xgv4vb2w21w"]
+
+[ext_resource type="Script" uid="uid://b5nmuv8x8pgd" path="res://scripts/SettingsScript/tan-2/script/hotkey_rebind_button.gd" id="1_hvptl"]
+
+[sub_resource type="SystemFont" id="SystemFont_u6k1n"]
+font_names = PackedStringArray("Century")
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_okub4"]
+font_names = PackedStringArray("Century")
+subpixel_positioning = 0
+
+[node name="hotkey_rebind_button" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hvptl")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.0
+offset_right = 21.0
+offset_bottom = 11.0
+grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(170, 20)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_u6k1n")
+theme_override_font_sizes/font_size = 22
+text = "Action"
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 100
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 10)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_okub4")
+theme_override_font_sizes/font_size = 22
+toggle_mode = true
+text = "Action_KEY"
