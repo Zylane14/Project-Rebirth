@@ -24,7 +24,7 @@ var last_move_dir := Vector2.RIGHT
 ##==============================
 ## HEALTH, STATS, AND UI
 ##==============================
-var health: float = 100:
+var health: float = 500:
 	set(value):
 		health = max(value, 0)
 		%Health.value = value
@@ -32,7 +32,7 @@ var health: float = 100:
 			die()
 			show_game_over_screen()
 
-var max_health: float = 100:
+var max_health: float = 500:
 	set(value):
 		var delta = value - max_health
 		max_health = value
@@ -41,12 +41,12 @@ var max_health: float = 100:
 		if delta > 0:
 			health = min(health + delta, max_health)
 
-var movement_speed: float = 120:
+var movement_speed: float = 75:
 	set(value):
 		movement_speed = value
 		%MovementSpeed.text = "Movement Speed : " + str(value)
 
-var recovery: float = 0:
+var recovery: float = 1.0:
 	set(value):
 		recovery = value
 		%Recovery.text = "Recovery : " + str(value) + " hp/sec"
@@ -61,7 +61,7 @@ var damage: float = 10.0:
 		damage = value
 		%Damage.text = "Damage : " + str(value)
 
-var amplify: float = 5.0:
+var amplify: float = 0.1:
 	set(value):
 		amplify = value
 		%Amplify.text = "Amplify : " + str(value) + "%"
@@ -74,7 +74,7 @@ var area: float = 0:
 var magnet: float = 0:
 	set(value):
 		magnet = value
-		%Magnet.shape.radius = 50 + value
+		%Magnet.shape.radius = 100 + value
 		%MagnetL.text = "Magnet : " + str(value)
 
 var growth: float = 1:
@@ -92,12 +92,12 @@ var dodge: float = 10.0:
 		dodge = value
 		%Dodge.text = "Dodge : " + str(value) + "%"
 
-var crit: float = 10.0:
+var crit: float = 5.0:
 	set(value):
 		crit = value
 		%Crit.text = "Crit : " + str(value) + "%"
 
-var crit_damage: float = 2.0:
+var crit_damage: float = 100.0:
 	set(value):
 		crit_damage = value
 		%CritDamage.text = "Crit Damage : " + str(value) + "%"
@@ -167,6 +167,7 @@ func _ready() -> void:
 ## PHYSICS PROCESS
 ##==============================
 func _physics_process(delta):
+#if is_multiplayer_authority()
 	if is_dashing:
 		return
 
@@ -194,6 +195,12 @@ func _physics_process(delta):
 	animation(delta)
 	health = min(health + recovery * delta, max_health)
 
+##==============================
+## MULTIPLAYER
+##==============================
+func _enter_tree() -> void:
+	set_multiplayer_authority(name.to_int())
+	
 ##==============================
 ## DASHING
 ##==============================

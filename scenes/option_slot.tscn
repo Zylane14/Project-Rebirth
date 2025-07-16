@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bmh3a8id7u7qj" path="res://assets/Projectiles/fireball_V_1_1/FB500-1.png" id="1_je35h"]
 [ext_resource type="Script" uid="uid://b2plm87fnhmh4" path="res://scenes/option_slot.gd" id="2_bux6k"]
-[ext_resource type="Texture2D" uid="uid://c5u11r88d57ut" path="res://assets/World/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/9SlicedObjects_windows_4.png" id="3_11gh2"]
+[ext_resource type="Texture2D" uid="uid://enbt5o2qvqgr" path="res://assets/UI/Astrology UI/game/gui/button/choice_hover_background.png" id="3_je35h"]
 
 [node name="OptionSlot" type="TextureButton"]
 custom_minimum_size = Vector2(315, 40)
@@ -22,16 +22,20 @@ offset_right = 88.0
 offset_bottom = 32.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+vertical_alignment = 1
 
 [node name="Description" type="Label" parent="."]
 layout_mode = 0
-offset_left = 97.0
-offset_top = 9.0
-offset_right = 279.0
+offset_left = 96.0
+offset_top = 2.0
+offset_right = 278.0
 offset_bottom = 39.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 11
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 show_behind_parent = true
@@ -39,7 +43,7 @@ custom_minimum_size = Vector2(315, 40)
 layout_mode = 0
 offset_right = 315.0
 offset_bottom = 40.0
-texture = ExtResource("3_11gh2")
-region_rect = Rect2(6.11519, 6.07167, 19.8574, 20.0465)
+texture = ExtResource("3_je35h")
+region_rect = Rect2(0, 0, 600, 52)
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

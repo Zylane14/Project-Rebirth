@@ -16,3 +16,4 @@ func _process(delta: float) -> void:
 func reset():
 	global_buff_stage = 0
 	elapsed_time = 0.0
+	enemy_kill_count = 0

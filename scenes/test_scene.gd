@@ -5,9 +5,10 @@ extends Node2D
 
 @export var cycle_duration := 300.0 # total time (in seconds) for full day-night cycle
 @export var max_fog_opacity := 0.5
+@export var player_scene: PackedScene
 
 var time := 0.0
-
+var peer = ENetMultiplayerPeer.new()
 # Tint colors for each time of day
 var sunrise_color := Color(1.0, 0.7, 0.5)    # soft orange-pink
 var noon_color := Color(1.0, 1.0, 1.0)       # bright white
@@ -67,3 +68,19 @@ func get_time_of_day() -> String:
 		return "Evening"
 	else:
 		return "Night"
+
+
+#func _on_host_pressed() -> void:
+#	peer.create_server(135)
+#	multiplayer.multiplayer_peer = peer
+#	multiplayer.peer_connected.connect(_add_player)
+#	_add_player()
+
+#func _add_player(id = 1):
+#	player.name = str(id)
+#	call_deferred("add_child", player)
+
+
+#func _on_join_pressed() -> void:
+#	peer.create_client("localhost", 135)
+#	multiplayer.multiplayer_peer = peer

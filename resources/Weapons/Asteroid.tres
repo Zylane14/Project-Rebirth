@@ -10,54 +10,56 @@
 
 [sub_resource type="Resource" id="Resource_3xwug"]
 script = ExtResource("5_5v0xx")
-angular_speed = 60.0
-amount = 1
+angular_speed = 20.0
+amount = 0
 damage = 1.0
 cooldown = 0.0
-description = "ASTEROID"
+description = "FIRE TORNADO"
 metadata/_custom_type_script = "uid://cnqkprtjrc6t6"
 
 [sub_resource type="Resource" id="Resource_rgxfb"]
 script = ExtResource("5_5v0xx")
-angular_speed = 60.0
+angular_speed = 20.0
 amount = 1
 damage = 2.0
 cooldown = 0.0
-description = "+60 Speed +1 Amount +2 Damage"
+description = "+20 Speed +1 Amount +2 Damage"
 metadata/_custom_type_script = "uid://cnqkprtjrc6t6"
 
 [sub_resource type="Resource" id="Resource_ye6g7"]
 script = ExtResource("5_5v0xx")
-angular_speed = 40.0
+angular_speed = 20.0
 amount = 1
 damage = 2.0
 cooldown = 0.0
 description = "+1 Projectile +2 Damage
-+40 Speed"
++20 Speed"
 metadata/_custom_type_script = "uid://cnqkprtjrc6t6"
 
 [sub_resource type="Resource" id="Resource_viqsq"]
 script = ExtResource("5_5v0xx")
-angular_speed = 0.0
+angular_speed = 20.0
 amount = 1
 damage = 4.0
 cooldown = 0.0
-description = "+4 Damage"
+description = "+20 Speed
++4 Damage
++1 Amount"
 metadata/_custom_type_script = "uid://cnqkprtjrc6t6"
 
 [sub_resource type="Resource" id="Resource_1303o"]
 script = ExtResource("5_5v0xx")
-angular_speed = 60.0
+angular_speed = 30.0
 amount = 0
 damage = 4.0
 cooldown = 0.0
-description = "+60 Speed
+description = "+30 Speed
 +4 Damage"
 metadata/_custom_type_script = "uid://cnqkprtjrc6t6"
 
 [resource]
 script = ExtResource("2_5v0xx")
-angular_speed = 75
+angular_speed = 60
 radius = 100
 amount = 1
 damage = 4.0
@@ -69,10 +71,9 @@ item_needed = ExtResource("3_viqsq")
 evolution = ExtResource("1_ye6g7")
 projectile_animation_name = "Fire_Tornado_loop"
 manual_only = false
-title = "Asteroid"
+title = "Fire Tornado"
 description = ""
 icon = ExtResource("2_rgxfb")
-texture = ExtResource("2_rgxfb")
 rarity = 4
 level = 1
 metadata/_custom_type_script = "uid://4711pfsdiwbb"

@@ -48,7 +48,7 @@ func update_sprite_frame():
 	if tex == null:
 		return
 
-	var frame_width = tex.get_width() / type.frame_count
+	var frame_width = int(tex.get_width() / type.frame_count)
 	$Sprite2D.region_enabled = true
 	$Sprite2D.texture = tex
 	$Sprite2D.region_rect = Rect2(current_frame * frame_width, 0, frame_width, tex.get_height())

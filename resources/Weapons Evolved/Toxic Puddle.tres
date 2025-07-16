@@ -22,7 +22,6 @@ manual_only = false
 title = "BlackHole"
 description = ""
 icon = ExtResource("1_a80up")
-texture = ExtResource("1_a80up")
 rarity = 0
 level = 1
 metadata/_custom_type_script = "uid://xs5efml7d1rs"

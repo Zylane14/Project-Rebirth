@@ -7,7 +7,7 @@ extends TextureButton
 		
 		#for option slot, it will show text normally if its under the max item level
 		if value.upgrades.size() > 0 and value.upgrades.size() +1 != value.level:
-			texture_normal = value.texture
+			texture_normal = value.icon
 			$Label.text = "Lvl " + str(item.level + 1)
 			$Description.text = value.upgrades[value.level - 1].description
 		else: #else show evolution text and texture

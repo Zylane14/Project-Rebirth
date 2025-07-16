@@ -180,11 +180,14 @@ func _set_dissolve_value(val: float):
 func take_damage(amount := 1):
 	health -= amount
 	%HealthBar.value = health
+	flash() 
+
 	if health <= 0:
 		state_machine.travel("death")
 		set_physics_process(false)
 		await animation_player.animation_finished
 		await start_dissolve()
+
 
 func enter_phase_2():
 	in_phase_2 = true
@@ -196,3 +199,8 @@ func enter_phase_2():
 	health += 100
 	%HealthBar.max_value = max_health
 	%HealthBar.value = health
+
+func flash():
+	var tween = create_tween()
+	$Sprite2D.modulate = Color(1, 0.3, 0.3)  # red tint flash
+	tween.tween_property($Sprite2D, "modulate", Color(1, 1, 1), 0.15)
