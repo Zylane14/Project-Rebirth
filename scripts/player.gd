@@ -56,7 +56,7 @@ var armor: float = 0:
 		armor = value
 		%Armor.text = "Armor : %.1f" % value + "%"
 
-var damage: float = 10.0:
+var damage: float = 1.0:
 	set(value):
 		damage = value
 		%Damage.text = "Damage : " + str(value)
@@ -82,7 +82,7 @@ var growth: float = 1:
 		growth = value
 		%Growth.text = "Growth : " + str(value) + " exp/rate"
 
-var luck: float = 2.5:
+var luck: float = 0.1:
 	set(value):
 		luck = value
 		%Luck.text = "Luck : " + str(value) + "%"
