@@ -6,6 +6,7 @@ class_name MeleeWeapon
 @export var arc_angle: float = 90.0 # total spread angle in degrees
 @export var delay: float = 0.15
 @export var reversible: bool = false
+@export var knockback: float = 100.0
 
 var hitbox_scene: PackedScene = preload("res://scenes/melee_hitbox.tscn")
 
@@ -38,6 +39,7 @@ func spawn_hitboxes(source, scene_tree):
 		hitbox.damage = damage
 		hitbox.source = source
 		hitbox.weapon = self
+		hitbox.knockback = knockback
 		hitbox.animation_to_play = projectile_animation_name
 
 		if sound:

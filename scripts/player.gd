@@ -20,11 +20,13 @@ var can_dash := true
 var is_dashing := false
 var is_invincible: bool = false
 var last_move_dir := Vector2.RIGHT
+var damage_cooldown = 0.3
+var damage_timer = 0.0
 
 ##==============================
 ## HEALTH, STATS, AND UI
 ##==============================
-var health: float = 500:
+var health: int = 500:
 	set(value):
 		health = max(value, 0)
 		%Health.value = value
@@ -32,7 +34,7 @@ var health: float = 500:
 			die()
 			show_game_over_screen()
 
-var max_health: float = 500:
+var max_health: int = 500:
 	set(value):
 		var delta = value - max_health
 		max_health = value
@@ -56,7 +58,7 @@ var armor: float = 0:
 		armor = value
 		%Armor.text = "Armor : %.1f" % value + "%"
 
-var damage: float = 1.0:
+var damage: int = 1:
 	set(value):
 		damage = value
 		%Damage.text = "Damage : " + str(value)
@@ -87,7 +89,7 @@ var luck: float = 0.1:
 		luck = value
 		%Luck.text = "Luck : " + str(value) + "%"
 
-var dodge: float = 10.0:
+var dodge: float = 1.0:
 	set(value):
 		dodge = value
 		%Dodge.text = "Dodge : " + str(value) + "%"
@@ -97,7 +99,7 @@ var crit: float = 5.0:
 		crit = value
 		%Crit.text = "Crit : " + str(value) + "%"
 
-var crit_damage: float = 100.0:
+var crit_damage: float = 10.0:
 	set(value):
 		crit_damage = value
 		%CritDamage.text = "Crit Damage : " + str(value) + "%"
@@ -168,6 +170,9 @@ func _ready() -> void:
 ##==============================
 func _physics_process(delta):
 #if is_multiplayer_authority()
+	if damage_timer > 0:
+		damage_timer -= delta
+	
 	if is_dashing:
 		return
 
@@ -247,16 +252,29 @@ func _input(event):
 ##==============================
 ## COMBAT / DAMAGE
 ##==============================
-func take_damage(amount, bypass_invincibility := false):
+func take_damage(amount: float, bypass_invincibility: bool = false, source: Variant = null):
 	if is_invincible and not bypass_invincibility:
 		return
+
+	if damage_timer > 0:
+		return
+
+	damage_timer = damage_cooldown
 
 	if randf() * 100 < dodge:
 		show_dodge_feedback()
 		return
 
-	var reduced_damage = max(amount * (amount / (amount + armor)), 1)
+	var damage_multiplier = 100.0 / (100.0 + armor)
+	var reduced_damage = max(amount * damage_multiplier, 1)
+
+	print("Incoming Damage:", amount)
+	print("Reduced by Armor:", reduced_damage)
+	if source != null:
+		print("Damage Source:", source.name)
+
 	health -= reduced_damage
+
 
 func apply_knockback(force: Vector2):
 	if is_dashing:

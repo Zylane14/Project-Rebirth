@@ -1,14 +1,14 @@
-[gd_resource type="Resource" script_class="Weapon" load_steps=7 format=3 uid="uid://b2so3xjfm3ta3"]
+[gd_resource type="Resource" script_class="SingleShot" load_steps=7 format=3 uid="uid://b2so3xjfm3ta3"]
 
 [ext_resource type="Texture2D" uid="uid://crfdvvbwx51ph" path="res://assets/Icons/SkillIcons/evolved fireball.png" id="1_hbob5"]
 [ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="1_tew3o"]
-[ext_resource type="Script" uid="uid://cnx1yfvbpbkka" path="res://scripts/Weapon.gd" id="2_dhg5w"]
 [ext_resource type="Material" uid="uid://c86gbstqtbdlq" path="res://Paticles FX/Fire.tres" id="2_hbob5"]
+[ext_resource type="Script" uid="uid://bthks1pwcgkfj" path="res://scenes/WeaponScript/SingleShot.gd" id="2_rqxon"]
 [ext_resource type="Script" uid="uid://co5wubqlbfsyl" path="res://scenes/Upgrade.gd" id="4_va0ch"]
 [ext_resource type="AudioStream" uid="uid://cqyg5sl2bkne5" path="res://music & sfx/RPG_Essentials_Free/8_Atk_Magic_SFX/04_Fire_explosion_04_medium.wav" id="5_ecffc"]
 
 [resource]
-script = ExtResource("2_dhg5w")
+script = ExtResource("2_rqxon")
 damage = 12.0
 cooldown = 0.4
 speed = 600.0
@@ -21,6 +21,6 @@ manual_only = false
 title = "Holy Fire"
 description = ""
 icon = ExtResource("1_hbob5")
-rarity = 0
+rarity = 4
 level = 1
 metadata/_custom_type_script = "uid://cnx1yfvbpbkka"

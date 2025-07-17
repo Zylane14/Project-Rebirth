@@ -1,0 +1,86 @@
+[gd_resource type="Resource" script_class="Circular" load_steps=13 format=3 uid="uid://k0qec0duaiuq"]
+
+[ext_resource type="Resource" uid="uid://ci5ieqn2o8pmk" path="res://resources/Weapons Evolved/FlameBurstTornado.tres" id="1_o3suu"]
+[ext_resource type="Texture2D" uid="uid://cywryp28lwa50" path="res://assets/Icons/SkillIcons/pyro vortex level 1.png" id="2_4tr5a"]
+[ext_resource type="Resource" uid="uid://byk5so652svi8" path="res://resources/Passive Items/Recovery.tres" id="3_45mlr"]
+[ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="4_fqtt7"]
+[ext_resource type="Script" uid="uid://4711pfsdiwbb" path="res://scenes/WeaponScript/CircularWeapon.gd" id="5_x6kms"]
+[ext_resource type="Script" uid="uid://co5wubqlbfsyl" path="res://scenes/Upgrade.gd" id="6_iloyh"]
+[ext_resource type="Script" uid="uid://cnqkprtjrc6t6" path="res://scenes/WeaponScript/CircularUpgrade.gd" id="7_jf17j"]
+
+[sub_resource type="Resource" id="Resource_3xwug"]
+script = ExtResource("7_jf17j")
+angular_speed = 20.0
+amount = 0
+area = 0.0
+damage = 1.0
+cooldown = 0.0
+description = "FIRE TORNADO"
+metadata/_custom_type_script = "uid://cnqkprtjrc6t6"
+
+[sub_resource type="Resource" id="Resource_rgxfb"]
+script = ExtResource("7_jf17j")
+angular_speed = 20.0
+amount = 1
+area = 0.0
+damage = 2.0
+cooldown = 0.0
+description = "+20 Speed +1 Amount +2 Damage"
+metadata/_custom_type_script = "uid://cnqkprtjrc6t6"
+
+[sub_resource type="Resource" id="Resource_ye6g7"]
+script = ExtResource("7_jf17j")
+angular_speed = 20.0
+amount = 1
+area = 0.0
+damage = 2.0
+cooldown = 0.0
+description = "+1 Projectile +2 Damage
++20 Speed"
+metadata/_custom_type_script = "uid://cnqkprtjrc6t6"
+
+[sub_resource type="Resource" id="Resource_viqsq"]
+script = ExtResource("7_jf17j")
+angular_speed = 20.0
+amount = 1
+area = 0.0
+damage = 4.0
+cooldown = 0.0
+description = "+20 Speed
++4 Damage
++1 Amount"
+metadata/_custom_type_script = "uid://cnqkprtjrc6t6"
+
+[sub_resource type="Resource" id="Resource_1303o"]
+script = ExtResource("7_jf17j")
+angular_speed = 30.0
+amount = 1
+area = 0.0
+damage = 4.0
+cooldown = 0.0
+description = "+30 Speed
++4 Damage
++1 Amount"
+metadata/_custom_type_script = "uid://cnqkprtjrc6t6"
+
+[resource]
+script = ExtResource("5_x6kms")
+angular_speed = 60
+radius = 100
+amount = 1
+area = 1.0
+damage = 2.0
+cooldown = 2.0
+speed = 0.0
+projectile_node = ExtResource("4_fqtt7")
+upgrades = Array[ExtResource("6_iloyh")]([SubResource("Resource_3xwug"), SubResource("Resource_rgxfb"), SubResource("Resource_ye6g7"), SubResource("Resource_viqsq"), SubResource("Resource_1303o")])
+item_needed = ExtResource("3_45mlr")
+evolution = ExtResource("1_o3suu")
+projectile_animation_name = "Fire_Tornado_loop"
+manual_only = false
+title = "Fire Tornado"
+description = ""
+icon = ExtResource("2_4tr5a")
+rarity = 4
+level = 1
+metadata/_custom_type_script = "uid://4711pfsdiwbb"

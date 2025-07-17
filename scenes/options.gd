@@ -20,7 +20,6 @@ var every_passive
 
 func _ready(): #on ready hide the option
 	hide()
-	weapons.show()
 	particles.hide() #on ready, hide both particle and panel
 	panel.hide()
 	get_all_item() #load and store every item on ready
@@ -29,7 +28,6 @@ func close_option(): #will hide option and resume the scene tree
 	hide()
 	particles.hide() #hide both while closing option
 	panel.hide()
-	weapons.show()
 	%Gold.show()
 	%XP.show()
 	get_tree().paused = false
@@ -180,13 +178,11 @@ func get_available_upgrades()-> Array[Item]: #set function that will return an a
 	
 	return upgrades
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("toggle_inventory"):
-		var inventory = %WeaponInventory
-		if inventory.visible:
-			inventory.hide()
-			get_tree().paused = false
-		else:
-			inventory.show()
-			get_tree().paused = true
-	
+func toggle_inventory():
+	var inventory = %WeaponInventory
+	if inventory.visible:
+		inventory.hide()
+		get_tree().paused = false
+	else:
+		inventory.show()
+		get_tree().paused = true

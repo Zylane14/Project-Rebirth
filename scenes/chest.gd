@@ -35,20 +35,35 @@ func _on_close_pressed(): #resumes the scene tree and hide the chest
 	hide()
 
 
-func set_reward(): #set reward get a random value between 0 and 1
+func set_reward():
+	# Set rewards for each slot independently; gold chance depends on player luck.
 	clear_reward()
-	var chance = randf()
-	var weight = [5.0,2.0,1.0] #weight for rare, epic, and legendary chance
-	print(chance)
-	if chance < get_weighted_chance(weight, 0):
-		upgrade_item(2,3)
-		print("rare")
-	elif chance < get_weighted_chance(weight, 1):
-		upgrade_item(1,4)
-		print("epic")
-	else:
-		upgrade_item(0,5)
-		print("legendary")
+	var weights = [5.0, 2.0, 1.0] #weights for rare, epic, legendary upgrades
+
+	# --- Gold chance based on luck ---
+	var min_gold_chance = 0.2 # never less than 20% gold chance
+	var max_gold_chance = 0.7 # up to 70% gold chance at lowest luck
+	var luck = owner.luck if owner.has_method("luck") else 1.0 # fallback if no luck property
+	var gold_chance = clamp(max_gold_chance - (luck * 0.1), min_gold_chance, max_gold_chance)
+	# e.g. at luck = 1.0, gold chance = 0.6. At luck = 5.0, gold chance = 0.2 (never lower).
+
+	for index in range(rewards.get_child_count()): # loop through each reward slot
+		var roll = randf()
+		if roll < gold_chance:
+			add_gold(index)
+			print("Gold reward")
+		else:
+			# Roll for upgrade rarity
+			var rarity_chance = randf()
+			var rarity = 0
+			if rarity_chance < get_weighted_chance(weights, 0):
+				rarity = 2 # rare
+			elif rarity_chance < get_weighted_chance(weights, 1):
+				rarity = 1 # epic
+			else:
+				rarity = 0 # legendary
+			upgrade_item(index, rarity)
+
 
 
 func upgrade_item(start, end):

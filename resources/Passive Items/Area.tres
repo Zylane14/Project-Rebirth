@@ -1,17 +1,17 @@
 [gd_resource type="Resource" script_class="PassiveItem" load_steps=7 format=3 uid="uid://dylur0xig1asu"]
 
 [ext_resource type="Script" uid="uid://oh3fq60et0sw" path="res://scenes/PassiveItem.gd" id="1_1pnu5"]
-[ext_resource type="Texture2D" uid="uid://knq1n2vwygwh" path="res://assets/World/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/char_equip_slots_12.png" id="2_nyo22"]
+[ext_resource type="Texture2D" uid="uid://byr6vjohrtosl" path="res://assets/Icons/unTied Games/Super Pixel Icons/Super Pixel Skill Icons Pack 3/icons/sk3_radar_C.png" id="1_nyo22"]
 [ext_resource type="Script" uid="uid://dhltvcvyn33cy" path="res://scenes/Stats.gd" id="3_avugv"]
 
 [sub_resource type="Resource" id="Resource_ujoeh"]
 script = ExtResource("3_avugv")
 description = "+25 Attack Range"
-max_health = 0.0
+max_health = 0
 recovery = 0.0
 armor = 0.0
 movement_speed = 0.0
-damage = 0.0
+damage = 0
 amplify = 0.0
 area = 25.0
 magnet = 0.0
@@ -25,11 +25,11 @@ metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 [sub_resource type="Resource" id="Resource_prwxu"]
 script = ExtResource("3_avugv")
 description = "+35 Attack Range"
-max_health = 0.0
+max_health = 0
 recovery = 0.0
 armor = 0.0
 movement_speed = 0.0
-damage = 0.0
+damage = 0
 amplify = 0.0
 area = 35.0
 magnet = 0.0
@@ -43,11 +43,11 @@ metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 [sub_resource type="Resource" id="Resource_sw3i4"]
 script = ExtResource("3_avugv")
 description = "+45 Attack Range"
-max_health = 0.0
+max_health = 0
 recovery = 0.0
 armor = 0.0
 movement_speed = 0.0
-damage = 0.0
+damage = 0
 amplify = 0.0
 area = 45.0
 magnet = 0.0
@@ -63,8 +63,8 @@ script = ExtResource("1_1pnu5")
 upgrades = Array[ExtResource("3_avugv")]([SubResource("Resource_ujoeh"), SubResource("Resource_prwxu"), SubResource("Resource_sw3i4")])
 title = "Area"
 description = ""
-icon = ExtResource("2_nyo22")
-texture = ExtResource("2_nyo22")
+icon = ExtResource("1_nyo22")
+texture = ExtResource("1_nyo22")
 rarity = 1
 level = 1
 metadata/_custom_type_script = "uid://oh3fq60et0sw"

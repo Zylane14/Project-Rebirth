@@ -1,17 +1,17 @@
 [gd_resource type="Resource" script_class="PassiveItem" load_steps=7 format=3 uid="uid://bm011iemi6tjk"]
 
+[ext_resource type="Texture2D" uid="uid://cv4am40cnpgti" path="res://assets/Icons/unTied Games/Super Pixel Icons/Super Pixel Skill Icons Pack 6/icons/sk6_afterimage_A.png" id="1_cbwvd"]
 [ext_resource type="Script" uid="uid://oh3fq60et0sw" path="res://scenes/PassiveItem.gd" id="1_symqv"]
-[ext_resource type="Texture2D" uid="uid://mqjcchsdhbjm" path="res://assets/World/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/char_stats_slots_7.png" id="2_cbwvd"]
 [ext_resource type="Script" uid="uid://dhltvcvyn33cy" path="res://scenes/Stats.gd" id="3_i14he"]
 
 [sub_resource type="Resource" id="Resource_m2aq6"]
 script = ExtResource("3_i14he")
 description = "+10 Movement Speed"
-max_health = 0.0
+max_health = 0
 recovery = 0.0
 armor = 0.0
 movement_speed = 10.0
-damage = 0.0
+damage = 0
 amplify = 0.0
 area = 0.0
 magnet = 0.0
@@ -25,11 +25,11 @@ metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 [sub_resource type="Resource" id="Resource_rfiue"]
 script = ExtResource("3_i14he")
 description = "+15 Movement Speed"
-max_health = 0.0
+max_health = 0
 recovery = 0.0
 armor = 0.0
 movement_speed = 15.0
-damage = 0.0
+damage = 0
 amplify = 0.0
 area = 0.0
 magnet = 0.0
@@ -43,11 +43,11 @@ metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 [sub_resource type="Resource" id="Resource_bi6nk"]
 script = ExtResource("3_i14he")
 description = "+20 Movement Speed"
-max_health = 0.0
+max_health = 0
 recovery = 0.0
 armor = 0.0
 movement_speed = 20.0
-damage = 0.0
+damage = 0
 amplify = 0.0
 area = 0.0
 magnet = 0.0
@@ -63,8 +63,8 @@ script = ExtResource("1_symqv")
 upgrades = Array[ExtResource("3_i14he")]([SubResource("Resource_m2aq6"), SubResource("Resource_rfiue"), SubResource("Resource_bi6nk")])
 title = "Movement Speed"
 description = "I AM SPEED!!!"
-icon = ExtResource("2_cbwvd")
-texture = ExtResource("2_cbwvd")
+icon = ExtResource("1_cbwvd")
+texture = ExtResource("1_cbwvd")
 rarity = 4
 level = 1
 metadata/_custom_type_script = "uid://oh3fq60et0sw"

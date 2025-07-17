@@ -3,11 +3,11 @@ class_name Stats
 
 @export_multiline var description : String
 
-@export var max_health : float
+@export var max_health : int
 @export var recovery : float
 @export var armor : float
 @export var movement_speed : float
-@export var damage : float = 0 
+@export var damage : int
 @export var amplify : float
 @export var area : float
 @export var magnet : float

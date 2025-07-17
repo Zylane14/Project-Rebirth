@@ -68,6 +68,7 @@ amount = 1
 arc_angle = 90.0
 delay = 0.15
 reversible = false
+knockback = 100.0
 damage = 5.0
 cooldown = 1.2
 speed = 400.0

@@ -14,7 +14,6 @@ class_name Weapon
 @export var projectile_animation_name: String = "" #animation to play on projectile
 @export var manual_only: bool = false  #requires pressing button
 
-
 var slot
 var damage_dealt : float = 0
 var cooldown_timer := 0.0

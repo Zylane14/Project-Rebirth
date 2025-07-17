@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://rd7jqoyg5ayg" path="res://scripts/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://3ninw6nm3qxc" path="res://scenes/slot.tscn" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://gdw0uqu72fms" path="res://assets/Characters/main-character-of-the-story/MainCharacter(FullPack)/MainCharacter(FullPack-v1)/MainChar - idle.png" id="2_i3pqv"]
-[ext_resource type="Resource" uid="uid://q3uqovvyoat2" path="res://resources/Characters/Eleonore.tres" id="2_i4ail"]
 [ext_resource type="Texture2D" uid="uid://dwjn4w41mc2p2" path="res://assets/World/EPIC RPG World Pack - Grass Land V. 1.6/UI/UI-elements-32x32-separated sprites/icons_items_bag.png" id="2_ur7pv"]
 [ext_resource type="PackedScene" uid="uid://bt46puqq0y8kf" path="res://scenes/ghost.tscn" id="3_l71n6"]
 [ext_resource type="PackedScene" uid="uid://3oy7wx1aj4tc" path="res://scenes/passive_slot.tscn" id="5_ur7pv"]
@@ -34,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://cs0bq6oxl60le" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Buttons/Buttons_4.png" id="22_hax0n"]
 [ext_resource type="Script" uid="uid://bbvhpeiafo6h3" path="res://scripts/weapons.gd" id="25_hhpqf"]
 [ext_resource type="Texture2D" uid="uid://pur6vjtyf7pf" path="res://assets/UI/Astrology UI/game/gui/main_menu.png" id="25_mx1m4"]
+[ext_resource type="Resource" uid="uid://ci5ieqn2o8pmk" path="res://resources/Weapons Evolved/FlameBurstTornado.tres" id="28_g5jhy"]
 [ext_resource type="Texture2D" uid="uid://crpkl8dgv00g2" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Boss-bars/Filler_loading.png" id="29_hax0n"]
 [ext_resource type="Texture2D" uid="uid://c17f6d35uar7g" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Scalable screen/Selected_.png" id="31_hhpqf"]
 [ext_resource type="Texture2D" uid="uid://b1av1bkg0ndva" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Scalable screen/Scalable_4.png" id="32_g5jhy"]
@@ -681,18 +681,6 @@ tracks/3/keys = {
 "update": 1,
 "values": [ExtResource("2_i3pqv")]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Sprite2D:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -5)]
-}
 
 [sub_resource type="Animation" id="Animation_4r5pv"]
 resource_name = "idle_Nora"
@@ -1198,9 +1186,7 @@ properties/0/replication_mode = 1
 process_mode = 1
 visibility_layer = 2
 z_index = 1
-y_sort_enabled = true
 script = ExtResource("1_onrkg")
-character = ExtResource("2_i4ail")
 ghost_node = ExtResource("3_l71n6")
 dash_distance = 140.0
 dash_cooldown = 0.2
@@ -1288,6 +1274,7 @@ script = ExtResource("25_hhpqf")
 
 [node name="Slot" parent="UI/WeaponInventory/Weapons" instance=ExtResource("2_dqkch")]
 layout_mode = 2
+item = ExtResource("28_g5jhy")
 
 [node name="Slot2" parent="UI/WeaponInventory/Weapons" instance=ExtResource("2_dqkch")]
 layout_mode = 2
@@ -1866,7 +1853,6 @@ wait_time = 0.06
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_g5jhy")
 
-[connection signal="mouse_entered" from="UI/WeaponInventory/Weapons" to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="UI/Chest/Open" to="UI/Chest" method="_on_open_pressed"]
 [connection signal="pressed" from="UI/Chest/Close" to="UI/Chest" method="_on_close_pressed"]
 [connection signal="pressed" from="UI/Report/Back" to="UI/Report/Back" method="_on_pressed"]

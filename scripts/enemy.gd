@@ -131,11 +131,15 @@ func knockback_update(delta):
 
 func damage_popup(amount, modifier = 1.0):
 	var popup = damage_popup_node.instantiate()
-	popup.text = str(amount * modifier)
-	popup.position = position + Vector2(-50,-25)
+	var final_damage = int(amount * modifier)
+	popup.text = str(final_damage)
+	popup.position = position + Vector2(-50, -25)
+
 	if modifier > 1.0:
 		popup.set("theme_override_colors/font_color", Color.DARK_RED)
+
 	get_tree().current_scene.add_child(popup)
+
 
 func apply_buff(stage: int):
 	var health_multiplier := pow(1.1, stage)

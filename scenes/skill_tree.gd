@@ -7,14 +7,24 @@ func _ready():
 	load_skill_tree() #loads skill tree when ready
 
 func load_skill_tree():
-	if SaveData.skill_tree == []: #if SaveData skill tree is empty, the set default values
+	var branch_count = get_child_count()
+	var is_valid_tree = (
+		SaveData.skill_tree.size() == branch_count and
+		SaveData.skill_tree.all(func(branch): return branch is Array)
+	)
+
+	if not is_valid_tree:
 		set_skill_tree()
 	
-	skill_tree = SaveData.skill_tree #else get the values and traverse through the elements
+	skill_tree = SaveData.skill_tree
 	for branch in get_children():
+		var branch_index = branch.get_index()
 		for upgrade in branch.get_children():
-			upgrade.enabled = skill_tree[branch.get_index()][upgrade.get_index()] #set it's enabled property to every upgrades
-	get_total_stats() #get total stats after loading the skill tree
+			var upgrade_index = upgrade.get_index()
+			if branch_index < skill_tree.size() and upgrade_index < skill_tree[branch_index].size():
+				upgrade.enabled = skill_tree[branch_index][upgrade_index]
+	get_total_stats()
+
 
 func set_skill_tree():
 	skill_tree = []

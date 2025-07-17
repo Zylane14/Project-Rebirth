@@ -445,9 +445,9 @@ _data = {
 
 [node name="MeleeHitbox" type="Area2D"]
 process_mode = 1
-z_as_relative = false
 collision_layer = 2
 collision_mask = 2
+monitorable = false
 script = ExtResource("1_147gh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

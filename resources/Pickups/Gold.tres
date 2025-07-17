@@ -6,12 +6,12 @@
 
 [resource]
 script = ExtResource("2_fm0yb")
-gold = 10
+gold = 5
 title = "Gold"
 icon = ExtResource("1_6hpao")
 frame_count = 1
 frame_duration = 0.1
-description = "+10 Gold"
+description = "+5 Gold"
 sound = ExtResource("3_fm0yb")
 weight = 10.0
 metadata/_custom_type_script = "uid://csixs0ikw2obv"
