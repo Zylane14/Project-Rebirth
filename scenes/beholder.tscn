@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://do5ufcaajv7dk"]
+[gd_scene load_steps=67 format=3 uid="uid://do5ufcaajv7dk"]
 
 [ext_resource type="Texture2D" uid="uid://d4cyilokpr0oq" path="res://assets/World/EPIC RPG World - Sewers V1.5/Characters/Beholder/beholder-atk2-back view-finishing.png" id="1_3fpyk"]
 [ext_resource type="Script" uid="uid://dljo48ryyd73s" path="res://scenes/beholder.gd" id="1_53efv"]
@@ -1110,7 +1110,6 @@ tracks/3/keys = {
 [sub_resource type="Animation" id="Animation_jub8c"]
 resource_name = "walk_front"
 length = 1.33334
-loop_mode = 1
 step = 0.0833333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1300,19 +1299,41 @@ _data = {
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i60sd"]
 animation = &"attack1_front_loop"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dtiw4"]
+animation = &"death"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j1t3t"]
+animation = &"walk_back_side"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p0qli"]
 animation = &"walk_front"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_i60sd"]
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_leow6"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_t5rn3"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5c34g"]
+switch_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_08ggm"]
-states/End/position = Vector2(1145.5, 99.5)
+states/End/position = Vector2(1250, 99.5)
 states/attack1_front_loop/node = SubResource("AnimationNodeAnimation_i60sd")
-states/attack1_front_loop/position = Vector2(531, 91.5)
+states/attack1_front_loop/position = Vector2(351.5, 246.625)
+states/death/node = SubResource("AnimationNodeAnimation_dtiw4")
+states/death/position = Vector2(1099.57, 97.75)
+states/walk_back_side/node = SubResource("AnimationNodeAnimation_j1t3t")
+states/walk_back_side/position = Vector2(350.75, 362.5)
 states/walk_front/node = SubResource("AnimationNodeAnimation_p0qli")
-states/walk_front/position = Vector2(353, 90.5)
-transitions = ["Start", "walk_front", SubResource("AnimationNodeStateMachineTransition_i60sd")]
+states/walk_front/position = Vector2(350, 99.25)
+transitions = ["Start", "walk_front", SubResource("AnimationNodeStateMachineTransition_i60sd"), "death", "End", SubResource("AnimationNodeStateMachineTransition_leow6"), "walk_front", "attack1_front_loop", SubResource("AnimationNodeStateMachineTransition_t5rn3"), "attack1_front_loop", "walk_back_side", SubResource("AnimationNodeStateMachineTransition_5c34g")]
+graph_offset = Vector2(-30.6602, 49.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p0qli"]
 radius = 210.343
@@ -1324,8 +1345,8 @@ alpha = 0.8
 bullet_node = ExtResource("2_p0qli")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("3_edinc")
-hframes = 16
+texture = ExtResource("3_j6nf4")
+hframes = 2
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

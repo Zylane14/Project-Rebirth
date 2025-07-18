@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://kob240l1y6xk"]
+[gd_scene load_steps=17 format=4 uid="uid://kob240l1y6xk"]
 
 [ext_resource type="PackedScene" uid="uid://63kp1cwf1snt" path="res://scenes/player.tscn" id="1_g7g4h"]
 [ext_resource type="Texture2D" uid="uid://1pn1vpo8ol6a" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Tilesets/grass1 to water.png" id="1_h3xc6"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c8uororia56pg" path="res://scenes/spawner.tscn" id="2_j8ivh"]
 [ext_resource type="Texture2D" uid="uid://4qyt52afdb8g" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Tilesets/Tileset-Terrain.png" id="2_s36qc"]
 [ext_resource type="TileSet" uid="uid://c1sydj0iss6fu" path="res://scenes/Tiles/TreeLayer.tres" id="4_6qxox"]
+[ext_resource type="PackedScene" uid="uid://cqojmim05b0x4" path="res://scenes/pickups.tscn" id="8_h3xc6"]
+[ext_resource type="Resource" uid="uid://brhulfmqu2bs1" path="res://resources/Pickups/Orange EXP.tres" id="9_s36qc"]
 [ext_resource type="Shader" uid="uid://cgynfnqoms3wq" path="res://scenes/fog_shader.gdshader" id="14_u0xbq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8gixj"]
@@ -7129,7 +7131,7 @@ text = "Host"
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 visible = false
-color = Color(1, 0.740855, 0.723288, 1)
+color = Color(0.918279, 0.91531, 0.921418, 1)
 blend_mode = 2
 
 [node name="DirectionalLight2D2" type="DirectionalLight2D" parent="."]
@@ -7144,6 +7146,7 @@ environment = SubResource("Environment_6qxox")
 
 [node name="FogParallax" type="ParallaxBackground" parent="."]
 layer = 2
+visible = false
 scroll_ignore_camera_zoom = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="FogParallax"]
@@ -7167,6 +7170,9 @@ text = "Join"
 _spawnable_scenes = PackedStringArray("uid://63kp1cwf1snt")
 spawn_path = NodePath("../..")
 spawn_limit = 1
+
+[node name="Pickups" parent="." instance=ExtResource("8_h3xc6")]
+type = ExtResource("9_s36qc")
 
 [connection signal="pressed" from="Player/host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="join" to="." method="_on_join_pressed"]

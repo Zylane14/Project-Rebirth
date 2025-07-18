@@ -1896,7 +1896,7 @@ advance_mode = 2
 states/End/position = Vector2(1148.5, 98.25)
 states/HumanIdle/node = SubResource("AnimationNodeAnimation_goydd")
 states/HumanIdle/position = Vector2(-48.436, -97.3543)
-states/Start/position = Vector2(-194.266, -97.2918)
+states/Start/position = Vector2(-190.766, -89.3387)
 states/Transform/node = SubResource("AnimationNodeAnimation_22lwr")
 states/Transform/position = Vector2(119.105, -97.3231)
 states/Turn/node = SubResource("AnimationNodeAnimation_jjrgq")
@@ -1926,7 +1926,7 @@ states/run_attack/position = Vector2(260.026, 191.564)
 states/run_start/node = SubResource("AnimationNodeAnimation_bwu8e")
 states/run_start/position = Vector2(119.584, 97.6102)
 transitions = ["death", "End", SubResource("AnimationNodeStateMachineTransition_lp3bm"), "attack_2", "dodge", SubResource("AnimationNodeStateMachineTransition_uotkj"), "jump_start", "jump_up", SubResource("AnimationNodeStateMachineTransition_6yd8y"), "run_start", "run", SubResource("AnimationNodeStateMachineTransition_5gicb"), "attack_1", "attack_2", SubResource("AnimationNodeStateMachineTransition_aub7x"), "dodge", "idle", SubResource("AnimationNodeStateMachineTransition_b0g7r"), "jump_up", "jump_land", SubResource("AnimationNodeStateMachineTransition_goydd"), "run_attack", "Turn", SubResource("AnimationNodeStateMachineTransition_4q8ak"), "Start", "HumanIdle", SubResource("AnimationNodeStateMachineTransition_1fuy8"), "HumanIdle", "Transform", SubResource("AnimationNodeStateMachineTransition_udgfo"), "Transform", "idle", SubResource("AnimationNodeStateMachineTransition_jjrgq"), "idle", "run_start", SubResource("AnimationNodeStateMachineTransition_420qj"), "jump_land", "bite", SubResource("AnimationNodeStateMachineTransition_22lwr"), "Turn", "jump_start", SubResource("AnimationNodeStateMachineTransition_tsrmg"), "jump_land", "attack_1", SubResource("AnimationNodeStateMachineTransition_v6pvc"), "bite", "idle", SubResource("AnimationNodeStateMachineTransition_2bao8"), "run", "run_attack", SubResource("AnimationNodeStateMachineTransition_nj2c0")]
-graph_offset = Vector2(-524.408, -132.138)
+graph_offset = Vector2(356.243, -23.3206)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f6awk"]
 radius = 300.0
@@ -1941,7 +1941,7 @@ collision_layer = 2
 collision_mask = 4
 script = ExtResource("1_uotkj")
 phase_2_material = ExtResource("2_udgfo")
-damage = 100.0
+damage = 80.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-11, 8)

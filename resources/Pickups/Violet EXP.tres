@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Gem" load_steps=4 format=3 uid="uid://chapfw3yu7kp7"]
+
+[ext_resource type="Texture2D" uid="uid://xh1oxgctrlb" path="res://assets/Icons/unTied Games/Super Pixel Object & Items/Super Pixel Objects And Items 2/PNG/outline_none/crystal_violet_large_A/frame0000.png" id="1_1nluc"]
+[ext_resource type="Script" uid="uid://xl6mh4kudeuh" path="res://scripts/Gem.gd" id="2_stmf5"]
+[ext_resource type="AudioStream" uid="uid://dx1xdwld4b3i5" path="res://music & sfx/RPG_Essentials_Free/10_UI_Menu_SFX/013_Confirm_03.wav" id="3_vmo5r"]
+
+[resource]
+script = ExtResource("2_stmf5")
+XP = 10.0
+title = "Violet EXP"
+icon = ExtResource("1_1nluc")
+frame_count = 1
+frame_duration = 0.1
+description = "Gives 2 Experience Points."
+sound = ExtResource("3_vmo5r")
+weight = 0.0
+metadata/_custom_type_script = "uid://xl6mh4kudeuh"

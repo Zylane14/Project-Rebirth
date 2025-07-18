@@ -59,11 +59,11 @@ metadata/_custom_type_script = "uid://desj1lkl2lkec"
 script = ExtResource("6_lnykp")
 area = 0.15
 speed = 100.0
-amount = 1.0
-damage = 0.0
-cooldown = -0.25
-description = "+1 Amount +100 Speed +0.15 Area
--0.25 Cooldown"
+amount = 0.0
+damage = 2.0
+cooldown = 0.0
+description = "+1 Damage +100 Speed +0.15 Area
+"
 metadata/_custom_type_script = "uid://desj1lkl2lkec"
 
 [resource]

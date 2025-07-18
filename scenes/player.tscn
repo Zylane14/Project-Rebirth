@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://63kp1cwf1snt"]
+[gd_scene load_steps=85 format=3 uid="uid://63kp1cwf1snt"]
 
 [ext_resource type="Script" uid="uid://rd7jqoyg5ayg" path="res://scripts/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://3ninw6nm3qxc" path="res://scenes/slot.tscn" id="2_dqkch"]
@@ -33,7 +33,6 @@
 [ext_resource type="Texture2D" uid="uid://cs0bq6oxl60le" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Buttons/Buttons_4.png" id="22_hax0n"]
 [ext_resource type="Script" uid="uid://bbvhpeiafo6h3" path="res://scripts/weapons.gd" id="25_hhpqf"]
 [ext_resource type="Texture2D" uid="uid://pur6vjtyf7pf" path="res://assets/UI/Astrology UI/game/gui/main_menu.png" id="25_mx1m4"]
-[ext_resource type="Resource" uid="uid://ci5ieqn2o8pmk" path="res://resources/Weapons Evolved/FlameBurstTornado.tres" id="28_g5jhy"]
 [ext_resource type="Texture2D" uid="uid://crpkl8dgv00g2" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Boss-bars/Filler_loading.png" id="29_hax0n"]
 [ext_resource type="Texture2D" uid="uid://c17f6d35uar7g" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Scalable screen/Selected_.png" id="31_hhpqf"]
 [ext_resource type="Texture2D" uid="uid://b1av1bkg0ndva" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Scalable screen/Scalable_4.png" id="32_g5jhy"]
@@ -1274,7 +1273,6 @@ script = ExtResource("25_hhpqf")
 
 [node name="Slot" parent="UI/WeaponInventory/Weapons" instance=ExtResource("2_dqkch")]
 layout_mode = 2
-item = ExtResource("28_g5jhy")
 
 [node name="Slot2" parent="UI/WeaponInventory/Weapons" instance=ExtResource("2_dqkch")]
 layout_mode = 2
