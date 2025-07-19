@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm0bgc7i2saot"]
+
+[ext_resource type="Script" uid="uid://jw4e7ejx1y41" path="res://scenes/healing_popup.gd" id="1_sjlew"]
+
+[node name="HealingPopup" type="RichTextLabel"]
+offset_right = 40.0
+offset_bottom = 40.0
+bbcode_enabled = true
+autowrap_mode = 0
+script = ExtResource("1_sjlew")

@@ -1,16 +1,54 @@
-[gd_resource type="Resource" script_class="Gem" load_steps=4 format=3 uid="uid://brhulfmqu2bs1"]
+[gd_resource type="Resource" script_class="Gem" load_steps=12 format=3 uid="uid://brhulfmqu2bs1"]
 
 [ext_resource type="Texture2D" uid="uid://s2fi4wpkfxdb" path="res://assets/Icons/unTied Games/Super Pixel Object & Items/Super Pixel Objects And Items 2/PNG/outline_none/crystal_orange_small_A/frame0002.png" id="1_8mdkf"]
+[ext_resource type="Texture2D" uid="uid://cxk6fg7w81j3m" path="res://assets/Icons/unTied Games/Super Pixel Object & Items/Super Pixel Objects And Items 2/PNG/outline_none/crystal_orange_small_A/frame0000.png" id="1_72c7j"]
 [ext_resource type="Script" uid="uid://xl6mh4kudeuh" path="res://scripts/Gem.gd" id="2_8mdkf"]
+[ext_resource type="Texture2D" uid="uid://cjkl0488u3jh" path="res://assets/Icons/unTied Games/Super Pixel Object & Items/Super Pixel Objects And Items 2/PNG/outline_none/crystal_orange_small_A/frame0001.png" id="2_t84fc"]
 [ext_resource type="AudioStream" uid="uid://dx1xdwld4b3i5" path="res://music & sfx/RPG_Essentials_Free/10_UI_Menu_SFX/013_Confirm_03.wav" id="3_8mdkf"]
+[ext_resource type="Texture2D" uid="uid://dpvytmfr24a86" path="res://assets/Icons/unTied Games/Super Pixel Object & Items/Super Pixel Objects And Items 2/PNG/outline_none/crystal_orange_small_A/frame0003.png" id="4_2b2hk"]
+[ext_resource type="Texture2D" uid="uid://ci4d08wnrmofa" path="res://assets/Icons/unTied Games/Super Pixel Object & Items/Super Pixel Objects And Items 2/PNG/outline_none/crystal_orange_small_A/frame0004.png" id="5_uoi7u"]
+[ext_resource type="Texture2D" uid="uid://dyomjcn1hytxp" path="res://assets/Icons/unTied Games/Super Pixel Object & Items/Super Pixel Objects And Items 2/PNG/outline_none/crystal_orange_small_A/frame0005.png" id="6_nl0cs"]
+[ext_resource type="Texture2D" uid="uid://cne4pg7ewcs73" path="res://assets/Icons/unTied Games/Super Pixel Object & Items/Super Pixel Objects And Items 2/PNG/outline_none/crystal_orange_small_A/frame0006.png" id="7_0hi30"]
+[ext_resource type="Texture2D" uid="uid://s7ofnmiqi5nv" path="res://assets/Icons/unTied Games/Super Pixel Object & Items/Super Pixel Objects And Items 2/PNG/outline_none/crystal_orange_small_A/frame0007.png" id="8_8u2qr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7jj8m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_72c7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_t84fc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_8mdkf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2b2hk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uoi7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nl0cs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0hi30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8u2qr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [resource]
 script = ExtResource("2_8mdkf")
 XP = 2.0
 title = "Orange EXP"
-icon = ExtResource("1_8mdkf")
-frame_count = 1
-frame_duration = 0.1
+frames = SubResource("SpriteFrames_7jj8m")
+animation_name = "default"
 description = "Gives 2 Experience Points."
 sound = ExtResource("3_8mdkf")
 weight = 0.0

@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=11 format=3 uid="uid://cjxq33wkvfrdb"]
+
+[ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="1_ar3ss"]
+[ext_resource type="Resource" uid="uid://bsdwvs8d0sd32" path="res://resources/Pickups/Blue EXP.tres" id="2_6x3w6"]
+[ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="3_8fp2j"]
+[ext_resource type="Texture2D" uid="uid://pc10td8asa6v" path="res://assets/Enemies/Wolf/black/ready_1.png" id="3_a4hin"]
+[ext_resource type="Texture2D" uid="uid://bk5wn2lwjk1v2" path="res://assets/Enemies/Wolf/black/ready_2.png" id="4_8cmlp"]
+[ext_resource type="Texture2D" uid="uid://cmehwatf3wke0" path="res://assets/Enemies/Wolf/black/ready_3.png" id="5_foels"]
+[ext_resource type="Texture2D" uid="uid://bmcetskyta0g3" path="res://assets/Enemies/Wolf/black/ready_4.png" id="6_8al0c"]
+[ext_resource type="Texture2D" uid="uid://884n7sofri55" path="res://assets/Enemies/Wolf/black/ready_5.png" id="7_arxll"]
+[ext_resource type="Texture2D" uid="uid://jm6d4tlijsrr" path="res://assets/Enemies/Wolf/black/ready_6.png" id="8_hst4u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yrf5q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_a4hin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8cmlp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_foels")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8al0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_arxll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hst4u")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
+
+[resource]
+script = ExtResource("3_8fp2j")
+title = "Black Wolf"
+animation_name = "WolfBlack"
+frames = SubResource("SpriteFrames_yrf5q")
+scale = Vector2(0.9, 0.9)
+health = 15.0
+damage = 15.0
+speed = 100.0
+drops = Array[ExtResource("1_ar3ss")]([ExtResource("2_6x3w6")])
+spawn_weight = 40.0
+unlock_minute = 3.0
+enemy_class = 0
+attack_cooldown = 1.5
+attack_range = 30.0
+ranged_attack_range = 300.0
+projectile_spawns_at_player = false
+metadata/_custom_type_script = "uid://brq1oadyao0po"

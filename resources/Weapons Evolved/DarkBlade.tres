@@ -8,13 +8,14 @@
 
 [resource]
 script = ExtResource("3_ge8gv")
-area = 1.0
-amount = 2
+area = 3.0
+amount = 1
 arc_angle = 90.0
 delay = 0.15
-reversible = true
-damage = 20.0
-cooldown = 1.0
+reversible = false
+knockback = 100.0
+damage = 30.0
+cooldown = 0.5
 speed = 250.0
 projectile_node = ExtResource("2_0sm8g")
 upgrades = Array[ExtResource("5_qysft")]([])

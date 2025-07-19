@@ -92,7 +92,7 @@ func show_option():
 	%Gold.hide()
 	%XP.hide()
 	get_tree().paused = true #else show the option and pause the scene tree
-
+	
 func dir_contents(path):
 	var dir = DirAccess.open(path)
 	var item_resources = []

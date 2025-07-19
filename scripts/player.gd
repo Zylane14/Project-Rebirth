@@ -26,20 +26,20 @@ var damage_timer = 0.0
 ##==============================
 ## HEALTH, STATS, AND UI
 ##==============================
-var health: int = 500:
+var health: float = 500.0:
 	set(value):
-		health = max(value, 0)
-		%Health.value = value
+		health = max(value, 0.0)
+		%Health.value = int(value)
 		if health <= 0:
 			die()
 			show_game_over_screen()
 
-var max_health: int = 500:
+var max_health: float = 500.0:
 	set(value):
 		var delta = value - max_health
 		max_health = value
-		%Health.max_value = value
-		%HealthMax.text = "Max Health : " + str(value)
+		%Health.max_value = int(value)
+		%HealthMax.text = "Max Health : " + str(int(value))
 		if delta > 0:
 			health = min(health + delta, max_health)
 
@@ -169,7 +169,7 @@ func _ready() -> void:
 ## PHYSICS PROCESS
 ##==============================
 func _physics_process(delta):
-#if is_multiplayer_authority()
+	#if is_multiplayer_authority():
 	if damage_timer > 0:
 		damage_timer -= delta
 	
@@ -198,7 +198,12 @@ func _physics_process(delta):
 
 	check_XP()
 	animation(delta)
-	health = min(health + recovery * delta, max_health)
+	
+	var new_health = min(health + recovery * delta, max_health)
+	if new_health > health:
+		health = new_health
+
+
 
 ##==============================
 ## MULTIPLAYER
@@ -321,6 +326,7 @@ func check_XP():
 	while XP >= get_xp_needed(level):
 		XP -= get_xp_needed(level)
 		level += 1
+		SoundManager.play_sfx(load("res://music & sfx/RPG_Essentials_Free/12_Player_Movement_SFX/88_Teleport_02.wav"))
 	update_xp_ui()
 
 func update_xp_ui():

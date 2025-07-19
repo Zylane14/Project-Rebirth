@@ -1,8 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqojmim05b0x4"]
+[gd_scene load_steps=4 format=3 uid="uid://cqojmim05b0x4"]
 
 [ext_resource type="Script" uid="uid://b0bgc0v6qyl0i" path="res://scenes/pickups.gd" id="1_xnt6b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lekrw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xnt6b"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"gold",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
 
 [node name="Pickups" type="Area2D" groups=["Pickups"]]
 collision_layer = 4
@@ -12,5 +25,9 @@ script = ExtResource("1_xnt6b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_lekrw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xnt6b")
+animation = &"gold"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

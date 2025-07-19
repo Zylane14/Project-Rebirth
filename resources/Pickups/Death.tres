@@ -1,15 +1,45 @@
-[gd_resource type="Resource" script_class="Death" load_steps=4 format=3 uid="uid://l0ac2tjhv1w4"]
+[gd_resource type="Resource" script_class="Death" load_steps=10 format=3 uid="uid://l0ac2tjhv1w4"]
 
-[ext_resource type="Texture2D" uid="uid://d08qlgf23q4e" path="res://assets/World/Epic RPG World - The dephs of the Mountain V1.5.1/Props/Animated props/power balls-2.png" id="1_6ie2f"]
+[ext_resource type="Texture2D" uid="uid://c03up34fcisdv" path="res://assets/World/Epic RPG World - The dephs of the Mountain V1.5.1/Props/Animated props/individual files/power balls-2-frame1.png" id="1_gltgg"]
 [ext_resource type="Script" uid="uid://c651kl7ka5dv5" path="res://scenes/Death.gd" id="2_6ie2f"]
+[ext_resource type="Texture2D" uid="uid://c8dv12ypxwek6" path="res://assets/World/Epic RPG World - The dephs of the Mountain V1.5.1/Props/Animated props/individual files/power balls-2-frame2.png" id="2_aatyw"]
 [ext_resource type="AudioStream" uid="uid://bfag4megjqfbj" path="res://music & sfx/Minifantasy_Dungeon_SFX/24_orc_death_spin.wav" id="3_6ie2f"]
+[ext_resource type="Texture2D" uid="uid://cg0oeag0p6cjw" path="res://assets/World/Epic RPG World - The dephs of the Mountain V1.5.1/Props/Animated props/individual files/power balls-2-frame3.png" id="3_xd6o8"]
+[ext_resource type="Texture2D" uid="uid://dubqi36q5nnbo" path="res://assets/World/Epic RPG World - The dephs of the Mountain V1.5.1/Props/Animated props/individual files/power balls-2-frame4.png" id="4_ovp7m"]
+[ext_resource type="Texture2D" uid="uid://1nx4m26m67kn" path="res://assets/World/Epic RPG World - The dephs of the Mountain V1.5.1/Props/Animated props/individual files/power balls-2-frame5.png" id="5_45qdy"]
+[ext_resource type="Texture2D" uid="uid://ws0flhpo430t" path="res://assets/World/Epic RPG World - The dephs of the Mountain V1.5.1/Props/Animated props/individual files/power balls-2-frame6.png" id="6_g1xpr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ghnj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gltgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_aatyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xd6o8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ovp7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_45qdy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_g1xpr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [resource]
 script = ExtResource("2_6ie2f")
 title = "Death"
-icon = ExtResource("1_6ie2f")
-frame_count = 6
-frame_duration = 0.12
+frames = SubResource("SpriteFrames_2ghnj")
+animation_name = "default"
 description = "Kills all enemies."
 sound = ExtResource("3_6ie2f")
 weight = 1.0

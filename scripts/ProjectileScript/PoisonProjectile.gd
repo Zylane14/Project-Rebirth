@@ -4,6 +4,8 @@ extends Area2D
 @export var lifetime : float = 1.0 # How long the projectile stays
 var player_reference : CharacterBody2D
 
+var direction: Vector2 = Vector2.ZERO 
+
 func _ready():
 	# Play animation if it exists
 	if $AnimatedSprite2D.sprite_frames.has_animation("poison"):

@@ -46,6 +46,9 @@ func add_stats(stat):
 	total_stat.area += stat.area
 	total_stat.magnet += stat.magnet
 	total_stat.growth += stat.growth
+	total_stat.luck += stat.luck
+	total_stat.crit += stat.crit
+	total_stat.crit_damage += stat.crit_damage
 
 func get_total_stats():
 	total_stat = Stats.new()

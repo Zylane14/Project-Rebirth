@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://c03paoqwr10t0"]
+[gd_scene load_steps=79 format=3 uid="uid://c03paoqwr10t0"]
 
 [ext_resource type="Script" uid="uid://crn6aqwa25bby" path="res://scripts/enemy.gd" id="1_md0e3"]
 [ext_resource type="Texture2D" uid="uid://b6vyleewnfxma" path="res://assets/World/EPIC RPG World Pack - Grass Land V. 1.6/Characters/Enemy1/enemy1-death.png" id="2_md0e3"]
@@ -35,6 +35,9 @@
 [ext_resource type="Texture2D" uid="uid://boat17og63dee" path="res://assets/World/ERW - Grass Land 2.0 v1.7.2/Characters/orc mage/orc1/orc mage - with hand fx-atk1.png" id="32_lsnsy"]
 [ext_resource type="Texture2D" uid="uid://cpw24qlb5jsva" path="res://assets/World/EPIC RPG World - Sewers V1.5/Characters/Mutant Rat/mutant rat - attack1.png" id="33_thsr5"]
 [ext_resource type="Texture2D" uid="uid://vvyfjp3dr55k" path="res://assets/World/EPIC RPG World - Sewers V1.5/Characters/Mutant Rat/mutant rat - attack2.png" id="34_ekh6n"]
+[ext_resource type="Texture2D" uid="uid://8scglhojcf8l" path="res://assets/Enemies/Wolf/black/wolf_run.png" id="36_605iw"]
+[ext_resource type="Texture2D" uid="uid://cfhrenuogee7p" path="res://assets/Enemies/Wolf/black/ClawAttack.png" id="37_x6q4o"]
+[ext_resource type="Texture2D" uid="uid://bq316ntl2a5eu" path="res://assets/Enemies/Wolf/black/wolf_dead.png" id="38_x6q4o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5uy6h"]
 radius = 9.0
@@ -102,18 +105,6 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, -12)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Sprite2D:frame_coords")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [Vector2i(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_nenq2"]
@@ -2236,6 +2227,166 @@ tracks/4/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
 
+[sub_resource type="Animation" id="Animation_qiusc"]
+resource_name = "walk_WolfBlack"
+length = 0.666675
+loop_mode = 1
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("36_605iw")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_5ie7m"]
+resource_name = "melee_attack_WolfBlack"
+length = 0.583342
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("37_x6q4o")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_ya47j"]
+resource_name = "death_WolfBlack"
+length = 0.416675
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("38_x6q4o")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c4w8v"]
 _data = {
 &"RESET": SubResource("Animation_5uy6h"),
@@ -2250,6 +2401,7 @@ _data = {
 &"death_OrcMelee": SubResource("Animation_ile5s"),
 &"death_OrcWarror": SubResource("Animation_shcg2"),
 &"death_Viper": SubResource("Animation_605iw"),
+&"death_WolfBlack": SubResource("Animation_ya47j"),
 &"melee_attack_Cyclops": SubResource("Animation_rogs8"),
 &"melee_attack_Goblin": SubResource("Animation_wtq4b"),
 &"melee_attack_GoblinBrawl": SubResource("Animation_1x4g4"),
@@ -2260,6 +2412,7 @@ _data = {
 &"melee_attack_OrcMelee": SubResource("Animation_wjec0"),
 &"melee_attack_OrcWarror": SubResource("Animation_i4rgx"),
 &"melee_attack_Viper": SubResource("Animation_x6q4o"),
+&"melee_attack_WolfBlack": SubResource("Animation_5ie7m"),
 &"range_attack_MutantRat": SubResource("Animation_7v6cf"),
 &"range_attack_OrcMage": SubResource("Animation_2tuss"),
 &"walk_Cyclops": SubResource("Animation_lioqc"),
@@ -2272,12 +2425,12 @@ _data = {
 &"walk_OrcMage": SubResource("Animation_lsnsy"),
 &"walk_OrcMelee": SubResource("Animation_thsr5"),
 &"walk_OrcWarrior": SubResource("Animation_ekh6n"),
-&"walk_Viper": SubResource("Animation_78kod")
+&"walk_Viper": SubResource("Animation_78kod"),
+&"walk_WolfBlack": SubResource("Animation_qiusc")
 }
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 visibility_layer = 2
-z_index = 1
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_md0e3")
@@ -2287,6 +2440,7 @@ buff_interval = 15.0
 position = Vector2(0, -12)
 texture = ExtResource("2_md0e3")
 hframes = 13
+region_rect = Rect2(0, 0, 2463, 128)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_5uy6h")

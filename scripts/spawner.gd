@@ -95,16 +95,26 @@ func update_unlocked_enemies():
 	for i in range(num_to_unlock):
 		unlocked_enemy_types.append(enemy_types[i])
 
+#function to calculate how many enemies to spawn based on time passed
+#base is the starting spawn count, scaling controls how fast enemy count increases per minute
+#this setup starts easy and slowly ramps up difficulty over time
+func get_spawn_amount() -> int:
+	var time = float(minute) + float(second) / 60.0
+	var base = 1
+	var scaling = 5
+	return int(base + time * scaling)
+
 func pick_weighted_enemy_type() -> Enemy: #function to pick a random enemy type using time-scaled weighted rarity
 	var weighted_list: Array[Enemy] = []
 	var weights: Array[float] = []
 
+	var time = float(minute) + float(second) / 60.0
 	var total_weight: float = 0.0
 
 	for enemy_type in enemy_types:
-		if (minute + float(second) / 60.0) >= enemy_type.unlock_minute:
-			# Increase spawn weight gradually over time
-			var scaled_weight = enemy_type.spawn_weight * (1.0 + (minute - enemy_type.unlock_minute) * 0.1)
+		if time >= enemy_type.unlock_minute:
+			var progression = clamp((time - enemy_type.unlock_minute) * 0.1, 0.0, 3.0)
+			var scaled_weight = enemy_type.spawn_weight * (1.0 + progression)
 			weighted_list.append(enemy_type)
 			weights.append(scaled_weight)
 			total_weight += scaled_weight
@@ -136,10 +146,9 @@ func _on_timer_timeout():
 	second += 1
 	update_unlocked_enemies()
 
-	var base_spawn = 20 + minute
-	if minute < 3:
-		base_spawn = int(base_spawn * 0.6)
-	amount(base_spawn)
+	var spawn_amount := get_spawn_amount() + randi_range(-3, 3)
+	spawn_amount = max(spawn_amount, 1)
+	amount(spawn_amount)
 
 	# === Boss unlock check ===
 	if not boss_spawned and minute >= boss_unlock_minute:
@@ -147,7 +156,10 @@ func _on_timer_timeout():
 
 
 func _on_pattern_timeout():
-	for i in range(100 + minute * 10):
+	var base := 30
+	var time := float(minute) + float(second) / 60.0
+	var count := int(base + time * 15.0)
+	for i in range(count):
 		spawn(get_random_position())
 
 func _on_elite_timeout():

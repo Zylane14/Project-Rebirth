@@ -1,15 +1,53 @@
-[gd_resource type="Resource" script_class="PickupMagnet" load_steps=4 format=3 uid="uid://db1qi4br8jy2u"]
+[gd_resource type="Resource" script_class="PickupMagnet" load_steps=12 format=3 uid="uid://db1qi4br8jy2u"]
 
-[ext_resource type="Texture2D" uid="uid://b27v7un5ryd07" path="res://assets/World/Epic RPG World - The dephs of the Mountain V1.5.1/Props/power balls-5.png" id="1_s1x8o"]
+[ext_resource type="Texture2D" uid="uid://bqdl0ptrspnse" path="res://assets/World/Epic RPG World - The dephs of the Mountain V1.5.1/Props/Animated props/individual files/power balls-5-frame1.png" id="1_n124k"]
+[ext_resource type="Texture2D" uid="uid://bgxh0m6vqcqp8" path="res://assets/World/Epic RPG World - The dephs of the Mountain V1.5.1/Props/Animated props/individual files/power balls-5-frame3.png" id="2_25pna"]
+[ext_resource type="Texture2D" uid="uid://bpy4mcq1fcf14" path="res://assets/World/Epic RPG World - The dephs of the Mountain V1.5.1/Props/Animated props/individual files/power balls-5-frame2.png" id="2_pptya"]
 [ext_resource type="Script" uid="uid://da2ukx3dfs8bo" path="res://scenes/Vacuum.gd" id="2_s1x8o"]
 [ext_resource type="AudioStream" uid="uid://c5dpotlc0yhdy" path="res://music & sfx/RPG_Essentials_Free/8_Buffs_Heals_SFX/39_Absorb_04.wav" id="3_n124k"]
+[ext_resource type="Texture2D" uid="uid://t8umfetvlght" path="res://assets/World/Epic RPG World - The dephs of the Mountain V1.5.1/Props/Animated props/individual files/power balls-5-frame4.png" id="4_skmfp"]
+[ext_resource type="Texture2D" uid="uid://c7w3ib71e7qpw" path="res://assets/World/Epic RPG World - The dephs of the Mountain V1.5.1/Props/Animated props/individual files/power balls-5-frame5.png" id="5_w8e5r"]
+[ext_resource type="Texture2D" uid="uid://dtexvlpabhse" path="res://assets/World/Epic RPG World - The dephs of the Mountain V1.5.1/Props/Animated props/individual files/power balls-5-frame6.png" id="6_c0rye"]
+[ext_resource type="Texture2D" uid="uid://ooy23npbgpt7" path="res://assets/World/Epic RPG World - The dephs of the Mountain V1.5.1/Props/Animated props/individual files/power balls-5-frame7.png" id="7_n17qk"]
+[ext_resource type="Texture2D" uid="uid://lwm1bap6et8h" path="res://assets/World/Epic RPG World - The dephs of the Mountain V1.5.1/Props/Animated props/individual files/power balls-5-frame8.png" id="8_7vtip"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_610rn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_n124k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_pptya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_25pna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_skmfp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_w8e5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_c0rye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_n17qk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7vtip")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [resource]
 script = ExtResource("2_s1x8o")
 title = "Vacuum"
-icon = ExtResource("1_s1x8o")
-frame_count = 8
-frame_duration = 0.12
+frames = SubResource("SpriteFrames_610rn")
+animation_name = "default"
 description = "Vacuum's all the gems."
 sound = ExtResource("3_n124k")
 weight = 2.0

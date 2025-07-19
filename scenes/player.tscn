@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://63kp1cwf1snt"]
+[gd_scene load_steps=106 format=3 uid="uid://63kp1cwf1snt"]
 
 [ext_resource type="Script" uid="uid://rd7jqoyg5ayg" path="res://scripts/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://3ninw6nm3qxc" path="res://scenes/slot.tscn" id="2_dqkch"]
@@ -27,21 +27,25 @@
 [ext_resource type="Texture2D" uid="uid://lxu2c2smo2as" path="res://assets/Characters/main-character-of-the-story/MainCharacter(FullPack)/MainCharacter(FullPack-v1)/MainChar - death.png" id="20_a38lo"]
 [ext_resource type="Texture2D" uid="uid://dtqrrv2elxtah" path="res://assets/Characters/main-character-of-the-story/MainCharacter(FullPack)/MainCharacter(FullPack-v1)/MainChar - stun(loop).png" id="20_hax0n"]
 [ext_resource type="Texture2D" uid="uid://ddjxw2ftebndw" path="res://assets/Characters/main-character-of-the-story/MainCharacter(FullPack)/MainCharacter(FullPack-v1)/MainChar - dash(start).png" id="20_i4ail"]
+[ext_resource type="Texture2D" uid="uid://b5t58q7uxtoxk" path="res://assets/Characters/main-character-of-the-story/MainCharacter(FullPack)/MainCharacter(FullPack-v1)/MainChar - Buff.png" id="20_mx1m4"]
 [ext_resource type="Texture2D" uid="uid://c0bvoj6tmik18" path="res://assets/Characters/main-character-of-the-story/MainCharacter(FullPack)/MainCharacter(FullPack-v1)/MainChar - walk.png" id="21_i4ail"]
 [ext_resource type="Texture2D" uid="uid://cbkrhjtcx1mt6" path="res://assets/Characters/main-character-of-the-story/MainCharacter(FullPack)/MainCharacter(FullPack-v1)/MainChar - stun(end).png" id="21_t4otl"]
+[ext_resource type="Texture2D" uid="uid://dqecwxfe2i3u2" path="res://assets/Characters/EleonoreAndJoanna/Addon#1/BatleIdle/Full/spritesheet-5.png" id="22_4gjji"]
 [ext_resource type="PackedScene" uid="uid://do0gye7vyetq7" path="res://scenes/tutorial_overlay.tscn" id="22_g5jhy"]
 [ext_resource type="Texture2D" uid="uid://cs0bq6oxl60le" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Buttons/Buttons_4.png" id="22_hax0n"]
+[ext_resource type="Texture2D" uid="uid://cwcop5plj3upg" path="res://assets/Characters/EleonoreAndJoanna/Addon#1/BatleIdle/Loop/Glow/spritesheet-6.png" id="23_u2ulf"]
 [ext_resource type="Script" uid="uid://bbvhpeiafo6h3" path="res://scripts/weapons.gd" id="25_hhpqf"]
 [ext_resource type="Texture2D" uid="uid://pur6vjtyf7pf" path="res://assets/UI/Astrology UI/game/gui/main_menu.png" id="25_mx1m4"]
 [ext_resource type="Texture2D" uid="uid://crpkl8dgv00g2" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Boss-bars/Filler_loading.png" id="29_hax0n"]
 [ext_resource type="Texture2D" uid="uid://c17f6d35uar7g" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Scalable screen/Selected_.png" id="31_hhpqf"]
 [ext_resource type="Texture2D" uid="uid://b1av1bkg0ndva" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Scalable screen/Scalable_4.png" id="32_g5jhy"]
 [ext_resource type="Texture2D" uid="uid://dlmxkfiyrj3ct" path="res://assets/UI/Astrology UI/game/gui/overlay/game_menu.png" id="32_t4otl"]
-[ext_resource type="Texture2D" uid="uid://34lq1ahlsvnf" path="res://assets/World/EPIC RPG World - Sewers V1.5/Props/atlas props - individual sprites/chest - animation style 1_0.png" id="34_2dvfe"]
 [ext_resource type="Texture2D" uid="uid://drm35d0qb4jl3" path="res://assets/World/EPIC RPG World - Sewers V1.5/Props/rustic chest-opening animation style3.png" id="35_giy8y"]
 [ext_resource type="Texture2D" uid="uid://p666mkx807s2" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Buttons/Button_Selected.png" id="35_j2b1d"]
 [ext_resource type="Texture2D" uid="uid://bj666pcsbdiqf" path="res://assets/UI/Astrology UI/game/gui/border.png" id="37_cs1tg"]
 [ext_resource type="Texture2D" uid="uid://cv07vjtinku07" path="res://assets/UI/Astrology UI/game/gui/button/q_about.png" id="38_2dvfe"]
+[ext_resource type="Texture2D" uid="uid://c4sodq50e842k" path="res://assets/World/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/chests_0.png" id="38_4gjji"]
+[ext_resource type="Texture2D" uid="uid://b63d8w5s2s3q3" path="res://assets/World/EPIC RPG World Pack - Grass Land V. 1.6/Props/animated/treasure chest lvl 2-opening animation-cartoon style.png" id="39_4gjji"]
 [ext_resource type="Script" uid="uid://crxcidbxm6nnk" path="res://scenes/KillCount.gd" id="45_g5jhy"]
 [ext_resource type="Shader" uid="uid://c7n5en1vkusyr" path="res://scenes/Vignette.gdshader" id="46_holxr"]
 
@@ -573,60 +577,6 @@ tracks/3/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 }
 
-[sub_resource type="Animation" id="Animation_fulsm"]
-resource_name = "idle_Eleonore"
-length = 1.12501
-loop_mode = 1
-step = 0.125
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:hframes")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [9]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:vframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:texture")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("17_qfm1y")]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
-}
-
 [sub_resource type="Animation" id="Animation_a8ls1"]
 resource_name = "idle_MainChar"
 length = 1.33335
@@ -1038,9 +988,229 @@ tracks/4/keys = {
 "values": [Vector2(0, -5)]
 }
 
+[sub_resource type="Animation" id="Animation_6e8lb"]
+resource_name = "attack_MainChar"
+step = 0.1
+
+[sub_resource type="Animation" id="Animation_2gdjj"]
+resource_name = "buff_MainChar"
+length = 1.58334
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("20_mx1m4")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [19]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75, 0.833333, 0.916667, 1, 1.08333, 1.16667, 1.25, 1.33333, 1.41667, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+}
+
+[sub_resource type="Animation" id="Animation_sc3ue"]
+resource_name = "idlestart_Eleonore"
+length = 1.58334
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("22_4gjji")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [19]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75, 0.833333, 0.916667, 1, 1.08333, 1.16667, 1.25, 1.33333, 1.41667, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+}
+
+[sub_resource type="Animation" id="Animation_lxlsd"]
+resource_name = "idle1_Eleonore"
+length = 0.750008
+loop_mode = 1
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("23_u2ulf")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_fulsm"]
+resource_name = "idle_Eleonore"
+length = 1.12501
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("17_qfm1y")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_60mlk"]
 _data = {
 &"RESET": SubResource("Animation_qfm1y"),
+&"attack_MainChar": SubResource("Animation_6e8lb"),
+&"buff_MainChar": SubResource("Animation_2gdjj"),
 &"dash_Carmin": SubResource("Animation_jc3p3"),
 &"dash_Eleonore": SubResource("Animation_wqfne"),
 &"dash_MainChar": SubResource("Animation_4ni07"),
@@ -1049,10 +1219,12 @@ _data = {
 &"death_MainChar": SubResource("Animation_ke2ow"),
 &"flash": SubResource("Animation_l71n6"),
 &"hit_MainChar": SubResource("Animation_31cv2"),
+&"idle1_Eleonore": SubResource("Animation_lxlsd"),
 &"idle_Carmin": SubResource("Animation_487ah"),
 &"idle_Eleonore": SubResource("Animation_fulsm"),
 &"idle_MainChar": SubResource("Animation_a8ls1"),
 &"idle_Nora": SubResource("Animation_4r5pv"),
+&"idlestart_Eleonore": SubResource("Animation_sc3ue"),
 &"run_MainChar": SubResource("Animation_60mlk"),
 &"stun_MainChar": SubResource("Animation_j2b1d"),
 &"walk_Carmin": SubResource("Animation_md1ol"),
@@ -1075,6 +1247,58 @@ gravity = Vector3(0, 98, 0)
 scale_min = 0.5
 scale_max = 0.8
 color_ramp = SubResource("GradientTexture1D_3v2ag")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gdjj"]
+atlas = ExtResource("39_4gjji")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sc3ue"]
+atlas = ExtResource("39_4gjji")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxlsd"]
+atlas = ExtResource("39_4gjji")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ha2mi"]
+atlas = ExtResource("39_4gjji")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apa73"]
+atlas = ExtResource("39_4gjji")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74r1k"]
+atlas = ExtResource("39_4gjji")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8svfe"]
+atlas = ExtResource("39_4gjji")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2a3c5"]
+atlas = ExtResource("39_4gjji")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42b1b"]
+atlas = ExtResource("39_4gjji")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7ic4"]
+atlas = ExtResource("39_4gjji")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_au7lq"]
+atlas = ExtResource("39_4gjji")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nubpm"]
+atlas = ExtResource("39_4gjji")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ua5cf"]
+atlas = ExtResource("39_4gjji")
+region = Rect2(768, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fdfoy"]
 atlas = ExtResource("35_giy8y")
@@ -1112,11 +1336,55 @@ region = Rect2(448, 0, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("34_2dvfe")
+"texture": ExtResource("38_4gjji")
 }],
 "loop": true,
 "name": &"idle_boss_chest",
-"speed": 10.0
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gdjj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sc3ue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxlsd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ha2mi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apa73")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74r1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8svfe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2a3c5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42b1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7ic4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_au7lq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nubpm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ua5cf")
+}],
+"loop": false,
+"name": &"open_boss_chest",
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1144,7 +1412,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_6e8lb")
 }],
 "loop": false,
-"name": &"open_boss_chest",
+"name": &"open_boss_chest2",
 "speed": 10.0
 }]
 
@@ -1375,6 +1643,27 @@ grow_horizontal = 2
 theme_override_font_sizes/font_size = 9
 text = "CHOOSE YOUR  UPGRADE"
 
+[node name="Options" type="VBoxContainer" parent="UI" node_paths=PackedStringArray("weapons", "passive_items", "particles", "panel")]
+unique_name_in_owner = true
+process_mode = 3
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_fjrip")
+weapons = NodePath("../WeaponInventory/Weapons")
+passive_items = NodePath("../WeaponInventory/PassiveItems")
+particles = NodePath("../Particle")
+panel = NodePath("../Panel")
+
 [node name="XP" type="TextureProgressBar" parent="UI"]
 unique_name_in_owner = true
 anchors_preset = 7
@@ -1430,27 +1719,6 @@ offset_bottom = 8.8
 theme_override_font_sizes/font_size = 7
 text = "XP: 0 / 0"
 
-[node name="Options" type="VBoxContainer" parent="UI" node_paths=PackedStringArray("weapons", "passive_items", "particles", "panel")]
-unique_name_in_owner = true
-process_mode = 3
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("6_fjrip")
-weapons = NodePath("../WeaponInventory/Weapons")
-passive_items = NodePath("../WeaponInventory/PassiveItems")
-particles = NodePath("../Particle")
-panel = NodePath("../Panel")
-
 [node name="Chest" type="NinePatchRect" parent="UI"]
 process_mode = 3
 visible = false
@@ -1477,8 +1745,6 @@ scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_wnwbv")
 animation = &"open_boss_chest"
 autoplay = "idle_boss_chest"
-frame = 7
-frame_progress = 1.0
 
 [node name="Open" type="TextureButton" parent="UI/Chest"]
 visible = false
