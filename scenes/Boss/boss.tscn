@@ -1941,7 +1941,8 @@ collision_layer = 2
 collision_mask = 4
 script = ExtResource("1_uotkj")
 phase_2_material = ExtResource("2_udgfo")
-damage = 80.0
+damage = 60.0
+regen_rate = 50.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-11, 8)

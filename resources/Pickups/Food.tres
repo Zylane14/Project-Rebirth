@@ -17,13 +17,13 @@ animations = [{
 
 [resource]
 script = ExtResource("2_rganw")
-amount = 20
+amount = 100
 title = "Food"
 icon = ExtResource("1_p5ttk")
 frames = SubResource("SpriteFrames_p5ttk")
 animation_name = "default"
 scale = Vector2(1, 1)
-description = "+20 Health"
+description = "+100 Health"
 sound = ExtResource("3_rganw")
-weight = 80.0
+weight = 50.0
 metadata/_custom_type_script = "uid://dp38fhgeg1xjh"

@@ -392,7 +392,6 @@ func animation(_delta):
 	$AnimationPlayer.play(anim_name)
 
 
-
 func _on_magnet_area_entered(pickup_area):
 	if pickup_area.has_method("follow"):
 		pickup_area.follow(self)

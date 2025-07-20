@@ -143,8 +143,6 @@ func damage_popup(amount: float, modifier: float = 1.0, is_crit: bool = false):
 	get_tree().current_scene.add_child(popup)
 
 
-
-
 func apply_buff(stage: int):
 	var health_multiplier := pow(1.1, stage)
 	var damage_multiplier := pow(1.1, stage)
@@ -155,9 +153,9 @@ func apply_buff(stage: int):
 	max_health = type.health * health_multiplier
 	
 	if elite:
-		max_health *= 8.0
+		max_health *= 2.5
 		speed *= 1.1
-		damage *= 2.5
+		damage *= 2.0
 		health = max_health
 
 func take_damage(amount):

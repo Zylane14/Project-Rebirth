@@ -66,8 +66,11 @@ func show_option():
 		available.append_array(get_upgradeable(every_passive, get_equipped_item()))
 	available.shuffle() #shuffle entire array
 	
-	var chance = randf() #store random fraction in the variable chance
-	var modifier : int = 1 if (chance < (1.0 - (1.0/owner.luck))) else 0 #formula for luck to get the fourth option
+	var modifier = 0
+	var luck_roll = randf() * 100.0
+	if luck_roll < owner.luck: #formula to get 4th option
+		modifier = 1
+
 	
 	var option_size = 0
 	for weapon in weapons_available:
@@ -133,9 +136,12 @@ func slot_available(items):
 func get_upgradeable(items, flag = []): #set flag to not include specific items
 	var array = []
 	for item in items:
-		if item.is_upgradeable() and item not in flag: #function to get only the upgradeable item
+		if item.is_upgradeable() and item not in flag:
+			if item is Weapon and GlobalManager.is_evolved(item.title):
+				continue  # Skip already-evolved weapons
 			array.append(item)
 	return array
+
 
 func get_equipped_item():
 	var equipped_items = get_available_resource_in(weapons)

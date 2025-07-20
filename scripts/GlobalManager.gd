@@ -7,6 +7,7 @@ var global_buff_stage: int = 0
 var elapsed_time: float = 0.0
 var buff_interval: float = 15.0
 var enemy_kill_count : int = 0
+var evolved_weapons: Array[String] = []
 
 ##==============================
 ## ENEMY REGISTRY FOR SWARMING
@@ -42,3 +43,14 @@ func clear_all_enemies():
 
 func get_enemy_count() -> int:
 	return enemies.size()
+	
+	
+func register_evolution(weapon: Weapon):
+	var title = weapon.title if weapon.title != "" else weapon.resource_path
+	if title not in evolved_weapons:
+		evolved_weapons.append(title)
+
+func is_evolved(title: String) -> bool:
+	return title in evolved_weapons
+	
+	

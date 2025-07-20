@@ -13,7 +13,7 @@ extends PanelContainer
 			item.slot = self
 		else:
 			$TextureRect.texture = null
-			$Cooldown.wait_time = 0.1 # Default or safe fallback
+			$Cooldown.wait_time = max(item.cooldown, 0.01)
 
 func _physics_process(delta):
 	if item != null and item.has_method("update"):

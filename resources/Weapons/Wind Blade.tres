@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="WindBlade" load_steps=15 format=3 uid="uid://dtuaquges8at1"]
 
-[ext_resource type="Resource" uid="uid://cvvo1wgg3i1uq" path="res://resources/Weapons Evolved/Blade Slash.tres" id="1_o8pbe"]
+[ext_resource type="Resource" uid="uid://cvvo1wgg3i1uq" path="res://resources/Weapons Evolved/Wind Slash.tres" id="1_o8pbe"]
 [ext_resource type="Resource" uid="uid://dw478itjqgfrt" path="res://resources/Passive Items/Lucky Ring.tres" id="2_dmrje"]
 [ext_resource type="Texture2D" uid="uid://crx07mreta7su" path="res://assets/Icons/SkillIcons/Windblade.png" id="2_kiewn"]
 [ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="2_lnykp"]

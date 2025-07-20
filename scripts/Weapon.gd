@@ -3,7 +3,6 @@ class_name Weapon
 
 #properties for projectilesw
 @export var damage : float
-@export var cooldown : float
 @export var speed : float
 @export var projectile_node : PackedScene = preload("res://scenes/projectile.tscn") #preload projectile node
 @export var upgrades : Array[Upgrade] #property to store array of upgrade
@@ -13,7 +12,10 @@ class_name Weapon
 @export var particle : ParticleProcessMaterial = null #new property to store particles
 @export var projectile_animation_name: String = "" #animation to play on projectile
 @export var manual_only: bool = false  #requires pressing button
-
+@export var cooldown: float = 0.5:
+	set(value):
+		cooldown = max(value, 0.01) # never allow 0 or less
+		
 var slot
 var damage_dealt : float = 0
 var cooldown_timer := 0.0
@@ -39,23 +41,36 @@ func is_upgradeable() -> bool:
 		return true
 	return false
 
-func upgrade_item(): #function to upgrade item
+func upgrade_item():
+	# If at max level, evolve instead
+	if max_level_reached() and evolution != null:
+		var evolved_weapon = evolution.duplicate()
+		evolved_weapon.level = 1
+		evolved_weapon.owner = owner
+		evolved_weapon.slot = slot
+
+		slot.item = evolved_weapon
+
+		if GlobalManager.has_method("register_evolution"):
+			GlobalManager.register_evolution(self)
+
+		slot.item = evolved_weapon
+	# Clear strong references to help GC clean up
+		owner = null
+		slot = null
+
+		return
+
+	# If not upgradeable, do nothing
 	if not is_upgradeable():
 		return
-		
+
 	var upgrade = upgrades[level - 1]
-	
-	damage += upgrade.damage #base Resource upgrades common stats (for now)
+	damage += upgrade.damage
 	cooldown += upgrade.cooldown
-	
+	cooldown = max(cooldown, 0.01)  # Safety clamp
+
 	level += 1
 
-func max_level_reached(): #function to check if an item reached max level or not
-	if upgrades.size() +1 == level and upgrades.size() != 0:
-		return true
-	return false
-	
-func reset():
-	damage_dealt = 0
-	slot = null
-	level = 1
+func max_level_reached() -> bool:
+	return level >= upgrades.size() + 1 and upgrades.size() != 0

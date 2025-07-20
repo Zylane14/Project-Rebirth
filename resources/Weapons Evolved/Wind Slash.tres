@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="WindBlade" load_steps=6 format=3 uid="uid://cvvo1wgg3i1uq"]
+
+[ext_resource type="Texture2D" uid="uid://crx07mreta7su" path="res://assets/Icons/SkillIcons/Windblade.png" id="1_c2m2t"]
+[ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="2_xwfo7"]
+[ext_resource type="Script" uid="uid://sur3de5kfqnl" path="res://scenes/WeaponScript/WindBlade.gd" id="3_iuguo"]
+[ext_resource type="AudioStream" uid="uid://c8lxd31388kud" path="res://music & sfx/RPG_Essentials_Free/8_Atk_Magic_SFX/25_Wind_01.wav" id="4_kavj2"]
+[ext_resource type="Script" uid="uid://co5wubqlbfsyl" path="res://scenes/Upgrade.gd" id="5_myxjt"]
+
+[resource]
+script = ExtResource("3_iuguo")
+area = 1.8
+amount = 2
+reversible = false
+delay = 0.5
+damage = 25.0
+speed = 1200.0
+projectile_node = ExtResource("2_xwfo7")
+upgrades = Array[ExtResource("5_myxjt")]([])
+sound = ExtResource("4_kavj2")
+projectile_animation_name = "WindBlade"
+manual_only = false
+cooldown = 1.0
+title = "Wind Slash"
+description = ""
+icon = ExtResource("1_c2m2t")
+rarity = 0
+level = 1
+metadata/_custom_type_script = "uid://sur3de5kfqnl"

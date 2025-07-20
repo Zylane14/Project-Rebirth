@@ -9,8 +9,8 @@
 
 [resource]
 script = ExtResource("2_rqxon")
-damage = 12.0
-cooldown = 0.4
+damage = 15.0
+cooldown = 0.2
 speed = 600.0
 projectile_node = ExtResource("1_tew3o")
 upgrades = Array[ExtResource("4_va0ch")]([])

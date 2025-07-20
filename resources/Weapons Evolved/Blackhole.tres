@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MultiDamagingArea" load_steps=6 format=3 uid="uid://cjtkcusgqhpuh"]
 
-[ext_resource type="Texture2D" uid="uid://ca2exm6pab42m" path="res://assets/Icons/SkillIcons/blackhole 1.png" id="1_grf1i"]
+[ext_resource type="Texture2D" uid="uid://cijov5co31npy" path="res://assets/Icons/SkillIcons/blackhole 1-2.png" id="1_grf1i"]
 [ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="2_fxqqk"]
 [ext_resource type="Script" uid="uid://xs5efml7d1rs" path="res://scenes/WeaponScript/MultiDamagingArea.gd" id="3_1fk6e"]
 [ext_resource type="AudioStream" uid="uid://dqy2e2lstypbn" path="res://music & sfx/Minifantasy_Dungeon_SFX/21_orc_damage_1.wav" id="4_r3k12"]
@@ -12,13 +12,13 @@ amount = 1
 area = 2.5
 delay = 0.1
 damage = 50.0
-cooldown = 5.0
 speed = 0.0
 projectile_node = ExtResource("2_fxqqk")
 upgrades = Array[ExtResource("5_dddid")]([])
 sound = ExtResource("4_r3k12")
 projectile_animation_name = "Blackhole"
 manual_only = false
+cooldown = 5.0
 title = "Blackhole"
 description = ""
 icon = ExtResource("1_grf1i")

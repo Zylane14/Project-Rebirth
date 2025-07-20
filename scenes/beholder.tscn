@@ -1345,8 +1345,8 @@ alpha = 0.8
 bullet_node = ExtResource("2_p0qli")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("3_edinc")
-hframes = 16
+texture = ExtResource("3_j6nf4")
+hframes = 2
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

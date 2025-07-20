@@ -40,17 +40,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 10.0
+"speed": 12.0
 }]
 
 [resource]
 script = ExtResource("2_stmf5")
-XP = 50.0
+XP = 100.0
 title = "Violet EXP"
 frames = SubResource("SpriteFrames_qxhls")
 animation_name = "default"
-scale = Vector2(0.6, 0.6)
-description = "Gives 2 Experience Points."
+scale = Vector2(0.7, 0.7)
+description = "Gives 100 Experience Points."
 sound = ExtResource("3_vmo5r")
 weight = 1.0
 metadata/_custom_type_script = "uid://xl6mh4kudeuh"

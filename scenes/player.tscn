@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=3 uid="uid://63kp1cwf1snt"]
+[gd_scene load_steps=108 format=3 uid="uid://63kp1cwf1snt"]
 
 [ext_resource type="Script" uid="uid://rd7jqoyg5ayg" path="res://scripts/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://3ninw6nm3qxc" path="res://scenes/slot.tscn" id="2_dqkch"]
@@ -1231,6 +1231,9 @@ tracks/4/keys = {
 "values": [Vector2(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_u2ulf"]
+resource_name = "idle_Callen"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_60mlk"]
 _data = {
 &"RESET": SubResource("Animation_qfm1y"),
@@ -1245,6 +1248,7 @@ _data = {
 &"flash": SubResource("Animation_l71n6"),
 &"hit_MainChar": SubResource("Animation_31cv2"),
 &"idle1_Eleonore": SubResource("Animation_lxlsd"),
+&"idle_Callen": SubResource("Animation_u2ulf"),
 &"idle_Carmin": SubResource("Animation_487ah"),
 &"idle_Eleonore": SubResource("Animation_fulsm"),
 &"idle_MainChar": SubResource("Animation_a8ls1"),

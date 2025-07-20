@@ -219,9 +219,9 @@ func flash():
 	$Sprite2D.modulate = Color(1, 0.3, 0.3)  # red tint flash
 	tween.tween_property($Sprite2D, "modulate", Color(1, 1, 1), 0.15)
 
-func show_damage_popup(damage: float, is_crit: bool):
+func show_damage_popup(amount: float, is_crit: bool):
 	var popup = damage_popup_scene.instantiate()
-	popup.text = str(int(damage))
+	popup.text = str(int(amount))
 	popup.position = global_position + Vector2(randf_range(-20, 20), -50)
 
 	if is_crit:
