@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MultiDamagingArea" load_steps=14 format=3 uid="uid://b8d44jntry46n"]
 
 [ext_resource type="Resource" uid="uid://cjtkcusgqhpuh" path="res://resources/Weapons Evolved/Blackhole.tres" id="1_krfsd"]
-[ext_resource type="Texture2D" uid="uid://ca2exm6pab42m" path="res://assets/Icons/SkillIcons/blackhole 1.png" id="2_3vijs"]
+[ext_resource type="Texture2D" uid="uid://cijov5co31npy" path="res://assets/Icons/SkillIcons/blackhole 1-2.png" id="2_krfsd"]
 [ext_resource type="Resource" uid="uid://dylur0xig1asu" path="res://resources/Passive Items/Area.tres" id="3_270w0"]
 [ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="4_tr045"]
 [ext_resource type="Script" uid="uid://xs5efml7d1rs" path="res://scenes/WeaponScript/MultiDamagingArea.gd" id="5_yjl2v"]
@@ -71,8 +71,7 @@ projectile_animation_name = "Blackhole"
 manual_only = false
 title = "BlackHole"
 description = ""
-icon = ExtResource("2_3vijs")
-texture = ExtResource("2_3vijs")
+icon = ExtResource("2_krfsd")
 rarity = 3
 level = 1
 metadata/_custom_type_script = "uid://xs5efml7d1rs"

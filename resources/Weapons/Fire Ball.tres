@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://b2so3xjfm3ta3" path="res://resources/Weapons Evolved/Holy Fire.tres" id="1_bsojs"]
 [ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="1_msqgw"]
-[ext_resource type="Texture2D" uid="uid://bcs2hcg5kir8j" path="res://assets/Projectiles/Demo/Colored/tile015.png" id="2_bsojs"]
+[ext_resource type="Texture2D" uid="uid://bltiwf5tcxeo2" path="res://assets/Icons/SkillIcons/fireball 1.png" id="2_bsojs"]
 [ext_resource type="Script" uid="uid://bthks1pwcgkfj" path="res://scenes/WeaponScript/SingleShot.gd" id="2_ja44x"]
 [ext_resource type="Resource" uid="uid://cdqw7gta62gvm" path="res://resources/Passive Items/Magnet.tres" id="2_wuo0d"]
 [ext_resource type="Script" uid="uid://co5wubqlbfsyl" path="res://scenes/Upgrade.gd" id="4_2b7by"]
@@ -66,7 +66,6 @@ manual_only = true
 title = "Fireball"
 description = ""
 icon = ExtResource("2_bsojs")
-texture = ExtResource("2_bsojs")
 rarity = 2
-level = 0
+level = 1
 metadata/_custom_type_script = "uid://bthks1pwcgkfj"

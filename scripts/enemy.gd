@@ -155,7 +155,7 @@ func apply_buff(stage: int):
 	max_health = type.health * health_multiplier
 	
 	if elite:
-		max_health *= 10.0
+		max_health *= 8.0
 		speed *= 1.1
 		damage *= 2.5
 		health = max_health

@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://btaq7k4spibi5" path="res://resources/Weapons Evolved/Thunder.tres" id="1_ikmcd"]
 [ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="2_d8nxx"]
-[ext_resource type="Texture2D" uid="uid://k1qx6vi6uuky" path="res://assets/Icons/SkillIcons/lightning strike.png" id="2_r8hb1"]
+[ext_resource type="Texture2D" uid="uid://csbmura8inxck" path="res://assets/Icons/SkillIcons/lightning strike 2.0.png" id="2_ikmcd"]
 [ext_resource type="Script" uid="uid://c0anj5l8vyvkr" path="res://scenes/WeaponScript/Lightning.gd" id="3_8hp45"]
 [ext_resource type="Resource" uid="uid://bg2vjx7ir7rx2" path="res://resources/Passive Items/Amplify.tres" id="3_r8hb1"]
 [ext_resource type="AudioStream" uid="uid://b8nwmsne0o08o" path="res://music & sfx/RPG_Essentials_Free/8_Atk_Magic_SFX/18_Thunder_02.wav" id="4_8hp45"]
@@ -67,8 +67,7 @@ projectile_animation_name = "diagonal_Electricity"
 manual_only = false
 title = "Lightning"
 description = ""
-icon = ExtResource("2_r8hb1")
-texture = ExtResource("2_r8hb1")
+icon = ExtResource("2_ikmcd")
 rarity = 2
 level = 1
 metadata/_custom_type_script = "uid://c0anj5l8vyvkr"

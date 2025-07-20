@@ -25,5 +25,5 @@ animation_name = "default"
 scale = Vector2(1, 1)
 description = "+20 Health"
 sound = ExtResource("3_rganw")
-weight = 5.0
+weight = 80.0
 metadata/_custom_type_script = "uid://dp38fhgeg1xjh"
