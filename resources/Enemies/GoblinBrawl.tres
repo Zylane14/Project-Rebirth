@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=14 format=3 uid="uid://cyfp26oy6hbmm"]
+[gd_resource type="Resource" script_class="Enemy" load_steps=16 format=3 uid="uid://cyfp26oy6hbmm"]
 
 [ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="1_3xd4o"]
 [ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="1_6r0uh"]
 [ext_resource type="Resource" uid="uid://bsdwvs8d0sd32" path="res://resources/Pickups/Blue EXP.tres" id="2_cc8tm"]
 [ext_resource type="Texture2D" uid="uid://k8u6uwhr6v7h" path="res://assets/World/EPIC RPG World Pack - Grass Land V. 1.6/Characters/Enemy1/enemy1-variation1-idle.png" id="3_3xd4o"]
+[ext_resource type="Resource" uid="uid://brhulfmqu2bs1" path="res://resources/Pickups/Orange EXP.tres" id="3_6jh6p"]
+[ext_resource type="Resource" uid="uid://chapfw3yu7kp7" path="res://resources/Pickups/Violet EXP.tres" id="4_j7wx3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cc8tm"]
 atlas = ExtResource("3_3xd4o")
@@ -78,7 +80,7 @@ scale = Vector2(0.95, 0.95)
 health = 12.0
 damage = 12.0
 speed = 45.0
-drops = Array[ExtResource("1_3xd4o")]([ExtResource("2_cc8tm")])
+drops = Array[ExtResource("1_3xd4o")]([ExtResource("2_cc8tm"), ExtResource("3_6jh6p"), ExtResource("4_j7wx3")])
 spawn_weight = 75.0
 unlock_minute = 0.2
 enemy_class = 0

@@ -45,11 +45,12 @@ animations = [{
 
 [resource]
 script = ExtResource("2_nfxct")
-XP = 1.0
+XP = 2.0
 title = "BlueXp"
 frames = SubResource("SpriteFrames_c3vmc")
 animation_name = "default"
+scale = Vector2(1, 1)
 description = "Gives 1 Experience Point."
 sound = ExtResource("3_nfxct")
-weight = 0.0
+weight = 1000.0
 metadata/_custom_type_script = "uid://xl6mh4kudeuh"

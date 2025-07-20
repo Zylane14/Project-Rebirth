@@ -66,5 +66,5 @@ description = ""
 icon = ExtResource("1_nyo22")
 texture = ExtResource("1_nyo22")
 rarity = 1
-level = 1
+level = 0
 metadata/_custom_type_script = "uid://oh3fq60et0sw"

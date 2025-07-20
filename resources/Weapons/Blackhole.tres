@@ -13,7 +13,7 @@
 script = ExtResource("8_iu6dr")
 amount = 0
 area = 0.0
-damage = 10.0
+damage = 5.0
 cooldown = 0.0
 description = "BLACK HOLE"
 metadata/_custom_type_script = "uid://bhud26ecmt7ug"
@@ -21,37 +21,37 @@ metadata/_custom_type_script = "uid://bhud26ecmt7ug"
 [sub_resource type="Resource" id="Resource_6qa28"]
 script = ExtResource("8_iu6dr")
 amount = 0
-area = 0.0
+area = 0.1
 damage = 5.0
 cooldown = 0.0
-description = "+5 Damage"
+description = "+5 Damage 10% Size"
 metadata/_custom_type_script = "uid://bhud26ecmt7ug"
 
 [sub_resource type="Resource" id="Resource_tnn3l"]
 script = ExtResource("8_iu6dr")
 amount = 0
 area = 0.0
-damage = 2.0
+damage = 4.0
 cooldown = 0.0
-description = "+2 Damage"
+description = "+4 Damage"
 metadata/_custom_type_script = "uid://bhud26ecmt7ug"
 
 [sub_resource type="Resource" id="Resource_njufj"]
 script = ExtResource("8_iu6dr")
 amount = 0
-area = 0.0
+area = 0.1
 damage = 2.0
 cooldown = 0.0
-description = "+1 Amount +2 Damage"
+description = "+2 Damage 10% Size"
 metadata/_custom_type_script = "uid://bhud26ecmt7ug"
 
 [sub_resource type="Resource" id="Resource_kpdg7"]
 script = ExtResource("8_iu6dr")
 amount = 0
 area = 0.0
-damage = 2.0
+damage = 4.0
 cooldown = 0.0
-description = "+2 Damage"
+description = "+4 Damage"
 metadata/_custom_type_script = "uid://bhud26ecmt7ug"
 
 [resource]
@@ -74,5 +74,5 @@ description = ""
 icon = ExtResource("2_3vijs")
 texture = ExtResource("2_3vijs")
 rarity = 3
-level = 1
+level = 0
 metadata/_custom_type_script = "uid://xs5efml7d1rs"

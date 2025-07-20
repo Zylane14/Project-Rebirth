@@ -45,11 +45,12 @@ animations = [{
 
 [resource]
 script = ExtResource("2_8mdkf")
-XP = 2.0
+XP = 25.0
 title = "Orange EXP"
 frames = SubResource("SpriteFrames_7jj8m")
 animation_name = "default"
+scale = Vector2(1, 1)
 description = "Gives 2 Experience Points."
 sound = ExtResource("3_8mdkf")
-weight = 0.0
+weight = 50.0
 metadata/_custom_type_script = "uid://xl6mh4kudeuh"

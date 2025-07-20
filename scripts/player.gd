@@ -84,7 +84,7 @@ var growth: float = 1:
 		growth = value
 		%Growth.text = "Growth : " + str(value) + " exp/rate"
 
-var luck: float = 0.1:
+var luck: float = 1.0:
 	set(value):
 		luck = value
 		%Luck.text = "Luck : " + str(value) + "%"
@@ -94,15 +94,15 @@ var dodge: float = 1.0:
 		dodge = value
 		%Dodge.text = "Dodge : " + str(value) + "%"
 
-var crit: float = 5.0:
+var crit: float = 1.0:
 	set(value):
 		crit = value
 		%Crit.text = "Crit : " + str(value) + "%"
 
-var crit_damage: float = 10.0:
+var crit_damage: float = 2.0:
 	set(value):
 		crit_damage = value
-		%CritDamage.text = "Crit Damage : " + str(value) + "%"
+		%CritDamage.text = "Crit Damage : " + str(value) + "x"
 
 ##==============================
 ## ENEMY DETECTION
@@ -373,12 +373,25 @@ func _on_ghost_timer_timeout():
 ## UI / MISC
 ##==============================
 func animation(_delta):
-	if velocity == Vector2.ZERO:
-		$AnimationPlayer.play("idle_" + character.animation_name)
-	else:
-		$AnimationPlayer.play("walk_" + character.animation_name)
+	var is_moving = velocity != Vector2.ZERO
+	var anim_name = "idle_" + character.animation_name
 
-	$Sprite2D.flip_h = velocity.x < 0
+	if is_moving:
+		if movement_speed >= 120:
+			var run_anim = "run_" + character.animation_name
+			if $AnimationPlayer.has_animation(run_anim):
+				anim_name = run_anim
+			else:
+				anim_name = "walk_" + character.animation_name
+		else:
+			anim_name = "walk_" + character.animation_name
+
+		# Only update flip_h when moving
+		$Sprite2D.flip_h = velocity.x < 0
+
+	$AnimationPlayer.play(anim_name)
+
+
 
 func _on_magnet_area_entered(pickup_area):
 	if pickup_area.has_method("follow"):

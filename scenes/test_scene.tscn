@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://kob240l1y6xk"]
+[gd_scene load_steps=16 format=4 uid="uid://kob240l1y6xk"]
 
 [ext_resource type="PackedScene" uid="uid://63kp1cwf1snt" path="res://scenes/player.tscn" id="1_g7g4h"]
 [ext_resource type="Texture2D" uid="uid://1pn1vpo8ol6a" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Tilesets/grass1 to water.png" id="1_h3xc6"]
@@ -6,8 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c8uororia56pg" path="res://scenes/spawner.tscn" id="2_j8ivh"]
 [ext_resource type="Texture2D" uid="uid://4qyt52afdb8g" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Tilesets/Tileset-Terrain.png" id="2_s36qc"]
 [ext_resource type="TileSet" uid="uid://c1sydj0iss6fu" path="res://scenes/Tiles/TreeLayer.tres" id="4_6qxox"]
-[ext_resource type="PackedScene" uid="uid://cqojmim05b0x4" path="res://scenes/pickups.tscn" id="8_h3xc6"]
-[ext_resource type="Resource" uid="uid://db1qi4br8jy2u" path="res://resources/Pickups/Vacuum.tres" id="10_s36qc"]
+[ext_resource type="PackedScene" uid="uid://pch00to2lji7" path="res://scenes/day_night_cycle.tscn" id="8_rnaij"]
 [ext_resource type="Shader" uid="uid://cgynfnqoms3wq" path="res://scenes/fog_shader.gdshader" id="14_u0xbq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8gixj"]
@@ -7175,10 +7174,9 @@ _spawnable_scenes = PackedStringArray("uid://63kp1cwf1snt")
 spawn_path = NodePath("..")
 spawn_limit = 1
 
-[node name="Pickups2" parent="." node_paths=PackedStringArray("player_reference") instance=ExtResource("8_h3xc6")]
-position = Vector2(94, 185)
-type = ExtResource("10_s36qc")
-player_reference = NodePath("../Player")
+[node name="DayNightCycle" parent="." node_paths=PackedStringArray("canvas_modulate", "fog_sprite") instance=ExtResource("8_rnaij")]
+canvas_modulate = NodePath("../Day&Night")
+fog_sprite = NodePath("../FogParallax/ParallaxLayer/ColorRect")
 
 [connection signal="pressed" from="Player/join" to="." method="_on_join_pressed"]
 [connection signal="pressed" from="Player/host" to="." method="_on_host_pressed"]

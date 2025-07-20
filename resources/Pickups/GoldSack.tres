@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="Gold" load_steps=5 format=3 uid="uid://dwwhi6klhq403"]
+
+[ext_resource type="Texture2D" uid="uid://dffmivbp40bwc" path="res://assets/Icons/unTied Games/Super Pixel Object & Items/Super Pixel Objects And Items 2/PNG/outline_none/gold_sack_large_A.png" id="1_tgknb"]
+[ext_resource type="Script" uid="uid://csixs0ikw2obv" path="res://scenes/Gold.gd" id="2_14e4i"]
+[ext_resource type="AudioStream" uid="uid://wcbvrhkadniw" path="res://music & sfx/RPG_Essentials_Free/10_UI_Menu_SFX/079_Buy_sell_01.wav" id="3_date4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_leulu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tgknb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("2_14e4i")
+gold = 25
+title = "GoldSack"
+icon = ExtResource("1_tgknb")
+frames = SubResource("SpriteFrames_leulu")
+animation_name = "default"
+scale = Vector2(0.6, 0.6)
+description = "+20 Gold"
+sound = ExtResource("3_date4")
+weight = 4.0
+metadata/_custom_type_script = "uid://csixs0ikw2obv"

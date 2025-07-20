@@ -48,6 +48,7 @@ script = ExtResource("2_s1x8o")
 title = "Vacuum"
 frames = SubResource("SpriteFrames_610rn")
 animation_name = "default"
+scale = Vector2(1, 1)
 description = "Vacuum's all the gems."
 sound = ExtResource("3_n124k")
 weight = 2.0

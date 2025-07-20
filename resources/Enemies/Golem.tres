@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="1_q05k0"]
 [ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="1_ts7x5"]
-[ext_resource type="Resource" uid="uid://brhulfmqu2bs1" path="res://resources/Pickups/Orange EXP.tres" id="2_veemv"]
 [ext_resource type="Texture2D" uid="uid://cscr1mu0vfo57" path="res://assets/World/ERW - Ancient Ruins V 1.9.1/Characters/Stone  Golem/Stone-golem v2-idle-224x192.png" id="3_q05k0"]
+[ext_resource type="Resource" uid="uid://chapfw3yu7kp7" path="res://resources/Pickups/Violet EXP.tres" id="3_veemv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_veemv"]
 atlas = ExtResource("3_q05k0")
@@ -78,7 +78,7 @@ scale = Vector2(1.2, 1.2)
 health = 1200.0
 damage = 50.0
 speed = 35.0
-drops = Array[ExtResource("1_q05k0")]([ExtResource("2_veemv")])
+drops = Array[ExtResource("1_q05k0")]([ExtResource("3_veemv")])
 spawn_weight = 4.0
 unlock_minute = 3.0
 enemy_class = 0

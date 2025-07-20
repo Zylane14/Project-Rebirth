@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var state_machine = animation_tree["parameters/playback"]
+@onready var damage_popup_scene = preload("res://scenes/damage.tscn")
 @export var phase_2_material: Material
 
 @export var max_health := 10000.0
@@ -177,10 +178,23 @@ func _set_dissolve_value(val: float):
 	if $Sprite2D.material:
 		$Sprite2D.material.set_shader_parameter("dissolve_value", val)
 		
-func take_damage(amount := 1):
-	health -= amount
+
+func take_damage(amount := 1.0, source: Variant = null):
+	var is_crit := false
+	var modifier: float = 1.0
+
+	if source != null and source.has_variable("crit") and source.has_variable("crit_damage"):
+		var crit_chance: float = source.crit / 100.0
+		is_crit = randf() < crit_chance
+		if is_crit:
+			modifier = 1.0 + (source.crit_damage / 100.0)
+
+	var final_damage: float = amount * modifier
+	health -= final_damage
 	%HealthBar.value = health
-	flash() 
+
+	show_damage_popup(final_damage, is_crit)
+	flash()
 
 	if health <= 0:
 		state_machine.travel("death")
@@ -204,3 +218,13 @@ func flash():
 	var tween = create_tween()
 	$Sprite2D.modulate = Color(1, 0.3, 0.3)  # red tint flash
 	tween.tween_property($Sprite2D, "modulate", Color(1, 1, 1), 0.15)
+
+func show_damage_popup(damage: float, is_crit: bool):
+	var popup = damage_popup_scene.instantiate()
+	popup.text = str(int(damage))
+	popup.position = global_position + Vector2(randf_range(-20, 20), -50)
+
+	if is_crit:
+		popup.set("theme_override_colors/font_color", Color.DARK_RED)
+
+	get_tree().current_scene.add_child(popup)

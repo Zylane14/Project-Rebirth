@@ -45,10 +45,10 @@ metadata/_custom_type_script = "uid://c557imx4ux1uo"
 
 [sub_resource type="Resource" id="Resource_230km"]
 script = ExtResource("7_yg4jm")
-amount = 2
+amount = 1
 damage = 2.0
 cooldown = 0.0
-description = "+2 Lightning +2 Damage"
+description = "+1 Lightning +4 Damage"
 metadata/_custom_type_script = "uid://c557imx4ux1uo"
 
 [resource]
@@ -70,5 +70,5 @@ description = ""
 icon = ExtResource("2_r8hb1")
 texture = ExtResource("2_r8hb1")
 rarity = 2
-level = 1
+level = 0
 metadata/_custom_type_script = "uid://c0anj5l8vyvkr"

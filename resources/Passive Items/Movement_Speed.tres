@@ -66,5 +66,5 @@ description = "I AM SPEED!!!"
 icon = ExtResource("1_cbwvd")
 texture = ExtResource("1_cbwvd")
 rarity = 4
-level = 1
+level = 0
 metadata/_custom_type_script = "uid://oh3fq60et0sw"

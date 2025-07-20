@@ -129,16 +129,20 @@ func knockback_update(delta):
 	
 	self.velocity = move_dir + knockback
 
-func damage_popup(amount, modifier = 1.0):
+func damage_popup(amount: float, modifier: float = 1.0, is_crit: bool = false):
 	var popup = damage_popup_node.instantiate()
 	var final_damage = int(amount * modifier)
 	popup.text = str(final_damage)
 	popup.position = position + Vector2(-50, -25)
 
-	if modifier > 1.0:
-		popup.set("theme_override_colors/font_color", Color.DARK_RED)
+	if is_crit:
+		popup.add_theme_color_override("font_color", Color.DARK_RED)
+	else:
+		popup.add_theme_color_override("font_color", Color.WHITE)
 
 	get_tree().current_scene.add_child(popup)
+
+
 
 
 func apply_buff(stage: int):
@@ -157,50 +161,71 @@ func apply_buff(stage: int):
 		health = max_health
 
 func take_damage(amount):
+	# Flash red
 	var tween = get_tree().create_tween()
 	tween.tween_property($Sprite2D, "modulate", Color(3, 0.25, 0.25), 0.2)
 	tween.chain().tween_property($Sprite2D, "modulate", Color(1, 1, 1), 0.2)
 	tween.bind_node(self)
 
-	var chance = randf()
-	var modifier : float = 2.0 if (chance < (1.0 - (1.0/player_reference.luck))) else 1.0
-	damage_popup(amount, modifier)
-	health = clamp(health - amount * modifier, 0, max_health)
-	
+	# Determine critical hit
+	var crit_chance: float = player_reference.crit / 100.0
+	var is_crit: bool = randf() < crit_chance
+
+	var final_damage: float = amount
+	if is_crit:
+		final_damage *= (1.0 + player_reference.crit_damage / 100.0)
+
+	damage_popup(final_damage, 1.0, is_crit)
+	health = clamp(health - final_damage, 0, max_health)
+
+
+
+	# Update health bar
 	if health_bar:
-		if not health_bar.visible:
-			health_bar.visible = true
+		health_bar.visible = true
 		health_bar.max_value = max_health
 		health_bar.value = health
-	
-	if health_bar_timer.is_stopped():
-		health_bar_timer.start()
-	else:
-		health_bar_timer.stop()
-		health_bar_timer.start()
+
+		if health_bar_timer.is_stopped():
+			health_bar_timer.start()
+		else:
+			health_bar_timer.stop()
+			health_bar_timer.start()
 
 func drop_item():
 	if is_dead:
 		return
 
 	is_dead = true
-	
 	GlobalManager.enemy_kill_count += 1
 	
-	if type.drops.size() > 0:
-		var item = type.drops.pick_random()
-		if elite:
-			item = load("res://resources/Pickups/Chest.tres")
+	var item_variant: Variant = null  # use Variant to avoid null type issues
 
-		var item_to_drop = drop.instantiate()
-		item_to_drop.type = item
-		item_to_drop.position = position
-		item_to_drop.player_reference = player_reference
-		get_tree().current_scene.call_deferred("add_child", item_to_drop)
+	if elite:
+		var base_chance: float = 0.3
+		var luck_multiplier: float = clamp(player_reference.luck / 100.0, 0.0, 1.0)
+		var final_chance: float = base_chance + (0.5 * luck_multiplier)  # max 80%
 
+		if randf() < final_chance:
+			item_variant = load("res://resources/Pickups/Chest.tres")
+		else:
+			item_variant = Drops.pick_weighted_drop(type.drops, player_reference.luck)
+	else:
+		item_variant = Drops.pick_weighted_drop(type.drops, player_reference.luck)
+
+	if item_variant:
+		var item := item_variant as Pickups
+		if item:
+			var item_to_drop = drop.instantiate()
+			item_to_drop.type = item
+			item_to_drop.position = position
+			item_to_drop.player_reference = player_reference
+			get_tree().current_scene.call_deferred("add_child", item_to_drop)
+
+	# gold drop
 	var gold_drop_chance := 0.3
 	if randf() < gold_drop_chance:
-		var gold_resource = load("res://resources/Pickups/Gold.tres")
+		var gold_resource = load("res://resources/Pickups/Gold.tres") as Pickups
 		var gold_pickup = drop.instantiate()
 		gold_pickup.type = gold_resource
 		gold_pickup.position = position + Vector2(randf_range(-16, 16), randf_range(-16, 16))

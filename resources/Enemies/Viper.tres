@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=14 format=3 uid="uid://qr8u3bnfh1o4"]
+[gd_resource type="Resource" script_class="Enemy" load_steps=16 format=3 uid="uid://qr8u3bnfh1o4"]
 
 [ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="1_v2u6u"]
 [ext_resource type="Resource" uid="uid://bsdwvs8d0sd32" path="res://resources/Pickups/Blue EXP.tres" id="2_bpgjt"]
+[ext_resource type="Resource" uid="uid://brhulfmqu2bs1" path="res://resources/Pickups/Orange EXP.tres" id="3_4x6m4"]
 [ext_resource type="Texture2D" uid="uid://d3v7upfdepqlj" path="res://assets/World/EPIC RPG World - Sewers V1.5/Characters/Viper/viper-idle.png" id="3_bpgjt"]
 [ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="3_iikci"]
+[ext_resource type="Resource" uid="uid://chapfw3yu7kp7" path="res://resources/Pickups/Violet EXP.tres" id="4_2m372"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iikci"]
 atlas = ExtResource("3_bpgjt")
@@ -78,7 +80,7 @@ scale = Vector2(1, 1)
 health = 25.0
 damage = 10.0
 speed = 70.0
-drops = Array[ExtResource("1_v2u6u")]([ExtResource("2_bpgjt")])
+drops = Array[ExtResource("1_v2u6u")]([ExtResource("2_bpgjt"), ExtResource("3_4x6m4"), ExtResource("4_2m372")])
 spawn_weight = 30.0
 unlock_minute = 2.0
 enemy_class = 0

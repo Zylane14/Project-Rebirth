@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=15 format=3 uid="uid://dmikugp6yofm5"]
+[gd_resource type="Resource" script_class="Enemy" load_steps=16 format=3 uid="uid://dmikugp6yofm5"]
 
 [ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="1_5wsa8"]
 [ext_resource type="Resource" uid="uid://brhulfmqu2bs1" path="res://resources/Pickups/Orange EXP.tres" id="2_ypj5w"]
 [ext_resource type="Texture2D" uid="uid://cr2blm031ikag" path="res://assets/World/ERW - Grass Land 2.0 v1.7.2/Characters/orc warrior/orc2/orc melee - anims color2-idle.png" id="3_5wsa8"]
 [ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="3_tlnwc"]
+[ext_resource type="Resource" uid="uid://chapfw3yu7kp7" path="res://resources/Pickups/Violet EXP.tres" id="3_ypj5w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ypj5w"]
 atlas = ExtResource("3_5wsa8")
@@ -85,7 +86,7 @@ scale = Vector2(0.9, 0.9)
 health = 35.0
 damage = 8.0
 speed = 45.0
-drops = Array[ExtResource("1_5wsa8")]([ExtResource("2_ypj5w")])
+drops = Array[ExtResource("1_5wsa8")]([ExtResource("2_ypj5w"), ExtResource("3_ypj5w")])
 spawn_weight = 55.0
 unlock_minute = 1.2
 enemy_class = 0

@@ -14,12 +14,15 @@ var can_follow: bool = false
 func _ready():
 	var sprite = $AnimatedSprite2D
 
-	if type.frames:
-		sprite.frames = type.frames
-		sprite.animation = type.animation_name
-		sprite.play()
-	else:
-		print("Warning: No frames assigned to", type.title)
+	if type:
+		sprite.scale = type.scale
+
+		if type.frames:
+			sprite.frames = type.frames
+			sprite.animation = type.animation_name
+			sprite.play()
+		else:
+			print("Warning: No frames assigned to", type.title)
 
 func _physics_process(delta):
 	if player_reference and can_follow:

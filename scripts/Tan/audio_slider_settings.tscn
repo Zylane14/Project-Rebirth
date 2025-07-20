@@ -1,0 +1,88 @@
+[gd_scene load_steps=4 format=3 uid="uid://cy6p4o2wx6k1k"]
+
+[sub_resource type="GDScript" id="GDScript_spnj5"]
+script/source = "extends Control
+
+@onready var audio_name_lbl = $HBoxContainer/Audio_Name_LBL as Label
+@onready var audio_num_lbl = $HBoxContainer/Audio_Num_LBL as Label
+@onready var h_slider = $HBoxContainer/HSlider as HSlider
+
+@export_enum(\"Master\", \"Music\", \"SFX\") var bus_name : String
+
+var bus_index : int = 0
+
+func _ready():
+	h_slider.value_changed.connect(on_value_changed)
+	get_bus_name_by_index()
+	set_name_label_text()
+	set_slider_value()
+
+func set_name_label_text() -> void:
+	audio_name_lbl.text = str(bus_name) + \" Volume\"
+
+func set_audio_num_label_text() -> void:
+	audio_num_lbl.text = str(h_slider.value * 100) + \"%\"
+
+func get_bus_name_by_index() -> void:
+	bus_index = AudioServer.get_bus_index(bus_name)
+
+func set_slider_value() -> void:
+	h_slider.value = db_to_linear(AudioServer.get_bus_volume_db(bus_index))
+	set_audio_num_label_text()
+
+func on_value_changed(value : float) -> void:
+	AudioServer.set_bus_volume_db(bus_index, linear_to_db(value))
+	set_audio_num_label_text()
+"
+
+[sub_resource type="SystemFont" id="SystemFont_dqfn4"]
+font_names = PackedStringArray("Century")
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_rfsrf"]
+font_names = PackedStringArray("Century")
+subpixel_positioning = 0
+
+[node name="audio_slider_settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_spnj5")
+bus_name = "Master"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 20
+
+[node name="Audio_Name_LBL" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_dqfn4")
+theme_override_font_sizes/font_size = 22
+text = "Master Volume"
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer"]
+custom_minimum_size = Vector2(130, 25)
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.001
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Audio_Num_LBL" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_rfsrf")
+theme_override_font_sizes/font_size = 22
+text = "100"

@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=15 format=3 uid="uid://q51bg0iwnqs4"]
+[gd_resource type="Resource" script_class="Enemy" load_steps=17 format=3 uid="uid://q51bg0iwnqs4"]
 
 [ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="1_e58ni"]
 [ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="1_g45f2"]
+[ext_resource type="Resource" uid="uid://bsdwvs8d0sd32" path="res://resources/Pickups/Blue EXP.tres" id="2_edwde"]
 [ext_resource type="Resource" uid="uid://brhulfmqu2bs1" path="res://resources/Pickups/Orange EXP.tres" id="2_g45f2"]
 [ext_resource type="Texture2D" uid="uid://cdgb52in7qxen" path="res://assets/World/Epic RPG World - The dephs of the Mountain V1.5.1/Characters/Enemy 1/enemy 1-idle.png" id="3_80cnl"]
 [ext_resource type="PackedScene" uid="uid://b8k11td5n644u" path="res://scenes/enemy_projectile.tscn" id="3_uj4fl"]
+[ext_resource type="Resource" uid="uid://chapfw3yu7kp7" path="res://resources/Pickups/Violet EXP.tres" id="4_bx5qe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_edwde"]
 atlas = ExtResource("3_80cnl")
@@ -79,7 +81,7 @@ scale = Vector2(1.15, 1.15)
 health = 40.0
 damage = 15.0
 speed = 34.0
-drops = Array[ExtResource("1_g45f2")]([ExtResource("2_g45f2")])
+drops = Array[ExtResource("1_g45f2")]([ExtResource("2_edwde"), ExtResource("2_g45f2"), ExtResource("4_bx5qe")])
 spawn_weight = 30.0
 unlock_minute = 2.0
 enemy_class = 0

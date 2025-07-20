@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=15 format=3 uid="uid://rdvqfst83nqu"]
+[gd_resource type="Resource" script_class="Enemy" load_steps=17 format=3 uid="uid://rdvqfst83nqu"]
 
 [ext_resource type="Script" uid="uid://bdra5cgamya2h" path="res://scripts/PickupResource.gd" id="1_ymgrw"]
 [ext_resource type="Script" uid="uid://brq1oadyao0po" path="res://scripts/EnemyType.gd" id="2_t85i8"]
 [ext_resource type="Resource" uid="uid://bsdwvs8d0sd32" path="res://resources/Pickups/Blue EXP.tres" id="2_yvnva"]
+[ext_resource type="Resource" uid="uid://brhulfmqu2bs1" path="res://resources/Pickups/Orange EXP.tres" id="3_6sv55"]
 [ext_resource type="PackedScene" uid="uid://bcupmhfdpk6vh" path="res://scenes/PoisonVialProjectile.tscn" id="3_14gvv"]
 [ext_resource type="Texture2D" uid="uid://dogrig7sly1wd" path="res://assets/World/EPIC RPG World - Sewers V1.5/Characters/Mutant Rat/mutant rat - idle.png" id="3_yvnva"]
+[ext_resource type="Resource" uid="uid://chapfw3yu7kp7" path="res://resources/Pickups/Violet EXP.tres" id="4_e0xee"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_14gvv"]
 atlas = ExtResource("3_yvnva")
@@ -79,7 +81,7 @@ scale = Vector2(1, 1)
 health = 16.0
 damage = 15.0
 speed = 50.0
-drops = Array[ExtResource("1_ymgrw")]([ExtResource("2_yvnva")])
+drops = Array[ExtResource("1_ymgrw")]([ExtResource("2_yvnva"), ExtResource("3_6sv55"), ExtResource("4_e0xee")])
 spawn_weight = 8.0
 unlock_minute = 2.0
 enemy_class = 6

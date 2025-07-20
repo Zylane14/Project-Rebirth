@@ -66,5 +66,5 @@ description = "HP Regens every second."
 icon = ExtResource("1_yg5t0")
 texture = ExtResource("1_yg5t0")
 rarity = 3
-level = 1
+level = 0
 metadata/_custom_type_script = "uid://oh3fq60et0sw"

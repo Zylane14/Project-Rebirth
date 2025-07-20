@@ -82,5 +82,5 @@ title = "Fire Tornado"
 description = ""
 icon = ExtResource("2_4tr5a")
 rarity = 4
-level = 1
+level = 0
 metadata/_custom_type_script = "uid://4711pfsdiwbb"
