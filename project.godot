@@ -35,8 +35,8 @@ MusicManager="*res://scenes/MusicManager.gd"
 AudioController="*res://scenes/audio_controller.tscn"
 GlobalManager="*res://scripts/GlobalManager.gd"
 Popups="*res://scenes/popups.tscn"
-Drops="*res://scripts/Drops.gd"
 DayNightCycle="*res://scenes/day_night_cycle.tscn"
+Drops="*res://scripts/Drops.gd"
 
 [dialogic]
 

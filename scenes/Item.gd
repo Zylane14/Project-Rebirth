@@ -11,7 +11,7 @@ enum Rarity { COMMON, RARE, EPIC, SPECIAL, LEGENDARY }
 @export var icon : Texture2D #texture and icon stored seperately
 @export var texture : Texture2D
 @export var rarity: Rarity = Rarity.COMMON #default to COMMON
-@export var level = 0
+@export var level = 1
 
 func upgrade_item(): #abstract function in item to keep a track
 	pass
