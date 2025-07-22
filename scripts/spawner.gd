@@ -5,7 +5,7 @@ extends Node2D
 @export var enemy : PackedScene
 @export var destructible : PackedScene
 @export var boss_scene: PackedScene
-@export var boss_unlock_minute := 5  # change this to whatever minute you want
+@export var boss_unlock_minute := 0  # change this to whatever minute you want
 
 var boss_spawned := false
 var enemy_types: Array[Enemy] = [] #declare a variable to store array of enemy

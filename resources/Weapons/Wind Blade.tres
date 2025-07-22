@@ -27,9 +27,7 @@ speed = 50.0
 amount = 0.0
 damage = 0.0
 cooldown = 0.2
-description = "+2 Amount
--2 Cooldown
-+50 Speed
+description = "+2 Amount -2 Cooldown +50 Speed
 "
 metadata/_custom_type_script = "uid://desj1lkl2lkec"
 
@@ -50,8 +48,7 @@ speed = 60.0
 amount = 0.0
 damage = 3.0
 cooldown = -0.25
-description = "+3 Damage -0.25 Cooldown
-+60 Speed
+description = "+3 Damage -0.25 Cooldown +60 Speed
 "
 metadata/_custom_type_script = "uid://desj1lkl2lkec"
 
@@ -73,7 +70,6 @@ amount = 1
 reversible = false
 delay = 0.8
 damage = 4.0
-cooldown = 1.0
 speed = 550.0
 projectile_node = ExtResource("2_lnykp")
 upgrades = Array[ExtResource("5_kiewn")]([SubResource("Resource_dmrje"), SubResource("Resource_o8pbe"), SubResource("Resource_kiewn"), SubResource("Resource_03jd5"), SubResource("Resource_qjasa")])
@@ -83,6 +79,7 @@ sound = ExtResource("4_o8pbe")
 particle = ExtResource("4_kiewn")
 projectile_animation_name = "WindBlade"
 manual_only = false
+cooldown = 1.0
 title = "Wind Blade"
 description = "WIINDD BLAAADEE"
 icon = ExtResource("2_kiewn")

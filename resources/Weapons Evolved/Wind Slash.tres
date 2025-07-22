@@ -9,7 +9,7 @@
 [resource]
 script = ExtResource("3_iuguo")
 area = 1.8
-amount = 2
+amount = 1
 reversible = false
 delay = 0.5
 damage = 25.0

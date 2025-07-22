@@ -32,6 +32,7 @@ var current_knockback_strength := 0.0
 var in_phase_2 := false
 var is_immovable := false
 var is_transforming := false
+var has_transformed := false
 var has_attacked_during_run := false
 var regen_timer := 0.0
 
@@ -97,13 +98,18 @@ func apply_knockback_to_player():
 
 # === Actions ===
 func transform():
+	if has_transformed:
+		return
+	has_transformed = true
+
 	is_immovable = true
 	is_transforming = true
 	state_machine.travel("Transform")
 
-	await get_tree().create_timer(3.0).timeout # tiny buffer to allow animation to start
+	await get_tree().create_timer(3.0).timeout
 	var tween = create_tween()
 	tween.tween_property(self, "scale", Vector2(1.4, 1.4), 1.5)
+	
 
 func _on_transform_end():
 	is_transforming = false
@@ -158,12 +164,16 @@ func set_destination(final_position: Vector2):
 	p1 = p0 + 90 * curve
 
 func _on_player_entered(_body):
+	if has_transformed:
+		return
+	
 	%PlayerCollision.set_deferred("disabled", true)
 	transform()
 	%HealthBar.show()
 
 	if global_position.distance_to(player.global_position) < 100:
 		run_attack()
+
 
 func start_dissolve():
 	$Sprite2D.material = ShaderPool.burn.duplicate()

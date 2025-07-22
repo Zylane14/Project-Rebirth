@@ -120,10 +120,10 @@ func knockback_update(delta):
 	var move_dir = (player_reference.position - position).normalized() * speed
 	
 	#decay knockback over time
-	knockback = knockback.move_toward(Vector2.ZERO, 200 * delta)
+	knockback = knockback.move_toward(Vector2.ZERO, 20 * delta)
 	
-	#clamp knockback strength (max 200 by default, tweak if needed)
-	var max_knockback_strength := 200.0
+	#clamp knockback strength
+	var max_knockback_strength := 25.0
 	if knockback.length() > max_knockback_strength:
 		knockback = knockback.normalized() * max_knockback_strength
 	
@@ -153,7 +153,7 @@ func apply_buff(stage: int):
 	max_health = type.health * health_multiplier
 	
 	if elite:
-		max_health *= 2.5
+		max_health *= 3.5
 		speed *= 1.1
 		damage *= 2.0
 		health = max_health
@@ -173,6 +173,10 @@ func take_damage(amount):
 	if is_crit:
 		final_damage *= (1.0 + player_reference.crit_damage / 100.0)
 
+	var knockback_strength = 100.0  # tweakable
+	var dir = (position - player_reference.position).normalized()
+	knockback += dir * knockback_strength
+	
 	damage_popup(final_damage, 1.0, is_crit)
 	health = clamp(health - final_damage, 0, max_health)
 
@@ -197,18 +201,20 @@ func drop_item():
 	is_dead = true
 	GlobalManager.enemy_kill_count += 1
 	
-	var item_variant: Variant = null  # use Variant to avoid null type issues
+	var item_variant: Variant = null
 
 	if elite:
-		var base_chance: float = 0.3
+		var base_chance: float = 0.1
 		var luck_multiplier: float = clamp(player_reference.luck / 100.0, 0.0, 1.0)
-		var final_chance: float = base_chance + (0.5 * luck_multiplier)  # max 80%
+		var final_chance: float = base_chance + (0.7 * luck_multiplier)  # max 80%
 
 		if randf() < final_chance:
 			item_variant = load("res://resources/Pickups/Chest.tres")
 		else:
+			@warning_ignore("static_called_on_instance")
 			item_variant = Drops.pick_weighted_drop(type.drops, player_reference.luck)
 	else:
+		@warning_ignore("static_called_on_instance")
 		item_variant = Drops.pick_weighted_drop(type.drops, player_reference.luck)
 
 	if item_variant:

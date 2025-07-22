@@ -30,5 +30,7 @@ func upgrade_item(): #this will first check for upgrades and player reference
 	player_reference.growth += upgrade.growth
 	player_reference.luck += upgrade.luck
 	player_reference.dodge += upgrade.dodge
-
+	player_reference.crit += upgrade.crit
+	player_reference.crit_damage += upgrade.crit_damage
+	
 	level += 1

@@ -1,0 +1,106 @@
+[gd_resource type="Resource" script_class="PassiveItem" load_steps=9 format=3 uid="uid://cj8l823sbgyt1"]
+
+[ext_resource type="Texture2D" uid="uid://dbpu3fr7840mx" path="res://assets/Icons/unTied Games/Super Pixel Icons/Super Pixel Skill Icons Pack 5/icons/sk5_precision_A.png" id="1_iald8"]
+[ext_resource type="Script" uid="uid://oh3fq60et0sw" path="res://scenes/PassiveItem.gd" id="2_3eckn"]
+[ext_resource type="Script" uid="uid://dhltvcvyn33cy" path="res://scenes/Stats.gd" id="3_mp4yd"]
+
+[sub_resource type="Resource" id="Resource_wa3yt"]
+script = ExtResource("3_mp4yd")
+description = "+2% Crit Chance"
+max_health = 0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+damage = 0
+amplify = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.0
+dodge = 0.0
+crit = 2.0
+crit_damage = 0.0
+metadata/_custom_type_script = "uid://dhltvcvyn33cy"
+
+[sub_resource type="Resource" id="Resource_yj8vg"]
+script = ExtResource("3_mp4yd")
+description = "+3% Crit Chance"
+max_health = 0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+damage = 0
+amplify = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.0
+dodge = 0.0
+crit = 3.0
+crit_damage = 0.0
+metadata/_custom_type_script = "uid://dhltvcvyn33cy"
+
+[sub_resource type="Resource" id="Resource_lukaj"]
+script = ExtResource("3_mp4yd")
+description = "+3.5% Crit Chance"
+max_health = 0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+damage = 0
+amplify = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.0
+dodge = 0.0
+crit = 3.5
+crit_damage = 0.0
+metadata/_custom_type_script = "uid://dhltvcvyn33cy"
+
+[sub_resource type="Resource" id="Resource_nki6m"]
+script = ExtResource("3_mp4yd")
+description = "+4% Crit Chance"
+max_health = 0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+damage = 0
+amplify = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.0
+dodge = 0.0
+crit = 4.0
+crit_damage = 0.0
+metadata/_custom_type_script = "uid://dhltvcvyn33cy"
+
+[sub_resource type="Resource" id="Resource_mvam8"]
+script = ExtResource("3_mp4yd")
+description = "+5% Crit Chance"
+max_health = 0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+damage = 0
+amplify = 0.0
+area = 0.0
+magnet = 0.0
+growth = 0.0
+luck = 0.0
+dodge = 0.0
+crit = 5.0
+crit_damage = 0.0
+metadata/_custom_type_script = "uid://dhltvcvyn33cy"
+
+[resource]
+script = ExtResource("2_3eckn")
+upgrades = Array[ExtResource("3_mp4yd")]([SubResource("Resource_wa3yt"), SubResource("Resource_yj8vg"), SubResource("Resource_lukaj"), SubResource("Resource_nki6m"), SubResource("Resource_mvam8")])
+title = "Crit Chance"
+description = "Increases critical hit chance"
+icon = ExtResource("1_iald8")
+texture = ExtResource("1_iald8")
+rarity = 0
+level = 1
+metadata/_custom_type_script = "uid://oh3fq60et0sw"
