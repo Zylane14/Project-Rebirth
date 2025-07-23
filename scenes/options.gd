@@ -17,13 +17,14 @@ var every_item #variable to store every item, weapon & passive resources
 var every_weapon
 var every_passive
 
-
+var game_paused := false
+	
 func _ready(): #on ready hide the option
 	hide()
 	particles.hide() #on ready, hide both particle and panel
 	panel.hide()
 	get_all_item() #load and store every item on ready
-
+	
 func close_option(): #will hide option and resume the scene tree
 	hide()
 	particles.hide() #hide both while closing option
@@ -183,12 +184,3 @@ func get_available_upgrades()-> Array[Item]: #set function that will return an a
 			upgrades.append(passive_item)
 	
 	return upgrades
-
-func toggle_inventory():
-	var inventory = %WeaponInventory
-	if inventory.visible:
-		inventory.hide()
-		get_tree().paused = false
-	else:
-		inventory.show()
-		get_tree().paused = true

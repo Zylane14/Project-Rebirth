@@ -11,8 +11,6 @@ var source # The node that fired this projectile (usually the player)
 var weapon: Weapon
 
 func _ready():
-	process_mode = Node.PROCESS_MODE_PAUSABLE
-
 	if animation_to_play != "" and animation_player.has_animation(animation_to_play):
 		animation_player.play(animation_to_play)
 

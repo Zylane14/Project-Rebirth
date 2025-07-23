@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cdc5a701cq1mj"
+path="res://.godot/imported/frame0000.png-58f91f9819d9e408671786ad691b0130.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/Icons/unTied Games/Super Pixel Projectiles/Super Pixel Sci-fi FX Pack 2/PNG/scifx2_scan_appear_small_black/frame0000.png"
+dest_files=["res://.godot/imported/frame0000.png-58f91f9819d9e408671786ad691b0130.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

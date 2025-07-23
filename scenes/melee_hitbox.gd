@@ -13,12 +13,13 @@ var hit_targets := {}
 
 func _ready():
 	rotation = direction.angle()
+
 	if animation_to_play != "" and animation_player.has_animation(animation_to_play):
 		animation_player.play(animation_to_play)
 		var duration = animation_player.current_animation_length
-		get_tree().create_timer(duration).connect("timeout", Callable(self, "queue_free"))
+		get_tree().create_timer(duration, true).connect("timeout", Callable(self, "queue_free"))
 	else:
-		get_tree().create_timer(0.3).connect("timeout", Callable(self, "queue_free"))
+		get_tree().create_timer(0.3, true).connect("timeout", Callable(self, "queue_free"))
 
 func _physics_process(delta):
 	position += direction * speed * delta

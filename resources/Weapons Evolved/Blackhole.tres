@@ -23,5 +23,5 @@ title = "Blackhole"
 description = ""
 icon = ExtResource("1_grf1i")
 rarity = 0
-level = 1
+level = 0
 metadata/_custom_type_script = "uid://xs5efml7d1rs"

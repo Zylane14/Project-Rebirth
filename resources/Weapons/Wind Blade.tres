@@ -26,19 +26,18 @@ area = 0.0
 speed = 50.0
 amount = 0.0
 damage = 0.0
-cooldown = 0.2
-description = "+2 Amount -2 Cooldown +50 Speed
-"
+cooldown = -0.2
+description = "-0.2 Cooldown +50 Speed"
 metadata/_custom_type_script = "uid://desj1lkl2lkec"
 
 [sub_resource type="Resource" id="Resource_kiewn"]
 script = ExtResource("6_lnykp")
-area = 0.25
+area = 0.0
 speed = 60.0
 amount = 0.0
 damage = 0.0
-cooldown = 0.2
-description = "+60 Speed +0.25 Area -0.2 Cooldown"
+cooldown = -0.2
+description = "+60 Speed  -0.2 Cooldown"
 metadata/_custom_type_script = "uid://desj1lkl2lkec"
 
 [sub_resource type="Resource" id="Resource_03jd5"]
@@ -84,5 +83,5 @@ title = "Wind Blade"
 description = "WIINDD BLAAADEE"
 icon = ExtResource("2_kiewn")
 rarity = 0
-level = 1
+level = 0
 metadata/_custom_type_script = "uid://sur3de5kfqnl"

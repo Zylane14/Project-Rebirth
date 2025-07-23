@@ -120,10 +120,10 @@ func knockback_update(delta):
 	var move_dir = (player_reference.position - position).normalized() * speed
 	
 	#decay knockback over time
-	knockback = knockback.move_toward(Vector2.ZERO, 20 * delta)
+	knockback = knockback.move_toward(Vector2.ZERO, 15 * delta)
 	
 	#clamp knockback strength
-	var max_knockback_strength := 25.0
+	var max_knockback_strength := 30.0
 	if knockback.length() > max_knockback_strength:
 		knockback = knockback.normalized() * max_knockback_strength
 	
@@ -243,7 +243,7 @@ func drop_item():
 		if $AnimationPlayer.has_animation(anim_name):
 			$AnimationPlayer.play(anim_name)
 			await $AnimationPlayer.animation_finished
-
+			
 	await set_shader()
 	queue_free()
 

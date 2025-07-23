@@ -52,5 +52,5 @@ animation_name = "default"
 scale = Vector2(1.1, 1.1)
 description = "Gives 2 Experience Points."
 sound = ExtResource("3_8mdkf")
-weight = 50.0
+weight = 30.0
 metadata/_custom_type_script = "uid://xl6mh4kudeuh"

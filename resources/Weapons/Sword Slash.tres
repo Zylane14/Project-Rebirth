@@ -15,14 +15,13 @@ area = 0.1
 amount = 0
 damage = 2.0
 cooldown = 0.0
-description = "+3 Damage
-10% Size"
+description = "+3 Damage 10% Size"
 metadata/_custom_type_script = "uid://d0amiabxudau7"
 
 [sub_resource type="Resource" id="Resource_qdh4m"]
 script = ExtResource("7_hyye0")
 area = 0.0
-amount = 1
+amount = 0
 damage = 2.0
 cooldown = 0.0
 description = "+2 Damage"
@@ -53,8 +52,7 @@ area = 0.2
 amount = 0
 damage = 4.0
 cooldown = 0.0
-description = "+4 Damage
-20% Size"
+description = "+4 Damage 20% Size"
 metadata/_custom_type_script = "uid://d0amiabxudau7"
 
 [resource]

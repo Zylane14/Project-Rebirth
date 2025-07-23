@@ -67,5 +67,5 @@ title = "Fireball"
 description = ""
 icon = ExtResource("2_bsojs")
 rarity = 0
-level = 1
+level = 0
 metadata/_custom_type_script = "uid://bthks1pwcgkfj"

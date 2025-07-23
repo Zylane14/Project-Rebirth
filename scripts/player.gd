@@ -7,21 +7,18 @@ class_name Player
 @export var character: Character
 @export var ghost_node: PackedScene
 @onready var ghost_timer: Timer = $GhostTimer
+@export var weapon_inventory: Control
 
 ##==============================
 ## DASH SETTINGS
 ##==============================
-@export var dash_distance := 180.0
-@export var dash_duration := 0.4
-@export var dash_cooldown := 0.3
-@export var post_dash_invincibility_duration := 0.2
-
 var can_dash := true
 var is_dashing := false
 var is_invincible: bool = false
 var last_move_dir := Vector2.RIGHT
 var damage_cooldown = 0.3
 var damage_timer = 0.0
+var game_paused := false
 
 ##==============================
 ## HEALTH, STATS, AND UI
@@ -76,7 +73,7 @@ var area: float = 0:
 var magnet: float = 0:
 	set(value):
 		magnet = value
-		%Magnet.shape.radius = 100 + value
+		%Magnet.shape.radius = 30 + value
 		%MagnetL.text = "Magnet : " + str(value)
 
 var growth: float = 1:
@@ -150,7 +147,7 @@ var stun_timer := 0.0
 ##==============================
 ## READY
 ##==============================
-func _ready() -> void:
+func _ready():
 	Persistence.gain_bonus_stats(self)
 	character = Persistence.character
 
@@ -169,6 +166,8 @@ func _ready() -> void:
 ## PHYSICS PROCESS
 ##==============================
 func _physics_process(delta):
+	if game_paused:
+		return
 	#if is_multiplayer_authority():
 	if damage_timer > 0:
 		damage_timer -= delta
@@ -215,7 +214,7 @@ func _enter_tree() -> void:
 ## DASHING
 ##==============================
 func dash():
-	if is_dashing or not can_dash:
+	if is_dashing or not can_dash or not character.can_dash:
 		return
 
 	is_dashing = true
@@ -231,20 +230,21 @@ func dash():
 	if dash_dir == Vector2.ZERO:
 		dash_dir = last_move_dir
 
-	var target_position = position + dash_dir * dash_distance
+	var target_position = position + dash_dir * character.dash_distance
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position", target_position, dash_duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "position", target_position, character.dash_duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	await tween.finished
 
 	%Collision.set_deferred("disabled", false)
 	ghost_timer.stop()
 	is_dashing = false
 
-	await get_tree().create_timer(post_dash_invincibility_duration).timeout
+	await get_tree().create_timer(character.post_dash_invincibility_duration).timeout
 	is_invincible = false
 
-	await get_tree().create_timer(dash_cooldown).timeout
+	await get_tree().create_timer(character.dash_cooldown).timeout
 	can_dash = true
+
 
 func _input(event):
 	if event.is_action_pressed("attack_primary"):
@@ -399,3 +399,8 @@ func _on_magnet_area_entered(pickup_area):
 func _on_timer_timeout():
 	%Collision.set_deferred("disabled", true)
 	%Collision.set_deferred("disabled", false)
+
+func toggle_inventory():
+	weapon_inventory.visible = not weapon_inventory.visible
+	game_paused = weapon_inventory.visible
+	get_tree().paused = game_paused

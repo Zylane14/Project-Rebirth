@@ -6,9 +6,9 @@
 
 [sub_resource type="Resource" id="Resource_qdiv8"]
 script = ExtResource("3_7wuij")
-description = "+1 Health/sec"
+description = "+1.25 Health/sec"
 max_health = 0
-recovery = 1.0
+recovery = 1.25
 armor = 0.0
 movement_speed = 0.0
 damage = 0
@@ -42,9 +42,9 @@ metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [sub_resource type="Resource" id="Resource_lab53"]
 script = ExtResource("3_7wuij")
-description = "+2 Health/sec"
+description = "+2.5 Health/sec"
 max_health = 0
-recovery = 2.0
+recovery = 2.5
 armor = 0.0
 movement_speed = 0.0
 damage = 0
