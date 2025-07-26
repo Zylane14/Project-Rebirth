@@ -1,4 +1,4 @@
-extends VBoxContainer
+extends HBoxContainer
 
 @export var weapons : HBoxContainer #variable to store weapon container
 @export var passive_items : HBoxContainer #variable to store container for passive items in Option

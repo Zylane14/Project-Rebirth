@@ -13,10 +13,10 @@
 [sub_resource type="Resource" id="Resource_dmrje"]
 script = ExtResource("6_lnykp")
 area = 0.0
-speed = 50.0
+speed = 0.0
 amount = 0.0
-damage = 2.0
-cooldown = -0.5
+damage = 0.0
+cooldown = 0.0
 description = "WIND BLADE"
 metadata/_custom_type_script = "uid://desj1lkl2lkec"
 

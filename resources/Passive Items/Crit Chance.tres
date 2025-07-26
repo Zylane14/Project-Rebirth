@@ -102,5 +102,4 @@ description = "Increases critical hit chance"
 icon = ExtResource("1_iald8")
 texture = ExtResource("1_iald8")
 rarity = 0
-level = 1
 metadata/_custom_type_script = "uid://oh3fq60et0sw"

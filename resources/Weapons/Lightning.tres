@@ -13,7 +13,7 @@
 [sub_resource type="Resource" id="Resource_8078k"]
 script = ExtResource("7_yg4jm")
 amount = 0
-damage = 2.0
+damage = 0.0
 cooldown = 0.0
 description = "LIGHTNING"
 metadata/_custom_type_script = "uid://c557imx4ux1uo"
@@ -67,6 +67,6 @@ cooldown = 4.5
 title = "Lightning"
 description = ""
 icon = ExtResource("2_ikmcd")
-rarity = 2
-level = 0
+rarity = 0
+level = 1
 metadata/_custom_type_script = "uid://c0anj5l8vyvkr"

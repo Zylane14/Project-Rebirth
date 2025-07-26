@@ -1515,13 +1515,12 @@ properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("weapon_inventory")]
+[node name="Player" type="CharacterBody2D"]
 process_mode = 1
 visibility_layer = 2
 z_index = 1
 script = ExtResource("1_onrkg")
 ghost_node = ExtResource("3_l71n6")
-weapon_inventory = NodePath("UI/WeaponInventory")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_i3pqv")
@@ -1582,7 +1581,7 @@ texture = ExtResource("2_ur7pv")
 lifetime = 2.6
 process_material = SubResource("ParticleProcessMaterial_jej6c")
 
-[node name="WeaponInventory" type="VBoxContainer" parent="UI" node_paths=PackedStringArray("weapons", "passive_items", "particles", "panel", "player_reference")]
+[node name="WeaponInventory" type="HBoxContainer" parent="UI" node_paths=PackedStringArray("weapons", "passive_items", "particles", "panel", "player_reference")]
 unique_name_in_owner = true
 anchors_preset = 8
 anchor_left = 0.5
@@ -1591,7 +1590,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -218.0
 offset_top = -42.0
-offset_right = 218.0
+offset_right = 658.0
 offset_bottom = 42.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1692,9 +1691,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -47.0
-offset_top = 44.0
+offset_top = 22.0
 offset_right = 48.0
-offset_bottom = 72.0
+offset_bottom = 50.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 20
 text = "LEVEL UP"
@@ -1704,29 +1703,28 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -59.0
-offset_top = 71.0
-offset_right = 59.0
-offset_bottom = 84.0
+offset_left = -54.0
+offset_top = 47.0
+offset_right = 54.0
+offset_bottom = 60.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 9
-text = "CHOOSE YOUR  UPGRADE"
+text = "Choose Your Upgrade"
 
-[node name="Options" type="VBoxContainer" parent="UI" node_paths=PackedStringArray("weapons", "passive_items", "particles", "panel")]
+[node name="Options" type="HBoxContainer" parent="UI" node_paths=PackedStringArray("weapons", "passive_items", "particles", "panel")]
 unique_name_in_owner = true
 process_mode = 3
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -20.0
-offset_top = -20.0
 offset_right = 20.0
-offset_bottom = 20.0
+offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 20
 script = ExtResource("6_fjrip")
 weapons = NodePath("../WeaponInventory/Weapons")
 passive_items = NodePath("../WeaponInventory/PassiveItems")

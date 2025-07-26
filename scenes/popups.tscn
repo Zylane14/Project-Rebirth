@@ -1,16 +1,21 @@
 [gd_scene load_steps=8 format=3 uid="uid://dgt7kgn1hndcf"]
 
 [ext_resource type="Script" uid="uid://gp00nvdecsvp" path="res://scenes/popups.gd" id="1_fk52g"]
-[ext_resource type="Texture2D" uid="uid://dchbvryra6a57" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Scalable screen/Scalable_3.png" id="2_201id"]
-[ext_resource type="Texture2D" uid="uid://c17f6d35uar7g" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Scalable screen/Selected_.png" id="3_jha0h"]
+[ext_resource type="Texture2D" uid="uid://cv4qfr1px8hb0" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Item holders/32px_5.png" id="2_201id"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jha0h"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
 texture = ExtResource("2_201id")
-texture_margin_left = 5.0
-texture_margin_top = 5.0
-texture_margin_right = 5.0
-texture_margin_bottom = 5.0
-region_rect = Rect2(0, 0, 80, 64)
+region_rect = Rect2(0, 0, 32, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_201id"]
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="FontVariation" id="FontVariation_201id"]
 spacing_bottom = -6
@@ -35,20 +40,42 @@ script = ExtResource("1_fk52g")
 [node name="ItemPopup" type="PopupPanel" parent="UI"]
 unique_name_in_owner = true
 position = Vector2i(260, 130)
-size = Vector2i(161, 191)
+size = Vector2i(109, 153)
 theme_override_styles/panel = SubResource("StyleBoxTexture_jha0h")
 
-[node name="Selected" type="Sprite2D" parent="UI/ItemPopup"]
+[node name="Panel" type="Panel" parent="UI/ItemPopup"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 99.0
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_201id")
+
+[node name="Selected" type="Panel" parent="UI/ItemPopup"]
+visible = false
+modulate = Color(0.284203, 0.57604, 1, 1)
 light_mask = 0
-position = Vector2(80, 95)
-scale = Vector2(3.29167, 4.29545)
-texture = ExtResource("3_jha0h")
+visibility_layer = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 99.0
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/ItemPopup"]
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 156.0
-offset_bottom = 186.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 99.0
+offset_bottom = 143.0
 
 [node name="Title" type="Label" parent="UI/ItemPopup/VBoxContainer"]
 unique_name_in_owner = true
@@ -132,10 +159,10 @@ size = Vector2i(121, 100)
 theme_override_styles/panel = SubResource("StyleBoxTexture_jha0h")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/StatsPopup"]
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 116.0
-offset_bottom = 95.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 111.0
+offset_bottom = 90.0
 
 [node name="TitleStats" type="Label" parent="UI/StatsPopup/VBoxContainer"]
 unique_name_in_owner = true

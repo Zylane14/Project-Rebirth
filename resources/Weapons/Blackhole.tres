@@ -13,7 +13,7 @@
 script = ExtResource("8_iu6dr")
 amount = 0
 area = 0.0
-damage = 5.0
+damage = 0.0
 cooldown = 0.0
 description = "BLACK HOLE"
 metadata/_custom_type_script = "uid://bhud26ecmt7ug"
@@ -73,5 +73,5 @@ title = "BlackHole"
 description = ""
 icon = ExtResource("2_krfsd")
 rarity = 3
-level = 0
+level = 1
 metadata/_custom_type_script = "uid://xs5efml7d1rs"

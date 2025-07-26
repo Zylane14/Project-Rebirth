@@ -10,10 +10,10 @@
 
 [sub_resource type="Resource" id="Resource_3xwug"]
 script = ExtResource("7_jf17j")
-angular_speed = 20.0
-amount = 1
+angular_speed = 0.0
+amount = 0
 area = 0.0
-damage = 1.0
+damage = 0.0
 cooldown = 0.0
 description = "FIRE TORNADO"
 metadata/_custom_type_script = "uid://cnqkprtjrc6t6"
@@ -74,8 +74,9 @@ projectile_animation_name = "Fire_Tornado_loop"
 manual_only = false
 cooldown = 2.0
 title = "Fire Tornado"
-description = ""
+description = "
+"
 icon = ExtResource("2_4tr5a")
-rarity = 4
+rarity = 0
 level = 0
 metadata/_custom_type_script = "uid://4711pfsdiwbb"
