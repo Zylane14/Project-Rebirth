@@ -68,5 +68,5 @@ title = "Lightning"
 description = ""
 icon = ExtResource("2_ikmcd")
 rarity = 0
-level = 1
+level = 0
 metadata/_custom_type_script = "uid://c0anj5l8vyvkr"

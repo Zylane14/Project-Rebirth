@@ -5,7 +5,7 @@ var stat_suffixes = {
 	"luck": "%", "dodge": "%", "growth": " exp/rate",
 	"recovery": " hp/sec", "movement_speed": "", "max_health": "",
 	"damage": "", "amplify": "%", "area": "", "magnet": "",
-	"cooldown": "s"
+	"cooldown": "s", "amount": "", "angular_speed": ""
 }
 
 @export var item: Item:
@@ -37,23 +37,29 @@ var stat_suffixes = {
 		var has_upgrades: bool = item.upgrades.size() > 0
 		var has_evolution: bool = item is Weapon and item.evolution != null
 
-		if has_upgrades and item.level <= item.upgrades.size():
-			# Show upgrade preview
-			var next_upgrade = item.upgrades[item.level - 1]
+		if has_upgrades and item.level < item.upgrades.size():
+			var next_upgrade = item.upgrades[item.level]
 			$Frame/Level.text = "Level " + str(item.level) + " → " + str(item.level + 1)
 
 			var stat_text := ""
-			var stat_fields = {
+
+			# Stat display rules: false = higher is better, true = lower is better
+			var custom_stat_fields = {
 				"max_health": false, "recovery": false, "armor": false,
 				"movement_speed": false, "damage": false, "amplify": false,
 				"area": false, "magnet": false, "growth": false, "luck": false,
 				"dodge": false, "crit": false, "crit_damage": false, "cooldown": true,
+				"amount": false, "angular_speed": false, "radius": false
 			}
 
-			for stat_name in stat_fields.keys():
-				var invert = stat_fields[stat_name]
-				if item.has_method("get") and _has_property(item, stat_name) and _has_property(next_upgrade, stat_name):
-					var current_value = item.get(stat_name)
+			for stat_name in custom_stat_fields.keys():
+				var invert = custom_stat_fields[stat_name]
+
+				if item.has_method("get") and _has_property(next_upgrade, stat_name):
+					var current_value := 0.0
+					if _has_property(item, stat_name):
+						current_value = item.get(stat_name)
+
 					var upgrade_value = next_upgrade.get(stat_name)
 					var new_value = current_value + upgrade_value
 
@@ -112,17 +118,18 @@ func format_stat_change(label: String, current: float, next: float, invert := fa
 
 	return "[color=gray]" + label + ":[/color] " + round1(current) + suffix + " → [color=" + color + "]" + round1(next) + suffix + "[/color]\n"
 
+func round1(value: float) -> String:
+	var rounded: float = round(value * 10.0) / 10.0
+	if int(rounded) == rounded:
+		return str(int(rounded))
+	return str(rounded)
+
 func _has_property(obj: Object, property_name: String) -> bool:
 	for prop in obj.get_property_list():
 		if prop.name == property_name:
 			return true
 	return false
 
-func round1(value: float) -> String:
-	var rounded: float = round(value * 10.0) / 10.0
-	if int(rounded) == rounded:
-		return str(int(rounded))
-	return str(rounded)
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("click") and item:

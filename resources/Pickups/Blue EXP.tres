@@ -45,7 +45,7 @@ animations = [{
 
 [resource]
 script = ExtResource("2_nfxct")
-XP = 1000.0
+XP = 2.0
 title = "BlueXp"
 frames = SubResource("SpriteFrames_c3vmc")
 animation_name = "default"

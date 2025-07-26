@@ -15,7 +15,7 @@ amount = 0
 area = 0.0
 damage = 0.0
 cooldown = 0.0
-description = "FIRE TORNADO"
+description = "Fire tornado that circles around the player, damaging enemies."
 metadata/_custom_type_script = "uid://cnqkprtjrc6t6"
 
 [sub_resource type="Resource" id="Resource_rgxfb"]

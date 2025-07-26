@@ -51,29 +51,33 @@ func add_option(item) -> int: #function to add Option with the item Resource
 
 func show_option():
 	var weapons_available = get_available_resource_in(weapons)
-	var passive_item_available = get_available_resource_in(passive_items) #get both weapon and passive item and store them
-	
-	if weapons_available.size() == 0 and passive_item_available.size() == 0: #if there are no weapon resource, return the show function
+	var passive_item_available = get_available_resource_in(passive_items)
+
+	if weapons_available.size() == 0 and passive_item_available.size() == 0:
 		return
-	
-	for slot in get_children(): #if there is any weapon, then remove previous option
+
+	# Remove previous options
+	for slot in get_children():
 		slot.queue_free()
 
-	
-	var available = get_equipped_item() #get the equipped item from the slots
-	if slot_available(weapons): #if any empty weapon slot is available, add the new weapons to array
+	var available = get_equipped_item()
+
+	# Add unequipped upgradeable items if there's space
+	if slot_available(weapons):
 		available.append_array(get_upgradeable(every_weapon, get_equipped_item()))
-	if slot_available(passive_items): #for empty passive slot, add new passive items
+	if slot_available(passive_items):
 		available.append_array(get_upgradeable(every_passive, get_equipped_item()))
-	available.shuffle() #shuffle entire array
-	
-	var modifier = 0
-	var luck_roll = randf() * 100.0
-	if luck_roll < owner.luck: #formula to get 4th option
+
+	available.shuffle()
+
+	var modifier := 0
+	var luck_roll := randf() * 100.0
+	if luck_roll < owner.luck:
 		modifier = 1
 
-	
-	var option_size = 0
+	var option_size := 0
+
+	# Handle evolutions
 	for weapon in weapons_available:
 		if weapon.max_level_reached() and weapon.item_needed in passive_item_available:
 			var option_slot = OptionSlot.instantiate()
@@ -81,22 +85,30 @@ func show_option():
 			option_slot.item = weapon
 			add_child(option_slot)
 			option_size += 1
-	
-	
-	for i in range(3 + modifier): #add 3 options
+
+	# Add up to 4 options max (even if lucky)
+	var max_options: int = min(4, 3 + modifier)
+	for i in range(max_options):
 		if available.size() > 0:
-			option_size += add_option(available.pop_front()) #with for loop from available items
-	
-	if option_size == 0: #if none of the weapons can be upgraded again, return the function
+			option_size += add_option(available.pop_front())
+
+	if option_size == 0:
 		return
-	
+
+	# Dynamic spacing based on number of options
+	if option_size == 4:
+		self.add_theme_constant_override("separation", 5) # tighter spacing for 4
+	else:
+		self.add_theme_constant_override("separation", 20) # default spacing
+
+	# Show UI
 	show()
-	particles.show() #show both while showing option
+	particles.show()
 	panel.show()
 	%Gold.hide()
 	%XP.hide()
-	get_tree().paused = true #else show the option and pause the scene tree
-	
+	get_tree().paused = true
+
 func dir_contents(path):
 	var dir = DirAccess.open(path)
 	var item_resources = []
