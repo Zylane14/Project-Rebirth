@@ -57,3 +57,4 @@ func get_total_stats():
 			if upgrade.enabled:
 				add_stats(upgrade.skill.stats) #adds stats from every upgrade
 	Persistence.bonus_stats = total_stat
+	

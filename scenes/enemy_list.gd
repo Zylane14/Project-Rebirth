@@ -32,10 +32,21 @@ func dir_contents():
 
 func _on_pressed(button : Button):
 	var index = button.get_index()
-	%Name.text = "Name : " + enemies[index].title #function to update beastiary labels
-	%Health.text = "Health : " + str(enemies[index].health)
-	%Damage.text = "Damage : " + str(enemies[index].damage)
+	var enemy = enemies[index]
+
+	%Name.text = "Name : " + enemy.title
+	%Health.text = "Health : " + str(enemy.health)
+	%Damage.text = "Damage : " + str(enemy.damage)
+	%Speed.text = "Speed : " + str(enemy.speed)
+	%Cooldown.text = "Cooldown : " + str(enemy.attack_cooldown) + "s"
+
+	%Class.text = "Class : " + Enemy.EnemyClass.keys()[enemy.enemy_class]
+	%Unlock.text = "Unlock : " + str(enemy.unlock_minute) + " min"
+	%SpawnWeight.text = "Spawn : " + str(enemy.spawn_weight)
+
+	# Sprite Animation
 	var sprite_node: AnimatedSprite2D = %Texture
-	sprite_node.sprite_frames = enemies[index].frames
+	sprite_node.sprite_frames = enemy.frames
 	sprite_node.play("idle")
+
 	SoundManager.play_sfx(load("res://music & sfx/RPG_Essentials_Free/10_UI_Menu_SFX/071_Unequip_01.wav"))

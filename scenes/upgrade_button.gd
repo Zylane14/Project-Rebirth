@@ -71,3 +71,11 @@ func final_modifier() -> Vector2:
 		modification += Vector2(0, -20)
 	
 	return modification
+
+func _on_mouse_entered() -> void:
+	if skill:
+		var rect = Rect2i(Vector2i(global_position), Vector2i(size))
+		Popups.SkillPopup(rect, skill)
+
+func _on_mouse_exited() -> void:
+	Popups.HideItemPopup()
