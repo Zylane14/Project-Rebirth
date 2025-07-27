@@ -1,7 +1,7 @@
 extends HBoxContainer
 
-@export var weapons : HBoxContainer #variable to store weapon container
-@export var passive_items : HBoxContainer #variable to store container for passive items in Option
+@export var weapons : VBoxContainer #variable to store weapon container
+@export var passive_items : VBoxContainer #variable to store container for passive items in Option
 var OptionSlot = preload("res://scenes/option_slot.tscn") #preloads the option slot
 
 #variable to store both particle and panel

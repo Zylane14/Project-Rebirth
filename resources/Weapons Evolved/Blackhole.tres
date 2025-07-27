@@ -9,7 +9,7 @@
 [resource]
 script = ExtResource("3_1fk6e")
 amount = 1
-area = 2.5
+area = 3.0
 delay = 0.1
 damage = 50.0
 speed = 0.0

@@ -1,47 +1,189 @@
-[gd_scene load_steps=2 format=3 uid="uid://do0gye7vyetq7"]
+[gd_scene load_steps=18 format=3 uid="uid://do0gye7vyetq7"]
 
 [ext_resource type="Script" uid="uid://d3oefooultsht" path="res://scenes/tutorial_overlay.gd" id="1_3d8bu"]
+[ext_resource type="Texture2D" uid="uid://6byeigj4p22h" path="res://assets/UI/keyboard and mouse/Keyboard icons(16x16)/W.png" id="2_ri6rx"]
+[ext_resource type="Texture2D" uid="uid://dpcbjk3ta0fo1" path="res://assets/UI/keyboard and mouse/Keyboard icons(16x16)/A.png" id="3_3mp0e"]
+[ext_resource type="Texture2D" uid="uid://bef7tvdivno1o" path="res://assets/UI/keyboard and mouse/Keyboard icons(16x16)/S.png" id="4_so2e3"]
+[ext_resource type="Texture2D" uid="uid://3o1sdiomoe2r" path="res://assets/UI/keyboard and mouse/Keyboard icons(16x16)/D.png" id="5_cn7sy"]
+[ext_resource type="Texture2D" uid="uid://lnp0krqdnq2p" path="res://assets/UI/keyboard and mouse/Keyboard icons(16x16)/space.png" id="6_dmjo4"]
+[ext_resource type="Texture2D" uid="uid://cvw77royuw1lg" path="res://assets/UI/keyboard and mouse/Keyboard icons(16x16)/tab.png" id="7_3mp0e"]
+[ext_resource type="Texture2D" uid="uid://bqqoo1ov3nilq" path="res://assets/UI/keyboard and mouse/mouse/mouseclick.png" id="7_ooqc7"]
+[ext_resource type="Texture2D" uid="uid://bgnuupbaotwg3" path="res://assets/UI/keyboard and mouse/Keyboard icons(16x16)/R.png" id="8_abd3s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_101bs"]
+atlas = ExtResource("2_ri6rx")
+region = Rect2(0, -1, 15, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfpww"]
+atlas = ExtResource("3_3mp0e")
+region = Rect2(0, 0, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmagj"]
+atlas = ExtResource("4_so2e3")
+region = Rect2(0, 0, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q68ox"]
+atlas = ExtResource("5_cn7sy")
+region = Rect2(0, 0, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_va5m3"]
+atlas = ExtResource("6_dmjo4")
+region = Rect2(0, 0, 40, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_so2e3"]
+atlas = ExtResource("7_3mp0e")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pn1s"]
+atlas = ExtResource("8_abd3s")
+region = Rect2(0, 0, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nipx"]
+atlas = ExtResource("7_ooqc7")
+region = Rect2(8, 4, 16, 24)
 
 [node name="TutorialOverlay" type="CanvasLayer"]
 script = ExtResource("1_3d8bu")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = 64.0
-offset_right = 100.0
-offset_bottom = 104.0
+offset_left = -178.0
+offset_top = -101.0
+offset_right = 160.0
+offset_bottom = 233.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 15
+scale = Vector2(0.6, 0.6)
+theme_override_constants/separation = 24
 alignment = 1
 
 [node name="WASD" type="Label" parent="HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
-text = "Controls:
-W, A, S, D"
+theme_override_font_sizes/font_size = 14
+text = "Move:
+"
 horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/WASD"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/WASD/VBoxContainer"]
+position = Vector2(-26.5, 32.5)
+scale = Vector2(1.5, 1.5)
+texture = SubResource("AtlasTexture_101bs")
+
+[node name="Sprite2D2" type="Sprite2D" parent="HBoxContainer/WASD/VBoxContainer"]
+position = Vector2(2.82144, 33)
+scale = Vector2(1.5, 1.5)
+texture = SubResource("AtlasTexture_lfpww")
+
+[node name="Sprite2D3" type="Sprite2D" parent="HBoxContainer/WASD/VBoxContainer"]
+position = Vector2(31.5, 33.5)
+scale = Vector2(1.5, 1.5)
+texture = SubResource("AtlasTexture_fmagj")
+
+[node name="Sprite2D4" type="Sprite2D" parent="HBoxContainer/WASD/VBoxContainer"]
+position = Vector2(60.5, 33.5)
+scale = Vector2(1.5, 1.5)
+texture = SubResource("AtlasTexture_q68ox")
 
 [node name="Spacebar" type="Label" parent="HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 14
 text = "Dash:
-Spacebar"
+"
 horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Spacebar"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/Spacebar/VBoxContainer"]
+position = Vector2(18.5, 33)
+scale = Vector2(1.5, 1.5)
+texture = SubResource("AtlasTexture_va5m3")
+
+[node name="Inventory" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Inventory:
+"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Inventory"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/Inventory/VBoxContainer"]
+position = Vector2(18.5, 35)
+scale = Vector2(1.5, 1.5)
+texture = SubResource("AtlasTexture_so2e3")
+
+[node name="Light" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Light:
+"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Light"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/Light/VBoxContainer"]
+position = Vector2(18.5, 33.5)
+scale = Vector2(1.5, 1.5)
+texture = SubResource("AtlasTexture_2pn1s")
 
 [node name="Mouse" type="Label" parent="HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 14
 text = "Aim:
-Mouse"
+
+"
 horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Mouse"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/Mouse/VBoxContainer"]
+position = Vector2(18.5, 39.5)
+scale = Vector2(1.5, 1.5)
+texture = SubResource("AtlasTexture_4nipx")

@@ -37,20 +37,25 @@ var stat_suffixes = {
 		var has_upgrades: bool = item.upgrades.size() > 0
 		var has_evolution: bool = item is Weapon and item.evolution != null
 
+		# Stat display rules: false = higher is better, true = lower is better
+		var custom_stat_fields = {
+			"max_health": false, "recovery": false, "armor": false,
+			"movement_speed": false, "damage": false, "amplify": false,
+			"area": false, "magnet": false, "growth": false, "luck": false,
+			"dodge": false, "crit": false, "crit_damage": false, "cooldown": true,
+			"amount": false, "angular_speed": false, "radius": false
+		}
+
 		if has_upgrades and item.level < item.upgrades.size():
+			# Show upgrade preview
 			var next_upgrade = item.upgrades[item.level]
-			$Frame/Level.text = "Level " + str(item.level) + " → " + str(item.level + 1)
+			var next_level = item.level + 1
+			if next_level >= item.upgrades.size():
+				$Frame/Level.text = "Level " + str(item.level) + " → MAX"
+			else:
+				$Frame/Level.text = "Level " + str(item.level) + " → " + str(next_level)
 
 			var stat_text := ""
-
-			# Stat display rules: false = higher is better, true = lower is better
-			var custom_stat_fields = {
-				"max_health": false, "recovery": false, "armor": false,
-				"movement_speed": false, "damage": false, "amplify": false,
-				"area": false, "magnet": false, "growth": false, "luck": false,
-				"dodge": false, "crit": false, "crit_damage": false, "cooldown": true,
-				"amount": false, "angular_speed": false, "radius": false
-			}
 
 			for stat_name in custom_stat_fields.keys():
 				var invert = custom_stat_fields[stat_name]
@@ -73,15 +78,36 @@ var stat_suffixes = {
 
 			desc_box.append_text(stat_text)
 
-		elif has_evolution:
-			# Show evolution preview (no GlobalManager check)
+		elif has_evolution and item.level >= item.upgrades.size() and item.evolution != null:
+			# Show evolution preview
 			$HeaderBar/Icon.texture = item.evolution.icon
 			$Frame/Level.text = "EVOLUTION"
-			desc_box.append_text(item.evolution.description)
+
+			var evolution_stat_text := ""
+
+			for stat_name in custom_stat_fields.keys():
+				var invert = custom_stat_fields[stat_name]
+
+				if item.has_method("get") and _has_property(item.evolution, stat_name):
+					var current_value := 0.0
+					if _has_property(item, stat_name):
+						current_value = item.get(stat_name)
+
+					var evolved_value = item.evolution.get(stat_name)
+
+					if abs(evolved_value - current_value) > 0.001:
+						var label = stat_name.capitalize().replace("_", " ")
+						var suffix = stat_suffixes.get(stat_name, "")
+						evolution_stat_text += format_stat_change(label, current_value, evolved_value, invert, suffix)
+
+			if item.evolution.description != "":
+				evolution_stat_text += "\n" + item.evolution.description
+
+			desc_box.append_text(evolution_stat_text)
 
 		else:
 			# No upgrade and no evolution
-			$Frame/Level.text = "MAX"
+			$Frame/Level.text = "MAX LEVEL"
 			desc_box.append_text(item.description)
 
 		# Rarity label
@@ -129,7 +155,6 @@ func _has_property(obj: Object, property_name: String) -> bool:
 		if prop.name == property_name:
 			return true
 	return false
-
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("click") and item:

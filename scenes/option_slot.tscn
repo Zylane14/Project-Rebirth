@@ -120,6 +120,7 @@ offset_bottom = 18.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 9
 text = "Level 1 -> 2"
+horizontal_alignment = 1
 
 [node name="Rarity" type="RichTextLabel" parent="Frame"]
 layout_mode = 1

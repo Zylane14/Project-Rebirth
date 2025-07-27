@@ -1,7 +1,7 @@
 extends Panel
 
 @onready var text: RichTextLabel = $Panel/Text
-@onready var weapons: HBoxContainer = %Weapons
+@onready var weapons: VBoxContainer = %Weapons
 
 var game_over : bool = false
 var temp = [] #temp array for storing both current and previously used weapons
@@ -24,20 +24,27 @@ func _on_continue_pressed() -> void:
 func set_icon(path : String):
 	return "[img=32x32]%s[/img]" % path #function to set icon 
 
-func get_available_resource_in(items)-> Array[Item]: #function to get all available weapon that the player is using
-	var resources : Array[Item] = []
+func get_available_resource_in(items) -> Array[Item]:
+	var resources: Array[Item] = []
+	if items == null:
+		return resources
 	for item in items.get_children():
 		if item.item != null:
 			resources.append(item.item)
 	return resources
 
-func set_text(): #set text and report damage for the currently equipped weapons
+
+func set_text():
+	if weapons == null:
+		return  # Early exit if the weapons container no longer exists
+
 	text.clear()
+
 	for weapon : Weapon in get_available_resource_in(weapons):
 		if weapon not in temp:
 			temp.append(weapon)
 		text.append_text(set_icon(weapon.icon.resource_path) + "%20.2f" % weapon.damage_dealt + "\n")
-	
-	for weapon : Weapon in temp: #and the previous weapons that got evolved
+
+	for weapon : Weapon in temp:
 		if weapon not in get_available_resource_in(weapons):
-			text.append_text(set_icon(weapon.icon.resource_path) + "%20.2f" %weapon.damage_dealt + "\n")
+			text.append_text(set_icon(weapon.icon.resource_path) + "%20.2f" % weapon.damage_dealt + "\n")

@@ -73,5 +73,5 @@ title = "BlackHole"
 description = ""
 icon = ExtResource("2_krfsd")
 rarity = 3
-level = 1
+level = 0
 metadata/_custom_type_script = "uid://xs5efml7d1rs"

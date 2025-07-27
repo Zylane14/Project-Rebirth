@@ -7,7 +7,8 @@ class_name Player
 @export var character: Character
 @export var ghost_node: PackedScene
 @onready var ghost_timer: Timer = $GhostTimer
-@export var weapon_inventory: Control
+@onready var light: PointLight2D = $Light 
+@onready var weapon_inventory: Control = %WeaponInventory
 
 ##==============================
 ## DASH SETTINGS
@@ -60,7 +61,7 @@ var damage: int = 1:
 		damage = value
 		%Damage.text = "Damage : " + str(value)
 
-var amplify: float = 0.1:
+var amplify: float = 0.0:
 	set(value):
 		amplify = value
 		%Amplify.text = "Amplify : " + str(value) + "%"
@@ -73,7 +74,7 @@ var area: float = 0:
 var magnet: float = 0:
 	set(value):
 		magnet = value
-		%Magnet.shape.radius = 30 + value
+		%Magnet.shape.radius = 40 + value
 		%MagnetL.text = "Magnet : " + str(value)
 
 var growth: float = 1:
@@ -253,6 +254,9 @@ func _input(event):
 
 	if event.is_action_pressed("dash"):
 		dash()
+	
+	if event.is_action_pressed("toggle_light"):
+		light.visible = not light.visible
 
 ##==============================
 ## COMBAT / DAMAGE
@@ -404,3 +408,4 @@ func toggle_inventory():
 	weapon_inventory.visible = not weapon_inventory.visible
 	game_paused = weapon_inventory.visible
 	get_tree().paused = game_paused
+	

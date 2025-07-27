@@ -10,7 +10,7 @@ script = ExtResource("1_ik2nu")
 enemy = ExtResource("2_tx2ig")
 destructible = ExtResource("3_e3f8v")
 boss_scene = ExtResource("4_6bbd6")
-boss_unlock_minute = 5
+boss_unlock_minute = 3
 
 [node name="UI" type="CanvasLayer" parent="."]
 

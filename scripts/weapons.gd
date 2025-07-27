@@ -1,4 +1,4 @@
-extends HBoxContainer
+extends VBoxContainer
 
 @export var item: Item = null: 
 	set(value):

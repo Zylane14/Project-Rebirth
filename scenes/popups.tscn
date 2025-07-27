@@ -3,19 +3,7 @@
 [ext_resource type="Script" uid="uid://gp00nvdecsvp" path="res://scenes/popups.gd" id="1_fk52g"]
 [ext_resource type="Texture2D" uid="uid://cv4qfr1px8hb0" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Item holders/32px_5.png" id="2_201id"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jha0h"]
-content_margin_left = 10.0
-content_margin_top = 10.0
-content_margin_right = 10.0
-content_margin_bottom = 10.0
-texture = ExtResource("2_201id")
-region_rect = Rect2(0, 0, 32, 32)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_201id"]
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
 
 [sub_resource type="FontVariation" id="FontVariation_201id"]
 spacing_bottom = -6
@@ -25,6 +13,14 @@ spacing_top = -2
 
 [sub_resource type="FontVariation" id="FontVariation_c2ssw"]
 spacing_top = 5
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jha0h"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+texture = ExtResource("2_201id")
+region_rect = Rect2(0, 0, 32, 32)
 
 [node name="Popups" type="Control"]
 process_mode = 3
@@ -40,42 +36,42 @@ script = ExtResource("1_fk52g")
 [node name="ItemPopup" type="PopupPanel" parent="UI"]
 unique_name_in_owner = true
 position = Vector2i(260, 130)
-size = Vector2i(109, 153)
-theme_override_styles/panel = SubResource("StyleBoxTexture_jha0h")
+size = Vector2i(114, 167)
 
 [node name="Panel" type="Panel" parent="UI/ItemPopup"]
 visible = false
+light_mask = 2
+visibility_layer = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 99.0
-offset_bottom = 143.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 110.0
+offset_bottom = 163.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_201id")
 
 [node name="Selected" type="Panel" parent="UI/ItemPopup"]
-visible = false
-modulate = Color(0.284203, 0.57604, 1, 1)
+modulate = Color(0.669661, 0.516108, 0.260468, 1)
 light_mask = 0
 visibility_layer = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 99.0
-offset_bottom = 143.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 110.0
+offset_bottom = 163.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/ItemPopup"]
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 99.0
-offset_bottom = 143.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 110.0
+offset_bottom = 163.0
 
 [node name="Title" type="Label" parent="UI/ItemPopup/VBoxContainer"]
 unique_name_in_owner = true

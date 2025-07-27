@@ -41,28 +41,31 @@ func max_level_reached() -> bool:
 	return level > upgrades.size()
 
 func upgrade_item():
-	if max_level_reached() and evolution != null:
-		# Perform evolution
+	if evolution != null and max_level_reached() and slot != null and slot.item == self:
+		# Evolve only if conditions are met and hasn't been evolved yet
+		if item_needed != null and not GlobalManager.has_item(item_needed):
+			return  # Required item not present
+
 		var evolved_weapon: Weapon = evolution.duplicate()
 		evolved_weapon.level = 1
 		evolved_weapon.owner = owner
 		evolved_weapon.slot = slot
-		slot.item = evolved_weapon
+		slot.item = evolved_weapon  # Replace this weapon with evolved one
 
 		if GlobalManager.has_method("register_evolution"):
 			GlobalManager.register_evolution(self)
 
-		# Help garbage collection
+		# Prevent further references to this weapon
 		owner = null
 		slot = null
 		return
 
-	# Apply upgrade
+	# Don't apply upgrades if already at max or no more upgrades available
 	if not is_upgradeable():
 		return
 
 	var upgrade = upgrades[level - 1]
 	damage += upgrade.damage
 	cooldown += upgrade.cooldown
-	cooldown = max(cooldown, 0.01)  # Clamp to prevent issues
+	cooldown = max(cooldown, 0.01)
 	level += 1

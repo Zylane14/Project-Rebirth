@@ -11,7 +11,7 @@
 [sub_resource type="Resource" id="Resource_3xwug"]
 script = ExtResource("7_jf17j")
 angular_speed = 0.0
-amount = 0
+amount = 1
 area = 0.0
 damage = 0.0
 cooldown = 0.0
