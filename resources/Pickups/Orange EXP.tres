@@ -45,7 +45,7 @@ animations = [{
 
 [resource]
 script = ExtResource("2_8mdkf")
-XP = 25.0
+XP = 10.0
 title = "Orange EXP"
 frames = SubResource("SpriteFrames_7jj8m")
 animation_name = "default"

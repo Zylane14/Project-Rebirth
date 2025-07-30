@@ -381,7 +381,7 @@ func animation(_delta):
 	var anim_name = "idle_" + character.animation_name
 
 	if is_moving:
-		if movement_speed >= 140:
+		if movement_speed >= 120:
 			var run_anim = "run_" + character.animation_name
 			if $AnimationPlayer.has_animation(run_anim):
 				anim_name = run_anim

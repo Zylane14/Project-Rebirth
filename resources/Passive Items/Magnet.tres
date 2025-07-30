@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PassiveItem" load_steps=9 format=3 uid="uid://cdqw7gta62gvm"]
+[gd_resource type="Resource" script_class="PassiveItem" load_steps=7 format=3 uid="uid://cdqw7gta62gvm"]
 
 [ext_resource type="Script" uid="uid://oh3fq60et0sw" path="res://scenes/PassiveItem.gd" id="1_82em7"]
 [ext_resource type="Texture2D" uid="uid://dvj1pwf3d04tl" path="res://assets/Icons/unTied Games/Super Pixel Icons/Super Pixel Skill Icons Pack 6/icons/sk6_magnet_A.png" id="1_d2ge8"]
@@ -6,7 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_mgu2e"]
 script = ExtResource("3_6ljra")
-description = "+5 Magnet Range"
+description = "+10 Magnet Range"
 max_health = 0
 recovery = 0.0
 armor = 0.0
@@ -14,7 +14,7 @@ movement_speed = 0.0
 damage = 0
 amplify = 0.0
 area = 0.0
-magnet = 5.0
+magnet = 10.0
 growth = 0.0
 luck = 0.0
 dodge = 0.0
@@ -23,60 +23,6 @@ crit_damage = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [sub_resource type="Resource" id="Resource_7tv1t"]
-script = ExtResource("3_6ljra")
-description = "+8 Magnet Range"
-max_health = 0
-recovery = 0.0
-armor = 0.0
-movement_speed = 0.0
-damage = 0
-amplify = 0.0
-area = 0.0
-magnet = 8.0
-growth = 0.0
-luck = 0.0
-dodge = 0.0
-crit = 0.0
-crit_damage = 0.0
-metadata/_custom_type_script = "uid://dhltvcvyn33cy"
-
-[sub_resource type="Resource" id="Resource_g1hcx"]
-script = ExtResource("3_6ljra")
-description = "+10 Magnet Range"
-max_health = 0
-recovery = 0.0
-armor = 0.0
-movement_speed = 0.0
-damage = 0
-amplify = 0.0
-area = 0.0
-magnet = 10.0
-growth = 0.0
-luck = 0.0
-dodge = 0.0
-crit = 0.0
-crit_damage = 0.0
-metadata/_custom_type_script = "uid://dhltvcvyn33cy"
-
-[sub_resource type="Resource" id="Resource_82em7"]
-script = ExtResource("3_6ljra")
-description = "+10 Magnet Range"
-max_health = 0
-recovery = 0.0
-armor = 0.0
-movement_speed = 0.0
-damage = 0
-amplify = 0.0
-area = 0.0
-magnet = 10.0
-growth = 0.0
-luck = 0.0
-dodge = 0.0
-crit = 0.0
-crit_damage = 0.0
-metadata/_custom_type_script = "uid://dhltvcvyn33cy"
-
-[sub_resource type="Resource" id="Resource_d2ge8"]
 script = ExtResource("3_6ljra")
 description = "+15 Magnet Range"
 max_health = 0
@@ -94,9 +40,27 @@ crit = 0.0
 crit_damage = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
+[sub_resource type="Resource" id="Resource_g1hcx"]
+script = ExtResource("3_6ljra")
+description = "+20 Magnet Range"
+max_health = 0
+recovery = 0.0
+armor = 0.0
+movement_speed = 0.0
+damage = 0
+amplify = 0.0
+area = 0.0
+magnet = 20.0
+growth = 0.0
+luck = 0.0
+dodge = 0.0
+crit = 0.0
+crit_damage = 0.0
+metadata/_custom_type_script = "uid://dhltvcvyn33cy"
+
 [resource]
 script = ExtResource("1_82em7")
-upgrades = Array[ExtResource("3_6ljra")]([SubResource("Resource_mgu2e"), SubResource("Resource_7tv1t"), SubResource("Resource_g1hcx"), SubResource("Resource_82em7"), SubResource("Resource_d2ge8")])
+upgrades = Array[ExtResource("3_6ljra")]([SubResource("Resource_mgu2e"), SubResource("Resource_7tv1t"), SubResource("Resource_g1hcx")])
 title = "Magnet"
 description = ""
 icon = ExtResource("1_d2ge8")
