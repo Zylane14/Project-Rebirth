@@ -18,8 +18,8 @@ magnet = 0.0
 growth = 0.0
 luck = 0.0
 dodge = 0.0
-crit = 0.1
-crit_damage = 2.0
+crit = 0.0
+crit_damage = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [sub_resource type="Resource" id="Resource_ef2dh"]
@@ -36,8 +36,8 @@ magnet = 0.0
 growth = 0.0
 luck = 0.0
 dodge = 0.0
-crit = 0.1
-crit_damage = 2.0
+crit = 0.0
+crit_damage = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [sub_resource type="Resource" id="Resource_uk1yw"]

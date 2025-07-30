@@ -75,31 +75,31 @@ func show_option():
 	if luck_roll < owner.luck:
 		modifier = 1
 
+	var max_options: int = min(4, 3 + modifier)
 	var option_size := 0
 
-	# Handle evolutions
+	# Handle evolutions first but count them toward max_options
 	for weapon in weapons_available:
 		if weapon.max_level_reached() and weapon.item_needed in passive_item_available:
+			if option_size >= max_options:
+				break
 			var option_slot = OptionSlot.instantiate()
-			available.append(weapon)
 			option_slot.item = weapon
 			add_child(option_slot)
 			option_size += 1
 
-	# Add up to 4 options max (even if lucky)
-	var max_options: int = min(4, 3 + modifier)
-	for i in range(max_options):
-		if available.size() > 0:
-			option_size += add_option(available.pop_front())
+	# Fill remaining slots with normal upgrades
+	while option_size < max_options and available.size() > 0:
+		option_size += add_option(available.pop_front())
 
 	if option_size == 0:
 		return
 
 	# Dynamic spacing based on number of options
 	if option_size == 4:
-		self.add_theme_constant_override("separation", 5) # tighter spacing for 4
+		self.add_theme_constant_override("separation", 5)
 	else:
-		self.add_theme_constant_override("separation", 20) # default spacing
+		self.add_theme_constant_override("separation", 20)
 
 	# Show UI
 	show()
@@ -108,6 +108,7 @@ func show_option():
 	%Gold.hide()
 	%XP.hide()
 	get_tree().paused = true
+
 
 func dir_contents(path):
 	var dir = DirAccess.open(path)

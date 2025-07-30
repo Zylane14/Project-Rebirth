@@ -22,5 +22,5 @@ title = "Burst Field"
 description = ""
 icon = ExtResource("1_q2oji")
 rarity = 4
-level = 1
+level = 0
 metadata/_custom_type_script = "uid://bp7xh7ffcmotq"

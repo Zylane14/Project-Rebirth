@@ -1,5 +1,7 @@
 extends TextureButton
 
+@export var player_reference: Player
+
 var stat_suffixes = {
 	"crit": "%", "crit_damage": "x", "armor": "%",
 	"luck": "%", "dodge": "%", "growth": " exp/rate",
@@ -47,13 +49,8 @@ var stat_suffixes = {
 		}
 
 		if has_upgrades and item.level < item.upgrades.size():
-			# Show upgrade preview
 			var next_upgrade = item.upgrades[item.level]
-			var next_level = item.level + 1
-			if next_level >= item.upgrades.size():
-				$Frame/Level.text = "Level " + str(item.level) + " → MAX"
-			else:
-				$Frame/Level.text = "Level " + str(item.level) + " → " + str(next_level)
+			$Frame/Level.text = get_level_label(item.level, item.upgrades.size())
 
 			var stat_text := ""
 
@@ -62,7 +59,9 @@ var stat_suffixes = {
 
 				if item.has_method("get") and _has_property(next_upgrade, stat_name):
 					var current_value := 0.0
-					if _has_property(item, stat_name):
+					if item is PassiveItem and is_instance_valid(player_reference) and _has_property(player_reference, stat_name):
+						current_value = player_reference.get(stat_name)
+					elif _has_property(item, stat_name):
 						current_value = item.get(stat_name)
 
 					var upgrade_value = next_upgrade.get(stat_name)
@@ -78,35 +77,37 @@ var stat_suffixes = {
 
 			desc_box.append_text(stat_text)
 
-		elif has_evolution and item.level >= item.upgrades.size() and item.evolution != null:
-			# Show evolution preview
-			$HeaderBar/Icon.texture = item.evolution.icon
-			$Frame/Level.text = "EVOLUTION"
+		elif has_evolution and item.level >= item.upgrades.size() and not item.has_evolved():
+				# Show evolution preview
+				$HeaderBar/Icon.texture = item.evolution.icon
+				$Frame/Level.text = "EVOLUTION"
 
-			var evolution_stat_text := ""
+				var evolution_stat_text := ""
 
-			for stat_name in custom_stat_fields.keys():
-				var invert = custom_stat_fields[stat_name]
+				for stat_name in custom_stat_fields.keys():
+					var invert = custom_stat_fields[stat_name]
 
-				if item.has_method("get") and _has_property(item.evolution, stat_name):
-					var current_value := 0.0
-					if _has_property(item, stat_name):
-						current_value = item.get(stat_name)
+					if item.has_method("get") and _has_property(item.evolution, stat_name):
+						var current_value := 0.0
+						if item is PassiveItem and is_instance_valid(player_reference) and _has_property(player_reference, stat_name):
+							current_value = player_reference.get(stat_name)
+						elif _has_property(item, stat_name):
+							current_value = item.get(stat_name)
 
-					var evolved_value = item.evolution.get(stat_name)
+						var evolved_value = item.evolution.get(stat_name)
 
-					if abs(evolved_value - current_value) > 0.001:
-						var label = stat_name.capitalize().replace("_", " ")
-						var suffix = stat_suffixes.get(stat_name, "")
-						evolution_stat_text += format_stat_change(label, current_value, evolved_value, invert, suffix)
+						if abs(evolved_value - current_value) > 0.001:
+							var label = stat_name.capitalize().replace("_", " ")
+							var suffix = stat_suffixes.get(stat_name, "")
+							evolution_stat_text += format_stat_change(label, current_value, evolved_value, invert, suffix)
 
-			if item.evolution.description != "":
-				evolution_stat_text += "\n" + item.evolution.description
+				if item.evolution.description != "":
+					evolution_stat_text += "\n" + item.evolution.description
 
-			desc_box.append_text(evolution_stat_text)
+				desc_box.append_text(evolution_stat_text)
 
 		else:
-			# No upgrade and no evolution
+			# No upgrade or evolution possible
 			$Frame/Level.text = "MAX LEVEL"
 			desc_box.append_text(item.description)
 
@@ -155,6 +156,9 @@ func _has_property(obj: Object, property_name: String) -> bool:
 		if prop.name == property_name:
 			return true
 	return false
+
+func get_level_label(current_level: int, _max_upgrades: int) -> String:
+	return "Level " + str(current_level + 1)
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("click") and item:

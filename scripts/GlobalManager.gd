@@ -8,6 +8,7 @@ var elapsed_time: float = 0.0
 var buff_interval: float = 15.0
 var enemy_kill_count : int = 0
 var evolved_weapons: Array[String] = []
+var owned_items: Array[Item] = []
 
 ##==============================
 ## ENEMY REGISTRY FOR SWARMING
@@ -53,4 +54,8 @@ func register_evolution(weapon: Weapon):
 func is_evolved(title: String) -> bool:
 	return title in evolved_weapons
 	
-	
+func has_item(target_item: Item) -> bool:
+	for item in owned_items:
+		if item == target_item:
+			return true
+	return false

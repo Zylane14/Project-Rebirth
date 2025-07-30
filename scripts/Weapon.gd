@@ -3,6 +3,9 @@ class_name Weapon
 
 @export var damage: float
 @export var speed: float
+@export var cooldown: float = 0.5:
+	set(value):
+		cooldown = max(value, 0.01)
 @export var projectile_node: PackedScene = preload("res://scenes/projectile.tscn")
 @export var upgrades: Array[Upgrade]
 @export var item_needed: PassiveItem
@@ -11,9 +14,6 @@ class_name Weapon
 @export var particle: ParticleProcessMaterial = null
 @export var projectile_animation_name: String = ""
 @export var manual_only: bool = false
-@export var cooldown: float = 0.5:
-	set(value):
-		cooldown = max(value, 0.01)
 
 var slot
 var damage_dealt: float = 0
@@ -39,6 +39,9 @@ func is_upgradeable() -> bool:
 
 func max_level_reached() -> bool:
 	return level > upgrades.size()
+
+func has_evolved() -> bool:
+	return slot != null and slot.item != self
 
 func upgrade_item():
 	if evolution != null and max_level_reached() and slot != null and slot.item == self:

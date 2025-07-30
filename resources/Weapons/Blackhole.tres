@@ -15,7 +15,10 @@ amount = 0
 area = 0.0
 damage = 0.0
 cooldown = 0.0
-description = "BLACK HOLE"
+description = "BLACK HOLE
+
+Amount: 1
+Damage: 25"
 metadata/_custom_type_script = "uid://bhud26ecmt7ug"
 
 [sub_resource type="Resource" id="Resource_6qa28"]
@@ -59,7 +62,7 @@ script = ExtResource("5_yjl2v")
 amount = 1
 area = 1.0
 delay = 0.1
-damage = 20.0
+damage = 25.0
 speed = 0.0
 projectile_node = ExtResource("4_tr045")
 upgrades = Array[ExtResource("7_5sf8b")]([SubResource("Resource_nt3kt"), SubResource("Resource_6qa28"), SubResource("Resource_tnn3l"), SubResource("Resource_njufj"), SubResource("Resource_kpdg7")])

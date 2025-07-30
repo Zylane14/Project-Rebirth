@@ -11,11 +11,12 @@
 
 [sub_resource type="Resource" id="Resource_d4vqs"]
 script = ExtResource("7_hyye0")
-area = 0.1
+area = 0.0
 amount = 0
-damage = 2.0
+damage = 0.0
 cooldown = 0.0
-description = "+3 Damage 10% Size"
+description = "Damage: 5
+Cooldown: 0.8"
 metadata/_custom_type_script = "uid://d0amiabxudau7"
 
 [sub_resource type="Resource" id="Resource_qdh4m"]
@@ -61,7 +62,7 @@ area = 1.0
 amount = 1
 arc_angle = 90.0
 delay = 0.8
-reversible = true
+reversible = false
 knockback = 100.0
 damage = 5.0
 speed = 400.0
