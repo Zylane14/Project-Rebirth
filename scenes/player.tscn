@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3 uid="uid://63kp1cwf1snt"]
+[gd_scene load_steps=110 format=3 uid="uid://63kp1cwf1snt"]
 
 [ext_resource type="Script" uid="uid://rd7jqoyg5ayg" path="res://scripts/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://3ninw6nm3qxc" path="res://scenes/slot.tscn" id="2_dqkch"]
@@ -50,6 +50,7 @@
 [ext_resource type="Script" uid="uid://crxcidbxm6nnk" path="res://scenes/KillCount.gd" id="45_g5jhy"]
 [ext_resource type="Shader" uid="uid://c7n5en1vkusyr" path="res://scenes/Vignette.gdshader" id="46_holxr"]
 [ext_resource type="Texture2D" uid="uid://djhp8wbaq46dc" path="res://Light.tres" id="49_u2ulf"]
+[ext_resource type="PackedScene" uid="uid://dd3i723qbx4y8" path="res://scenes/option_slot.tscn" id="51_2gdjj"]
 
 [sub_resource type="Animation" id="Animation_qfm1y"]
 length = 0.001
@@ -1710,6 +1711,21 @@ offset_bottom = 60.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 9
 text = "Choose Your Upgrade"
+
+[node name="OptionSlot" parent="UI/Panel" node_paths=PackedStringArray("player_reference") instance=ExtResource("51_2gdjj")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -103.0
+offset_right = 75.0
+offset_bottom = 147.0
+grow_horizontal = 2
+grow_vertical = 2
+player_reference = NodePath("../../..")
 
 [node name="Options" type="HBoxContainer" parent="UI" node_paths=PackedStringArray("weapons", "passive_items", "particles", "panel", "player_reference")]
 unique_name_in_owner = true

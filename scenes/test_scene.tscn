@@ -7117,7 +7117,7 @@ tile_set = ExtResource("4_6qxox")
 [node name="Spawner" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_j8ivh")]
 player = NodePath("../Player")
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource("1_g7g4h")]
+[node name="Player" parent="." instance=ExtResource("1_g7g4h")]
 position = Vector2(318, 173)
 
 [node name="join" type="Button" parent="Player"]

@@ -1,6 +1,6 @@
 extends TextureButton
 
-@export var player_reference: Player
+@export var player_reference : CharacterBody2D
 
 var stat_suffixes = {
 	"crit": "%", "crit_damage": "x", "armor": "%",

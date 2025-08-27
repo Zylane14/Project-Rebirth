@@ -57,6 +57,7 @@ metadata/_custom_type_script = "uid://ldvf6v3hcrde"
 script = ExtResource("2_ja44x")
 damage = 4.0
 speed = 300.0
+cooldown = 1.0
 projectile_node = ExtResource("1_msqgw")
 upgrades = Array[ExtResource("4_2b7by")]([SubResource("Resource_ap575"), SubResource("Resource_2b7by"), SubResource("Resource_2lheo"), SubResource("Resource_wuo0d"), SubResource("Resource_bsojs")])
 item_needed = ExtResource("2_wuo0d")
@@ -65,7 +66,6 @@ sound = ExtResource("5_wuo0d")
 particle = ExtResource("4_gu283")
 projectile_animation_name = "Fireball"
 manual_only = true
-cooldown = 1.0
 title = "Fireball"
 description = "Auto fires to the nearest enemy.
 

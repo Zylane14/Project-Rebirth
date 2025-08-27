@@ -11,7 +11,7 @@
 [sub_resource type="Resource" id="Resource_3xwug"]
 script = ExtResource("7_jf17j")
 angular_speed = 0.0
-amount = 0
+amount = 1
 area = 0.0
 damage = 0.0
 cooldown = 0.0
@@ -35,7 +35,7 @@ metadata/_custom_type_script = "uid://cnqkprtjrc6t6"
 [sub_resource type="Resource" id="Resource_ye6g7"]
 script = ExtResource("7_jf17j")
 angular_speed = 20.0
-amount = 2
+amount = 1
 area = 0.0
 damage = 2.0
 cooldown = 0.0
