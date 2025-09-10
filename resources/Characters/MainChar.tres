@@ -9,10 +9,10 @@
 [sub_resource type="Resource" id="Resource_s7l6c"]
 script = ExtResource("1_8lqxd")
 description = ""
-max_health = 120
+max_health = 50
 recovery = 0.2
 armor = 5.0
-movement_speed = 20.0
+movement_speed = 5.0
 damage = 0
 amplify = 1.0
 area = 0.0
@@ -32,7 +32,7 @@ portrait = ExtResource("3_njbcg")
 animation_name = "MainChar"
 base_stats = SubResource("Resource_s7l6c")
 starting_weapon = ExtResource("5_njbcg")
-scale = Vector2(0.9, 0.9)
+scale = Vector2(0.8, 0.8)
 can_dash = true
 dash_distance = 140.0
 dash_duration = 0.4

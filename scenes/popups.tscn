@@ -24,6 +24,7 @@ region_rect = Rect2(0, 0, 32, 32)
 
 [node name="Popups" type="Control"]
 process_mode = 3
+clip_contents = true
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -39,7 +40,6 @@ position = Vector2i(260, 130)
 size = Vector2i(114, 167)
 
 [node name="Panel" type="Panel" parent="UI/ItemPopup"]
-visible = false
 light_mask = 2
 visibility_layer = 2
 anchors_preset = 15
@@ -68,10 +68,17 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/ItemPopup"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 110.0
 offset_bottom = 163.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Title" type="Label" parent="UI/ItemPopup/VBoxContainer"]
 unique_name_in_owner = true

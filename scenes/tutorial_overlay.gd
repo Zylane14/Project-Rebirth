@@ -5,7 +5,8 @@ extends CanvasLayer
 	$HBoxContainer/Spacebar,
 	$HBoxContainer/Inventory,
 	$HBoxContainer/Light,
-	$HBoxContainer/Mouse
+	$HBoxContainer/Mouse,
+	$RichTextLabel
 ]
 
 func _ready() -> void:

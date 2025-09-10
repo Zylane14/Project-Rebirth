@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://dw478itjqgfrt" path="res://resources/Passive Items/Lucky Ring.tres" id="2_dmrje"]
 [ext_resource type="Texture2D" uid="uid://crx07mreta7su" path="res://assets/Icons/SkillIcons/Windblade.png" id="2_kiewn"]
 [ext_resource type="PackedScene" uid="uid://bga3lfxfnpqra" path="res://scenes/projectile.tscn" id="2_lnykp"]
-[ext_resource type="Material" uid="uid://djvjop6kmlya2" path="res://Paticles FX/Magic.tres" id="4_kiewn"]
+[ext_resource type="Material" uid="uid://bx1l6rnndgfve" path="res://Paticles FX/MagicGrass.tres" id="4_kiewn"]
 [ext_resource type="AudioStream" uid="uid://ctfl5kwg6ohhl" path="res://music & sfx/RPG_Essentials_Free/10_Battle_SFX/22_Slash_04.wav" id="4_o8pbe"]
 [ext_resource type="Script" uid="uid://sur3de5kfqnl" path="res://scenes/WeaponScript/WindBlade.gd" id="5_03jd5"]
 [ext_resource type="Script" uid="uid://co5wubqlbfsyl" path="res://scenes/Upgrade.gd" id="5_kiewn"]
@@ -70,6 +70,7 @@ reversible = false
 delay = 0.8
 damage = 4.0
 speed = 550.0
+cooldown = 1.0
 projectile_node = ExtResource("2_lnykp")
 upgrades = Array[ExtResource("5_kiewn")]([SubResource("Resource_dmrje"), SubResource("Resource_o8pbe"), SubResource("Resource_kiewn"), SubResource("Resource_03jd5"), SubResource("Resource_qjasa")])
 item_needed = ExtResource("2_dmrje")
@@ -77,8 +78,7 @@ evolution = ExtResource("1_o8pbe")
 sound = ExtResource("4_o8pbe")
 particle = ExtResource("4_kiewn")
 projectile_animation_name = "WindBlade"
-manual_only = false
-cooldown = 1.0
+manual_only = true
 title = "Wind Blade"
 description = "WIINDD BLAAADEE"
 icon = ExtResource("2_kiewn")
