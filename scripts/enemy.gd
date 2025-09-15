@@ -18,6 +18,7 @@ var drop = preload("res://scenes/pickups.tscn") #preloads pickup scene
 
 var attack_timer := 0.0
 var is_attacking := false
+var has_dealt_hit: bool = false
 
 var buff_timer : float = 0.0
 var buff_stage: int = 0
@@ -275,35 +276,39 @@ func perform_melee_attack():
 	if attack_timer > 0 or is_attacking:
 		return
 
-	if position.distance_to(player_reference.position) <= type.attack_range:
-		if has_node("AnimationPlayer"):
-			var anim_name = "melee_attack_" + type.animation_name
-			if $AnimationPlayer.has_animation(anim_name):
-				is_attacking = true
-				$AnimationPlayer.play(anim_name)
-				attack_timer = type.attack_cooldown
+	if position.distance_to(player_reference.position) <= type.attack_range and has_node("AnimationPlayer"):
+		var anim_name = "melee_attack_" + type.animation_name
+		if $AnimationPlayer.has_animation(anim_name):
+			is_attacking = true
+			has_dealt_hit = false               
+			$AnimationPlayer.play(anim_name)
+			attack_timer = type.attack_cooldown
+
 
 func perform_ranged_attack():
 	if attack_timer > 0 or is_attacking or has_done_ranged_attack or not is_instance_valid(player_reference):
 		return
 
 	var attack_range = type.ranged_attack_range if type.enemy_class == Enemy.EnemyClass.HYBRID else 300.0
+	
+	if position.distance_to(player_reference.position) <= attack_range and has_node("AnimationPlayer"):
+		var anim_name = "range_attack_" + type.animation_name
+		if $AnimationPlayer.has_animation(anim_name):
+			is_attacking = true
+			has_dealt_hit = false             
+			$AnimationPlayer.play(anim_name)
+			attack_timer = type.attack_cooldown
+			has_done_ranged_attack = true
+			hybrid_mode = "melee"
 
-	if position.distance_to(player_reference.position) <= attack_range:
-		if has_node("AnimationPlayer"):
-			var anim_name = "range_attack_" + type.animation_name
-			if $AnimationPlayer.has_animation(anim_name):
-				is_attacking = true
-				$AnimationPlayer.play(anim_name)
-				attack_timer = type.attack_cooldown
-				has_done_ranged_attack = true
-				hybrid_mode = "melee"
 
 func _on_animation_finished(anim_name: String):
 	if anim_name.begins_with("melee_attack_") or anim_name.begins_with("range_attack_"):
 		is_attacking = false
+		has_dealt_hit = false
 		if anim_name.begins_with("range_attack_"):
-			has_done_ranged_attack = false 
+			has_done_ranged_attack = false
+
 
 func switch_hybrid_mode():
 	hybrid_mode = "melee" if hybrid_mode == "ranged" else "ranged"

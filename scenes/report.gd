@@ -19,6 +19,7 @@ func _input(event):
 
 func _on_continue_pressed() -> void:
 	visible = false
+	%PauseButton.show()
 	get_tree().paused = false #pressing continue will unpause the game
  
 func set_icon(path : String):

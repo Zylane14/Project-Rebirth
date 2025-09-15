@@ -1081,7 +1081,7 @@ tracks/4/path = NodePath(".")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.8),
+"times": PackedFloat32Array(0.9),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -1148,7 +1148,7 @@ tracks/4/path = NodePath(".")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.7),
+"times": PackedFloat32Array(0.8),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -1218,6 +1218,20 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"do_melee_hit"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_wjec0"]
@@ -1418,6 +1432,20 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(-2, 9)]
 }
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"do_melee_hit"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_5ie7m"]
 resource_name = "melee_attack_WolfBlack"
@@ -1470,6 +1498,20 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"do_melee_hit"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_7v6cf"]

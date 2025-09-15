@@ -10,9 +10,9 @@
 script = ExtResource("1_j7lpw")
 description = ""
 max_health = 0
-recovery = 0.1
+recovery = 0.0
 armor = 0.0
-movement_speed = 20.0
+movement_speed = 10.0
 damage = 4.0
 amplify = 1.0
 area = 70.0

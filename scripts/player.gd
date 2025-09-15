@@ -381,7 +381,7 @@ func animation(_delta):
 	var anim_name = "idle_" + character.animation_name
 
 	if is_moving:
-		if movement_speed >= 100:
+		if movement_speed >= 120:
 			var run_anim = "run_" + character.animation_name
 			if $AnimationPlayer.has_animation(run_anim):
 				anim_name = run_anim
@@ -408,4 +408,14 @@ func toggle_inventory():
 	weapon_inventory.visible = not weapon_inventory.visible
 	game_paused = weapon_inventory.visible
 	get_tree().paused = game_paused
-	
+
+
+func _on_pause_button_pressed() -> void:
+	get_tree().paused = not get_tree().paused
+
+	if get_tree().paused:
+		$UI/Report.show()
+		$UI/PauseButton.hide()
+	else:
+		$UI/Report.hide()
+		$UI/PauseButton.show()
