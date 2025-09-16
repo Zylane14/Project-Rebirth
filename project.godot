@@ -16,7 +16,7 @@ warnings/check_invalid_track_paths=false
 
 config/name="Project Rebirth"
 run/main_scene="uid://cxt1tvyg3uor3"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="uid://dcgjgx6c8iait"
 
 [audio]
@@ -47,6 +47,7 @@ directories/dtl_directory={}
 
 window/size/viewport_width=640
 window/size/viewport_height=360
+window/size/mode=3
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
@@ -81,9 +82,9 @@ folder_colors={
 
 [gui]
 
-theme/custom_font="uid://dv3homoqo35tj"
 theme/default_font_multichannel_signed_distance_field=true
 theme/default_font_generate_mipmaps=true
+theme/custom_font="uid://dv3homoqo35tj"
 
 [input]
 

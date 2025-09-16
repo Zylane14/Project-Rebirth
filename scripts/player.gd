@@ -24,7 +24,7 @@ var game_paused := false
 ##==============================
 ## HEALTH, STATS, AND UI
 ##==============================
-var health: float = 500.0:
+var health: float = 100.0:
 	set(value):
 		health = max(value, 0.0)
 		%Health.value = int(value)
@@ -32,7 +32,7 @@ var health: float = 500.0:
 			die()
 			show_game_over_screen()
 
-var max_health: float = 500.0:
+var max_health: float = 100.0:
 	set(value):
 		var delta = value - max_health
 		max_health = value
@@ -381,7 +381,7 @@ func animation(_delta):
 	var anim_name = "idle_" + character.animation_name
 
 	if is_moving:
-		if movement_speed >= 120:
+		if movement_speed >= 115:
 			var run_anim = "run_" + character.animation_name
 			if $AnimationPlayer.has_animation(run_anim):
 				anim_name = run_anim

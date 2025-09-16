@@ -7,64 +7,26 @@
 [sub_resource type="Resource" id="Resource_opdgn"]
 script = ExtResource("3_6qo2h")
 description = "+2% Luck"
-max_health = 0
-recovery = 0.0
-armor = 0.0
-movement_speed = 0.0
-damage = 0
-amplify = 0.0
-area = 0.0
-magnet = 0.0
-growth = 0.0
 luck = 2.0
-dodge = 0.0
-crit = 0.0
-crit_damage = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [sub_resource type="Resource" id="Resource_63bs6"]
 script = ExtResource("3_6qo2h")
 description = "+3% Luck"
-max_health = 0
-recovery = 0.0
-armor = 0.0
-movement_speed = 0.0
-damage = 0
-amplify = 0.0
-area = 0.0
-magnet = 0.0
-growth = 0.0
 luck = 3.0
-dodge = 0.0
-crit = 0.0
-crit_damage = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [sub_resource type="Resource" id="Resource_m7p3p"]
 script = ExtResource("3_6qo2h")
 description = "+4% Luck"
-max_health = 0
-recovery = 0.0
-armor = 0.0
-movement_speed = 0.0
-damage = 0
-amplify = 0.0
-area = 0.0
-magnet = 0.0
-growth = 0.0
 luck = 4.0
-dodge = 0.0
-crit = 0.0
-crit_damage = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [resource]
 script = ExtResource("2_v7d1i")
 upgrades = Array[ExtResource("3_6qo2h")]([SubResource("Resource_opdgn"), SubResource("Resource_63bs6"), SubResource("Resource_m7p3p")])
 title = "Lucky Roll"
-description = ""
 icon = ExtResource("1_si68l")
 texture = ExtResource("1_si68l")
 rarity = 2
-level = 0
 metadata/_custom_type_script = "uid://oh3fq60et0sw"

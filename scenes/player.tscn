@@ -2234,7 +2234,6 @@ region_rect = Rect2(0, 0, 191, 191)
 
 [node name="Report" type="Panel" parent="UI"]
 process_mode = 3
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

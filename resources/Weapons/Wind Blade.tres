@@ -12,39 +12,27 @@
 
 [sub_resource type="Resource" id="Resource_dmrje"]
 script = ExtResource("6_lnykp")
-area = 0.0
-speed = 0.0
-amount = 0.0
 damage = 4.0
-cooldown = 0.0
 description = "WIND BLADE"
 metadata/_custom_type_script = "uid://desj1lkl2lkec"
 
 [sub_resource type="Resource" id="Resource_o8pbe"]
 script = ExtResource("6_lnykp")
-area = 0.0
 speed = 50.0
-amount = 0.0
-damage = 0.0
 cooldown = -0.2
 description = "-0.2 Cooldown +50 Speed"
 metadata/_custom_type_script = "uid://desj1lkl2lkec"
 
 [sub_resource type="Resource" id="Resource_kiewn"]
 script = ExtResource("6_lnykp")
-area = 0.0
 speed = 60.0
-amount = 0.0
-damage = 0.0
 cooldown = -0.2
 description = "+60 Speed  -0.2 Cooldown"
 metadata/_custom_type_script = "uid://desj1lkl2lkec"
 
 [sub_resource type="Resource" id="Resource_03jd5"]
 script = ExtResource("6_lnykp")
-area = 0.0
 speed = 60.0
-amount = 0.0
 damage = 3.0
 cooldown = -0.25
 description = "+3 Damage -0.25 Cooldown +60 Speed
@@ -55,23 +43,17 @@ metadata/_custom_type_script = "uid://desj1lkl2lkec"
 script = ExtResource("6_lnykp")
 area = 0.15
 speed = 100.0
-amount = 0.0
 damage = 2.0
-cooldown = 0.0
 description = "+1 Damage +100 Speed +0.15 Area
 "
 metadata/_custom_type_script = "uid://desj1lkl2lkec"
 
 [resource]
 script = ExtResource("5_03jd5")
-area = 1.0
-amount = 1
-reversible = false
 delay = 0.8
 damage = 4.0
 speed = 550.0
 cooldown = 1.0
-projectile_node = ExtResource("2_lnykp")
 upgrades = Array[ExtResource("5_kiewn")]([SubResource("Resource_dmrje"), SubResource("Resource_o8pbe"), SubResource("Resource_kiewn"), SubResource("Resource_03jd5"), SubResource("Resource_qjasa")])
 item_needed = ExtResource("2_dmrje")
 evolution = ExtResource("1_o8pbe")
@@ -82,6 +64,4 @@ manual_only = true
 title = "Wind Blade"
 description = "WIINDD BLAAADEE"
 icon = ExtResource("2_kiewn")
-rarity = 0
-level = 0
 metadata/_custom_type_script = "uid://sur3de5kfqnl"

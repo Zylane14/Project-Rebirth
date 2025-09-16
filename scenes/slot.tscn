@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://3ninw6nm3qxc"]
+[gd_scene load_steps=3 format=3 uid="uid://3ninw6nm3qxc"]
 
 [ext_resource type="Script" uid="uid://c2rncdt6tc021" path="res://scenes/slot.gd" id="1_4v6ba"]
+[ext_resource type="Texture2D" uid="uid://bv6b8ferff5rq" path="res://assets/UI/Ultimate Dark Fantasy UI V2.0 1.1 fix/Item holders/32px_selected.png" id="2_ic0fu"]
 
 [node name="Slot" type="PanelContainer"]
 offset_right = 40.0
@@ -10,6 +11,7 @@ script = ExtResource("1_4v6ba")
 [node name="TextureRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
+texture = ExtResource("2_ic0fu")
 expand_mode = 1
 stretch_mode = 5
 

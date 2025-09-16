@@ -8,20 +8,10 @@
 
 [sub_resource type="Resource" id="Resource_3cii4"]
 script = ExtResource("1_j7lpw")
-description = ""
-max_health = 0
-recovery = 0.0
-armor = 0.0
 movement_speed = 10.0
 damage = 4.0
 amplify = 1.0
 area = 70.0
-magnet = 0.0
-growth = 0.0
-luck = 0.0
-dodge = 0.0
-crit = 0.0
-crit_damage = 0.0
 metadata/_custom_type_script = "uid://dhltvcvyn33cy"
 
 [resource]
@@ -32,10 +22,7 @@ portrait = ExtResource("3_3cii4")
 animation_name = "Eleonore"
 base_stats = SubResource("Resource_3cii4")
 starting_weapon = ExtResource("4_i80kj")
-scale = Vector2(1, 1)
-can_dash = true
 dash_distance = 160.0
 dash_duration = 0.6
 dash_cooldown = 0.2
-post_dash_invincibility_duration = 0.2
 metadata/_custom_type_script = "uid://bjudu0im5j1jb"

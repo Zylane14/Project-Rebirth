@@ -21,7 +21,6 @@ gold = 25
 title = "GoldSack"
 icon = ExtResource("1_tgknb")
 frames = SubResource("SpriteFrames_leulu")
-animation_name = "default"
 scale = Vector2(0.7, 0.7)
 description = "+20 Gold"
 sound = ExtResource("3_date4")
